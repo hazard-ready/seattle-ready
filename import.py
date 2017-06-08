@@ -89,7 +89,6 @@ def main():
 # one block represents the code generation for each destination file
 def generateCode(codeSnippets, layers, sf, keyField, desiredSRID, shapeType, encoding, shapefileGroup, existingShapefileGroups, isSHP, isTIFF, first):
   for layer in layers:
-    print(layer)
     stem = os.path.basename(layer)[:-4].replace(".", "_").replace("-","_")
     codeSnippets["modelsLocationsList"] += "            '" + stem + "': " + stem + ".objects.data_bounds(),\n"
 
