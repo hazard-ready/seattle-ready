@@ -60,6 +60,9 @@ def main():
         shapeType = detectGeometryType(sf, stem)
       elif isTIFF:
         print("Opening raster data source:", stem)
+        keyField = 'bands[0]'
+        sf = None
+        shapeType = None
       encoding = findEncoding(dataDir, stem)
       shapefileGroup = askUserForShapefileGroup(stem, existingShapefileGroups)
 
@@ -84,9 +87,15 @@ def main():
 
       loadMappings += stem + "_mapping = {\n"
       loadMappings += "    '" + keyField.lower() + "': '" + keyField + "',\n"
-      loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
+      if isSHP:
+        loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
+      elif isTIFF:
+        loadMappings += "    'rast': GDALRaster('" + os.path.join(dataDir, f) + "'\n"
       loadMappings += "}\n\n"
-      loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
+      if isSHP:
+        loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
+      elif isTIFF:
+        loadPaths += stem + "_rst = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + os.path.join(dataDir, f) + "'))\n"
       loadImports += "    from .models import " + stem + "\n"
       loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
       loadImports += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
@@ -298,14 +307,19 @@ def findFieldType(sf, fieldName):
         exit()
 
 
-
+# call with sf=None for a raster source
 def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   text  = "class " + stem + "(models.Model):\n"
   text += "    def getGroup():\n"
   text += "        return ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')[0]\n\n"
-  text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
-  text += "    geom = models." + shapeType + "Field(srid=" + srs + ")\n"
-  text += "    objects = ShapeManager()\n\n"
+  if sf is None:
+    text += "    " + keyField.lower() + " = models.IntegerField()\n"
+    text += "    rast = models.RasterField()\n"
+    text += "    objects = RasterManager()\n\n"
+  else:
+    text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
+    text += "    geom = models." + shapeType + "Field(srid=" + srs + ")\n"
+    text += "    objects = ShapeManager()\n\n"
   text += "    group = models.ForeignKey(ShapefileGroup, default=getGroup)\n"
   text += "    def __str__(self):\n"
   text += "        return str(self." + keyField.lower() + ")\n\n"

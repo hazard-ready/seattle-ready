@@ -177,6 +177,12 @@ class ShapeManager(models.GeoManager):
     def data_bounds(self):
         return self.aggregate(Extent('geom'))['geom__extent']
 
+class RasterManager(models.GeoManager):
+    def has_point(self, pnt):
+        return self.filter(rast__contains=pnt)
+
+    def data_bounds(self):
+        return self.aggregate(Extent('rast'))['rast__extent']
 
 class ShapefileGroup(models.Model):
     name = models.CharField(max_length=50)
