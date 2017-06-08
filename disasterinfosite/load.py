@@ -168,7 +168,6 @@ def run(verbose=True):
     wildfire = ShapefileGroup.objects.get_or_create(name='wildfire')
     flood = ShapefileGroup.objects.get_or_create(name='flood')
     landslide = ShapefileGroup.objects.get_or_create(name='landslide')
-    lookup_val = ShapefileGroup.objects.get_or_create(name='lookup_val')
     summer = ShapefileGroup.objects.get_or_create(name='summer')
     volcano = ShapefileGroup.objects.get_or_create(name='volcano')
     winter = ShapefileGroup.objects.get_or_create(name='winter')

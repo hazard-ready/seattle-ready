@@ -443,7 +443,7 @@ class LSLD_Prone_kingco(models.Model):
 
 class LSLD_steepgradezone(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='lookup_val')[0]
+        return ShapefileGroup.objects.get_or_create(name='quake')[0]
 
     rast = models.RasterField(default=0)
     objects = RasterManager()
