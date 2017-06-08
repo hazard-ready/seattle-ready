@@ -12,6 +12,7 @@ def main():
   appName = "disasterinfosite"
   appDir = "disasterinfosite"
   dataDir = os.path.join(appDir, "data")
+  tiledDir = os.path.join(dataDir, "tiled")
   snuggetFile = os.path.join(dataDir, "snuggets.xlsx")
   overwriteAll = False
   optionalFields = ['intensity', 'image', 'lookup_value', ''] # all other fields in snuggetFile are required. The empty string is to deal with Excel's charming habit of putting a blank column after all data in a CSV.
@@ -30,7 +31,7 @@ def main():
       for row in newSnuggets:
         rowCount += 1
         if allRequiredFieldsPresent(row, optionalFields, rowCount):
-          overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row)
+          overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row, tiledDir)
   print("Snugget load complete. Processed", rowCount, "rows in", snuggetFile)
 
 
@@ -60,37 +61,54 @@ def allRequiredFieldsPresent(row, optionalFields, rowCount):
 
 
 
-def processRow(appName, snuggetFile, cur, overwriteAll, row):
-  filterColumn = row["shapefile"] + "_filter_id"
-  sectionID = getSectionID(appName, row["section"], cur, subsection=False)
-  subsectionID = getSectionID(appName, row["subsection"], cur, subsection=True)
-
-  # check if a snugget for this data already exists
-  # if we have a lookup value then deal with this value specifically:
-  if row["lookup_value"] is not '':  # if it is blank, we'll treat it as matching all existing values
-    filterIDs = [findFilterID(appName, row["shapefile"], row["lookup_value"], cur)]
-    if filterIDs[0] is None:
-      print("Skipping row:")
-      print(row)
-      print("Because no filter for lookup_value", row["lookup_value"], "was found in", row["shapefile"])
-      return overwriteAll
-    else:
-      oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterIDs[0], cur)
-      overwriteAll = askUserAboutOverwriting(row, oldSnugget, [], snuggetFile, overwriteAll)
+def processRow(appName, snuggetFile, cur, overwriteAll, row, tiledDir):
+  tiles = findTiles(row["shapefile"], tiledDir)
+  if len(tiles) > 1:
+    for tile in tiles:
+      row["shapefile"] = tile
+      overwriteAll = processRow(appName, snuggetFile, cur, overwriteAll, row, tiledDir)
   else:
-    filterIDs = findAllFilterIDs(appName, row["shapefile"], cur)
-    oldSnuggets = []
-    for filterID in filterIDs:
-      oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
-      if oldSnugget is not None and oldSnugget not in oldSnuggets:
-        oldSnuggets.append(oldSnugget)
-    overwriteAll = askUserAboutOverwriting(row, None, oldSnuggets, snuggetFile, overwriteAll)
+    filterColumn = row["shapefile"] + "_filter_id"
+    sectionID = getSectionID(appName, row["section"], cur, subsection=False)
+    subsectionID = getSectionID(appName, row["subsection"], cur, subsection=True)
 
-  for filterID in filterIDs:
-    removeOldSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
-    addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID, cur)
+    # check if a snugget for this data already exists
+    # if we have a lookup value then deal with this value specifically:
+    if row["lookup_value"] is not '':  # if it is blank, we'll treat it as matching all existing values
+      filterIDs = [findFilterID(appName, row["shapefile"], row["lookup_value"], cur)]
+      if filterIDs[0] is None:
+        print("Skipping row:")
+        print(row)
+        print("Because no filter for lookup_value", row["lookup_value"], "was found in", row["shapefile"])
+        return overwriteAll
+      else:
+        oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterIDs[0], cur)
+        overwriteAll = askUserAboutOverwriting(row, oldSnugget, [], snuggetFile, overwriteAll)
+    else:
+      filterIDs = findAllFilterIDs(appName, row["shapefile"], cur)
+      oldSnuggets = []
+      for filterID in filterIDs:
+        oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
+        if oldSnugget is not None and oldSnugget not in oldSnuggets:
+          oldSnuggets.append(oldSnugget)
+      overwriteAll = askUserAboutOverwriting(row, None, oldSnuggets, snuggetFile, overwriteAll)
+
+    for filterID in filterIDs:
+      print("Processing", filterID)
+      removeOldSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
+      addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID, cur)
 
   return overwriteAll
+
+
+
+
+def findTiles(layer, tiledDir):
+  tiles = []
+  for filename in os.listdir(tiledDir):
+    if layer in filename:
+      tiles.append(filename[:-4])
+  return tiles
 
 
 
