@@ -107,11 +107,6 @@ LSLD_Prone_kingco_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
-# LSLD_steepgradezone_mapping = {
-#     'bands[0]': 'bands[0]',
-#     'rast': GDALRaster('disasterinfosite/data/LSLD_steepgradezone.tif')
-# }
-
 Summer_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -170,11 +165,11 @@ def run(verbose=True):
 # loadGroups
     from .models import ShapefileGroup
     quake = ShapefileGroup.objects.get_or_create(name='quake')
-    fire = ShapefileGroup.objects.get_or_create(name='fire')
+    wildfire = ShapefileGroup.objects.get_or_create(name='wildfire')
     flood = ShapefileGroup.objects.get_or_create(name='flood')
-    hubs = ShapefileGroup.objects.get_or_create(name='hubs')
     landslide = ShapefileGroup.objects.get_or_create(name='landslide')
     lookup_val = ShapefileGroup.objects.get_or_create(name='lookup_val')
+    summer = ShapefileGroup.objects.get_or_create(name='summer')
     volcano = ShapefileGroup.objects.get_or_create(name='volcano')
     winter = ShapefileGroup.objects.get_or_create(name='winter')
 # END OF GENERATED CODE BLOCK
@@ -266,7 +261,6 @@ def run(verbose=True):
 
     from .models import LSLD_steepgradezone
     lm_LSLD_steepgradezone = LSLD_steepgradezone(rast=LSLD_steepgradezone_rst)
-#    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_rst, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['bands[0]'])
     lm_LSLD_steepgradezone.save()
 
     from .models import Summer_kingco
