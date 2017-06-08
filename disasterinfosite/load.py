@@ -109,7 +109,7 @@ LSLD_Prone_kingco_mapping = {
 
 LSLD_steepgradezone_mapping = {
     'bands[0]': 'bands[0]',
-    'rast': GDALRaster('disasterinfosite/data/LSLD_steepgradezone.tif'
+    'rast': GDALRaster('disasterinfosite/data/LSLD_steepgradezone.tif')
 }
 
 Summer_kingco_mapping = {

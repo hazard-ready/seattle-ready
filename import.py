@@ -90,7 +90,7 @@ def main():
       if isSHP:
         loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
       elif isTIFF:
-        loadMappings += "    'rast': GDALRaster('" + os.path.join(dataDir, f) + "'\n"
+        loadMappings += "    'rast': GDALRaster('" + os.path.join(dataDir, f) + ")'\n"
       loadMappings += "}\n\n"
       if isSHP:
         loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
