@@ -287,7 +287,7 @@ class EQ_URM_DensityZones_seattle(models.Model):
 
 class Fire_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='fire')[0]
+        return ShapefileGroup.objects.get_or_create(name='wildfire')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -299,7 +299,7 @@ class Fire_kingco(models.Model):
 
 class Fire_WUI_kingco_only(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='fire')[0]
+        return ShapefileGroup.objects.get_or_create(name='wildfire')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
@@ -383,7 +383,7 @@ class Flood_nearest_sand_distr(models.Model):
 
 class Hubs_Nearest_seattle(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='hubs')[0]
+        return ShapefileGroup.objects.get_or_create(name='quake')[0]
 
     lookup_val = models.IntegerField()
     geom = models.MultiPolygonField(srid=4326)
@@ -454,7 +454,7 @@ class LSLD_steepgradezone(models.Model):
 
 class Summer_kingco(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+        return ShapefileGroup.objects.get_or_create(name='summer')[0]
 
     lookup_val = models.CharField(max_length=50)
     geom = models.MultiPolygonField(srid=4326)
