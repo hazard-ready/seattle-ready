@@ -313,7 +313,6 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   text += "    def getGroup():\n"
   text += "        return ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')[0]\n\n"
   if sf is None:
-    text += "    " + keyField.lower() + " = models.IntegerField()\n"
     text += "    rast = models.RasterField()\n"
     text += "    objects = RasterManager()\n\n"
   else:
@@ -327,12 +326,15 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   return text
 
 
-
+# call with keyField="bands[0]" for a raster source
 def modelsGeoFilterGen(stem, keyField):
   text  = "        qs_" + stem + " = " + stem + ".objects.filter(geom__contains=pnt)\n"
   text += "        " + stem + "_rating = " + "qs_" + stem + ".values_list('" + keyField.lower() + "', flat=True)\n"
   text += "        for rating in " + stem + "_rating:\n"
-  text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__" + keyField.lower() + "__exact=rating).select_subclasses()\n"
+  if keyField != "bands[0]":
+    text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__" + keyField.lower() + "__exact=rating).select_subclasses()\n"
+  else:
+    text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__exact=rating).select_subclasses()\n"
   text += "            if individualSnugget:\n"
   text += "                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)\n\n"
   return text

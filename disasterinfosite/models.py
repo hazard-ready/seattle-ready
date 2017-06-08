@@ -185,7 +185,6 @@ class LSLD_steepgradezone(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='quake')[0]
 
-    bands[0] = models.IntegerField()
     rast = models.RasterField()
     objects = RasterManager()
 
@@ -361,7 +360,7 @@ class Snugget(models.Model):
         qs_LSLD_steepgradezone = LSLD_steepgradezone.objects.filter(geom__contains=pnt)
         LSLD_steepgradezone_rating = qs_LSLD_steepgradezone.values_list('bands[0]', flat=True)
         for rating in LSLD_steepgradezone_rating:
-            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_filter__bands[0]__exact=rating).select_subclasses()
+            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_filter__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
