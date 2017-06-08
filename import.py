@@ -85,23 +85,25 @@ def main():
       adminFilterRefs += "'" + stem + "_filter'"
       adminSiteRegistrations += "admin.site.register(" + stem + ", GeoNoEditAdmin)\n"
 
-      loadMappings += stem + "_mapping = {\n"
-      loadMappings += "    '" + keyField.lower() + "': '" + keyField + "',\n"
+# No loadMappings required for raster files
       if isSHP:
+        loadMappings += stem + "_mapping = {\n"
+        loadMappings += "    '" + keyField.lower() + "': '" + keyField + "',\n"
         loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
-      elif isTIFF:
-        loadMappings += "    'rast': GDALRaster('" + os.path.join(dataDir, f) + ")'\n"
-      loadMappings += "}\n\n"
+        loadMappings += "}\n\n"
+
       if isSHP:
-        loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
+        loadPaths += stem + "_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../" + simplified + "'))\n"
       elif isTIFF:
-        loadPaths += stem + "_rst = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + os.path.join(dataDir, f) + "'))\n"
+        loadPaths += stem + "_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../" + os.path.join(dataDir, f) + "')), write=True)\n"
+
       loadImports += "    from .models import " + stem + "\n"
       if isSHP:
-        loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding
-      elif isTIF:
-        loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_rst, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
-      loadImports += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
+        loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
+        loadImports += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
+      elif isTIFF:
+        loadImports += "    lm_" + stem + " = " + stem + "(rast=" + stem + "_rst)\n"
+        loadImports += "    lm_" + stem + ".save()\n\n"
 
       print("")
       first = False
