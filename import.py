@@ -40,19 +40,29 @@ def main():
 
   first = True
   for f in os.listdir(dataDir):
+    isTIFF = False
+    isSHP = False
     if f[-4:].lower() == ".shp":
+      isSHP = True
+    elif f[-4:].lower() == ".tif":
+      isTIFF = True
+
+    if isTIFF or isSHP:
       stem = f[:-4].replace(".", "_").replace("-","_")
-      print("Opening shapefile:", stem)
-      #TODO: if there's already a reprojected shapefile, use the field in that instead of prompting the user.
-      sf = shapefile.Reader(os.path.join(dataDir, f))
-      keyField = askUserForFieldNames(sf, stem)
+      if isSHP:
+        print("Opening shapefile:", stem)
+        #TODO: if there's already a reprojected shapefile, use the field in that instead of prompting the user.
+        sf = shapefile.Reader(os.path.join(dataDir, f))
+        keyField = askUserForFieldNames(sf, stem)
+        reprojected = processShapefile(f, stem, dataDir, reprojectedDir, SRIDNamespace+":"+desiredSRID, keyField)
+        simplified = simplifyShapefile(reprojected, simplifiedDir, simplificationTolerance)
+        sf = shapefile.Reader(simplified)
+        shapeType = detectGeometryType(sf, stem)
+      elif isTIFF:
+        print("Opening raster data source:", stem)
+      encoding = findEncoding(dataDir, stem)
       shapefileGroup = askUserForShapefileGroup(stem, existingShapefileGroups)
 
-      reprojected = processShapefile(f, stem, dataDir, reprojectedDir, SRIDNamespace+":"+desiredSRID, keyField)
-      simplified = simplifyShapefile(reprojected, simplifiedDir, simplificationTolerance)
-      sf = shapefile.Reader(simplified)
-      shapeType = detectGeometryType(sf, stem)
-      encoding = findEncoding(sf, dataDir, stem)
 
 #Code generation: one line in this function writes one line of code to be copied elsewhere
 # one block represents the code generation for each destination file
@@ -255,21 +265,18 @@ def detectGeometryType(sf, stem):
 
 
 
-def findEncoding(sf, inputDir, stem):
-  encodingFile = os.path.join(inputDir, stem+".cpg")
-# if .cpg is not found, try .CPG in case we're on a case sensitive file system
-  if not os.path.exists(encodingFile):
-  	encodingFile = os.path.join(inputDir, stem+".CPG")
-
-  if os.path.exists(encodingFile):
-    with open(encodingFile, 'r') as f:
-      encoding = f.read()
-    print("Determined that", stem, "uses character encoding", encoding)
+def findEncoding(inputDir, stem):
+  for ext in [".cpg", ".CPG", ".tif.vat.cpg", ".TIF.VAT.CPG"]:
+    encodingFile = os.path.join(inputDir, stem+ext)
+    if os.path.exists(encodingFile):
+      with open(encodingFile, 'r') as f:
+        encoding = f.read()
+      print("Determined that", stem, "uses character encoding", encoding)
+      return encoding
 # TODO: implement the chardet method from https://gist.github.com/jatorre/939830 as another option
-  else:
-    print("Unable to automatically detect the character encoding of", stem)
-    print("What encoding should we use? (If unknown, try UTF-8)")
-    encoding = input(">> ")
+  print("Unable to automatically detect the character encoding of", stem)
+  print("What encoding should we use? (If unknown, try UTF-8)")
+  encoding = input(">> ")
   return encoding
 
 
