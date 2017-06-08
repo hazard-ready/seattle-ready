@@ -107,10 +107,10 @@ LSLD_Prone_kingco_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
-LSLD_steepgradezone_mapping = {
-    'bands[0]': 'bands[0]',
-    'rast': GDALRaster('disasterinfosite/data/LSLD_steepgradezone.tif')
-}
+# LSLD_steepgradezone_mapping = {
+#     'bands[0]': 'bands[0]',
+#     'rast': GDALRaster('disasterinfosite/data/LSLD_steepgradezone.tif')
+# }
 
 Summer_kingco_mapping = {
     'lookup_val': 'lookup_val',
@@ -153,7 +153,7 @@ LSLD_existing_features_shp = os.path.abspath(os.path.join(os.path.dirname(__file
 LSLD_ExistingAreas_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_ExistingAreas_kingco.shp'))
 LSLD_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_kingco.shp'))
 LSLD_Prone_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_Prone_kingco.shp'))
-LSLD_steepgradezone_rst = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/LSLD_steepgradezone.tif'))
+LSLD_steepgradezone_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/LSLD_steepgradezone.tif')), write=True)
 Summer_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Summer_kingco.shp'))
 Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_kingco.shp'))
 Volcano_Lahar_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_Lahar_kingco.shp'))
@@ -265,8 +265,9 @@ def run(verbose=True):
     lm_LSLD_Prone_kingco.save(strict=True, verbose=verbose)
 
     from .models import LSLD_steepgradezone
-    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_rst, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['bands[0]'])
-    lm_LSLD_steepgradezone.save(strict=True, verbose=verbose)
+    lm_LSLD_steepgradezone = LSLD_steepgradezone(rast=LSLD_steepgradezone_rst)
+#    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_rst, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['bands[0]'])
+    lm_LSLD_steepgradezone.save()
 
     from .models import Summer_kingco
     lm_Summer_kingco = LayerMapping(Summer_kingco, Summer_kingco_shp, Summer_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
