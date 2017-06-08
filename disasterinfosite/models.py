@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.gis.db import models
+from django.contrib.gis.gdal import GDALRaster
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models import Extent
 from embed_video.fields import EmbedVideoField
@@ -175,6 +176,7 @@ class ShapeManager(models.GeoManager):
 
     def data_bounds(self):
         return self.aggregate(Extent('geom'))['geom__extent']
+
 
 class ShapefileGroup(models.Model):
     name = models.CharField(max_length=50)
