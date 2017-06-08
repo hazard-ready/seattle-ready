@@ -97,7 +97,10 @@ def main():
       elif isTIFF:
         loadPaths += stem + "_rst = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + os.path.join(dataDir, f) + "'))\n"
       loadImports += "    from .models import " + stem + "\n"
-      loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
+      if isSHP:
+        loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding
+      elif isTIF:
+        loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_rst, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
       loadImports += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
 
       print("")

@@ -265,7 +265,7 @@ def run(verbose=True):
     lm_LSLD_Prone_kingco.save(strict=True, verbose=verbose)
 
     from .models import LSLD_steepgradezone
-    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_shp, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['bands[0]'])
+    lm_LSLD_steepgradezone = LayerMapping(LSLD_steepgradezone, LSLD_steepgradezone_rst, LSLD_steepgradezone_mapping, transform=True, encoding='UTF-8', unique=['bands[0]'])
     lm_LSLD_steepgradezone.save(strict=True, verbose=verbose)
 
     from .models import Summer_kingco
