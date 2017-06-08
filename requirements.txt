@@ -12,3 +12,4 @@ django-solo==1.1.2
 Pillow==4.1.0
 django-modeltranslation==0.12.1
 django-embed-video==1.1.2
+openpyxl=2.4.8
