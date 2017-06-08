@@ -119,7 +119,10 @@ class Location(SingletonModel):
             'LSLD_ExistingAreas_kingco': LSLD_ExistingAreas_kingco.objects.data_bounds(),
             'LSLD_kingco': LSLD_kingco.objects.data_bounds(),
             'LSLD_Prone_kingco': LSLD_Prone_kingco.objects.data_bounds(),
-            'LSLD_steepgradezone': LSLD_steepgradezone.objects.data_bounds(),
+            'LSLD_steepgradezone_0x0': LSLD_steepgradezone_0x0.objects.data_bounds(),
+            'LSLD_steepgradezone_0x1': LSLD_steepgradezone_0x1.objects.data_bounds(),
+            'LSLD_steepgradezone_1x0': LSLD_steepgradezone_1x0.objects.data_bounds(),
+            'LSLD_steepgradezone_1x1': LSLD_steepgradezone_1x1.objects.data_bounds(),
             'Summer_kingco': Summer_kingco.objects.data_bounds(),
             'Volcano_kingco': Volcano_kingco.objects.data_bounds(),
             'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds(),
@@ -441,9 +444,42 @@ class LSLD_Prone_kingco(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
-class LSLD_steepgradezone(models.Model):
+class LSLD_steepgradezone_0x0(models.Model):
     def getGroup():
-        return ShapefileGroup.objects.get_or_create(name='quake')[0]
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField(default=0)
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.bands[0])
+
+class LSLD_steepgradezone_0x1(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField(default=0)
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.bands[0])
+
+class LSLD_steepgradezone_1x0(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField(default=0)
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.bands[0])
+
+class LSLD_steepgradezone_1x1(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
     rast = models.RasterField(default=0)
     objects = RasterManager()
@@ -609,7 +645,10 @@ class Snugget(models.Model):
     LSLD_ExistingAreas_kingco_filter = models.ForeignKey(LSLD_ExistingAreas_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_kingco_filter = models.ForeignKey(LSLD_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_Prone_kingco_filter = models.ForeignKey(LSLD_Prone_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    LSLD_steepgradezone_filter = models.ForeignKey(LSLD_steepgradezone, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_steepgradezone_0x0_filter = models.ForeignKey(LSLD_steepgradezone_0x0, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_steepgradezone_0x1_filter = models.ForeignKey(LSLD_steepgradezone_0x1, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_steepgradezone_1x0_filter = models.ForeignKey(LSLD_steepgradezone_1x0, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSLD_steepgradezone_1x1_filter = models.ForeignKey(LSLD_steepgradezone_1x1, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Summer_kingco_filter = models.ForeignKey(Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_Lahar_kingco_filter = models.ForeignKey(Volcano_Lahar_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
@@ -777,10 +816,31 @@ class Snugget(models.Model):
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_steepgradezone = LSLD_steepgradezone.objects.filter(geom__contains=pnt)
-        LSLD_steepgradezone_rating = qs_LSLD_steepgradezone.values_list('bands[0]', flat=True)
-        for rating in LSLD_steepgradezone_rating:
-            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_filter__exact=rating).select_subclasses()
+        qs_LSLD_steepgradezone_0x0 = LSLD_steepgradezone_0x0.objects.filter(geom__contains=pnt)
+        LSLD_steepgradezone_0x0_rating = qs_LSLD_steepgradezone_0x0.values_list('bands[0]', flat=True)
+        for rating in LSLD_steepgradezone_0x0_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_0x0_filter__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_LSLD_steepgradezone_0x1 = LSLD_steepgradezone_0x1.objects.filter(geom__contains=pnt)
+        LSLD_steepgradezone_0x1_rating = qs_LSLD_steepgradezone_0x1.values_list('bands[0]', flat=True)
+        for rating in LSLD_steepgradezone_0x1_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_0x1_filter__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_LSLD_steepgradezone_1x0 = LSLD_steepgradezone_1x0.objects.filter(geom__contains=pnt)
+        LSLD_steepgradezone_1x0_rating = qs_LSLD_steepgradezone_1x0.values_list('bands[0]', flat=True)
+        for rating in LSLD_steepgradezone_1x0_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_1x0_filter__exact=rating).select_subclasses()
+            if individualSnugget:
+                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
+
+        qs_LSLD_steepgradezone_1x1 = LSLD_steepgradezone_1x1.objects.filter(geom__contains=pnt)
+        LSLD_steepgradezone_1x1_rating = qs_LSLD_steepgradezone_1x1.values_list('bands[0]', flat=True)
+        for rating in LSLD_steepgradezone_1x1_rating:
+            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_1x1_filter__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
@@ -834,7 +894,10 @@ class Snugget(models.Model):
                 'LSLD_ExistingAreas_kingco_rating': LSLD_ExistingAreas_kingco_rating,
                 'LSLD_kingco_rating': LSLD_kingco_rating,
                 'LSLD_Prone_kingco_rating': LSLD_Prone_kingco_rating,
-                'LSLD_steepgradezone_rating': LSLD_steepgradezone_rating,
+                'LSLD_steepgradezone_0x0_rating': LSLD_steepgradezone_0x0_rating,
+                'LSLD_steepgradezone_0x1_rating': LSLD_steepgradezone_0x1_rating,
+                'LSLD_steepgradezone_1x0_rating': LSLD_steepgradezone_1x0_rating,
+                'LSLD_steepgradezone_1x1_rating': LSLD_steepgradezone_1x1_rating,
                 'Summer_kingco_rating': Summer_kingco_rating,
                 'Volcano_kingco_rating': Volcano_kingco_rating,
                 'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating,

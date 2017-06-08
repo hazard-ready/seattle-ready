@@ -148,7 +148,10 @@ LSLD_existing_features_shp = os.path.abspath(os.path.join(os.path.dirname(__file
 LSLD_ExistingAreas_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_ExistingAreas_kingco.shp'))
 LSLD_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_kingco.shp'))
 LSLD_Prone_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/LSLD_Prone_kingco.shp'))
-LSLD_steepgradezone_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/LSLD_steepgradezone.tif')), write=True)
+LSLD_steepgradezone_0x0_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/tiled/LSLD_steepgradezone_0x0.tif')), write=True)
+LSLD_steepgradezone_0x1_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/tiled/LSLD_steepgradezone_0x1.tif')), write=True)
+LSLD_steepgradezone_1x0_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/tiled/LSLD_steepgradezone_1x0.tif')), write=True)
+LSLD_steepgradezone_1x1_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/tiled/LSLD_steepgradezone_1x1.tif')), write=True)
 Summer_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Summer_kingco.shp'))
 Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_kingco.shp'))
 Volcano_Lahar_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../disasterinfosite/data/simplified/Volcano_Lahar_kingco.shp'))
@@ -258,9 +261,21 @@ def run(verbose=True):
     lm_LSLD_Prone_kingco = LayerMapping(LSLD_Prone_kingco, LSLD_Prone_kingco_shp, LSLD_Prone_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_LSLD_Prone_kingco.save(strict=True, verbose=verbose)
 
-    from .models import LSLD_steepgradezone
-    lm_LSLD_steepgradezone = LSLD_steepgradezone(rast=LSLD_steepgradezone_rst)
-    lm_LSLD_steepgradezone.save()
+    from .models import LSLD_steepgradezone_0x0
+    lm_LSLD_steepgradezone_0x0 = LSLD_steepgradezone_0x0(rast=LSLD_steepgradezone_0x0_rst)
+    lm_LSLD_steepgradezone_0x0.save()
+
+    from .models import LSLD_steepgradezone_0x1
+    lm_LSLD_steepgradezone_0x1 = LSLD_steepgradezone_0x1(rast=LSLD_steepgradezone_0x1_rst)
+    lm_LSLD_steepgradezone_0x1.save()
+
+    from .models import LSLD_steepgradezone_1x0
+    lm_LSLD_steepgradezone_1x0 = LSLD_steepgradezone_1x0(rast=LSLD_steepgradezone_1x0_rst)
+    lm_LSLD_steepgradezone_1x0.save()
+
+    from .models import LSLD_steepgradezone_1x1
+    lm_LSLD_steepgradezone_1x1 = LSLD_steepgradezone_1x1(rast=LSLD_steepgradezone_1x1_rst)
+    lm_LSLD_steepgradezone_1x1.save()
 
     from .models import Summer_kingco
     lm_Summer_kingco = LayerMapping(Summer_kingco, Summer_kingco_shp, Summer_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
