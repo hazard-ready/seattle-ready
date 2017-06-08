@@ -10,6 +10,7 @@ secure_settings.py
 #Directories for simplified and reprojected data files
 disasterinfosite/data/reprojected/
 disasterinfosite/data/simplified
+disasterinfosite/data/tiled
 
 #Directories for uploading photos and images
 disasterinfosite/static/img/data/

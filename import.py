@@ -1,9 +1,14 @@
+from django.contrib.gis.gdal import GDALRaster
+import math
 import os
 import subprocess
 
 import shapefile
 
 def main():
+  # raster files of more than this many bytes will be tiled to work around
+  # memory constraints in either Django or Postgres
+  rasterMaxSize = 200000000
   desiredSRID = "4326"  # EPSG:4326 = Google Mercator
   SRIDNamespace = "EPSG"
   simplificationTolerance = "0.00001"  # This is in the SRS's units. For EPSG:4326, that's decimal degrees
@@ -12,6 +17,7 @@ def main():
   dataDir = os.path.join(appDir, "data")
   reprojectedDir = os.path.join(dataDir, "reprojected")
   simplifiedDir = os.path.join(dataDir, "simplified")
+  tiledDir = os.path.join(dataDir, "tiled")
   modelsFile = os.path.join(appDir, "models.py")
   adminFile = os.path.join(appDir, "admin.py")
   loadFile = os.path.join(appDir, "load.py")
@@ -63,9 +69,9 @@ def main():
         keyField = 'bands[0]'
         sf = None
         shapeType = None
+        tiles = tileRaster(f, stem, dataDir, tiledDir, rasterMaxSize)
       encoding = findEncoding(dataDir, stem)
       shapefileGroup = askUserForShapefileGroup(stem, existingShapefileGroups)
-
 
 #Code generation: one line in this function writes one line of code to be copied elsewhere
 # one block represents the code generation for each destination file
@@ -162,6 +168,38 @@ def sanitiseInput(inputString):
 
   return inputString
 
+
+
+
+def tileRaster(f, stem, dataDir, tiledDir, rasterMaxSize):
+  fileSize = os.stat(os.path.join(dataDir, f)).st_size
+  srcFile = os.path.join(dataDir, f)
+  if fileSize <= rasterMaxSize:
+    print("No need to break this file up as it's already small enough.")
+    return [srcFile]
+  else:
+    tiles = []
+    nTiles = math.ceil(math.sqrt(fileSize / rasterMaxSize))
+    print("Breaking large GeoTIFF into " + str(nTiles) + "x" + str(nTiles) + " mosaic of smaller files:")
+    rst = GDALRaster(os.path.join(dataDir, f))
+    tileWidth = math.ceil(rst.width / nTiles)
+    tileHeight = math.ceil(rst.height / nTiles)
+    for x in range(0, nTiles):
+      for y in range(0, nTiles):
+        destFile = os.path.join(tiledDir, stem + '_' + str(x) + 'x' + str(y) + '.tif')
+        gdalCmd = [
+          "gdal_translate",
+          "-of", "GTIFF",
+          "-eco", # throw error if we go entirely outside the original file
+          "-q", # but don't output warnings or progress bar
+          "-srcwin", str(x * tileWidth), str(y * tileHeight), str(tileWidth), str(tileHeight),
+          srcFile,
+          destFile
+        ]
+        print(destFile)
+        subprocess.call(gdalCmd)
+        tiles.append(destFile)
+    return(tiles)
 
 
 
