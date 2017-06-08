@@ -81,3 +81,5 @@ staticfiles
 
 .DS_Store
 myenv/
+
+disasterinfosite/data/~$snuggets.xlsx
