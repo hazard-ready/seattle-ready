@@ -445,7 +445,7 @@ class LSLD_steepgradezone(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='lookup_val')[0]
 
-    rast = models.RasterField()
+    rast = models.RasterField(default=0)
     objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)

@@ -313,7 +313,7 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   text += "    def getGroup():\n"
   text += "        return ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')[0]\n\n"
   if sf is None:
-    text += "    rast = models.RasterField()\n"
+    text += "    rast = models.RasterField(default=0)\n"
     text += "    objects = RasterManager()\n\n"
   else:
     text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
