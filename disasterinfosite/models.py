@@ -182,10 +182,17 @@ class ShapeManager(models.GeoManager):
 
 class RasterManager(models.GeoManager):
     def has_point(self, pnt):
-        return self.filter(rast__contains=pnt)
+        pointAsRaster = GDALRaster({
+            'srid': 4326,
+            'width': 1,
+            'height': 1,
+            'origin': [pnt.x, pnt.y],
+            'scale': [0.000000000000001, 0.000000000000001]
+        })
+        return self.filter(rast__contains=pointAsRaster)
 
     def data_bounds(self):
-        return self.aggregate(Extent('rast'))['rast__extent']
+        return self.first().rast.extent
 
 class ShapefileGroup(models.Model):
     name = models.CharField(max_length=50)
