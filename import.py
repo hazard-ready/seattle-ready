@@ -93,7 +93,8 @@ def generateCode(codeSnippets, layers, sf, keyField, desiredSRID, shapeType, enc
     codeSnippets["modelsLocationsList"] += "            '" + stem + "': " + stem + ".objects.data_bounds(),\n"
 
     codeSnippets["modelsClasses"] += modelClassGen(stem, sf, keyField, desiredSRID, shapeType, shapefileGroup)
-    codeSnippets["modelsFilters"] += "    " + stem + "_filter = models.ForeignKey(" + stem + ", related_name='+', on_delete=models.PROTECT, blank=True, null=True)\n"
+    if isSHP:
+      codeSnippets["modelsFilters"] += "    " + stem + "_filter = models.ForeignKey(" + stem + ", related_name='+', on_delete=models.PROTECT, blank=True, null=True)\n"
     codeSnippets["modelsGeoFilters"] += modelsGeoFilterGen(stem, keyField)
     if shapefileGroup not in existingShapefileGroups:
       existingShapefileGroups.append(shapefileGroup)
@@ -101,11 +102,12 @@ def generateCode(codeSnippets, layers, sf, keyField, desiredSRID, shapeType, enc
     codeSnippets["modelsSnuggetRatings"] += "                '" + stem + "_rating': " + stem + "_rating,\n"
 
     codeSnippets["adminModelImports"] += ", " + stem
-    if not first:
-      codeSnippets["adminFilterRefs"] += ", "
-    else:
-      first = False
-    codeSnippets["adminFilterRefs"] += "'" + stem + "_filter'"
+    if isSHP:
+      if not first:
+        codeSnippets["adminFilterRefs"] += ", "
+      else:
+        first = False
+      codeSnippets["adminFilterRefs"] += "'" + stem + "_filter'"
     codeSnippets["adminSiteRegistrations"] += "admin.site.register(" + stem + ", GeoNoEditAdmin)\n"
 
   # No loadMappings required for raster files
@@ -394,13 +396,14 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
 def modelsGeoFilterGen(stem, keyField):
   text  = "        qs_" + stem + " = " + stem + ".objects.has_point(pnt)\n"
   text += "        " + stem + "_rating = " + "qs_" + stem + ".values_list('" + keyField.lower() + "', flat=True)\n"
-  text += "        for rating in " + stem + "_rating:\n"
   if keyField != "bands[0]":
+    text += "        for rating in " + stem + "_rating:\n"
+#   if keyField != "bands[0]":
     text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__" + keyField.lower() + "__exact=rating).select_subclasses()\n"
-  else:
-    text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__exact=rating).select_subclasses()\n"
-  text += "            if individualSnugget:\n"
-  text += "                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)\n\n"
+#   else:
+#     text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__exact=rating).select_subclasses()\n"
+    text += "            if individualSnugget:\n"
+    text += "                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)\n\n"
   return text
 
 
