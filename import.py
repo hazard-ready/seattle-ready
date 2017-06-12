@@ -374,7 +374,7 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   text += "    def getGroup():\n"
   text += "        return ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')[0]\n\n"
   if sf is None:
-    text += "    rast = models.RasterField(default=0)\n"
+    text += "    rast = models.RasterField()\n"
     text += "    objects = RasterManager()\n\n"
   else:
     text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
@@ -382,14 +382,17 @@ def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
     text += "    objects = ShapeManager()\n\n"
   text += "    group = models.ForeignKey(ShapefileGroup, default=getGroup)\n"
   text += "    def __str__(self):\n"
-  text += "        return str(self." + keyField.lower() + ")\n\n"
+  if sf is None:
+    text += "        return str(self.rast.name)\n\n"
+  else:
+    text += "        return str(self." + keyField.lower() + ")\n\n"
 
   return text
 
 
 # call with keyField="bands[0]" for a raster source
 def modelsGeoFilterGen(stem, keyField):
-  text  = "        qs_" + stem + " = " + stem + ".objects.filter(geom__contains=pnt)\n"
+  text  = "        qs_" + stem + " = " + stem + ".objects.has_point(pnt)\n"
   text += "        " + stem + "_rating = " + "qs_" + stem + ".values_list('" + keyField.lower() + "', flat=True)\n"
   text += "        for rating in " + stem + "_rating:\n"
   if keyField != "bands[0]":
