@@ -1,9 +1,14 @@
+from django.contrib.gis.gdal import GDALRaster
+import math
 import os
 import subprocess
 
 import shapefile
 
 def main():
+  # raster files of more than this many bytes will be tiled to work around
+  # memory constraints in either Django or Postgres
+  rasterMaxSize = 200000000
   desiredSRID = "4326"  # EPSG:4326 = Google Mercator
   SRIDNamespace = "EPSG"
   simplificationTolerance = "0.00001"  # This is in the SRS's units. For EPSG:4326, that's decimal degrees
@@ -12,6 +17,7 @@ def main():
   dataDir = os.path.join(appDir, "data")
   reprojectedDir = os.path.join(dataDir, "reprojected")
   simplifiedDir = os.path.join(dataDir, "simplified")
+  tiledDir = os.path.join(dataDir, "tiled")
   modelsFile = os.path.join(appDir, "models.py")
   adminFile = os.path.join(appDir, "admin.py")
   loadFile = os.path.join(appDir, "load.py")
@@ -19,20 +25,22 @@ def main():
 
   existingShapefileGroups = []
 
-  modelsLocationsList = ""
-  modelsClasses = ""
-  modelsFilters = ""
-  modelsGeoFilters = ""
-  modelsSnuggetRatings = ""
-  adminModelImports = "from .models import EmbedSnugget, TextSnugget, SnuggetSection, SnuggetSubSection, Location, SiteSettings, SupplyKit, ImportantLink"
-  adminFilterRefs = ""
-  adminSiteRegistrations = ""
-  loadMappings = ""
-  loadPaths = ""
-  loadImports = ""
-  loadGroups = "    from .models import ShapefileGroup\n"
-  viewsSnuggetMatches = ""
-  templateMomentSnuggets = ""
+  codeSnippets = {
+    "modelsLocationsList": "",
+    "modelsClasses": "",
+    "modelsFilters": "",
+    "modelsGeoFilters": "",
+    "modelsSnuggetRatings": "",
+    "adminModelImports": "from .models import EmbedSnugget, TextSnugget, SnuggetSection, SnuggetSubSection, Location, SiteSettings, SupplyKit, ImportantLink",
+    "adminFilterRefs": "",
+    "adminSiteRegistrations": "",
+    "loadMappings": "",
+    "loadPaths": "",
+    "loadImports": "",
+    "loadGroups": "    from .models import ShapefileGroup\n",
+    "viewsSnuggetMatches": "",
+    "templateMomentSnuggets": ""
+  }
 
   for subdir in [reprojectedDir, simplifiedDir]:
     if not os.path.exists(subdir):
@@ -40,88 +48,130 @@ def main():
 
   first = True
   for f in os.listdir(dataDir):
+    isTIFF = False
+    isSHP = False
     if f[-4:].lower() == ".shp":
+      isSHP = True
+    elif f[-4:].lower() == ".tif":
+      isTIFF = True
+
+    if isTIFF or isSHP:
       stem = f[:-4].replace(".", "_").replace("-","_")
-      print("Opening shapefile:", stem)
-      #TODO: if there's already a reprojected shapefile, use the field in that instead of prompting the user.
-      sf = shapefile.Reader(os.path.join(dataDir, f))
-      keyField = askUserForFieldNames(sf, stem)
+      if isSHP:
+        print("Opening shapefile:", stem)
+        #TODO: if there's already a reprojected shapefile, use the field in that instead of prompting the user.
+        sf = shapefile.Reader(os.path.join(dataDir, f))
+        keyField = askUserForFieldNames(sf, stem)
+        reprojected = processShapefile(f, stem, dataDir, reprojectedDir, SRIDNamespace+":"+desiredSRID, keyField)
+        simplified = simplifyShapefile(reprojected, simplifiedDir, simplificationTolerance)
+        sf = shapefile.Reader(simplified)
+        shapeType = detectGeometryType(sf, stem)
+        layers = [simplified]
+      elif isTIFF:
+        print("Opening raster data source:", stem)
+        keyField = 'bands[0]'
+        sf = None
+        shapeType = None
+        layers = tileRaster(f, stem, dataDir, tiledDir, rasterMaxSize)
+      encoding = findEncoding(dataDir, stem)
       shapefileGroup = askUserForShapefileGroup(stem, existingShapefileGroups)
 
-      reprojected = processShapefile(f, stem, dataDir, reprojectedDir, SRIDNamespace+":"+desiredSRID, keyField)
-      simplified = simplifyShapefile(reprojected, simplifiedDir, simplificationTolerance)
-      sf = shapefile.Reader(simplified)
-      shapeType = detectGeometryType(sf, stem)
-      encoding = findEncoding(sf, dataDir, stem)
+      codeSnippets = generateCode(codeSnippets, layers, sf, keyField, desiredSRID, shapeType, encoding, shapefileGroup, existingShapefileGroups, isSHP, isTIFF, first)
+      first = False
+      print("")
+
+  writeGeneratedCode(codeSnippets, modelsFile, adminFile, loadFile)
+  print("\n")
+
+
 
 #Code generation: one line in this function writes one line of code to be copied elsewhere
 # one block represents the code generation for each destination file
-      modelsLocationsList += "            '" + stem + "': " + stem + ".objects.data_bounds(),\n"
+def generateCode(codeSnippets, layers, sf, keyField, desiredSRID, shapeType, encoding, shapefileGroup, existingShapefileGroups, isSHP, isTIFF, first):
+  for layer in layers:
+    stem = os.path.basename(layer)[:-4].replace(".", "_").replace("-","_")
+    codeSnippets["modelsLocationsList"] += "            '" + stem + "': " + stem + ".objects.data_bounds(),\n"
 
-      modelsClasses += modelClassGen(stem, sf, keyField, desiredSRID, shapeType, shapefileGroup)
-      modelsFilters += "    " + stem + "_filter = models.ForeignKey(" + stem + ", related_name='+', on_delete=models.PROTECT, blank=True, null=True)\n"
-      modelsGeoFilters += modelsGeoFilterGen(stem, keyField)
-      if shapefileGroup not in existingShapefileGroups:
-        existingShapefileGroups.append(shapefileGroup)
-        loadGroups += "    " + shapefileGroup + " = ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')\n"
-      modelsSnuggetRatings += "                '" + stem + "_rating': " + stem + "_rating,\n"
+    codeSnippets["modelsClasses"] += modelClassGen(stem, sf, keyField, desiredSRID, shapeType, shapefileGroup)
+    if isSHP:
+      codeSnippets["modelsFilters"] += "    " + stem + "_filter = models.ForeignKey(" + stem + ", related_name='+', on_delete=models.PROTECT, blank=True, null=True)\n"
+    codeSnippets["modelsGeoFilters"] += modelsGeoFilterGen(stem, keyField)
+    if shapefileGroup not in existingShapefileGroups:
+      existingShapefileGroups.append(shapefileGroup)
+      codeSnippets["loadGroups"] += "    " + shapefileGroup + " = ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')\n"
+    codeSnippets["modelsSnuggetRatings"] += "                '" + stem + "_rating': " + stem + "_rating,\n"
 
-      adminModelImports += ", " + stem
+    codeSnippets["adminModelImports"] += ", " + stem
+    if isSHP:
       if not first:
-        adminFilterRefs += ", "
-      adminFilterRefs += "'" + stem + "_filter'"
-      adminSiteRegistrations += "admin.site.register(" + stem + ", GeoNoEditAdmin)\n"
+        codeSnippets["adminFilterRefs"] += ", "
+      else:
+        first = False
+      codeSnippets["adminFilterRefs"] += "'" + stem + "_filter'"
+    codeSnippets["adminSiteRegistrations"] += "admin.site.register(" + stem + ", GeoNoEditAdmin)\n"
 
-      loadMappings += stem + "_mapping = {\n"
-      loadMappings += "    '" + keyField.lower() + "': '" + keyField + "',\n"
-      loadMappings += "    'geom': '" + shapeType.upper() + "'\n"
-      loadMappings += "}\n\n"
-      loadPaths += stem + "_shp = " + "os.path.abspath(os.path.join(os.path.dirname(__file__)," + " '../" + simplified + "'))\n"
-      loadImports += "    from .models import " + stem + "\n"
-      loadImports += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
-      loadImports += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
+  # No loadMappings required for raster files
+    if isSHP:
+      codeSnippets["loadMappings"] += stem + "_mapping = {\n"
+      codeSnippets["loadMappings"] += "    '" + keyField.lower() + "': '" + keyField + "',\n"
+      codeSnippets["loadMappings"] += "    'geom': '" + shapeType.upper() + "'\n"
+      codeSnippets["loadMappings"] += "}\n\n"
 
-      print("")
-      first = False
+    if isSHP:
+      codeSnippets["loadPaths"] += stem + "_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), '../" + layer + "'))\n"
+    elif isTIFF:
+      codeSnippets["loadPaths"] += stem + "_rst = GDALRaster(os.path.abspath(os.path.join(os.path.dirname(__file__), '../" + layer + "')), write=True)\n"
 
-  # clear trailing comma from this one
-  modelsLocationsList = modelsLocationsList.strip(",\n") + "\n"
+    codeSnippets["loadImports"] += "    from .models import " + stem + "\n"
+    if isSHP:
+      codeSnippets["loadImports"] += "    lm_" + stem + " = LayerMapping(" + stem + ", " + stem + "_shp, " + stem + "_mapping, transform=True, " + "encoding='" + encoding + "', unique=['" + keyField.lower() + "'])\n"
+      codeSnippets["loadImports"] += "    lm_" + stem + ".save(strict=True, verbose=verbose)\n\n"
+    elif isTIFF:
+      codeSnippets["loadImports"] += "    lm_" + stem + " = " + stem + "(rast=" + stem + "_rst)\n"
+      codeSnippets["loadImports"] += "    lm_" + stem + ".save()\n\n"
 
-  # assemble the whole return statement for the snugget class after going through the loop
-  modelsSnuggetReturns = "        return {'groups': groupsDict,\n"
-  modelsSnuggetReturns += modelsSnuggetRatings.strip(",\n") + "\n"
-  modelsSnuggetReturns += "                }\n"
+  return codeSnippets
 
-  # make sure this gets its own line of code
-  adminModelImports += "\n"
 
-  # assembling the complete lists for the start of class SnuggetAdmin in admin.py
-  adminLists  = "    list_display = ('shortname', 'section', 'sub_section', " + adminFilterRefs + ")\n"
-  adminLists += "    list_filter = ('section', 'sub_section', " + adminFilterRefs + ")\n\n"
+
+
+def writeGeneratedCode(codeSnippets, modelsFile, adminFile, loadFile):
+# clear trailing comma from this one
+  codeSnippets["modelsLocationsList"] = codeSnippets["modelsLocationsList"].strip(",\n") + "\n"
+
+# assemble the whole return statement for the snugget class after going through the loop
+  codeSnippets["modelsSnuggetReturns"] = "        return {'groups': groupsDict,\n"
+  codeSnippets["modelsSnuggetReturns"] += codeSnippets["modelsSnuggetRatings"].strip(",\n") + "\n"
+  codeSnippets["modelsSnuggetReturns"] += "                }\n"
+
+# make sure this gets its own line of code
+  codeSnippets["adminModelImports"] += "\n"
+
+# assembling the complete lists for the start of class SnuggetAdmin in admin.py
+  adminLists  = "    list_display = ('shortname', 'section', 'sub_section', " + codeSnippets["adminFilterRefs"] + ")\n"
+  adminLists += "    list_filter = ('section', 'sub_section', " + codeSnippets["adminFilterRefs"] + ")\n\n"
   adminLists += "    fieldsets = (\n"
   adminLists += "        (None, {\n"
   adminLists += "            'fields': ('section', 'sub_section')\n"
   adminLists += "        }),\n"
   adminLists += "        ('Filters', {\n"
   adminLists += "            'description': 'Choose a filter value this snugget will show up for.  It is recommended you only select a value for one filter and leave the rest empty.',\n"
-  adminLists += "            'fields': ((" + adminFilterRefs + "))\n"
+  adminLists += "            'fields': ((" + codeSnippets["adminFilterRefs"] + "))\n"
   adminLists += "        })\n"
   adminLists += "    )\n"
 
-  outputGeneratedCode(modelsLocationsList, modelsFile, "locationsList")
-  outputGeneratedCode(modelsClasses, modelsFile, "modelsClasses")
-  outputGeneratedCode(modelsFilters, modelsFile, "modelsFilters")
-  outputGeneratedCode(modelsGeoFilters + "\n" + modelsSnuggetReturns, modelsFile, "modelsGeoFilters")
+  outputCodeSnippet(codeSnippets["modelsLocationsList"], modelsFile, "locationsList")
+  outputCodeSnippet(codeSnippets["modelsClasses"], modelsFile, "modelsClasses")
+  outputCodeSnippet(codeSnippets["modelsFilters"], modelsFile, "modelsFilters")
+  outputCodeSnippet(codeSnippets["modelsGeoFilters"] + "\n" + codeSnippets["modelsSnuggetReturns"], modelsFile, "modelsGeoFilters")
 
-  outputGeneratedCode(adminModelImports, adminFile, "adminModelImports")
-  outputGeneratedCode(adminLists, adminFile, "adminLists")
-  outputGeneratedCode(adminSiteRegistrations, adminFile, "adminSiteRegistrations")
+  outputCodeSnippet(codeSnippets["adminModelImports"], adminFile, "adminModelImports")
+  outputCodeSnippet(adminLists, adminFile, "adminLists")
+  outputCodeSnippet(codeSnippets["adminSiteRegistrations"], adminFile, "adminSiteRegistrations")
 
-  outputGeneratedCode(loadMappings + "\n" + loadPaths, loadFile, "loadMappings")
-  outputGeneratedCode(loadGroups, loadFile, "loadGroups")
-  outputGeneratedCode(loadImports, loadFile, "loadImports")
-
-  print("\n")
+  outputCodeSnippet(codeSnippets["loadMappings"] + "\n" + codeSnippets["loadPaths"], loadFile, "loadMappings")
+  outputCodeSnippet(codeSnippets["loadGroups"], loadFile, "loadGroups")
+  outputCodeSnippet(codeSnippets["loadImports"], loadFile, "loadImports")
 
 
 
@@ -138,6 +188,38 @@ def sanitiseInput(inputString):
 
   return inputString
 
+
+
+
+def tileRaster(f, stem, dataDir, tiledDir, rasterMaxSize):
+  fileSize = os.stat(os.path.join(dataDir, f)).st_size
+  srcFile = os.path.join(dataDir, f)
+  if fileSize <= rasterMaxSize:
+    print("No need to break this file up as it's already small enough.")
+    return [srcFile]
+  else:
+    tiles = []
+    nTiles = math.ceil(math.sqrt(fileSize / rasterMaxSize))
+    print("Breaking large GeoTIFF into " + str(nTiles) + "x" + str(nTiles) + " mosaic of smaller files:")
+    rst = GDALRaster(os.path.join(dataDir, f))
+    tileWidth = math.ceil(rst.width / nTiles)
+    tileHeight = math.ceil(rst.height / nTiles)
+    for x in range(0, nTiles):
+      for y in range(0, nTiles):
+        destFile = os.path.join(tiledDir, stem + '_' + str(x) + 'x' + str(y) + '.tif')
+        gdalCmd = [
+          "gdal_translate",
+          "-of", "GTIFF",
+          "-eco", # throw error if we go entirely outside the original file
+          "-q", # but don't output warnings or progress bar
+          "-srcwin", str(x * tileWidth), str(y * tileHeight), str(tileWidth), str(tileHeight),
+          srcFile,
+          destFile
+        ]
+        print(destFile)
+        subprocess.call(gdalCmd)
+        tiles.append(destFile)
+    return(tiles)
 
 
 
@@ -255,21 +337,18 @@ def detectGeometryType(sf, stem):
 
 
 
-def findEncoding(sf, inputDir, stem):
-  encodingFile = os.path.join(inputDir, stem+".cpg")
-# if .cpg is not found, try .CPG in case we're on a case sensitive file system
-  if not os.path.exists(encodingFile):
-  	encodingFile = os.path.join(inputDir, stem+".CPG")
-
-  if os.path.exists(encodingFile):
-    with open(encodingFile, 'r') as f:
-      encoding = f.read()
-    print("Determined that", stem, "uses character encoding", encoding)
+def findEncoding(inputDir, stem):
+  for ext in [".cpg", ".CPG", ".tif.vat.cpg", ".TIF.VAT.CPG"]:
+    encodingFile = os.path.join(inputDir, stem+ext)
+    if os.path.exists(encodingFile):
+      with open(encodingFile, 'r') as f:
+        encoding = f.read()
+      print("Determined that", stem, "uses character encoding", encoding)
+      return encoding
 # TODO: implement the chardet method from https://gist.github.com/jatorre/939830 as another option
-  else:
-    print("Unable to automatically detect the character encoding of", stem)
-    print("What encoding should we use? (If unknown, try UTF-8)")
-    encoding = input(">> ")
+  print("Unable to automatically detect the character encoding of", stem)
+  print("What encoding should we use? (If unknown, try UTF-8)")
+  encoding = input(">> ")
   return encoding
 
 
@@ -291,34 +370,45 @@ def findFieldType(sf, fieldName):
         exit()
 
 
-
+# call with sf=None for a raster source
 def modelClassGen(stem, sf, keyField, srs, shapeType, shapefileGroup):
   text  = "class " + stem + "(models.Model):\n"
   text += "    def getGroup():\n"
   text += "        return ShapefileGroup.objects.get_or_create(name='" + shapefileGroup + "')[0]\n\n"
-  text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
-  text += "    geom = models." + shapeType + "Field(srid=" + srs + ")\n"
-  text += "    objects = ShapeManager()\n\n"
+  if sf is None:
+    text += "    rast = models.RasterField()\n"
+    text += "    objects = RasterManager()\n\n"
+  else:
+    text += "    " + keyField.lower() + " = models." + findFieldType(sf, keyField) + "\n"
+    text += "    geom = models." + shapeType + "Field(srid=" + srs + ")\n"
+    text += "    objects = ShapeManager()\n\n"
   text += "    group = models.ForeignKey(ShapefileGroup, default=getGroup)\n"
   text += "    def __str__(self):\n"
-  text += "        return str(self." + keyField.lower() + ")\n\n"
+  if sf is None:
+    text += "        return str(self.rast.name)\n\n"
+  else:
+    text += "        return str(self." + keyField.lower() + ")\n\n"
 
   return text
 
 
-
+# call with keyField="bands[0]" for a raster source
 def modelsGeoFilterGen(stem, keyField):
-  text  = "        qs_" + stem + " = " + stem + ".objects.filter(geom__contains=pnt)\n"
+  text  = "        qs_" + stem + " = " + stem + ".objects.has_point(pnt)\n"
   text += "        " + stem + "_rating = " + "qs_" + stem + ".values_list('" + keyField.lower() + "', flat=True)\n"
-  text += "        for rating in " + stem + "_rating:\n"
-  text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__" + keyField.lower() + "__exact=rating).select_subclasses()\n"
-  text += "            if individualSnugget:\n"
-  text += "                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)\n\n"
+  if keyField != "bands[0]":
+    text += "        for rating in " + stem + "_rating:\n"
+#   if keyField != "bands[0]":
+    text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__" + keyField.lower() + "__exact=rating).select_subclasses()\n"
+#   else:
+#     text += "            individualSnugget = Snugget.objects.filter(" + stem + "_filter__exact=rating).select_subclasses()\n"
+    text += "            if individualSnugget:\n"
+    text += "                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)\n\n"
   return text
 
 
 
-def outputGeneratedCode(code, destFile, anchor):
+def outputCodeSnippet(code, destFile, anchor):
   linesWanted = True
   insertComplete = False
   tempFile = destFile + ".tmp"

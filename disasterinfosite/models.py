@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.gis.db import models
+from django.contrib.gis.gdal import GDALRaster
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models import Extent
 from embed_video.fields import EmbedVideoField
@@ -118,7 +119,10 @@ class Location(SingletonModel):
             'LSLD_ExistingAreas_kingco': LSLD_ExistingAreas_kingco.objects.data_bounds(),
             'LSLD_kingco': LSLD_kingco.objects.data_bounds(),
             'LSLD_Prone_kingco': LSLD_Prone_kingco.objects.data_bounds(),
-            'LSLD_steepgradezone': LSLD_steepgradezone.objects.data_bounds(),
+            'LSLD_steepgradezone_0x0': LSLD_steepgradezone_0x0.objects.data_bounds(),
+            'LSLD_steepgradezone_0x1': LSLD_steepgradezone_0x1.objects.data_bounds(),
+            'LSLD_steepgradezone_1x0': LSLD_steepgradezone_1x0.objects.data_bounds(),
+            'LSLD_steepgradezone_1x1': LSLD_steepgradezone_1x1.objects.data_bounds(),
             'Summer_kingco': Summer_kingco.objects.data_bounds(),
             'Volcano_kingco': Volcano_kingco.objects.data_bounds(),
             'Volcano_Lahar_kingco': Volcano_Lahar_kingco.objects.data_bounds(),
@@ -175,6 +179,20 @@ class ShapeManager(models.GeoManager):
 
     def data_bounds(self):
         return self.aggregate(Extent('geom'))['geom__extent']
+
+class RasterManager(models.GeoManager):
+    def has_point(self, pnt):
+        pointAsRaster = GDALRaster({
+            'srid': 4326,
+            'width': 1,
+            'height': 1,
+            'origin': [pnt.x, pnt.y],
+            'scale': [0.000000000000001, 0.000000000000001]
+        })
+        return self.filter(rast__contains=pointAsRaster)
+
+    def data_bounds(self):
+        return self.first().rast.extent
 
 class ShapefileGroup(models.Model):
     name = models.CharField(max_length=50)
@@ -433,17 +451,49 @@ class LSLD_Prone_kingco(models.Model):
     def __str__(self):
         return str(self.lookup_val)
 
-class LSLD_steepgradezone(models.Model):
+class LSLD_steepgradezone_0x0(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
-    lookup_val = models.IntegerField()
-    geom = models.MultiPolygonField(srid=4326)
-    objects = ShapeManager()
+    rast = models.RasterField()
+    objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.lookup_val)
+        return str(self.rast.name)
+
+class LSLD_steepgradezone_0x1(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField()
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.rast.name)
+
+class LSLD_steepgradezone_1x0(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField()
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.rast.name)
+
+class LSLD_steepgradezone_1x1(models.Model):
+    def getGroup():
+        return ShapefileGroup.objects.get_or_create(name='landslide')[0]
+
+    rast = models.RasterField()
+    objects = RasterManager()
+
+    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    def __str__(self):
+        return str(self.rast.name)
 
 class Summer_kingco(models.Model):
     def getGroup():
@@ -602,7 +652,6 @@ class Snugget(models.Model):
     LSLD_ExistingAreas_kingco_filter = models.ForeignKey(LSLD_ExistingAreas_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_kingco_filter = models.ForeignKey(LSLD_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSLD_Prone_kingco_filter = models.ForeignKey(LSLD_Prone_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    LSLD_steepgradezone_filter = models.ForeignKey(LSLD_steepgradezone, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Summer_kingco_filter = models.ForeignKey(Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     Volcano_Lahar_kingco_filter = models.ForeignKey(Volcano_Lahar_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
@@ -630,175 +679,176 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsGeoFilters
-        qs_EQ_Cascadia_kingco = EQ_Cascadia_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_Cascadia_kingco = EQ_Cascadia_kingco.objects.has_point(pnt)
         EQ_Cascadia_kingco_rating = qs_EQ_Cascadia_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Cascadia_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Cascadia_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_kingco = EQ_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_kingco = EQ_kingco.objects.has_point(pnt)
         EQ_kingco_rating = qs_EQ_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_Liquefact_kingco = EQ_Liquefact_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_Liquefact_kingco = EQ_Liquefact_kingco.objects.has_point(pnt)
         EQ_Liquefact_kingco_rating = qs_EQ_Liquefact_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Liquefact_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Liquefact_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_Nisqual68_kingco = EQ_Nisqual68_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_Nisqual68_kingco = EQ_Nisqual68_kingco.objects.has_point(pnt)
         EQ_Nisqual68_kingco_rating = qs_EQ_Nisqual68_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Nisqual68_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Nisqual68_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_SeattleFault72_kingco = EQ_SeattleFault72_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_SeattleFault72_kingco = EQ_SeattleFault72_kingco.objects.has_point(pnt)
         EQ_SeattleFault72_kingco_rating = qs_EQ_SeattleFault72_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_SeattleFault72_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_SeattleFault72_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_Tsunami_SeaFault72_kingco = EQ_Tsunami_SeaFault72_kingco.objects.filter(geom__contains=pnt)
+        qs_EQ_Tsunami_SeaFault72_kingco = EQ_Tsunami_SeaFault72_kingco.objects.has_point(pnt)
         EQ_Tsunami_SeaFault72_kingco_rating = qs_EQ_Tsunami_SeaFault72_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_Tsunami_SeaFault72_kingco_rating:
             individualSnugget = Snugget.objects.filter(EQ_Tsunami_SeaFault72_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_EQ_URM_DensityZones_seattle = EQ_URM_DensityZones_seattle.objects.filter(geom__contains=pnt)
+        qs_EQ_URM_DensityZones_seattle = EQ_URM_DensityZones_seattle.objects.has_point(pnt)
         EQ_URM_DensityZones_seattle_rating = qs_EQ_URM_DensityZones_seattle.values_list('lookup_val', flat=True)
         for rating in EQ_URM_DensityZones_seattle_rating:
             individualSnugget = Snugget.objects.filter(EQ_URM_DensityZones_seattle_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Fire_kingco = Fire_kingco.objects.filter(geom__contains=pnt)
+        qs_Fire_kingco = Fire_kingco.objects.has_point(pnt)
         Fire_kingco_rating = qs_Fire_kingco.values_list('lookup_val', flat=True)
         for rating in Fire_kingco_rating:
             individualSnugget = Snugget.objects.filter(Fire_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Fire_WUI_kingco_only = Fire_WUI_kingco_only.objects.filter(geom__contains=pnt)
+        qs_Fire_WUI_kingco_only = Fire_WUI_kingco_only.objects.has_point(pnt)
         Fire_WUI_kingco_only_rating = qs_Fire_WUI_kingco_only.values_list('lookup_val', flat=True)
         for rating in Fire_WUI_kingco_only_rating:
             individualSnugget = Snugget.objects.filter(Fire_WUI_kingco_only_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_100yr_wUrban_kingco = Flood_100yr_wUrban_kingco.objects.filter(geom__contains=pnt)
+        qs_Flood_100yr_wUrban_kingco = Flood_100yr_wUrban_kingco.objects.has_point(pnt)
         Flood_100yr_wUrban_kingco_rating = qs_Flood_100yr_wUrban_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_100yr_wUrban_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_100yr_wUrban_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_500yr_wUrban_kingco = Flood_500yr_wUrban_kingco.objects.filter(geom__contains=pnt)
+        qs_Flood_500yr_wUrban_kingco = Flood_500yr_wUrban_kingco.objects.has_point(pnt)
         Flood_500yr_wUrban_kingco_rating = qs_Flood_500yr_wUrban_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_500yr_wUrban_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_500yr_wUrban_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_CMZ_kingco = Flood_CMZ_kingco.objects.filter(geom__contains=pnt)
+        qs_Flood_CMZ_kingco = Flood_CMZ_kingco.objects.has_point(pnt)
         Flood_CMZ_kingco_rating = qs_Flood_CMZ_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_CMZ_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_CMZ_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_DamInundation = Flood_DamInundation.objects.filter(geom__contains=pnt)
+        qs_Flood_DamInundation = Flood_DamInundation.objects.has_point(pnt)
         Flood_DamInundation_rating = qs_Flood_DamInundation.values_list('lookup_val', flat=True)
         for rating in Flood_DamInundation_rating:
             individualSnugget = Snugget.objects.filter(Flood_DamInundation_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_kingco = Flood_kingco.objects.filter(geom__contains=pnt)
+        qs_Flood_kingco = Flood_kingco.objects.has_point(pnt)
         Flood_kingco_rating = qs_Flood_kingco.values_list('lookup_val', flat=True)
         for rating in Flood_kingco_rating:
             individualSnugget = Snugget.objects.filter(Flood_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Flood_nearest_sand_distr = Flood_nearest_sand_distr.objects.filter(geom__contains=pnt)
+        qs_Flood_nearest_sand_distr = Flood_nearest_sand_distr.objects.has_point(pnt)
         Flood_nearest_sand_distr_rating = qs_Flood_nearest_sand_distr.values_list('lookup_val', flat=True)
         for rating in Flood_nearest_sand_distr_rating:
             individualSnugget = Snugget.objects.filter(Flood_nearest_sand_distr_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Hubs_Nearest_seattle = Hubs_Nearest_seattle.objects.filter(geom__contains=pnt)
+        qs_Hubs_Nearest_seattle = Hubs_Nearest_seattle.objects.has_point(pnt)
         Hubs_Nearest_seattle_rating = qs_Hubs_Nearest_seattle.values_list('lookup_val', flat=True)
         for rating in Hubs_Nearest_seattle_rating:
             individualSnugget = Snugget.objects.filter(Hubs_Nearest_seattle_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_existing_features = LSLD_existing_features.objects.filter(geom__contains=pnt)
+        qs_LSLD_existing_features = LSLD_existing_features.objects.has_point(pnt)
         LSLD_existing_features_rating = qs_LSLD_existing_features.values_list('lookup_val', flat=True)
         for rating in LSLD_existing_features_rating:
             individualSnugget = Snugget.objects.filter(LSLD_existing_features_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_ExistingAreas_kingco = LSLD_ExistingAreas_kingco.objects.filter(geom__contains=pnt)
+        qs_LSLD_ExistingAreas_kingco = LSLD_ExistingAreas_kingco.objects.has_point(pnt)
         LSLD_ExistingAreas_kingco_rating = qs_LSLD_ExistingAreas_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_ExistingAreas_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_ExistingAreas_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_kingco = LSLD_kingco.objects.filter(geom__contains=pnt)
+        qs_LSLD_kingco = LSLD_kingco.objects.has_point(pnt)
         LSLD_kingco_rating = qs_LSLD_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_Prone_kingco = LSLD_Prone_kingco.objects.filter(geom__contains=pnt)
+        qs_LSLD_Prone_kingco = LSLD_Prone_kingco.objects.has_point(pnt)
         LSLD_Prone_kingco_rating = qs_LSLD_Prone_kingco.values_list('lookup_val', flat=True)
         for rating in LSLD_Prone_kingco_rating:
             individualSnugget = Snugget.objects.filter(LSLD_Prone_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_LSLD_steepgradezone = LSLD_steepgradezone.objects.filter(geom__contains=pnt)
-        LSLD_steepgradezone_rating = qs_LSLD_steepgradezone.values_list('lookup_val', flat=True)
-        for rating in LSLD_steepgradezone_rating:
-            individualSnugget = Snugget.objects.filter(LSLD_steepgradezone_filter__lookup_val__exact=rating).select_subclasses()
-            if individualSnugget:
-                groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
-
-        qs_Summer_kingco = Summer_kingco.objects.filter(geom__contains=pnt)
+        qs_LSLD_steepgradezone_0x0 = LSLD_steepgradezone_0x0.objects.has_point(pnt)
+        LSLD_steepgradezone_0x0_rating = qs_LSLD_steepgradezone_0x0.values_list('bands[0]', flat=True)
+        qs_LSLD_steepgradezone_0x1 = LSLD_steepgradezone_0x1.objects.has_point(pnt)
+        LSLD_steepgradezone_0x1_rating = qs_LSLD_steepgradezone_0x1.values_list('bands[0]', flat=True)
+        qs_LSLD_steepgradezone_1x0 = LSLD_steepgradezone_1x0.objects.has_point(pnt)
+        LSLD_steepgradezone_1x0_rating = qs_LSLD_steepgradezone_1x0.values_list('bands[0]', flat=True)
+        qs_LSLD_steepgradezone_1x1 = LSLD_steepgradezone_1x1.objects.has_point(pnt)
+        LSLD_steepgradezone_1x1_rating = qs_LSLD_steepgradezone_1x1.values_list('bands[0]', flat=True)
+        qs_Summer_kingco = Summer_kingco.objects.has_point(pnt)
         Summer_kingco_rating = qs_Summer_kingco.values_list('lookup_val', flat=True)
         for rating in Summer_kingco_rating:
             individualSnugget = Snugget.objects.filter(Summer_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Volcano_kingco = Volcano_kingco.objects.filter(geom__contains=pnt)
+        qs_Volcano_kingco = Volcano_kingco.objects.has_point(pnt)
         Volcano_kingco_rating = qs_Volcano_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_kingco_rating:
             individualSnugget = Snugget.objects.filter(Volcano_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Volcano_Lahar_kingco = Volcano_Lahar_kingco.objects.filter(geom__contains=pnt)
+        qs_Volcano_Lahar_kingco = Volcano_Lahar_kingco.objects.has_point(pnt)
         Volcano_Lahar_kingco_rating = qs_Volcano_Lahar_kingco.values_list('lookup_val', flat=True)
         for rating in Volcano_Lahar_kingco_rating:
             individualSnugget = Snugget.objects.filter(Volcano_Lahar_kingco_filter__lookup_val__exact=rating).select_subclasses()
             if individualSnugget:
                 groupsDict[individualSnugget[0].group.name].extend(individualSnugget)
 
-        qs_Winter_kingco = Winter_kingco.objects.filter(geom__contains=pnt)
+        qs_Winter_kingco = Winter_kingco.objects.has_point(pnt)
         Winter_kingco_rating = qs_Winter_kingco.values_list('lookup_val', flat=True)
         for rating in Winter_kingco_rating:
             individualSnugget = Snugget.objects.filter(Winter_kingco_filter__lookup_val__exact=rating).select_subclasses()
@@ -827,7 +877,10 @@ class Snugget(models.Model):
                 'LSLD_ExistingAreas_kingco_rating': LSLD_ExistingAreas_kingco_rating,
                 'LSLD_kingco_rating': LSLD_kingco_rating,
                 'LSLD_Prone_kingco_rating': LSLD_Prone_kingco_rating,
-                'LSLD_steepgradezone_rating': LSLD_steepgradezone_rating,
+                'LSLD_steepgradezone_0x0_rating': LSLD_steepgradezone_0x0_rating,
+                'LSLD_steepgradezone_0x1_rating': LSLD_steepgradezone_0x1_rating,
+                'LSLD_steepgradezone_1x0_rating': LSLD_steepgradezone_1x0_rating,
+                'LSLD_steepgradezone_1x1_rating': LSLD_steepgradezone_1x1_rating,
                 'Summer_kingco_rating': Summer_kingco_rating,
                 'Volcano_kingco_rating': Volcano_kingco_rating,
                 'Volcano_Lahar_kingco_rating': Volcano_Lahar_kingco_rating,
