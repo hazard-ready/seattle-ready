@@ -72,26 +72,27 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row, tiledDir):
     sectionID = getSectionID(appName, row["section"], cur, subsection=False)
     subsectionID = getSectionID(appName, row["subsection"], cur, subsection=True)
 
-    # check if a snugget for this data already exists
-    # if we have a lookup value then deal with this value specifically:
-    if row["lookup_value"] is not '':  # if it is blank, we'll treat it as matching all existing values
-      filterIDs = [findFilterID(appName, row["shapefile"], row["lookup_value"], cur)]
-      if filterIDs[0] is None:
-        print("Skipping row:")
-        print(row)
-        print("Because no filter for lookup_value", row["lookup_value"], "was found in", row["shapefile"])
-        return overwriteAll
-      else:
-        oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterIDs[0], cur)
-        overwriteAll = askUserAboutOverwriting(row, oldSnugget, [], snuggetFile, overwriteAll)
+    if isRasterLayer(appName, row["shapefile"], cur):
+      filterIDs = [row["lookup_value"]]
     else:
-      filterIDs = findAllFilterIDs(appName, row["shapefile"], cur)
-      oldSnuggets = []
-      for filterID in filterIDs:
-        oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
-        if oldSnugget is not None and oldSnugget not in oldSnuggets:
-          oldSnuggets.append(oldSnugget)
-      overwriteAll = askUserAboutOverwriting(row, None, oldSnuggets, snuggetFile, overwriteAll)
+      if row["lookup_value"] is not '':  # if it is blank, we'll treat it as matching all existing values
+        filterIDs = [findFilterID(appName, row["shapefile"], row["lookup_value"], cur)]
+        if filterIDs[0] is None:
+          print("Skipping row:")
+          print(row)
+          print("Because no filter for lookup_value", row["lookup_value"], "was found in", row["shapefile"])
+          return overwriteAll
+        else:
+          oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterIDs[0], cur)
+          overwriteAll = askUserAboutOverwriting(row, oldSnugget, [], snuggetFile, overwriteAll)
+      else:
+        filterIDs = findAllFilterIDs(appName, row["shapefile"], cur)
+        oldSnuggets = []
+        for filterID in filterIDs:
+          oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
+          if oldSnugget is not None and oldSnugget not in oldSnuggets:
+            oldSnuggets.append(oldSnugget)
+        overwriteAll = askUserAboutOverwriting(row, None, oldSnuggets, snuggetFile, overwriteAll)
 
     for filterID in filterIDs:
       print("Processing", filterID)
@@ -99,6 +100,18 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row, tiledDir):
       addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID, cur)
 
   return overwriteAll
+
+
+
+def isRasterLayer(appName, layerName, cur):
+  cur.execute(
+    "SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = %s AND column_name = 'rast';",
+    [appName + "_" + layerName.lower()]
+  )
+  if cur.fetchone() is not None:
+    return True
+  else:
+    return False
 
 
 

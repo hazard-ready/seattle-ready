@@ -1,3 +1,14 @@
+# NOTES FOR THIS BRANCH
+
+This branch represents an abortive attempt to add the ability to import rasters directly.  In case we decide to pick this up later, the following may be helpful:
+
+1) Django doesn't currently seem to have a method to look up the data value from a raster at a given point.  `pixel_value_from_point` in [the django-raster source](https://github.com/geodesign/django-raster/blob/ea6f5aa94dd8d9ff8fab9e13d675905c787d78c6/raster/utils.py#L135) looks like it would do the trick
+2) But the reason we didn't just go ahead and implement that was difficulty seeing how it would fit in to the general data model this project uses.
+3) The string method for GDALRaster.bands appears to be broken, so don't rely on inspecting that to see if data's been loaded.
+4) The code generation in import.py will be easier the more of the differences between vector & raster methods we can offload to generic ShapeManager and RasterManager classes.
+5) If you end up making the database query a raster with vector (including point) data, it tries to polygonise the raster first, so takes AGES.  Take care to avoid this.  At the time of writing, Django's built in methods do not avoid this.
+
+
 # seattle-ready
 A disaster readiness website specific to the Seattle metro area.
 
