@@ -448,45 +448,45 @@ class LSLD_steepgradezone_0x0(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
-    rast = models.RasterField(default=0)
+    rast = models.RasterField()
     objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.bands[0])
+        return str(self.rast.name)
 
 class LSLD_steepgradezone_0x1(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
-    rast = models.RasterField(default=0)
+    rast = models.RasterField()
     objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.bands[0])
+        return str(self.rast.name)
 
 class LSLD_steepgradezone_1x0(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
-    rast = models.RasterField(default=0)
+    rast = models.RasterField()
     objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.bands[0])
+        return str(self.rast.name)
 
 class LSLD_steepgradezone_1x1(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='landslide')[0]
 
-    rast = models.RasterField(default=0)
+    rast = models.RasterField()
     objects = RasterManager()
 
     group = models.ForeignKey(ShapefileGroup, default=getGroup)
     def __str__(self):
-        return str(self.bands[0])
+        return str(self.rast.name)
 
 class Summer_kingco(models.Model):
     def getGroup():
