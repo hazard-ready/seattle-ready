@@ -12,7 +12,7 @@ from os import environ
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY_SEATTLE']
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -21,8 +21,7 @@ DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '10.0.2.2']
 else:
-    # hazardready.org is the current production server. 23.92.25.126 is its numeric address. eldang.eldan.co.uk is our demo/test server
-    ALLOWED_HOSTS = ['.hazardready.org', '23.92.25.126']
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = (
@@ -130,7 +129,7 @@ TEMPLATES = [
 import dj_database_url
 
 DATABASES = {}
-DATABASES['default'] =  dj_database_url.parse(os.environ["DATABASE_URL_SEATTLE"])
+DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 # Allow database connections to persist
@@ -155,7 +154,7 @@ WEBPACK_LOADER = {
     }
 }
 
-
+FORCE_SCRIPT_NAME='/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
