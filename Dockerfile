@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg-dev       \
     g++               \
     libgdal-dev       \
+    nodejs            \
+    npm               \
     postgresql-client \
     unzip             \
     zip               \
