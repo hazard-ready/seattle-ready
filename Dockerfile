@@ -44,7 +44,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # verify pip install
 RUN pip list
 
-
 # build front-end code
 WORKDIR /app/disasterinfosite
 RUN mkdir -p media
