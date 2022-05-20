@@ -2,9 +2,9 @@
 Django settings for disasterinfosite project.
 """
 
-ADMINS = (
+ADMINS = [
           ('Melinda Minch', 'melinda@melindaminch.com')
-         )
+         ]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
