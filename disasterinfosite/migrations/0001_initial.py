@@ -190,7 +190,7 @@ class Migration(migrations.Migration):
                 ('city', models.CharField(max_length=200, blank=True)),
                 ('state', models.CharField(max_length=50, blank=True)),
                 ('zip_code', models.CharField(max_length=50, blank=True)),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL, , on_delete=django.db.models.deletion.CASCADE)),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=django.db.models.deletion.CASCADE)),
             ],
             options={
                 'verbose_name': 'User Profile',
