@@ -1,3 +1,4 @@
+import logging
 """
 Django settings for disasterinfosite project.
 """
