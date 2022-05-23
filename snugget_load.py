@@ -7,7 +7,7 @@ import psycopg2
 # for the database parameters
 import disasterinfosite.settings as settings
 
-def main():
+def run():
   appName = "disasterinfosite"
   appDir = "disasterinfosite"
   dataDir = os.path.join(appDir, "data")
@@ -296,7 +296,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
 # then heavily adapted because the original didn't actually work
 def XLSXDictReader(f):
   book  = openpyxl.reader.excel.load_workbook(f)
-  sheet = book.get_active_sheet()
+  sheet = book.active
   langs = []
 
   rows = 1
