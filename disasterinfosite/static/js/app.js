@@ -7,8 +7,8 @@ require('../css/app.css');
 
 var boundaryShape = require('../img/boundary.json');
 
-require('../img/marker-icon.png');
-require('../img/marker-icon-2x.png');
+require('../img/marker_icon.png');
+require('../img/marker_icon-2x.png');
 require('../img/marker-shadow.png');
 require('../img/thinking.gif');
 require('../img/favicon.ico');
@@ -223,7 +223,7 @@ $( document ).ready(function() {
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
-    icon.options.iconUrl = "marker-icon.png";
+    icon.options.iconUrl = "marker_icon.png";
     icon.options.shadowUrl = "marker-shadow.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
