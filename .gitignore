@@ -80,6 +80,7 @@ staticfiles
 media
 
 .DS_Store
+__MACOSX/
 myenv/
 
 # Node Modules
