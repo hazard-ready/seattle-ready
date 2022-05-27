@@ -15,7 +15,7 @@ module.exports = {
     ]
   },
   entry: {
-    vendor: ["foundation.min", "modernizr","leaflet", "jquery", "slick-carousel"],
+    vendor: ["jquery", "foundation.min", "modernizr","leaflet", "slick-carousel"],
     app: "./static/js/app.js"
   },
 
