@@ -17,6 +17,7 @@ require('../img/logo.png');
 require('slick-carousel');
 var L = require('leaflet');
 var $ = require('jquery');
+var Foundation = require('foundation');
 
 // This is on window so that it can get called after the google maps API script is loaded asynchronously.
 window.initAddressInput = function() {
