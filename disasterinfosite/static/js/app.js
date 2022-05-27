@@ -173,6 +173,7 @@ function hasInvalidInput($form) {
 
 
 $( document ).ready(function() {
+  Foundation.addToJquery($);
   $(document).foundation();
 
   $('a').on('click', function(e) {
