@@ -27,9 +27,7 @@ module.exports = {
     new BundleTracker({ filename: "./webpack-stats.json" }),
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery",
-      foundation: "foundation",
-      Foundation: "foundation"
+      jQuery: "jquery"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
