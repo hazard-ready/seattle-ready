@@ -24,9 +24,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
-  {% render_bundle 'vendor' 'js' %}
-  {% render_bundle 'app' 'js' %}
-
   <script type="text/javascript">
     var mapBounds = {{ data_bounds | js }};
     var staticPath = "{% get_static_prefix %}";
@@ -118,6 +115,8 @@
   <h1 class="loading-text caps">{% trans "Getting results for your location..." %}</h1>
   <img class="loading-spinner" src="{% webpack_static 'build/thinking.gif' %}">
 </div>
+  {% render_bundle 'vendor' 'js' %}
+  {% render_bundle 'app' 'js' %}
 
   <!-- Load Google Maps from CDN-->
   <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHXWbx7eZh8EgOguwdbb0q1Mvo6pkY9es&libraries=places&callback=initAddressInput"></script>
