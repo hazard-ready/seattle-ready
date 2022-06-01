@@ -15,7 +15,7 @@ module.exports = {
     ]
   },
   entry: {
-    vendor: ["foundation.min", "modernizr","leaflet", "jquery", "slick-carousel"],
+    vendor: ["foundation-sites", "modernizr", "leaflet", "jquery", "slick-carousel"],
     app: "./static/js/app.js"
   },
 
@@ -28,7 +28,6 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      "window.jQuery": "jquery"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"

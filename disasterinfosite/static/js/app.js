@@ -1,5 +1,4 @@
 require('../css/normalize.css');
-require('../css/foundation.min.css');
 require('leaflet/dist/leaflet.css');
 require("slick-carousel/slick/slick.css");
 require("slick-carousel/slick/slick-theme.css");
@@ -17,6 +16,7 @@ require('../img/logo.png');
 require('slick-carousel');
 var L = require('leaflet');
 var $ = require('jquery');
+var Foundation = require('foundation-sites');
 
 // This is on window so that it can get called after the google maps API script is loaded asynchronously.
 window.initAddressInput = function() {
@@ -171,7 +171,7 @@ function hasInvalidInput($form) {
   return false;
 };
 
-window.Foundation.addToJquery($);
+Foundation.addToJquery($);
 
 $( document ).ready(function() {
   $(document).foundation();
