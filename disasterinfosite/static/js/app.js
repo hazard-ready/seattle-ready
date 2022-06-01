@@ -171,7 +171,7 @@ function hasInvalidInput($form) {
   return false;
 };
 
-Foundation.addToJquery($);
+Foundation.Foundation.addToJquery($);
 
 $( document ).ready(function() {
   $(document).foundation();
