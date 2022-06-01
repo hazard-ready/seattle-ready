@@ -172,8 +172,10 @@ function hasInvalidInput($form) {
   return false;
 };
 
+Foundation.addToJquery($);
 
 $( document ).ready(function() {
+  $(document).foundation();
 
   $('a').on('click', function(e) {
     if(e.currentTarget.hostname !== location.hostname) {
@@ -264,9 +266,6 @@ $( document ).ready(function() {
     };
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
   });
-
-  Foundation.addToJquery($)
-  $(document).foundation();
 
   // Initialize the slide gallery on the open disaster tab
   var slideContainer = loadGallery();
