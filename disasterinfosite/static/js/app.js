@@ -225,8 +225,8 @@ $( document ).ready(function() {
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
     var icon = new L.Icon.Default;
-    icon.options.iconUrl = "marker_icon.png";
-    icon.options.shadowUrl = "marker-shadow.png";
+    icon.options.iconUrl = "../static/build/marker_icon.png";
+    icon.options.shadowUrl = "../static/build/marker-shadow.png";
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,
