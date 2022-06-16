@@ -163,13 +163,7 @@ WEBPACK_LOADER = {
 FORCE_SCRIPT_NAME='/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
-STATIC_URL = '/seattle/static/'
-
-# If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
-# STATIC_URL = '/SUBDIR/static/'
-# So for our current test server, eldang.eldan.co.uk/zr/ , we need:
-# STATIC_URL = '/zr/static/'
+STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -186,4 +180,4 @@ GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 ### END HEROKU CONFIGURATIONS ###
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'img')
-MEDIA_URL = '/static/img/'
+MEDIA_URL = 'static/img/'
