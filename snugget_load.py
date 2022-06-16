@@ -7,7 +7,7 @@ import psycopg2
 # for the database parameters
 import disasterinfosite.settings as settings
 
-def main():
+def run():
   appName = "disasterinfosite"
   appDir = "disasterinfosite"
   dataDir = os.path.join(appDir, "data")
@@ -84,7 +84,7 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row):
 
   # check if a snugget for this data already exists
   # if we have a lookup value then deal with this value specifically:
-  if row["lookup_value"] is not '':  # if it is blank, we'll treat it as matching all existing values
+  if row["lookup_value"] != '':  # if it is blank, we'll treat it as matching all existing values
     filterIDs = [findFilterID(appName, row["shapefile"], row["lookup_value"], cur)]
     if filterIDs[0] is None:
       print("Skipping row:")
@@ -99,7 +99,7 @@ def processRow(appName, snuggetFile, cur, overwriteAll, row):
     oldSnuggets = []
     for filterID in filterIDs:
       oldSnugget = checkForSnugget(appName, sectionID, subsectionID, filterColumn, filterID, cur)
-      if oldSnugget is not None and oldSnugget not in oldSnuggets:
+      if oldSnugget != None and oldSnugget not in oldSnuggets:
         oldSnuggets.append(oldSnugget)
     overwriteAll = askUserAboutOverwriting(row, None, oldSnuggets, snuggetFile, overwriteAll)
 
@@ -133,7 +133,7 @@ def addTextSnugget(appName, row, sectionID, subsectionID, filterColumn, filterID
   snuggetID = getSnuggetID(appName, sectionID, subsectionID, filterColumn, filterID, cur);
 
   # dynamically build list of multilingual content and language codes
-  i18n_columns = ", ".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c is not None])
+  i18n_columns = ", ".join([c for c in (_get_i18n_db_column(column_name) for column_name in row.keys()) if c != None])
   i18n_placeholders = ""
   values_to_insert = (snuggetID, row["text-en"])
   for col in i18n_columns.split(", "):
@@ -173,7 +173,7 @@ def getSectionID(appName, sectionName, cur, subsection=False):
 
   cur.execute("SELECT MIN(id) FROM " + tableName + " WHERE name = %s;", [sectionName])
   sectionID = cur.fetchone()[0]
-  if sectionID is not None:
+  if sectionID != None:
     return sectionID
   else: # if no sectionID was found then we need to create the section
     cur.execute("INSERT INTO " + tableName + "(name, order_of_appearance, display_name) VALUES(%s, %s, %s);", (sectionName, 0, sectionName))
@@ -187,7 +187,7 @@ def getGroupID(appName, shapefile, cur):
   shapefile_table = appName + "_" + shapefile
   cur.execute("SELECT " + group_table + ".id FROM " + group_table + ", " + shapefile_table + " WHERE " + group_table + ".id=" + shapefile_table + ".group_id")
   ref = cur.fetchone()
-  if ref is not None:
+  if ref != None:
     return str(ref[0])
   else:
     print("Could not find a group for the shapefile", shapefile)
@@ -199,7 +199,7 @@ def findFilterID(appName, shapefile, key, cur):
     keyColumn = cols[1]
     cur.execute("SELECT id FROM " + appName + "_" + shapefile + " WHERE " + keyColumn + "::text = %s;", [key])
     ref = cur.fetchone()
-    if ref is not None:
+    if ref != None:
       return str(ref[0])
     else: # if cur.fetchone() returns None it means that no matching id was found
       return None
@@ -296,7 +296,7 @@ def askUserAboutOverwriting(row, oldSnugget, oldSnuggets, snuggetFile, overwrite
 # then heavily adapted because the original didn't actually work
 def XLSXDictReader(f):
   book  = openpyxl.reader.excel.load_workbook(f)
-  sheet = book.get_active_sheet()
+  sheet = book.active
   langs = []
 
   rows = 1

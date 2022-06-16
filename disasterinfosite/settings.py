@@ -1,10 +1,11 @@
+import logging
 """
 Django settings for disasterinfosite project.
 """
 
-ADMINS = (
+ADMINS = [
           ('Melinda Minch', 'melinda@melindaminch.com')
-         )
+         ]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -12,7 +13,7 @@ from os import environ
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY_SEATTLE']
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -20,9 +21,10 @@ DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '10.0.2.2']
+    SITE_URL = "http://127.0.0.1:8000"
+    logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s %(levelname)s %(message)s')
 else:
-    # hazardready.org is the current production server. 23.92.25.126 is its numeric address. eldang.eldan.co.uk is our demo/test server
-    ALLOWED_HOSTS = ['.hazardready.org', '23.92.25.126']
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = (
@@ -40,13 +42,14 @@ INSTALLED_APPS = (
     'webpack_loader'
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -130,8 +133,10 @@ TEMPLATES = [
 import dj_database_url
 
 DATABASES = {}
-DATABASES['default'] =  dj_database_url.parse(os.environ["DATABASE_URL_SEATTLE"])
+DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Allow database connections to persist
 CONN_MAX_AGE = environ.get('CONN_MAX_AGE') or 0
@@ -155,20 +160,25 @@ WEBPACK_LOADER = {
     }
 }
 
-
+FORCE_SCRIPT_NAME='/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
-STATIC_URL = '/seattle/static/'
-
-# If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
-# STATIC_URL = '/SUBDIR/static/'
-# So for our current test server, eldang.eldan.co.uk/zr/ , we need:
-# STATIC_URL = '/zr/static/'
+if DEBUG:
+    # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
+    STATIC_URL = '/static/'
+else:
+    # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
+    # STATIC_URL = '/SUBDIR/static/'
+    # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
+    # STATIC_URL = '/zr/static/'
+    STATIC_URL = '/seattle/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+WHITENOISE_STATIC_PREFIX='/static/'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Specially for GeoDjango on Heroku
 GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')

@@ -8,7 +8,6 @@ require('../css/app.css');
 var boundaryShape = require('../img/boundary.json');
 
 require('../img/marker-icon.png');
-require('../img/marker-icon-2x.png');
 require('../img/marker-shadow.png');
 require('../img/thinking.gif');
 require('../img/favicon.ico');
@@ -17,6 +16,7 @@ require('../img/logo.png');
 require('slick-carousel');
 var L = require('leaflet');
 var $ = require('jquery');
+var Foundation = require('foundation-sites');
 
 // This is on window so that it can get called after the google maps API script is loaded asynchronously.
 window.initAddressInput = function() {
@@ -171,6 +171,7 @@ function hasInvalidInput($form) {
   return false;
 };
 
+Foundation.Foundation.addToJquery($);
 
 $( document ).ready(function() {
   $(document).foundation();
@@ -222,9 +223,13 @@ $( document ).ready(function() {
 
   document.getElementById('map').style.cursor='default';
   if (query_lat && query_lng) {
-    var icon = new L.Icon.Default;
-    icon.options.iconUrl = "marker-icon.png";
-    icon.options.shadowUrl = "marker-shadow.png";
+    var icon = L.icon({
+      iconUrl: require("../img/marker-icon.png"),
+      shadowUrl: require("../img/marker-shadow.png"),
+      iconSize: [25, 41],
+      iconAnchor: [25, 41],
+    });
+
     var marker = L.marker([query_lat, query_lng], {
       icon: icon,
       clickable: false,

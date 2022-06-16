@@ -18,7 +18,7 @@ SNUGGET_TYPES = (
                  )
 class UserProfile(models.Model):
     """ A model representing a user's information that isn't their username, password, or email address """
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     address1 = models.CharField(max_length=200, blank=True)
     address2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200, blank=True)
@@ -169,7 +169,7 @@ class ImportantLink(models.Model):
     def __str__(self):
         return self.title +': ' + self.link
 
-class ShapeManager(models.GeoManager):
+class ShapeManager(models.Manager):
     def has_point(self, pnt):
         return self.filter(geom__contains=pnt)
 
@@ -201,7 +201,7 @@ class EQ_SeattleFault72_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -213,7 +213,7 @@ class Summer_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -225,7 +225,7 @@ class Flood_DamInundation(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -237,7 +237,7 @@ class Flood_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -249,7 +249,7 @@ class LSLD_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -261,7 +261,7 @@ class Volcano_Lahar_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -273,7 +273,7 @@ class Volcano_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -285,7 +285,7 @@ class EQ_URM_DensityZones_seattle(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -297,7 +297,7 @@ class EQ_Nisqual68_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -309,7 +309,7 @@ class Hubs_Nearest_seattle(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -321,7 +321,7 @@ class Flood_500yr_wUrban_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -333,7 +333,7 @@ class EQ_Tsunami_SeaFault72_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -345,7 +345,7 @@ class Winter_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -357,7 +357,7 @@ class Fire_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -369,7 +369,7 @@ class Flood_CMZ_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -381,7 +381,7 @@ class EQ_Cascadia_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -393,7 +393,7 @@ class LSLD_steepgradezone(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.gridcode)
 
@@ -405,7 +405,7 @@ class EQ_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -417,7 +417,7 @@ class Fire_WUI_kingco_only(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -429,7 +429,7 @@ class Flood_nearest_sand_distr(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -441,7 +441,7 @@ class Flood_100yr_wUrban_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -453,7 +453,7 @@ class EQ_Liquefact_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -465,7 +465,7 @@ class LSLD_ExistingAreas_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -477,7 +477,7 @@ class LSLD_Prone_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 
@@ -489,7 +489,7 @@ class LSLD_existing_features(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup)
+    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.lookup_val)
 

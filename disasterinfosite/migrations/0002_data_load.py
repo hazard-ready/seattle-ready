@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Liquefact_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Liquefact_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Nisqual68_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Nisqual68_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_SeattleFault72_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_SeattleFault72_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Tsunami_SeaFault72_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_Tsunami_SeaFault72_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_URM_DensityZones_seattle.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_URM_DensityZones_seattle.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Fire_WUI_kingco_only.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Fire_WUI_kingco_only.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_100yr_wUrban_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_100yr_wUrban_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -83,7 +83,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_500yr_wUrban_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_500yr_wUrban_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_CMZ_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_CMZ_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -101,7 +101,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_DamInundation.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_DamInundation.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -110,7 +110,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_nearest_sand_distr.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_nearest_sand_distr.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -119,7 +119,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Hubs_Nearest_seattle.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Hubs_Nearest_seattle.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -128,7 +128,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=100)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_ExistingAreas_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_ExistingAreas_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -137,7 +137,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.IntegerField()),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_Prone_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_Prone_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -146,7 +146,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_Lahar_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_Lahar_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -155,7 +155,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.EQ_Cascadia_kingco.getGroup)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE, default=disasterinfosite.models.EQ_Cascadia_kingco.getGroup)),
             ],
         ),
         migrations.AddField(
@@ -244,7 +244,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.EQ_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -253,7 +253,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Flood_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -262,7 +262,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.LSLD_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -271,7 +271,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_kingco.getGroup, to='disasterinfosite.ShapefileGroup')),
+                ('group', models.ForeignKey(default=disasterinfosite.models.Volcano_kingco.getGroup, to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE)),
             ],
         ),
         migrations.AddField(
@@ -300,7 +300,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Fire_kingco.getGroup)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE, default=disasterinfosite.models.Fire_kingco.getGroup)),
             ],
         ),
         migrations.AddField(
@@ -314,7 +314,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.LSLD_existing_features.getGroup)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE, default=disasterinfosite.models.LSLD_existing_features.getGroup)),
             ],
         ),
         migrations.CreateModel(
@@ -323,7 +323,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Summer_kingco.getGroup)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE, default=disasterinfosite.models.Summer_kingco.getGroup)),
             ],
         ),
         migrations.CreateModel(
@@ -332,7 +332,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
                 ('lookup_val', models.CharField(max_length=50)),
                 ('geom', django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326)),
-                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', default=disasterinfosite.models.Winter_kingco.getGroup)),
+                ('group', models.ForeignKey(to='disasterinfosite.ShapefileGroup', on_delete=django.db.models.deletion.CASCADE, default=disasterinfosite.models.Winter_kingco.getGroup)),
             ],
         ),
         migrations.CreateModel(

@@ -4,7 +4,7 @@ A disaster readiness website specific to the Seattle metro area.
 
 The project is a custom instance of the [Disaster Preparedness](https://github.com/missoula-ready/disaster-preparedness) project, which is an adaptation of [a pioneering project from Oregon](https://github.com/Oregon-Public-Broadcasting/earthquake-preparedness) but has been generalized to make it easy to clone and tailor to other regions.
 
-# To set it up, follow the instructions in the [Disaster Preparedness project README](https://github.com/missoula-ready/disaster-preparedness/blob/master/README.md). But instead of DJANGO_SECRET_KEY, use DJANGO_SECRET_KEY_SEATTLE, and instead of DATABASE_URL, use DATABASE_URL_SEATTLE.
+# To set it up, follow the instructions in the [Disaster Preparedness project README](https://github.com/missoula-ready/disaster-preparedness/blob/master/README.md).
 
 # This instance of Hazard Ready uses Webpack to bundle its static files. For that reason, you need these additional steps to set it up:
 1. Make sure that you have [Node and NPM installed](https://www.npmjs.com/get-npm)
@@ -181,3 +181,9 @@ In the box at the bottom of every page, there's a section called 'Quick Data Ove
 ### Deploying to the web via Apache
 There are directories called 'photos' and 'data' in disasterinfosite/img. This is where images go when you upload them via Django Admin, under 'Photos of Past Events' and 'Data Overview Images'. In order for that upload to work, you need to change the owner (chown) those directories to whatever user Apache is running as (www-data, perhaps).
 
+### Deploying to the web via Docker
+This repository has a Dockerfile that lets you build a Docker image of the Django app. It needs you to have `DATABASE_URL` and `DJANGO_SECRET_KEY` set in your environment, but it is also able to guess sensible defaults for these values.
+
+Do `docker build . --tag seattle-ready` and you can run it. It will set up the Python environment for you. Depending on the state of the database you're connecting to, you will likely need to start at the `python manage.py migrate` step under "Load some data".
+
+For an example of a working production environment, see the `docker-compose.yml` in the [base repository](https://github.com/hazard-ready/disaster-preparedness)
