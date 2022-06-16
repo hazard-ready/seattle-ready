@@ -163,13 +163,21 @@ WEBPACK_LOADER = {
 FORCE_SCRIPT_NAME='/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = 'static/'
+if DEBUG:
+    # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
+    STATIC_URL = '/static/'
+else:
+    # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
+    # STATIC_URL = '/SUBDIR/static/'
+    # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
+    # STATIC_URL = '/zr/static/'
+    STATIC_URL = '/seattle/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-WHITENOISE_STATIC_PREFIX='static/'
+WHITENOISE_STATIC_PREFIX='/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Specially for GeoDjango on Heroku
@@ -180,4 +188,4 @@ GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 ### END HEROKU CONFIGURATIONS ###
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'img')
-MEDIA_URL = 'static/img/'
+MEDIA_URL = '/seattle/static/img/'
