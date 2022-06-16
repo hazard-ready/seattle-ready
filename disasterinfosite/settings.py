@@ -169,7 +169,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-WHITENOISE_STATIC_PREFIX='/static/'
+WHITENOISE_STATIC_PREFIX='static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Specially for GeoDjango on Heroku
