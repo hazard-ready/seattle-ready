@@ -7,13 +7,12 @@
 # Files we made but don't want in git (usually security reason)
 secure_settings.py
 
-#Directories for simplified and reprojected data files
-disasterinfosite/data/reprojected/
-disasterinfosite/data/simplified
+# Data directory full of binary or large data sets we don't need in a code repository.
+disasterinfosite/data/
 
-#Directories for uploading photos and images
-disasterinfosite/static/img/data/
-disasterinfosite/static/img/photos/
+# Temp directories made by the importer
+disasterinfosite/data/reprojected/
+disasterinfosite/data/simplified/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -66,6 +65,7 @@ coverage.xml
 *,cover
 
 # Translations
+*.mo
 *.pot
 
 # Django stuff:
@@ -96,3 +96,23 @@ disasterinfosite/webpack-stats.json
 
 # Data files
 disasterinfosite/data
+
+.DS_Store
+myenv/
+__MACOSX
+
+# Node Modules
+node_modules/
+
+webpack-stats.json
+
+# Excel temp files
+~$*.xlsx
+
+# Auto-assembled media folder
+disasterinfosite/media/*
+
+*__MACOSX*
+
+# The actual keys to our test environment
+docker-test.env

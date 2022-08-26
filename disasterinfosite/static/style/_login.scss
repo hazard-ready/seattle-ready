@@ -1,0 +1,50 @@
+/* login and sign in */
+
+.user--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-interaction__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: start;
+  padding-top: 10px;
+
+  @include breakpoint(medium-and-up) {
+    padding-top: 0;
+  }
+
+  button {
+    margin-right: 20px;
+  }
+}
+
+.user-interaction__fields {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  padding: 10px;
+
+  @include breakpoint(medium-and-up) {
+    margin-right: 20px;
+  }
+}
+
+.user-interactions-help {
+  padding-top: 1rem;
+}
+
+.user--ui {
+  input {
+    margin: 5px 0 10px;
+    display: block;
+    width: 100%;
+  }
+}
+
+.username {
+  font-weight: $font-weight-bold;
+}
