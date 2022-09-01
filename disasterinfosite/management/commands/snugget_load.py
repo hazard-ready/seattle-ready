@@ -35,7 +35,15 @@ optionalFields = ['heading',
                   'image_slideshow_folder',
                   'video',
                   'text-es',
-                  'pop_out_txt-es']
+                  'pop_out_txt-es',
+                  'text-cn',
+                  'pop_out_txt-cn',
+                  'text-ru',
+                  'pop_out_txt-ru',
+                  'text-so',
+                  'pop_out_txt-so',
+                  'text-vi',
+                  'pop_out_txt-vi']
 
 defaults = {
     "intensity": None,
