@@ -17,6 +17,16 @@ rasterTileSize = 128
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # loadMappings
+EQNisqually_2001_171004_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
+Flood_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 EQTsunami_2022_220619_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -32,12 +42,22 @@ EQCascadia_2020_220619_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+Volcano_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 EQSeattleNorth_2017_220619_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
 
 Flood100yr500yr_2020_220619_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
+Fire_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
@@ -52,12 +72,22 @@ FloodSandbag_2016_220710_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+Summer_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 EQUrm_2022_220710_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
 
 EQTsunami_2022_220707_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
+EQ_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
@@ -97,19 +127,30 @@ Winter_kingco_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+LS_kingco_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 
 FireHazardPotential_2020_220619_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/FireHazardPotential_2020_220619.tif'))
+EQNisqually_2001_171004_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQNisqually_2001_171004.shp'))
+Flood_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Flood_kingco.shp'))
 EQTsunami_2022_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQTsunami_2022_220619.shp'))
 EQLiquefaction_2019_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQLiquefaction_2019_220619.shp'))
 EQCascadia_2020_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQCascadia_2020_220619.shp'))
+Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Volcano_kingco.shp'))
 LSSteepPotential_2018_220701_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/LSSteepPotential_2018_220701.tif'))
 EQSeattleNorth_2017_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQSeattleNorth_2017_220619.shp'))
 Flood100yr500yr_2020_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Flood100yr500yr_2020_220619.shp'))
 FireWUI_2021_220619_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/FireWUI_2021_220619.tif'))
+Fire_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Fire_kingco.shp'))
 LSHistorical_2020_220701_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/LSHistorical_2020_220701.shp'))
 FloodSandbag_2016_220710_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/FloodSandbag_2016_220710.shp'))
+Summer_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Summer_kingco.shp'))
 EQUrm_2022_220710_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQUrm_2022_220710.shp'))
 EQTsunami_2022_220707_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQTsunami_2022_220707.shp'))
+EQ_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQ_kingco.shp'))
 Volcano_2016_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Volcano_2016_220619.shp'))
 EQCascadiaDisplaced_2017_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQCascadiaDisplaced_2017_220619.shp'))
 FloodDamInund_2013_220710_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/FloodDamInund_2013_220710.shp'))
@@ -117,6 +158,7 @@ FloodCMZ_2015_220703_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR
 Heat_2020_20220803_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Heat_2020_20220803.shp'))
 seattle_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/seattle_kingco.shp'))
 Winter_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Winter_kingco.shp'))
+LS_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/LS_kingco.shp'))
 # END OF GENERATED CODE BLOCK
 ######################################################
 
@@ -192,9 +234,9 @@ def run(verbose=True):
     from disasterinfosite.models import ShapefileGroup
     fire = ShapefileGroup.objects.get_or_create(name='fire')
     quake = ShapefileGroup.objects.get_or_create(name='quake')
-    slide = ShapefileGroup.objects.get_or_create(name='slide')
     flood = ShapefileGroup.objects.get_or_create(name='flood')
     volcano = ShapefileGroup.objects.get_or_create(name='volcano')
+    slide = ShapefileGroup.objects.get_or_create(name='slide')
     summer = ShapefileGroup.objects.get_or_create(name='summer')
     winter = ShapefileGroup.objects.get_or_create(name='winter')
     # END OF GENERATED CODE BLOCK
@@ -207,6 +249,16 @@ def run(verbose=True):
     print('Loading data for FireHazardPotential_2020_220619')
     from disasterinfosite.models import FireHazardPotential_2020_220619
     tileLoadRaster(FireHazardPotential_2020_220619, FireHazardPotential_2020_220619_tif)
+
+    print('Loading data for EQNisqually_2001_171004')
+    from disasterinfosite.models import EQNisqually_2001_171004
+    lm_EQNisqually_2001_171004 = LayerMapping(EQNisqually_2001_171004, EQNisqually_2001_171004_shp, EQNisqually_2001_171004_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_EQNisqually_2001_171004.save()
+
+    print('Loading data for Flood_kingco')
+    from disasterinfosite.models import Flood_kingco
+    lm_Flood_kingco = LayerMapping(Flood_kingco, Flood_kingco_shp, Flood_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Flood_kingco.save()
 
     print('Loading data for EQTsunami_2022_220619')
     from disasterinfosite.models import EQTsunami_2022_220619
@@ -222,6 +274,11 @@ def run(verbose=True):
     from disasterinfosite.models import EQCascadia_2020_220619
     lm_EQCascadia_2020_220619 = LayerMapping(EQCascadia_2020_220619, EQCascadia_2020_220619_shp, EQCascadia_2020_220619_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQCascadia_2020_220619.save()
+
+    print('Loading data for Volcano_kingco')
+    from disasterinfosite.models import Volcano_kingco
+    lm_Volcano_kingco = LayerMapping(Volcano_kingco, Volcano_kingco_shp, Volcano_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Volcano_kingco.save()
 
     print('Loading data for LSSteepPotential_2018_220701')
     from disasterinfosite.models import LSSteepPotential_2018_220701
@@ -241,6 +298,11 @@ def run(verbose=True):
     from disasterinfosite.models import FireWUI_2021_220619
     tileLoadRaster(FireWUI_2021_220619, FireWUI_2021_220619_tif)
 
+    print('Loading data for Fire_kingco')
+    from disasterinfosite.models import Fire_kingco
+    lm_Fire_kingco = LayerMapping(Fire_kingco, Fire_kingco_shp, Fire_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Fire_kingco.save()
+
     print('Loading data for LSHistorical_2020_220701')
     from disasterinfosite.models import LSHistorical_2020_220701
     lm_LSHistorical_2020_220701 = LayerMapping(LSHistorical_2020_220701, LSHistorical_2020_220701_shp, LSHistorical_2020_220701_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
@@ -251,6 +313,11 @@ def run(verbose=True):
     lm_FloodSandbag_2016_220710 = LayerMapping(FloodSandbag_2016_220710, FloodSandbag_2016_220710_shp, FloodSandbag_2016_220710_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_FloodSandbag_2016_220710.save()
 
+    print('Loading data for Summer_kingco')
+    from disasterinfosite.models import Summer_kingco
+    lm_Summer_kingco = LayerMapping(Summer_kingco, Summer_kingco_shp, Summer_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Summer_kingco.save()
+
     print('Loading data for EQUrm_2022_220710')
     from disasterinfosite.models import EQUrm_2022_220710
     lm_EQUrm_2022_220710 = LayerMapping(EQUrm_2022_220710, EQUrm_2022_220710_shp, EQUrm_2022_220710_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
@@ -260,6 +327,11 @@ def run(verbose=True):
     from disasterinfosite.models import EQTsunami_2022_220707
     lm_EQTsunami_2022_220707 = LayerMapping(EQTsunami_2022_220707, EQTsunami_2022_220707_shp, EQTsunami_2022_220707_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQTsunami_2022_220707.save()
+
+    print('Loading data for EQ_kingco')
+    from disasterinfosite.models import EQ_kingco
+    lm_EQ_kingco = LayerMapping(EQ_kingco, EQ_kingco_shp, EQ_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_EQ_kingco.save()
 
     print('Loading data for Volcano_2016_220619')
     from disasterinfosite.models import Volcano_2016_220619
@@ -295,6 +367,11 @@ def run(verbose=True):
     from disasterinfosite.models import Winter_kingco
     lm_Winter_kingco = LayerMapping(Winter_kingco, Winter_kingco_shp, Winter_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_Winter_kingco.save()
+
+    print('Loading data for LS_kingco')
+    from disasterinfosite.models import LS_kingco
+    lm_LS_kingco = LayerMapping(LS_kingco, LS_kingco_shp, LS_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_LS_kingco.save()
 
     # END OF GENERATED CODE BLOCK
     ######################################################
