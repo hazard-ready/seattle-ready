@@ -16,8 +16,28 @@ imagesDir = os.path.join(dataDir, 'images/prepare')
 file = os.path.join(dataDir, "prepare.xlsx")
 
 # All other fields are required
-optionalFields = ['image', 'happy', 'happy-es', 'useful',
-                  'useful-es', 'property', 'property-es', 'external_icon']
+optionalFields = [
+    'image',
+    'happy',
+    'happy-es',
+    'happy-cn',
+    'happy-ru',
+    'happy-so',
+    'happy-vi',
+    'useful',
+    'useful-es',
+    'useful-cn',
+    'useful-ru',
+    'useful-so',
+    'useful-vi',
+    'property',
+    'property-es',
+    'property-cn',
+    'property-ru',
+    'property-so',
+    'property-vi',
+    'external_icon'
+]
 
 
 def run():
