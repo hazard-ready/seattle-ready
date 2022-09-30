@@ -162,6 +162,16 @@ WEBPACK_LOADER = {
 FORCE_SCRIPT_NAME = '/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
+if DEBUG:
+    # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
+    STATIC_URL = '/static/'
+else:
+    # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
+    # STATIC_URL = '/SUBDIR/static/'
+    # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
+    # STATIC_URL = '/zr/static/'
+    STATIC_URL = '/seattle/static/'
+
 WHITENOISE_STATIC_PREFIX = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -172,14 +182,7 @@ GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'img')
 
 if DEBUG:
-    # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
-    STATIC_URL = '/static/'
     MEDIA_URL = '/media/img/'
 
 else:
-    # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
-    # STATIC_URL = '/SUBDIR/static/'
-    # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
-    # STATIC_URL = '/zr/static/'
-    STATIC_URL = '/seattle/static/'
     MEDIA_URL = '/seattle/static/img/'
