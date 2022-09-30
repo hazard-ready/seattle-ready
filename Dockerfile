@@ -48,7 +48,7 @@ RUN pip list
 WORKDIR /app/disasterinfosite
 RUN mkdir -p media/img/photos
 RUN mkdir -p media/img/data
-RUN unzip data.zip
+RUN rm -rf data && unzip data.zip
 
 RUN npm install && npm run webpack
 
