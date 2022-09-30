@@ -42,17 +42,17 @@ EQCascadia_2020_220619_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
+Flood100yr500yr_2020_220907_mapping = {
+    'lookup_val': 'lookup_val',
+    'geom': 'MULTIPOLYGON'
+}
+
 Volcano_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
 
 EQSeattleNorth_2017_220619_mapping = {
-    'lookup_val': 'lookup_val',
-    'geom': 'MULTIPOLYGON'
-}
-
-Flood100yr500yr_2020_220619_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
 }
@@ -117,11 +117,6 @@ Heat_2020_20220803_mapping = {
     'geom': 'MULTIPOLYGON'
 }
 
-seattle_kingco_mapping = {
-    'lookup_val': 'lookup_val',
-    'geom': 'MULTIPOLYGON'
-}
-
 Winter_kingco_mapping = {
     'lookup_val': 'lookup_val',
     'geom': 'MULTIPOLYGON'
@@ -135,15 +130,15 @@ LS_kingco_mapping = {
 
 FireHazardPotential_2020_220619_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/FireHazardPotential_2020_220619.tif'))
 EQNisqually_2001_171004_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQNisqually_2001_171004.shp'))
+FireWUI_2021_220914_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/FireWUI_2021_220914.tif'))
 Flood_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Flood_kingco.shp'))
 EQTsunami_2022_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQTsunami_2022_220619.shp'))
 EQLiquefaction_2019_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQLiquefaction_2019_220619.shp'))
 EQCascadia_2020_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQCascadia_2020_220619.shp'))
+Flood100yr500yr_2020_220907_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Flood100yr500yr_2020_220907.shp'))
 Volcano_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Volcano_kingco.shp'))
 LSSteepPotential_2018_220701_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/LSSteepPotential_2018_220701.tif'))
 EQSeattleNorth_2017_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/EQSeattleNorth_2017_220619.shp'))
-Flood100yr500yr_2020_220619_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Flood100yr500yr_2020_220619.shp'))
-FireWUI_2021_220619_tif = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/reprojected/FireWUI_2021_220619.tif'))
 Fire_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Fire_kingco.shp'))
 LSHistorical_2020_220701_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/LSHistorical_2020_220701.shp'))
 FloodSandbag_2016_220710_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/FloodSandbag_2016_220710.shp'))
@@ -156,7 +151,6 @@ EQCascadiaDisplaced_2017_220619_shp = os.path.abspath(os.path.join(os.path.dirna
 FloodDamInund_2013_220710_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/FloodDamInund_2013_220710.shp'))
 FloodCMZ_2015_220703_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/FloodCMZ_2015_220703.shp'))
 Heat_2020_20220803_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Heat_2020_20220803.shp'))
-seattle_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/seattle_kingco.shp'))
 Winter_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/Winter_kingco.shp'))
 LS_kingco_shp = os.path.abspath(os.path.join(os.path.dirname(BASE_DIR), 'disasterinfosite/data/simplified/LS_kingco.shp'))
 # END OF GENERATED CODE BLOCK
@@ -255,6 +249,10 @@ def run(verbose=True):
     lm_EQNisqually_2001_171004 = LayerMapping(EQNisqually_2001_171004, EQNisqually_2001_171004_shp, EQNisqually_2001_171004_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQNisqually_2001_171004.save()
 
+    print('Loading data for FireWUI_2021_220914')
+    from disasterinfosite.models import FireWUI_2021_220914
+    tileLoadRaster(FireWUI_2021_220914, FireWUI_2021_220914_tif)
+
     print('Loading data for Flood_kingco')
     from disasterinfosite.models import Flood_kingco
     lm_Flood_kingco = LayerMapping(Flood_kingco, Flood_kingco_shp, Flood_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
@@ -275,6 +273,11 @@ def run(verbose=True):
     lm_EQCascadia_2020_220619 = LayerMapping(EQCascadia_2020_220619, EQCascadia_2020_220619_shp, EQCascadia_2020_220619_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQCascadia_2020_220619.save()
 
+    print('Loading data for Flood100yr500yr_2020_220907')
+    from disasterinfosite.models import Flood100yr500yr_2020_220907
+    lm_Flood100yr500yr_2020_220907 = LayerMapping(Flood100yr500yr_2020_220907, Flood100yr500yr_2020_220907_shp, Flood100yr500yr_2020_220907_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
+    lm_Flood100yr500yr_2020_220907.save()
+
     print('Loading data for Volcano_kingco')
     from disasterinfosite.models import Volcano_kingco
     lm_Volcano_kingco = LayerMapping(Volcano_kingco, Volcano_kingco_shp, Volcano_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
@@ -288,15 +291,6 @@ def run(verbose=True):
     from disasterinfosite.models import EQSeattleNorth_2017_220619
     lm_EQSeattleNorth_2017_220619 = LayerMapping(EQSeattleNorth_2017_220619, EQSeattleNorth_2017_220619_shp, EQSeattleNorth_2017_220619_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_EQSeattleNorth_2017_220619.save()
-
-    print('Loading data for Flood100yr500yr_2020_220619')
-    from disasterinfosite.models import Flood100yr500yr_2020_220619
-    lm_Flood100yr500yr_2020_220619 = LayerMapping(Flood100yr500yr_2020_220619, Flood100yr500yr_2020_220619_shp, Flood100yr500yr_2020_220619_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
-    lm_Flood100yr500yr_2020_220619.save()
-
-    print('Loading data for FireWUI_2021_220619')
-    from disasterinfosite.models import FireWUI_2021_220619
-    tileLoadRaster(FireWUI_2021_220619, FireWUI_2021_220619_tif)
 
     print('Loading data for Fire_kingco')
     from disasterinfosite.models import Fire_kingco
@@ -357,11 +351,6 @@ def run(verbose=True):
     from disasterinfosite.models import Heat_2020_20220803
     lm_Heat_2020_20220803 = LayerMapping(Heat_2020_20220803, Heat_2020_20220803_shp, Heat_2020_20220803_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
     lm_Heat_2020_20220803.save()
-
-    print('Loading data for seattle_kingco')
-    from disasterinfosite.models import seattle_kingco
-    lm_seattle_kingco = LayerMapping(seattle_kingco, seattle_kingco_shp, seattle_kingco_mapping, transform=True, encoding='UTF-8', unique=['lookup_val'])
-    lm_seattle_kingco.save()
 
     print('Loading data for Winter_kingco')
     from disasterinfosite.models import Winter_kingco

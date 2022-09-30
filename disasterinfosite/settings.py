@@ -159,7 +159,6 @@ WEBPACK_LOADER = {
     }
 }
 
-FORCE_SCRIPT_NAME = '/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG:
@@ -170,6 +169,7 @@ else:
     # STATIC_URL = '/SUBDIR/static/'
     # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
     # STATIC_URL = '/zr/static/'
+    FORCE_SCRIPT_NAME = '/seattle/'
     STATIC_URL = '/seattle/static/'
 
 WHITENOISE_STATIC_PREFIX = '/static/'
