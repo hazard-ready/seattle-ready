@@ -29,6 +29,7 @@ if DEBUG:
                         format='%(asctime)s %(levelname)s %(message)s')
 else:
     ALLOWED_HOSTS = ['*']
+    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
 
 # Application definition
 INSTALLED_APPS = (
