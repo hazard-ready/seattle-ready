@@ -1,227 +1,154 @@
-require('../css/normalize.css');
-require('../css/foundation.min.css');
-require('leaflet/dist/leaflet.css');
-require("slick-carousel/slick/slick.css");
-require("slick-carousel/slick/slick-theme.css");
-require('../css/app.css');
+require("normalize.css/normalize.css");
+require("leaflet/dist/leaflet.css");
+require("../style/app.scss");
 
-var boundaryShape = require('../img/boundary.json');
+var boundaryShape = require("./boundary.json");
 
-require('../img/marker-icon.png');
-require('../img/marker-shadow.png');
-require('../img/thinking.gif');
-require('../img/favicon.ico');
-require('../img/logo.png');
+require("../img/favicon.ico");
+require("../img/thinking.gif");
+require("../img/logo.png");
+require("../img/logo-no-text.png");
+require("../img/icon-search.png");
+require("../img/caret.svg");
+require("../img/language.svg");
+require("../img/locate-me.svg");
 
-require('slick-carousel');
-var L = require('leaflet');
-var $ = require('jquery');
-var Foundation = require('foundation-sites');
+// Our Data Sources pdf that gets linked to in several snuggets
+// require("../img/data-sources.pdf");
 
-// This is on window so that it can get called after the google maps API script is loaded asynchronously.
-window.initAddressInput = function() {
-  // Set up autocomplete
-  var autocomplete = new google.maps.places.Autocomplete($locationInput[0]);
+require("./users");
+require("./sections");
 
-  // submit location text
-  $locationSubmit.click(submitLocationQuery);
+// IE11 polyfills
+require("url-polyfill");
 
-  // hitting enter key in the textfield will also trigger submit
-  $locationInput.keydown(function(event) {
-    if (event.keyCode === 13) {
-      submitLocationQuery();
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    "use strict";
+    if (typeof start !== "number") {
+      start = 0;
+    }
+
+    if (start + search.length > this.length) {
       return false;
-    }
-  });
-};
-
-var $locationInput = $('#location-text');
-var $locationSubmit = $('#location-submit');
-var $autoLocationSubmit = $('.auto-location-submit');
-var $loading = $('.loading');
-
-// during api calls, disable the form
-function disableForm() {
-  $locationInput.prop("disabled", true);
-  $locationSubmit.addClass("disabled");
-  $autoLocationSubmit.addClass("disabled");
-  $loading.show();
-}
-
-// if a search fails or a restart, enable the form
-function enableForm() {
-  $locationInput.prop("disabled", false);
-  $locationSubmit.removeClass("disabled");
-  $autoLocationSubmit.removeClass("disabled");
-  $loading.hide();
-}
-
-function submitLocation(lat,lng, location_query_text) {
-  var queryString = "?lat=" + lat + "&lng=" + lng;
-  if(location_query_text && location_query_text.length) {
-    queryString = queryString  + "&loc=" + location_query_text;
-  }
-  document.location =  encodeURI(document.location.pathname + queryString);
-}
-
-function submitLocationQuery() {
-  // grab the query value, ignoring it if it's empty
-  var location_query_text = $locationInput.val();
-  if (location_query_text.length === 0) return;
-  disableForm();
-
-  // request geocoding from google CLIENT SIDE!
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { 'address': location_query_text}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      var lat = results[0].geometry.location.lat();
-      var lon = results[0].geometry.location.lng();
-      submitLocation(lat,lon, location_query_text);
     } else {
-      $(".geocode-error-message").html($('p').text("We had a problem finding that location."));
+      return this.indexOf(search, start) !== -1;
     }
-  });
+  };
+}
+
+// This is the base repository Mapquest key. Get your own
+// Mapquest key for a new app!
+var MAPQUEST_KEY = "b3ZxSWOID7jOlLLGb8KvPxbF4DGBMEHy";
+var osmUrl =
+  "//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4";
+var osmAttrib =
+  'Map data © <a href="//openstreetmap.org">OpenStreetMap</a> contributors';
+
+var boundaryStyle = {
+  color: "rgb(253, 141, 60)",
+  weight: 4,
+  opacity: 1,
+  fillColor: "#ffffff",
+  fillOpacity: 0.7
 };
+
+var location_query_text = "";
+var input_lat;
+var input_lng;
+var $locationInput;
+
+// grab the position, if possible
+var query_lat = getURLParameter("lat");
+var query_lng = getURLParameter("lng");
 
 // convenience function to extract url parameters
 function getURLParameter(name) {
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-  if (results==null) {
-     return null;
-  } else {
-     return results[1] || 0;
+  var results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
+    window.location.href
+  );
+  return results === null ? null : results[1] || 0;
+}
+
+// Reload the current page, with the specified parameters (to show a location on the map and its information)
+function loadPageWithParameters(lat, lng, queryText) {
+  var query = "?lat=" + lat + "&lng=" + lng;
+  if (queryText) {
+    query += "&loc=" + queryText;
   }
-};
+  document.location = encodeURI(document.location.pathname + query);
+}
 
-// Set up slick photo slideshow
-function loadGallery() {
-  var currentSlideElement = $('.disaster-content.active .past-photos');
-  currentSlideElement.slick({
-    slidesToShow: 1,
-    variableWidth: false,
-    prevArrow: '<button type="button" class="slick-prev"><</button>',
-    nextArrow: '<button type="button" class="slick-next">></button>'
-  });
-  return currentSlideElement;
-};
+function showGeocodeError() {
+  $(".geocode-error-message").removeClass("hide");
+}
 
-// Helpers for the sign-up / log in form
-function setValueOnFocus(el, value) {
-  el.focus(function() {
-    if(el.val() === "") {
-      el.val(value);
+function hideGeocodeError() {
+  $(".geocode-error-message").addClass("hide");
+}
+
+function reverseGeocodeLocation(lat, lng) {
+  // if we don't have text for the location, reverse geocode to get it
+  return $.ajax({
+    type: "GET",
+    url: "https://www.mapquestapi.com/geocoding/v1/reverse",
+    data: {
+      key: MAPQUEST_KEY,
+      location: lat + "," + lng,
+      outFormat: "json",
+      thumbMaps: false
     }
-  });
-};
-
-function requiredFocus(el) {
-  el.focus(function() {
-    el.removeAttr('placeholder');
-  });
-};
-
-function requiredBlur(el, text) {
-  el.blur(function() {
-    if(el.val() === "") {
-      el.attr('placeholder', text);
-    }
-  });
-};
-
-function getCookie(name) {
-  var cookieValue = null;
-  if (document.cookie && document.cookie != '') {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = $.trim(cookies[i]);
-      // Does this cookie string begin with the name we want?
-      if (cookie.substring(0, name.length + 1) == (name + '=')) {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
-        }
+  })
+    .then(function(result) {
+      // We have at least one result and nothing went wrong
+      if (result.info.statuscode === 0 && result.results.length > 0) {
+        var address = result.results[0].locations[0];
+        return address.street +
+          ", " +
+          address.adminArea5 +
+          ", " +
+          address.adminArea3 +
+          " " +
+          address.postalCode;
+      } else {
+        console.log("Reverse geocoding error messages", result.info.messages);
       }
+    })
+    .catch(function(error) {
+      console.log("reverse geocoding error", error);
+    });
+}
+
+function submitLocation(lat, lng, queryText) {
+  if (!queryText) {
+    reverseGeocodeLocation(lat, lng).then(function(queryText) {return loadPageWithParameters(lat, lng, queryText);})
+  } else {
+    loadPageWithParameters(lat, lng, queryText);
   }
-  return cookieValue;
-};
+}
 
-function sendAjaxAuthRequest(url, data, error, success) {
-  var csrftoken = getCookie('csrftoken');
-  $.ajaxSetup({
-    crossDomain: false,
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("X-CSRFToken", csrftoken);
-    }
-  });
-  $.ajax({
-    type: "POST",
-    url: url,
-    data: data,
-    error: error,
-    success: success
-  });
-};
-
-function hasInvalidInput($form) {
-  var inputs = $form.find('input:visible');
-  for(var i = 0; i < inputs.length; i++ ) {
-    if(!inputs[i].checkValidity()) {
-      return true;
-    }
-  }
-  return false;
-};
-
-Foundation.Foundation.addToJquery($);
-
-$( document ).ready(function() {
-  $(document).foundation();
-
-  $('a').on('click', function(e) {
-    if(e.currentTarget.hostname !== location.hostname) {
-      return trackOutboundLink(e.currentTarget.href, e.currentTarget.target === "_blank");
-    }
-  });
-
-  // grab the position, if possible
-  var query_lat = getURLParameter('lat');
-  var query_lng = getURLParameter('lng');
-
+function setUpMap() {
   // set up the map
-  var map = L.map('map');
+  var map = new L.Map("map", {
+    scrollWheelZoom: false
+  });
   if (query_lat && query_lng) {
     zoom = 14;
     map.setView([query_lat, query_lng], zoom);
-  } else { // use the data bounds if we don't have a position in the query string
+  } else {
+    // use the data bounds if we don't have a position in the query string
     map.fitBounds(mapBounds);
   }
-  map.scrollWheelZoom.disable();
 
-// uncomment these lines to go back to Thunderforest's map tiles.
-// at the time of making this change, they have a specific issue:
-// Lake Washington is marked as land at sea level, while Mercer Island is marked as water.
-// This issue is common to multiple Thunderforest styles, but not OSM itself
-// You can check http://thunderforest.com/maps/landscape/ to see if it's fixed
-//  var osmUrl='//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4';
-//  var osmAttrib='Map data © <a href="//openstreetmap.org">OpenStreetMap</a> contributors';
-
-// temp switch to Stamen's Terrain style
-// Comment these lines and uncomment the ones above to go back
-// see http://maps.stamen.com/terrain/#12/47.5697/-122.2203 for a style preview
-  var osmUrl='//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png';
-  var osmAttrib='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
-  var layer = new L.TileLayer(osmUrl, {attribution: osmAttrib}).addTo(map);
+  var layer = L.tileLayer(osmUrl, { attribution: osmAttrib }).addTo(map);
   layer.setOpacity(0.6);
 
-  L.geoJson(boundaryShape,
-    { style: {
-        "color": "rgb(165, 199, 39)",
-        "weight": 4,
-        "opacity": 1,
-        "fillColor": "#ffffff",
-        "fillOpacity": 0.7
-    }}).addTo(map);
+  var boundaryLayer = L.geoJson(boundaryShape, {
+    style: boundaryStyle
+  }).addTo(map);
 
-  document.getElementById('map').style.cursor='default';
+  document.getElementById("map").style.cursor = "default";
+
   if (query_lat && query_lng) {
     var icon = L.icon({
       iconUrl: require("../img/marker-icon.png"),
@@ -239,194 +166,248 @@ $( document ).ready(function() {
   }
 
   // Make a click on the map submit the location
-  map.on('click', function(e) {
-    $locationInput.val("");  // clear query text
-    disableForm();
+  map.on("click", function(e) {
+    $locationInput.val(""); // clear query text
     submitLocation(e.latlng.lat, e.latlng.lng, "");
   });
+}
+
+function setStopHeight(heroContainer) {
+  var headerHeight = $("header").outerHeight();
+  var informationHeight = heroContainer.outerHeight();
+  return headerHeight + informationHeight - 20;
+}
+
+function lazyLoadVideos() {
+  $(".video").each(function(idx) {
+    var self = $(this);
+    var embedCode = self.data("embed");
+    // Load the video preview thumbnails asynchronously
+    var preview = new Image();
+    preview.src = "https://img.youtube.com/vi/" + embedCode + "/sddefault.jpg";
+    preview.alt = "";
+    $(preview).on('load', function() {
+      self.append(preview);
+    });
+
+    self.click(function() {
+      var iframe = $(document.createElement("iframe"));
+
+      iframe.attr("frameborder", 0);
+      iframe.attr("allowfullscreen", "");
+      iframe.attr(
+        "src",
+        "https://www.youtube.com/embed/" +
+          embedCode +
+          "?rel=0&showinfo=0&autoplay=1"
+      );
+
+      // Swap out the static image and the play button for the video when someone clicks on it.
+      self.empty();
+      self.append(iframe);
+    });
+  });
+}
+
+$(document).ready(function() {
+  var infoContainer = $(".information-container--found-content");
+  var heroContainer = $(".hero-container");
+  var contentContainer = $(".content-container");
+
+  $('a').on('click', function(e) {
+    if(e.currentTarget.hostname !== location.hostname) {
+      return trackOutboundLink(e.currentTarget.href, e.currentTarget.target === "_blank");
+    }
+  });
+
+  // if we are on the found content page, stick the hero container, set up our tabs and lazy load our videos.
+  if (infoContainer.length) {
+    var stopHeight = setStopHeight(heroContainer);
+
+    var hazardLinks = $('.hazard-link');
+
+    // get the hash, if there is one, and select the correct tab
+    var anchor = window.location.hash;
+    $('a[href="' + anchor + '"]').addClass('selected');
+
+    // Select the correct tab when we click on one
+    hazardLinks.click(function(event) {
+      // Clicking one of these from a non-collapsed header makes things weird if we don't compensate for the way the header is going to collapse.
+      if(!heroContainer.hasClass('sticky')) {
+        contentContainer.css({ "padding-top": "150px" });
+      }
+      hazardLinks.removeClass('selected');
+      $(event.delegateTarget).addClass('selected');
+    });
+
+    // Highlight the correct hazard tabs as we scroll
+    var anchors = $('.anchor');
+    var previousHazard;
+
+    var stickMenu = function() {
+      var scrollTop = $(document).scrollTop();
+      if (scrollTop >= stopHeight) {
+        heroContainer.addClass("sticky");
+        contentContainer.css({ "padding-top": stopHeight + 100 + "px" });
+
+        // Get id of current hazard
+         var currentHazard = anchors.filter(function(){
+          var container = $(this).parent();
+          var top = container.offset().top - 200;
+          return (top <= scrollTop && container.outerHeight() + top >= scrollTop)
+         }).attr('id');
+
+         if(currentHazard !== previousHazard) {
+            previousHazard = currentHazard;
+            hazardLinks.removeClass('selected');
+            var currentTab = $('a[href="#' + currentHazard + '"]');
+            currentTab.addClass('selected');
+            if(currentTab[0]) {
+              currentTab[0].scrollIntoView();
+            }
+         }
+      } else {
+        heroContainer.removeClass("sticky");
+        contentContainer.css({ "padding-top": "" });
+      }
+    };
+
+    $(document).scroll(stickMenu);
+
+    $(window).resize(function() {
+      stopHeight = setStopHeight(heroContainer);
+    });
+
+    lazyLoadVideos();
+  }
+
+  // Set up input box
+  $locationInput = $("#location-text");
+  var $locationSubmit = $("#location-submit");
+  var $autoLocationButton = $(".auto-location-submit");
+  if (document.getElementById("map")) {
+    setUpMap();
+  }
 
   // grab and set any previously entered query text
-  var loc = getURLParameter('loc');
-  var location_query_text = (loc) ? decodeURIComponent(loc) : query_lat + "," + query_lng;
-  if (!query_lat || !query_lng)
-    location_query_text = "";
-  $locationInput.val(location_query_text);
+  var loc = getURLParameter("loc");
+  if(loc) {
+    $locationInput.val(decodeURIComponent(loc));
+  } else if(query_lat && query_lng) {
+    // or if there isn't any, and we have a lat and lng, reverse geocode our lat and lng, and set it in the UI.
+    reverseGeocodeLocation(query_lat, query_lng).then(function(queryText) {
+      $locationInput.val(queryText);
+      $('.info__location').text(queryText);
+    });
+  }
 
+  // Hide a geocoding error message every time, if there is one
+  $locationInput.on("click", hideGeocodeError);
 
-  // auto location
-  $autoLocationSubmit.click(function() {
-    disableForm();
-    var geoOptions = { timeout: 8000 };
-    var geoSuccess = function(position) {
-      var lat = position.coords.latitude;
-      var lng = position.coords.longitude;
-      // success! onwards to view the content
-      submitLocation(lat, lng);
-    };
-    var geoError = function(error) {
-      console.log('Error finding your location: ' + error.message);
-      enableForm();
-    };
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
-  });
+  // Set up autocomplete when someone clicks in the input field
+  $locationInput.one("click", function() {
+    var input = document.getElementById("location-text");
+    $locationInput.prop("placeholder", "");
+    var autocomplete = placeSearch({
+      key: MAPQUEST_KEY,
+      container: input,
+      useDeviceLocation: !!navigator.geolocation
+    });
+    $locationInput.focus();
 
-  // Initialize the slide gallery on the open disaster tab
-  var slideContainer = loadGallery();
-
-  // Open a new image gallery when a new tab is opened
-  $('.disaster-tabs').on('toggled', function () {
-    slideContainer.slick('unslick');
-    slideContainer = loadGallery();
-  });
-
-
-// Signup and login functionality
-
-  $(".button--signup").click(function() {
-    $("#user-button-container").hide();
-    $("#failure-container").hide();
-    $("#user-signup-container").show();
-  });
-
-  $(".button--login").click(function() {
-    $("#user-button-container").hide();
-    $("#user-info-container--invalid").hide();
-    $("#failure-container").hide();
-    $("#user-login-container").show();
-  });
-
-  $(".button--cancel").click(function() {
-    $("#user-signup-container").hide();
-    $("#user-login-container").hide();
-    $("#user-button-container").show();
-  });
-
-  $(".button--cancel-update").click(function() {
-    $("#user-profile-container").hide();
-    $("#user-info-container").show();
-  });
-
-  $(".button--update").click(function() {
-    $("#user-info-container").hide();
-    $("#user-button-container--logged-in").hide();
-    $("#failure-container").hide();
-    $("#user-profile-container").show();
-  });
-
-  $(".button--logout").click(function() {
-    sendAjaxAuthRequest(
-      "accounts/logout/",
-      { next: "/" },
-      function() {
-        $("#user-info-container").hide();
-        $("#user-button-container--logged-in").hide();
-        $("#failure-container").show();
-      },
-      function() {
-        $("#user-info-container").hide();
-        $("#user-button-container--logged-in").hide();
-        $("#failure-container").hide();
-        $("#user-button-container").show();
-      }
-    );
-  });
-
-  requiredFocus($("#user-signup__username"));
-  requiredFocus($("#user-signup__password"));
-  requiredBlur($("#user-signup__username"), "Valid email address required.");
-  requiredBlur($("#user-signup__password"), "Required");
-  setValueOnFocus($("#user-signup__state"), "WA");
-
-  $("#user-signup__submit").click(function() {
-    if(hasInvalidInput($("#user-signup__form"))) {
-      return false;
-    }
-
-    var username = $('#user-signup__username').val();
-    var password = $('#user-signup__password').val();
-    var address1 = $('#user-signup__address1').val();
-    var address2 = $('#user-signup__address2').val();
-    var city = $('#user-signup__city').val();
-    var state = $('#user-signup__state').val();
-    var zip = $('#user-signup__zip').val();
-
-    sendAjaxAuthRequest(
-      "accounts/create_user/",
-      {
-        username: username,
-        password: password,
-        address1: address1,
-        address2: address2,
-        city: city,
-        state: state,
-        zip_code: zip,
-        next: document.location.pathname
-      },
-      function(err) {
-        $("#user-signup-container").hide();
-        $("#failure-container").show();
-      },
-      function(){
-        $("#user-signup-container").hide();
-        $("#user-signup-result-container").show();
+    autocomplete.on("change", function(event) {
+      input_lat = event.result.latlng.lat;
+      input_lng = event.result.latlng.lng;
     });
   });
 
-  $("#user-login__submit").click(function() {
-    if(hasInvalidInput($("#user-login__form"))) {
+  // hitting enter key in the textfield will trigger submit
+  $locationInput.keydown(function(event) {
+    if (event.keyCode == 13) {
+      $locationSubmit.trigger("click");
       return false;
     }
+  });
 
-    var username = $('#user-login__username').val();
-    var password = $('#user-login__password').val();
+  // submit location text
+  $locationSubmit.click(function() {
+    // grab the query value, ignoring it if it's empty
+    location_query_text = $locationInput.val();
+    if (location_query_text.trim().length == 0) return;
+    disableForm();
 
-    sendAjaxAuthRequest(
-      "accounts/login/",
-      {
-        username: username,
-        password: password,
-        next: document.location.pathname
-      },
-      function() {
-        $("#user-login-container").hide();
-        $("#user-info-container--invalid").show();
-      },
-      function() {
-        document.location.hash = "user-interaction-container";
-        document.location.reload(true);
-        $("#user-login-container").hide();
-        $("#user-info-container").show();
+    if (input_lat && input_lng) {
+      submitLocation(input_lat, input_lng, location_query_text);
+      return;
+    }
+
+    // Geocode our location text if we don't have a lat/lng from the autocomplete (e.g someone just typed in there and hit 'enter')
+    $.ajax({
+      type: "GET",
+      url: "https://www.mapquestapi.com/geocoding/v1/address",
+      data: {
+        key: MAPQUEST_KEY,
+        location: location_query_text,
+        outFormat: "json",
+        thumbMaps: false,
+        boundingBox: mapBounds
+      }
+    })
+      .then(function(result) {
+        if (result.info.statuscode === 0) {
+          var lat = result.results[0].locations[0].latLng.lat;
+          var lon = result.results[0].locations[0].latLng.lng;
+          submitLocation(lat, lon, location_query_text);
+        } else {
+          console.log("Geocoding error messages", result.info.messages);
+          showGeocodeError();
+        }
+      })
+      .catch(function(error) {
+        console.log("error", error);
+        showGeocodeError();
       });
   });
 
-  $("#user-profile__submit").click(function() {
-    if(hasInvalidInput($("#user-profile__form"))) {
-      return false;
+  // auto location (the Find Me button)
+  $autoLocationButton.click(function() {
+    hideGeocodeError();
+    disableForm();
+
+    if (!navigator.geolocation) {
+      showGeocodeError();
+      enableForm();
+    } else {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          // success! onwards to view the content
+          submitLocation(lat, lng);
+        },
+        function(error) {
+          console.log("Error finding your location: " + error.message);
+          showGeocodeError();
+          enableForm();
+        },
+        { timeout: 8000 }
+      );
     }
-
-    var address1 = $('#user-profile__address1').val();
-    var address2 = $('#user-profile__address2').val();
-    var city = $('#user-profile__city').val();
-    var state = $('#user-profile__state').val();
-    var zip = $('#user-profile__zip').val();
-
-    sendAjaxAuthRequest(
-      "accounts/update_profile/",
-      {
-        address1: address1,
-        address2: address2,
-        city: city,
-        state: state,
-        zip_code: zip,
-        next: document.location.pathname
-      },
-      function(err) {
-        $("#user-profile-container").hide();
-        $("#failure-container").show();
-      },
-      function(){
-        $("#user-profile-container").hide();
-        $("#user-profile-result-container").show();
-    });
   });
+
+  // during api calls, disable the form
+  function disableForm() {
+    $locationInput.prop("disabled", true);
+    $locationSubmit.addClass("disabled");
+    $autoLocationButton.addClass("disabled");
+    $(".loading").show();
+  }
+
+  // if a search fails or a restart, enable the form
+  function enableForm() {
+    $locationInput.prop("disabled", false);
+    $locationSubmit.removeClass("disabled");
+    $autoLocationButton.removeClass("disabled");
+    $(".loading").hide();
+  }
 });

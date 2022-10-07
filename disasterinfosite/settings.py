@@ -1,15 +1,18 @@
+import dj_database_url
+import django.conf.locale
+from os import environ
+import os
 import logging
+
 """
 Django settings for disasterinfosite project.
 """
 
 ADMINS = [
-          ('Melinda Minch', 'melinda@melindaminch.com')
-         ]
+    ('Melinda Minch', 'melinda@melindaminch.com')
+]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-from os import environ
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -22,9 +25,11 @@ DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '10.0.2.2']
     SITE_URL = "http://127.0.0.1:8000"
-    logging.basicConfig(level = logging.DEBUG, format = '%(asctime)s %(levelname)s %(message)s')
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)s %(message)s')
 else:
     ALLOWED_HOSTS = ['*']
+    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
 
 # Application definition
 INSTALLED_APPS = (
@@ -37,9 +42,14 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'embed_video',
-    'disasterinfosite',
+    'disasterinfosite.apps.DisasterInfoConfig',
     'solo',
     'webpack_loader'
+)
+
+
+EMBED_VIDEO_BACKENDS = (
+    'disasterinfosite.backends.LazyLoadBackend',
 )
 
 MIDDLEWARE = (
@@ -65,7 +75,6 @@ LANGUAGE_CODE = 'en'
 USE_L10N = True
 
 # Somali is not an officially supported language in Django, so this is a patch to add it.
-import django.conf.locale
 django.conf.locale.LANG_INFO['so'] = {
     'bidi': False,
     'code': 'so',
@@ -81,7 +90,10 @@ django.conf.locale.LANG_INFO['cn'] = {
     'name_local': '简体中文',
 }
 
-gettext = lambda s: s
+
+def gettext(s): return s
+
+
 LANGUAGES = (
     ('cn', gettext('Chinese')),
     ('en', gettext('English')),
@@ -100,40 +112,27 @@ USE_TZ = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            # insert your TEMPLATE_DIRS here
-        ],
+
+        'DIRS': [],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
-                'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-            ],
-            'loaders': [
-            # Template caching is on by default in 1.11, so take this out on upgrade.
-                ('django.template.loaders.cached.Loader', (
-                    'django.template.loaders.filesystem.Loader',
-                    'django.template.loaders.app_directories.Loader',)
-                )
+                'django.template.context_processors.request'
             ]
         },
     },
 ]
 
-
-### HEROKU CONFIGURATIONS ###
-# Added per instructions at https://devcenter.heroku.com/articles/getting-started-with-django
-
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
 
 DATABASES = {}
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -152,7 +151,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'build/', # must end with slash
+        'BUNDLE_DIR_NAME': 'build/',  # must end with slash
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
@@ -160,7 +159,6 @@ WEBPACK_LOADER = {
     }
 }
 
-FORCE_SCRIPT_NAME='/seattle/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG:
@@ -171,21 +169,20 @@ else:
     # STATIC_URL = '/SUBDIR/static/'
     # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
     # STATIC_URL = '/zr/static/'
+    FORCE_SCRIPT_NAME = '/seattle/'
     STATIC_URL = '/seattle/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-WHITENOISE_STATIC_PREFIX='/static/'
+WHITENOISE_STATIC_PREFIX = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Specially for GeoDjango on Heroku
 GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
 GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 
-### ^^^^^^^^^^^^^^^^^^^^^^^^^ ###
-### END HEROKU CONFIGURATIONS ###
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'img')
-MEDIA_URL = '/seattle/static/img/'
+
+if DEBUG:
+    MEDIA_URL = '/media/img/'
+
+else:
+    MEDIA_URL = '/seattle/static/img/'

@@ -1,16 +1,36 @@
-from django.shortcuts import render
 from collections import OrderedDict
-from .models import Snugget, Location, SiteSettings, SupplyKit, ImportantLink, ShapefileGroup, PastEventsPhoto, DataOverviewImage, UserProfile
-from .fire_dial import make_icon
-from django.contrib.auth import authenticate, login
+from .models import (
+    DataOverviewImage,
+    Location,
+    PastEventsPhoto,
+    PreparednessAction,
+    ShapefileGroup,
+    SiteSettings,
+    SlideshowSnugget,
+    Snugget,
+    UserProfile
+)
+
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpResponseRedirect
 from django.db.utils import IntegrityError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.urls import reverse
+
+import logging
+import re
+
+
+def reverse_no_i18n(viewname, *args, **kwargs):
+    result = reverse(viewname, *args, **kwargs)
+    m = re.match(r'(/[^/]*)(/.*$)', result)
+    return m.groups()[1]
+
 
 def create_user(request):
     if request.method == 'POST':
-
         try:
             user = User.objects.create_user(
                 username=request.POST.get('username', ''),
@@ -19,7 +39,7 @@ def create_user(request):
             )
         except IntegrityError:
             return HttpResponse(status=409, reason="That user already exists.")
-        except ValueError:
+        except ValueError as error:
             return HttpResponse(status=400)
 
         profile = UserProfile(
@@ -48,6 +68,7 @@ def create_user(request):
     else:
         return HttpResponse(status=403)
 
+
 def login_view(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
@@ -60,6 +81,12 @@ def login_view(request):
     else:
         # Show an error page
         return HttpResponse(status=403)
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponse(status=201)
+
 
 def update_profile(request):
     if request.method == 'POST' and request.user.is_authenticated:
@@ -80,83 +107,144 @@ def update_profile(request):
     else:
         return HttpResponse(status=403)
 
+
+@ensure_csrf_cookie
+def about_view(request):
+    renderData = {
+        'settings': SiteSettings.get_solo(),
+        'nextPath': reverse_no_i18n('about')
+    }
+    return render(request, "about.html", renderData)
+
+
+@ensure_csrf_cookie
+def data_view(request):
+    renderData = {
+        'settings': SiteSettings.get_solo(),
+        'nextPath': reverse_no_i18n('data'),
+        'quick_data_overview': DataOverviewImage.objects.all()
+
+    }
+    return render(request, "data.html", renderData)
+
+
+@ensure_csrf_cookie
+def prepare_view(request):
+    renderData = {
+        'settings': SiteSettings.get_solo(),
+        'actions': PreparednessAction.objects.all().order_by('cost'),
+        'logged_in': False,
+        'nextPath': reverse_no_i18n('prepare')
+    }
+
+    if request.user.is_authenticated:
+        renderData['logged_in'] = True
+        renderData['actions_taken'] = UserProfile.objects.get(
+            user=request.user).actions_taken.all().values_list('id', flat=True)
+
+    return render(request, "prepare.html", renderData)
+
+
+@ensure_csrf_cookie
+def prepare_action_update(request):
+    if request.method == 'POST' and request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            action_id = request.POST.get('action', '')
+            action = PreparednessAction.objects.get(id=action_id)
+            taken = request.POST.get('taken', '')
+
+            if taken == 'true':
+                profile.actions_taken.add(action)
+            else:
+                profile.actions_taken.remove(action)
+
+            profile.save()
+        except (ValueError, IntegrityError):
+            return HttpResponse(status=500)
+
+        return HttpResponse(status=201)
+    else:
+        return HttpResponse(status=403)
+
+
 @ensure_csrf_cookie
 def app_view(request):
-    location = Location.get_solo()
-    important_links = ImportantLink.objects.all()
-    settings = SiteSettings.get_solo()
-    data_bounds = Location.get_data_bounds()
-    supply_kit = SupplyKit.get_solo()
-    supply_kit.meals = 3 * supply_kit.days
-    quick_data_overview = DataOverviewImage.objects.all()
     username = None
     profile = None
+    path = reverse_no_i18n('index')
+
+    if 'QUERY_STRING' in request.META:
+        path = path + '?' + request.META['QUERY_STRING']
+
     if request.user.is_authenticated:
         username = request.user.username
-        profile = UserProfile.objects.get_or_create(user=request.user)
+        profile = UserProfile.objects.get(user=request.user)
 
-    template = "no_content_found.html"
+    renderData = {
+        'settings': SiteSettings.get_solo(),
+        'data_bounds': Location.get_data_bounds(),
+        'username': username,
+        'profile': profile,
+        'nextPath': path
+
+    }
+
+    template = "index.html"
 
     # if user submitted lat/lng, find our snuggets and send them to our template
     if 'lat' and 'lng' in request.GET:
         lat = request.GET['lat']
         lng = request.GET['lng']
 
-        if len(lat) > 0:
-            snugget_content = Snugget.findSnuggetsForPoint(lat=float(lat), lng=float(lng))
+        if'loc' in request.GET:
+            renderData['location_name'] = request.GET['loc']
 
-            data = {}
+        template = "no_content_found.html"
+
+        if lat and lng:
+            snugget_content = Snugget.findSnuggetsForPoint(
+                lat=float(lat), lng=float(lng))
+            data = {el: {'collapsible': {}, 'static': {}}
+                    for el in snugget_content}
+
             if snugget_content is not None:
-                for key, values in snugget_content['groups'].items():
-                    sections = {}
-                    if values:
+                for group, snuggets in snugget_content.items():
+
+                    if snuggets:
                         template = 'found_content.html'
-                        heading = values[0].group.display_name
-                        for text_snugget in values:
-                            if not text_snugget.image:
-                                text_snugget.dynamic_image = make_icon(text_snugget.percentage)
-                            if not text_snugget.section in sections:
-                                sections[text_snugget.section] = {}
-                            if text_snugget.sub_section in sections[text_snugget.section]:
-                                sections[text_snugget.section][text_snugget.sub_section].append(text_snugget)
+
+                        for snugget in snuggets:
+                            if snugget.percentage is not None:
+                                group.percentage = snugget.percentage
+                            if snugget.__class__ == SlideshowSnugget:
+                                snugget.photos = PastEventsPhoto.objects.filter(
+                                    snugget=snugget)
+
+                            if snugget.section.collapsible:
+                                if not snugget.section in data[group]['collapsible']:
+                                    data[group]['collapsible'][snugget.section] = [
+                                        snugget]
+                                else:
+                                    data[group]['collapsible'][snugget.section].append(
+                                        snugget)
                             else:
-                                sections[text_snugget.section][text_snugget.sub_section] = [text_snugget]
+                                if not snugget.section in data[group]['static']:
+                                    data[group]['static'][snugget.section] = [
+                                        snugget]
+                                else:
+                                    data[group]['static'][snugget.section].append(
+                                        snugget)
 
-                        for section, sub_section_dict in sections.items():
-                            sections[section] = OrderedDict(sorted(sub_section_dict.items(), key=lambda t: t[0].order_of_appearance))
+                    # Sort the sections by order_of_appearance
+                    # python 3.5 does not guarantee the ORDER of keys coming out of an ORDERED DICTIONARY.
+                    data = OrderedDict(
+                        sorted(data.items(), key=lambda t: t[0].order_of_appearance))
+                    data[group]['collapsible'] = OrderedDict(sorted(
+                        data[group]['collapsible'].items(), key=lambda t: t[0].order_of_appearance))
+                    data[group]['static'] = OrderedDict(
+                        sorted(data[group]['static'].items(), key=lambda t: t[0].order_of_appearance))
 
-                        photos = []
-                        for p in PastEventsPhoto.objects.filter(group=values[0].group):
-                            photos.append(p)
+            renderData['data'] = data
 
-                        data[key] = {
-                            'heading': heading,
-                            'sections': OrderedDict(sorted(sections.items(), key=lambda t: t[0].order_of_appearance )),
-                            'likely_scenario_title': values[0].group.likely_scenario_title,
-                            'likely_scenario_text': values[0].group.likely_scenario_text,
-                            'photos': photos
-                        }
-
-        return render(request, template, {
-            'location': location,
-            'settings': settings,
-            'supply_kit': supply_kit,
-            'important_links': important_links,
-            'data_bounds': data_bounds,
-            'data': OrderedDict(sorted(data.items(), key=lambda t: ShapefileGroup.objects.get(name=t[0]).order_of_appearance )),
-            'quick_data_overview': quick_data_overview,
-            'username': username,
-            'profile': profile
-        })
-
-
-    # if not, we'll still serve up the same template without data
-    else:
-        return render(request, 'index.html', {
-            'location': location,
-            'settings': settings,
-            'data_bounds': data_bounds,
-            'quick_data_overview': quick_data_overview,
-            'username': username,
-            'profile': profile
-        })
+    return render(request, template, renderData)

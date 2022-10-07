@@ -3,24 +3,28 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib.gis import admin
 from django.conf import settings
-from django.contrib.auth import login, logout
 
 from disasterinfosite import views
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
-   path('accounts/login/', login),
-   path('accounts/logout/', logout),
-   path('accounts/create_user/', views.create_user),
-   path('accounts/update_profile/', views.update_profile),
-   path('i18n/', include('django.conf.urls.i18n'))
+    path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
+
+    # API urls
+    path('accounts/login/', views.login_view, name="login"),
+    path('accounts/logout/', views.logout_view, name="logout"),
+    path('accounts/create_user/', views.create_user, name="create_user"),
+    path('accounts/update_profile/', views.update_profile, name="update_profile"),
+    path('accounts/update_prepare_action/',
+         views.prepare_action_update, name='prepare_action_update')
 ]
 
+# user-facing URLs
 urlpatterns += i18n_patterns(path('', views.app_view, name='index'))
-urlpatterns += i18n_patterns(path('accounts/login/',  login))
-urlpatterns += i18n_patterns(path('accounts/logout/', logout))
-urlpatterns += i18n_patterns(path('accounts/create_user/', views.create_user))
-urlpatterns += i18n_patterns(path('accounts/update_profile/', views.update_profile))
+urlpatterns += i18n_patterns(path('about/', views.about_view, name='about'))
+urlpatterns += i18n_patterns(path('prepare/',
+                                  views.prepare_view, name='prepare'))
+urlpatterns += i18n_patterns(path('data/', views.data_view, name='data'))
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

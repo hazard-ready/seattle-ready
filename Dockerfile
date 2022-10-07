@@ -29,7 +29,7 @@ RUN groupadd -r django && useradd --no-log-init -r -g django django
 RUN mkdir /home/django && chown -R django:django /home/django
 RUN mkdir /app
 
-
+# copy the application to the container:
 COPY . /app
 RUN chown -R django:django /app
 WORKDIR /app
@@ -46,7 +46,10 @@ RUN pip list
 
 # build front-end code
 WORKDIR /app/disasterinfosite
-RUN mkdir -p media
+RUN mkdir -p media/img/photos
+RUN mkdir -p media/img/data
+RUN rm -rf data && unzip data.zip
+
 RUN npm install && npm run webpack
 
 WORKDIR /app
