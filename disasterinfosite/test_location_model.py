@@ -3,10 +3,7 @@ from .models import Location
 
 class LocationModelTestCase(TestCase):
   def setUp(self):
-    Location.objects.create(
-      area_name="Melindaville",
-      community_leaders="Some information about community leaders"
-    )
+    Location.objects.create()
 
   def testObjectFormation(self):
     """The Location object is created properly as a singleton"""

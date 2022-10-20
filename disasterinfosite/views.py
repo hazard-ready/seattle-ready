@@ -218,8 +218,8 @@ def app_view(request):
                             if snugget.percentage is not None:
                                 group.percentage = snugget.percentage
                             if snugget.__class__ == SlideshowSnugget:
-                                snugget.photos = PastEventsPhoto.objects.filter(
-                                    snugget=snugget)
+                                snugget.photos = sorted(PastEventsPhoto.objects.filter(
+                                    snugget=snugget), key=lambda p: (p.image.height / p.image.width) + len(p.caption), reverse=True)
 
                             if snugget.section.collapsible:
                                 if not snugget.section in data[group]['collapsible']:

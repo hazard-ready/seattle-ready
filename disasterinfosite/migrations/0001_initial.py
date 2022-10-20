@@ -3,6 +3,7 @@
 import disasterinfosite.models
 from django.conf import settings
 import django.contrib.postgres.validators
+from django.contrib.postgres.operations import CreateExtension
 from django.db import migrations, models
 import django.db.models.deletion
 import embed_video.fields
@@ -17,6 +18,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        CreateExtension(name='postgis'),
+        CreateExtension(name='postgis_raster'),
         migrations.CreateModel(
             name='DataOverviewImage',
             fields=[
