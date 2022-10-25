@@ -111,10 +111,9 @@ header {
 #location-text,
 .mq-input {
   border: none;
-  flex: 1 1 auto;
+  flex: 1 0 130px;
   height: 40px;
   margin: 2px 2px 2px 8px;
-  min-width: 170px;
   text-overflow: ellipsis;
   z-index: $z-index-bottom;
 
@@ -152,12 +151,13 @@ header {
   background-color: $white;
   border: none;
   color: $light-accent;
-  flex: 0 0 120px;
+  flex: 0 1 170px;
   font-weight: 600;
   line-height: 1.4;
   margin-left: auto;
   padding: 0;
   transition: color 1s;
+  white-space: nowrap;
   z-index: $z-index-next;
 
   &:focus,
