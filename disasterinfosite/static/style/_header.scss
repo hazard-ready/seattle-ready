@@ -38,7 +38,7 @@ header {
 .logo--header {
   display: inline-block;
   /* Nestle the text a little closer to the logo. */
-  margin-right: -12px;
+  margin-right: -20px;
   max-height: 48px;
 
   @include breakpoint(medium) {
@@ -57,7 +57,6 @@ header {
   vertical-align: top;
 
   h3 {
-    font-size: 20px;
     margin: 0.75rem;
 
     @include breakpoint(medium-and-up) {
@@ -74,7 +73,7 @@ header {
 }
 
 .header__about--small {
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 0 2rem;
 }
 
