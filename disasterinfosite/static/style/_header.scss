@@ -11,6 +11,10 @@ header {
 
   @include breakpoint(large) {
     flex-direction: row;
+    padding: 5px 10px;
+  }
+
+  @include breakpoint(xlarge) {
     padding: 5px 20px;
   }
 }
@@ -27,8 +31,9 @@ header {
   }
 
   @include breakpoint(large) {
-    margin: 0 10px 0 0;
-    min-width: 228px;
+    display: flex;
+    margin: 0 5px 0 0;
+    min-width: unset;
   }
 }
 
@@ -48,7 +53,7 @@ header {
   }
 
   @include breakpoint(large) {
-    margin-right: -13px;
+    margin-right: 0;
     max-height: 65px;
   }
 }
@@ -60,8 +65,16 @@ header {
   h3 {
     margin: 0.75rem;
 
-    @include breakpoint(medium-and-up) {
+    @include breakpoint(medium) {
       font-size: 21px;
+    }
+
+    @include breakpoint(large) {
+      margin-right: 0.25rem;
+    }
+
+    @include breakpoint(xlarge) {
+      margin-right: 0.75rem;
     }
   }
 
@@ -70,7 +83,7 @@ header {
 .header__about {
   align-items: baseline;
   flex-shrink: 0;
-  margin-left: auto;
+  margin: 0.25rem 0 0 auto;
 }
 
 .header__about--small {
@@ -91,7 +104,7 @@ header {
 
   @include breakpoint(large) {
     font-size: 18px;
-    margin: 15px 0 0 10px;
+    margin: 18px 0 0 10px;
   }
 }
 
@@ -102,10 +115,15 @@ header {
   display: flex;
   flex: 2 1 auto;
   margin: 10px 5px 0;
+  overflow: auto;
   position: relative;
 
   @include breakpoint(large) {
-    margin: 14px 30px 14px auto;
+    margin: 10px auto;
+    flex: 1 0 auto;
+  }
+
+  @include breakpoint(xlarge) {
     max-width: 600px;
   }
 }
@@ -154,13 +172,13 @@ header {
   background-color: $white;
   border: none;
   color: $light-accent;
-  flex: 0 1 auto;
+  flex: 0 1 140px;
   font-weight: 600;
   line-height: 1.4;
   margin-left: auto;
-  margin-right: 4px;
-  padding: 0;
+  padding: 0 4px 0 0;
   transition: color 1s;
+  width: min-content;
   z-index: $z-index-next;
 
   &:focus,
@@ -171,6 +189,10 @@ header {
     .target {
       fill: $white;
     }
+  }
+
+  @include breakpoint(large) {
+    flex: 1 1 auto;
   }
 }
 
@@ -213,8 +235,11 @@ header {
   }
 
   @include breakpoint(large) {
-    margin-left: 30px;
-    margin-top: 15px;
+    margin-left: 0;
+  }
+
+  @include breakpoint(xlarge) {
+    margin-left: 15px;
   }
 }
 
