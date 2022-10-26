@@ -56,6 +56,10 @@ header {
     margin-right: 0;
     max-height: 65px;
   }
+
+  @include breakpoint(xlarge) {
+    margin-right: -15px;
+  }
 }
 
 .logo__text {
