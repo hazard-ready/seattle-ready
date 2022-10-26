@@ -15,7 +15,7 @@ header {
   }
 }
 
-.logo__container {
+.small-header__container {
   overflow: auto;
   margin: 0;
   position: relative;
@@ -29,6 +29,10 @@ header {
     margin: 0 10px 0 0;
     min-width: 228px;
   }
+}
+
+.logo__container {
+  display: flex;
 }
 
 .logo--header {
@@ -50,13 +54,15 @@ header {
 
 .logo__text {
   display: inline;
-  font-size: 20px;
-  line-height: 2.3;
   vertical-align: top;
 
-  @include breakpoint(medium-and-up) {
-    line-height: 1.3;
-    font-size: 21px;
+  h3 {
+    font-size: 20px;
+    margin: 0.75rem;
+
+    @include breakpoint(medium-and-up) {
+      font-size: 21px;
+    }
   }
 
 }
@@ -111,9 +117,10 @@ header {
 #location-text,
 .mq-input {
   border: none;
-  flex: 1 0 130px;
+  flex: 1 1 auto;
   height: 40px;
   margin: 2px 2px 2px 8px;
+  min-width: 170px;
   text-overflow: ellipsis;
   z-index: $z-index-bottom;
 
@@ -151,13 +158,12 @@ header {
   background-color: $white;
   border: none;
   color: $light-accent;
-  flex: 0 1 170px;
+  flex: 0 0 120px;
   font-weight: 600;
   line-height: 1.4;
   margin-left: auto;
   padding: 0;
   transition: color 1s;
-  white-space: nowrap;
   z-index: $z-index-next;
 
   &:focus,

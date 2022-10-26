@@ -2,10 +2,14 @@
 {% load webpack_static from webpack_loader %}
 
 <header>
-  <div class="logo__container" role="banner">
+  <div class="small-header__container" role="banner">
     <a class="link--plain" href="{{ settings.site_url }}">
-      <img class="logo--header" src="{% webpack_static 'build/logo-no-text.png' %}" alt="">
-      <h3 class="logo__text h3--sans-serif">{{ settings.site_title }}</h3>
+      <div class="logo__container">
+        <img class="logo--header" src="{% webpack_static 'build/logo-no-text.png' %}" alt="">
+        <div class="logo__text">
+          <h3 class="h3--sans-serif">{{ settings.site_title }}</h3>
+        </div>
+      </div>
     </a>
     <div class="header__about header__about--small hide-for-medium-up--flex">
     {% block about-small %}
