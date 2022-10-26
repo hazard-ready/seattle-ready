@@ -12,5 +12,9 @@
     @media only screen and (min-width: 900px) {
       @content;
     }
+  } @else if $point == xlarge {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
   }
 }

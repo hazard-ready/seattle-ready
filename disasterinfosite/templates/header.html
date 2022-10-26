@@ -2,14 +2,16 @@
 {% load webpack_static from webpack_loader %}
 
 <header>
-  <div class="logo__container" role="banner">
+  <div class="small-header__container" role="banner">
     <a class="link--plain" href="{{ settings.site_url }}">
-      <img class="logo--header" src="{% webpack_static 'build/logo-no-text.png' %}" alt="">
-      <div class="logo__text">
-        <h3 class="h3--sans-serif">{{ settings.site_title }}</h3>
+      <div class="logo__container">
+        <img class="logo--header" src="{% webpack_static 'build/logo-no-text.png' %}" alt="">
+        <div class="logo__text">
+          <h3 class="h3--sans-serif">{{ settings.site_title }}</h3>
+        </div>
       </div>
     </a>
-    <div class="header__about header__about--small hide-for-medium-up--flex">
+    <div class="header__about header__about--small hide-for-large--flex">
     {% block about-small %}
       <a class="link--plain" href="{% url 'about' %}"><h5 class="about__link link--grey" role="navigation">{% trans "About" %}</h5></a>
       {% endblock about-small %}
@@ -35,7 +37,7 @@
       </div>
     </div>
   {% endblock search %}
-  <div class="header__about hide-for-small--flex">
+  <div class="header__about hide-for-medium-down--flex">
     {% block about-med-and-up %}
     <a class="link--plain" href="{% url 'about' %}"><h5 class="about__link link--grey" role="navigation">{% trans "About" %}</h5></a>
     {% endblock about-med-and-up %}
