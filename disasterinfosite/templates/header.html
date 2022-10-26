@@ -11,7 +11,7 @@
         </div>
       </div>
     </a>
-    <div class="header__about header__about--small hide-for-medium-up--flex">
+    <div class="header__about header__about--small hide-for-large--flex">
     {% block about-small %}
       <a class="link--plain" href="{% url 'about' %}"><h5 class="about__link link--grey" role="navigation">{% trans "About" %}</h5></a>
       {% endblock about-small %}
@@ -37,7 +37,7 @@
       </div>
     </div>
   {% endblock search %}
-  <div class="header__about hide-for-small--flex">
+  <div class="header__about hide-for-medium-down--flex">
     {% block about-med-and-up %}
     <a class="link--plain" href="{% url 'about' %}"><h5 class="about__link link--grey" role="navigation">{% trans "About" %}</h5></a>
     {% endblock about-med-and-up %}
