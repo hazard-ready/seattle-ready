@@ -1,6 +1,7 @@
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 from django.contrib.gis import admin
 from django.conf import settings
 
@@ -11,9 +12,16 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 
     # API urls
-    path('accounts/login/', views.login_view, name="login"),
-    path('accounts/logout/', views.logout_view, name="logout"),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/create_user/', views.create_user, name="create_user"),
+    # path('accounts/password_change/', name='password_change'),
+    # path('accounts/password_change/done/', name='password_change_done'),
+    # path('accounts/password_reset/', name='password_reset'),
+    # path('accounts/password_reset/done/', name='password_reset_done'),
+    # path('accounts/reset/<uidb64>/<token>/', name='password_reset_confirm'),
+    # path('accounts/reset/done/', name='password_reset_complete'),
+
+    # Our own user account actions
     path('accounts/update_profile/', views.update_profile, name="update_profile"),
     path('accounts/update_prepare_action/',
          views.prepare_action_update, name='prepare_action_update')

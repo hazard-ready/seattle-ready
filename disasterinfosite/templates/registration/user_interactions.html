@@ -9,12 +9,12 @@
 
 
 <div role="form" id="user-interaction-container" aria-label="signup-login">
-  {% include "users/user_login.html" %}
+  {% include "registration/login.html" %}
 
-  {% include "users/user_signup.html" %}
+  {% include "registration/user_signup.html" %}
 
   {% if username and profile %}
-    {% include "users/user_profile.html" %}
+    {% include "registration/user_profile.html" %}
   {% endif %}
 
   <div id="user-info-container" class="user--message hide">

@@ -143,6 +143,8 @@ CONN_MAX_AGE = environ.get('CONN_MAX_AGE') or 0
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+LOGIN_REDIRECT_URL = '/'
+
 # Static asset configuration
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

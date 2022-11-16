@@ -69,25 +69,6 @@ def create_user(request):
         return HttpResponse(status=403)
 
 
-def login_view(request):
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    user = authenticate(username=username, password=password)
-    if user is not None and user.is_active:
-        # Correct password, and the user is marked "active"
-        login(request, user)
-        # Redirect to a success page.
-        return HttpResponse(status=201)
-    else:
-        # Show an error page
-        return HttpResponse(status=403)
-
-
-def logout_view(request):
-    logout(request)
-    return HttpResponse(status=201)
-
-
 def update_profile(request):
     if request.method == 'POST' and request.user.is_authenticated:
         username = request.user.username
