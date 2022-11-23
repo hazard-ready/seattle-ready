@@ -17,7 +17,7 @@
     {% include "registration/user_profile.html" %}
   {% endif %}
 
-  <div id="user-info-container" class="user--message hide">
+  <div id="user-info-container">
    {% if username %}
       <p>{% blocktrans %}Welcome back, <span class="username">{{ username }}</span>!{% endblocktrans %}</p>
    {% else %}
@@ -27,20 +27,6 @@
 
   <div id="user-info-container--invalid" class="user--message hide">
     <p>{% trans "Whoops, it looks like that username or password didn't work." %}</p>
-  </div>
-
-  <div id="failure-container" class="user--message hide">
-    <p>{% trans "Whoops, we're not sure what happened there. Maybe you should try again." %}</p>
-  </div>
-
-  <div id="user-signup-result-container" class="user--message hide">
-    <p>
-      {% trans "Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address." %}
-    </p>
-  </div>
-
-  <div id="user-profile-result-container" class="user--message hide">
-    <p>{% trans "Thanks for keeping us up to date!" %}</p>
   </div>
 
   {% if username and profile %}

@@ -17,10 +17,14 @@ from django.db.utils import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.http import require_http_methods
+from django.utils.translation import gettext as _
 from django.urls import reverse
 
 import logging
 import re
+
+logger = logging.getLogger(__name__)
 
 
 def reverse_no_i18n(viewname, *args, **kwargs):
@@ -29,48 +33,54 @@ def reverse_no_i18n(viewname, *args, **kwargs):
     return m.groups()[1]
 
 
+@require_http_methods(["POST"])
 def create_user(request):
-    if request.method == 'POST':
-        try:
-            user = User.objects.create_user(
-                username=request.POST.get('username', ''),
-                email=request.POST.get('username', ''),
-                password=request.POST.get('password', '')
-            )
-        except IntegrityError:
-            return HttpResponse(status=409, reason="That user already exists.")
-        except ValueError as error:
-            return HttpResponse(status=400)
-
-        profile = UserProfile(
-            user=user,
-            address1=request.POST.get('address1', ''),
-            address2=request.POST.get('address2', ''),
-            city=request.POST.get('city', ''),
-            state=request.POST.get('state', ''),
-            zip_code=request.POST.get('zip_code', '')
-        )
-        try:
-            profile.save()
-        except (ValueError, IntegrityError):
-            return HttpResponse(status=500)
-
-        user = authenticate(
+    try:
+        user = User.objects.create_user(
             username=request.POST.get('username', ''),
+            email=request.POST.get('username', ''),
             password=request.POST.get('password', '')
         )
-        if user is None:
-            return HttpResponse(status=500)
+    except IntegrityError:
+        return render(request, "registration/simple_message.html", {
+            'message': _("That email address has already been used. Try logging in instead.")})
+    except ValueError as error:
+        logger.error("Unable to create a user", error)
+        return render(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
 
-        login(request, user)
+    profile = UserProfile(
+        user=user,
+        address1=request.POST.get('address1', ''),
+        address2=request.POST.get('address2', ''),
+        city=request.POST.get('city', ''),
+        state=request.POST.get('state', ''),
+        zip_code=request.POST.get('zip_code', '')
+    )
+    try:
+        profile.save()
+    except (ValueError, IntegrityError):
+        logger.error("Unable to save a user profile", error)
+        return render(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
 
-        return HttpResponse(status=201)
-    else:
-        return HttpResponse(status=403)
+    user = authenticate(
+        username=request.POST.get('username', ''),
+        password=request.POST.get('password', '')
+    )
+    if user is None:
+        logger.error("Unable to authenticate a newly created user")
+        return render(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
+
+    login(request, user)
+    return render(request, "registration/simple_message.html", {
+        'message': _("Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address.")})
 
 
+@require_http_methods(["POST"])
 def update_profile(request):
-    if request.method == 'POST' and request.user.is_authenticated:
+    if request.user.is_authenticated:
         username = request.user.username
         profile = UserProfile.objects.get(user=request.user)
         profile.address1 = request.POST.get('address1', '')
@@ -82,9 +92,13 @@ def update_profile(request):
         try:
             profile.save()
         except (ValueError, IntegrityError):
-            return HttpResponse(status=500)
+            logger.error("Unable to save a user profile", error)
+            return render(request, "registration/simple_message.html", {
+                'message': _("We're not sure what happened there. Maybe you should try again.")})
 
-        return HttpResponse(status=201)
+        return render(request, "registration/simple_message.html", {
+            'message': _("Thanks for keeping us up to date!")})
+
     else:
         return HttpResponse(status=403)
 
