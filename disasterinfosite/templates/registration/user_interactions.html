@@ -18,38 +18,37 @@
   {% endif %}
 
   <div id="user-info-container">
-   {% if username %}
-      <p>{% blocktrans %}Welcome back, <span class="username">{{ username }}</span>!{% endblocktrans %}</p>
-   {% else %}
-     <p>{% trans "We're logging you in. Just a moment..." %}</p>
-   {% endif %}
+    <p class="login-message hide">
+     {% if username %}
+        {% blocktrans %}Welcome back, <span class="username">{{ username }}</span>!{% endblocktrans %}
+     {% else %}
+       {% trans "We're logging you in. Just a moment..." %}
+     {% endif %}
+    </p>
   </div>
 
-  <div id="user-info-container--invalid" class="user--message hide">
-    <p>{% trans "Whoops, it looks like that username or password didn't work." %}</p>
-  </div>
-
-  {% if username and profile %}
-    <div id="user-button-container--logged-in">
-      <p><strong>{% trans "Welcome back!" %}</strong></p>
-      <p>
-        {% blocktrans %}If your username isn't <span class="username">{{ username }}</span>, you might want to log out.{% endblocktrans %}
-      </p>
-      <div class="user-interaction__buttons user--ui">
-        <button class="caps button--logout">{{ log_out }}</button>
-        <button class="caps button--update">{{ update_my_info }}</button>
+  <div id="user-button-container">
+    {% if username and profile %}
+      <div class="login-welcome">
+        <p><strong>{% trans "Welcome back!" %}</strong></p>
+        <p>
+          {% blocktrans %}If your username isn't <span class="username">{{ username }}</span>, you might want to log out.{% endblocktrans %}
+        </p>
+        <div class="user-interaction__buttons user--ui">
+          <button class="caps button--logout">{{ log_out }}</button>
+          <button class="caps button--update">{{ update_my_info }}</button>
+        </div>
       </div>
-    </div>
-  {% else %}
-    <div id="user-button-container">
+    {% else %}
       <h4>{% trans "Receive Important Updates" %}</h4>
       <p>
-        {% trans "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason." %}
-      </p>
-      <div class="user-interaction__buttons user--ui">
-        <button class="caps button--login">{{ log_in }}</button>
-        <button class="caps button--signup">{{ sign_up }}</button>
+          {% trans "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason." %}
+        </p>
+        <div class="user-interaction__buttons user--ui">
+          <button class="caps button--login">{{ log_in }}</button>
+          <button class="caps button--signup">{{ sign_up }}</button>
+        </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 </div>

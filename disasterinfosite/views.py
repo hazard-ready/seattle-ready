@@ -45,7 +45,7 @@ def create_user(request):
         return render(request, "registration/simple_message.html", {
             'message': _("That email address has already been used. Try logging in instead.")})
     except ValueError as error:
-        logger.error("Unable to create a user", error)
+        logger.error("Unable to create a user")
         return render(request, "registration/simple_message.html", {
             'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
 
@@ -60,7 +60,7 @@ def create_user(request):
     try:
         profile.save()
     except (ValueError, IntegrityError):
-        logger.error("Unable to save a user profile", error)
+        logger.error("Unable to save a user profile")
         return render(request, "registration/simple_message.html", {
             'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
 
@@ -92,7 +92,7 @@ def update_profile(request):
         try:
             profile.save()
         except (ValueError, IntegrityError):
-            logger.error("Unable to save a user profile", error)
+            logger.error("Unable to save a user profile")
             return render(request, "registration/simple_message.html", {
                 'message': _("We're not sure what happened there. Maybe you should try again.")})
 

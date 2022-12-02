@@ -7,9 +7,11 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.auth.models import User
 import unittest
 from unittest.mock import patch
+import logging
 
 request_url = '/accounts/update_profile/'
 
+logger = logging.getLogger(__name__)
 
 class FakeUser():
     is_authenticated = False
@@ -46,7 +48,7 @@ class UpdateProfileViewTestCase(TestCase):
                               "DELETE", "OPTIONS", "TRACE", "CONNECT", "ASDF"]
         for method in disallowed_methods:
             request.method = method
-            self.assertEqual(403, update_profile(request).status_code)
+            self.assertEqual(405, update_profile(request).status_code)
 
     def testOnlyAuthenticatedUsers(self):
         """ Only authenticated users can update their profile. """
@@ -57,13 +59,13 @@ class UpdateProfileViewTestCase(TestCase):
 
     @patch.object(UserProfile, "save", side_effect=ValueError())
     def testProfileSaveFails(self, mock_profile):
-        """ It returns a 500 when the profile fails to save """
+        """ It returns a 200 and error template when the profile fails to save """
         request_body = {
             "invalid_field": "foo"
         }
         request = self.makeRequest(request_body)
         request.user = self.created_user
-        self.assertEqual(500, update_profile(request).status_code)
+        self.assertEqual(200, update_profile(request).status_code)
 
     def testProfileUpdated(self):
         """ The profile gets updated with the new data """
@@ -85,8 +87,8 @@ class UpdateProfileViewTestCase(TestCase):
         self.assertEqual(profile.city, request_body['city'])
         self.assertEqual(profile.zip_code, request_body['zip_code'])
 
-    def test201Success(self):
-        """ It returns a 201 on success """
+    def test200Success(self):
+        """ It returns a 200 on success """
         request_body = {
             "address1": "success address1",
             "address2": "success address2",
@@ -96,4 +98,4 @@ class UpdateProfileViewTestCase(TestCase):
         }
         request = self.makeRequest(request_body)
         request.user = self.created_user
-        self.assertEqual(201, update_profile(request).status_code)
+        self.assertEqual(200, update_profile(request).status_code)
