@@ -63,6 +63,7 @@ var query_lat = getURLParameter("lat");
 var query_lng = getURLParameter("lng");
 
 var map;
+var mapElement = document.getElementById("map");
 
 // convenience function to extract url parameters
 function getURLParameter(name) {
@@ -135,11 +136,7 @@ function submitLocation(lat, lng, queryText) {
 
 function setUpMap() {
   // set up the map
-  if (!!map) {
-    // sometimes we already have one and I don't know why
-    map = map.remove();
-  }
-  map = new L.Map("map", {
+  map = new L.Map(mapElement, {
     scrollWheelZoom: false,
   });
   if (query_lat && query_lng) {
@@ -157,7 +154,7 @@ function setUpMap() {
     style: boundaryStyle,
   }).addTo(map);
 
-  document.getElementById("map").style.cursor = "default";
+  mapElement.style.cursor = "default";
 
   if (query_lat && query_lng) {
     var icon = L.icon({
@@ -302,7 +299,11 @@ $(document).ready(function () {
   $locationInput = $("#location-text");
   var $locationSubmit = $("#location-submit");
   var $autoLocationButton = $(".auto-location-submit");
-  if (document.getElementById("map")) {
+  if (mapElement) {
+    if (map !== undefined && map !== null) {
+      // sometimes we already have one and I don't know why
+      map = map.remove();
+    }
     setUpMap();
   }
 

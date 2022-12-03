@@ -134,10 +134,10 @@ $(document).ready(function() {
   });
 
   $loginForm.submit(function(event) {
-    console.log("SUBMIT")
     event.preventDefault();
     sendAjaxAuthRequest(loginApiUrl, new FormData($loginForm[0]))
       .done(function(data) {
+        location.reload(true);
         $("#user-info-container").append(data).removeClass('hide').focus();
       })
       .fail(function(error) {
