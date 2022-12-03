@@ -5,7 +5,6 @@ from .models import (
     PastEventsPhoto,
     PreparednessAction,
     ShapefileGroup,
-    SiteSettings,
     SlideshowSnugget,
     Snugget,
     UserProfile
@@ -106,7 +105,6 @@ def update_profile(request):
 @ensure_csrf_cookie
 def about_view(request):
     renderData = {
-        'settings': SiteSettings.get_solo(),
         'nextPath': reverse_no_i18n('about')
     }
     return render(request, "about.html", renderData)
@@ -115,7 +113,6 @@ def about_view(request):
 @ensure_csrf_cookie
 def data_view(request):
     renderData = {
-        'settings': SiteSettings.get_solo(),
         'nextPath': reverse_no_i18n('data'),
         'quick_data_overview': DataOverviewImage.objects.all()
 
@@ -126,7 +123,6 @@ def data_view(request):
 @ensure_csrf_cookie
 def prepare_view(request):
     renderData = {
-        'settings': SiteSettings.get_solo(),
         'actions': PreparednessAction.objects.all().order_by('cost'),
         'logged_in': False,
         'nextPath': reverse_no_i18n('prepare')
@@ -177,7 +173,6 @@ def app_view(request):
         profile = UserProfile.objects.get(user=request.user)
 
     renderData = {
-        'settings': SiteSettings.get_solo(),
         'data_bounds': Location.get_data_bounds(),
         'username': username,
         'profile': profile,

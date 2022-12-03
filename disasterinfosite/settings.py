@@ -33,6 +33,7 @@ else:
 
 # Application definition
 INSTALLED_APPS = (
+    'disasterinfosite.apps.DisasterInfoConfig',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +43,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'embed_video',
-    'disasterinfosite.apps.DisasterInfoConfig',
     'solo',
     'webpack_loader'
 )
@@ -123,7 +123,8 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request'
+                'django.template.context_processors.request',
+                'disasterinfosite.context_processors.global_site_settings'
             ]
         },
     },
