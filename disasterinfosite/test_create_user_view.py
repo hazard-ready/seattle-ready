@@ -47,7 +47,7 @@ class CreateUserViewTestCase(TestCase):
             "zip_code": ""
         }
         create_user(self.makeRequest(request_body))
-        self.assertEqual(200, create_user(
+        self.assertEqual(409, create_user(
             self.makeRequest(request_body)).status_code
         )
 
@@ -57,11 +57,11 @@ class CreateUserViewTestCase(TestCase):
             "invalid_field": "foo"
         }
         request = self.makeRequest(request_body)
-        self.assertEqual(200, create_user(request).status_code)
+        self.assertEqual(400, create_user(request).status_code)
 
     @patch.object(UserProfile, "save", side_effect=ValueError())
     def testProfileSaveFails(self, mock_profile):
-        """ It returns a 200 and an error message when saving the newly created profile fails """
+        """ It returns a 500 and an error message when saving the newly created profile fails """
         request_body = {
             "username": "test_profile_save",
             "email": "test",
@@ -69,7 +69,7 @@ class CreateUserViewTestCase(TestCase):
             "invalid_field": "foo"
         }
         request = self.makeRequest(request_body)
-        self.assertEqual(200, create_user(request).status_code)
+        self.assertEqual(500, create_user(request).status_code)
 
     def testProfileCreated(self):
         """ A profile for the user is created. """

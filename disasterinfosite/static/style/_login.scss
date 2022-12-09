@@ -48,3 +48,8 @@
 .username {
   font-weight: $font-weight-bold;
 }
+
+.user-interaction__error {
+  color: $error-red;
+  font-weight: $font-weight-bold;
+}

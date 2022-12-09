@@ -59,13 +59,13 @@ class UpdateProfileViewTestCase(TestCase):
 
     @patch.object(UserProfile, "save", side_effect=ValueError())
     def testProfileSaveFails(self, mock_profile):
-        """ It returns a 200 and error template when the profile fails to save """
+        """ It returns a 500 and error template when the profile fails to save """
         request_body = {
             "invalid_field": "foo"
         }
         request = self.makeRequest(request_body)
         request.user = self.created_user
-        self.assertEqual(200, update_profile(request).status_code)
+        self.assertEqual(500, update_profile(request).status_code)
 
     def testProfileUpdated(self):
         """ The profile gets updated with the new data """

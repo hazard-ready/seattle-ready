@@ -130,8 +130,16 @@ TEMPLATES = [
     },
 ]
 
-# Parse database configuration from $DATABASE_URL
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # Send emails through MailChimp, for password resets
+    EMAIL_HOST = os.environ['EMAIL_HOST']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
+# Parse database configuration from $DATABASE_URL
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'

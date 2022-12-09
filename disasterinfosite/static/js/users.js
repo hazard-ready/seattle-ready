@@ -63,7 +63,6 @@ $(document).ready(function() {
   var $userLoginContainer = $("#user-login-container");
   var $userProfileContainer = $("#user-profile-container");
 
-
   $(".button--signup").click(function(event) {
     event.preventDefault();
     $userButtonContainer.addClass('hide');
@@ -83,6 +82,7 @@ $(document).ready(function() {
     $userSignupContainer.addClass('hide');
     $userLoginContainer.addClass('hide');
     $userButtonContainer.removeClass('hide');
+    $userInfoContainer.addClass('hide');
   });
 
   $(".button--cancel-update").click(function(event) {
@@ -90,6 +90,7 @@ $(document).ready(function() {
     $userProfileContainer.addClass('hide');
     $userInfoContainer.removeClass('hide');
     $userButtonContainer.removeClass('hide');
+    $userInfoContainer.addClass('hide');
   });
 
   $(".button--update").click(function(event) {
@@ -123,14 +124,12 @@ $(document).ready(function() {
 
     sendAjaxAuthRequest(createUserApiUrl, new FormData($signupForm[0]))
     .done(function(data) {
-      $("#user-info-container").append(data).removeClass('hide').focus();
-    })
-    .fail(function(error) {
-      console.error("signup form error:", error.statusCode())
-    })
-    .always(function() {
+      $userInfoContainer.append(data).removeClass('hide').focus();
       $userSignupContainer.addClass('hide');
-    });
+    })
+    .fail(function(request, status, error) {
+      $userInfoContainer.append(request.responseText).removeClass('hide').focus();
+    })
   });
 
   $loginForm.submit(function(event) {
@@ -138,10 +137,10 @@ $(document).ready(function() {
     sendAjaxAuthRequest(loginApiUrl, new FormData($loginForm[0]))
       .done(function(data) {
         location.reload(true);
-        $("#user-info-container").append(data).removeClass('hide').focus();
+        $userInfoContainer.append(data).removeClass('hide').focus();
       })
-      .fail(function(error) {
-        console.error("login form error:", error)
+      .fail(function(request, status, error) {
+        console.error("login form error:", error, "status:", status);
       });
   });
 
@@ -150,13 +149,11 @@ $(document).ready(function() {
 
     sendAjaxAuthRequest(updateProfileApiUrl, new FormData($updateForm[0]))
       .done(function(data) {
-        $("#user-info-container").append(data).removeClass('hide').focus();
-      })
-      .fail(function(error) {
-        console.error("update form error:", error)
-      })
-      .always(function() {
+        $userInfoContainer.append(data).removeClass('hide').focus();
         $userProfileContainer.addClass('hide');
-      });
+      })
+      .fail(function(request, status, error) {
+        $userInfoContainer.append(request.responseText).removeClass('hide').focus();
+      })
   });
 });

@@ -15,6 +15,7 @@ from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.template.response import TemplateResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_http_methods
 from django.utils.translation import gettext as _
@@ -41,12 +42,21 @@ def create_user(request):
             password=request.POST.get('password', '')
         )
     except IntegrityError:
-        return render(request, "registration/simple_message.html", {
-            'message': _("That email address has already been used. Try logging in instead.")})
+        return TemplateResponse(
+            request,
+            "registration/simple_message.html",
+            {
+                'message': _("That email address has already been used. Try logging in instead."),
+                'error': True
+            },
+            status=409
+        )
     except ValueError as error:
         logger.error("Unable to create a user")
-        return render(request, "registration/simple_message.html", {
-            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
+        return TemplateResponse(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again."),
+            'error': True
+        }, status=400)
 
     profile = UserProfile(
         user=user,
@@ -60,8 +70,10 @@ def create_user(request):
         profile.save()
     except (ValueError, IntegrityError):
         logger.error("Unable to save a user profile")
-        return render(request, "registration/simple_message.html", {
-            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
+        return TemplateResponse(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again."),
+            'error': True
+        }, status=500)
 
     user = authenticate(
         username=request.POST.get('username', ''),
@@ -69,12 +81,16 @@ def create_user(request):
     )
     if user is None:
         logger.error("Unable to authenticate a newly created user")
-        return render(request, "registration/simple_message.html", {
-            'message': _("Whoops, we're not sure what happened there. Maybe you should try again.")})
+        return TemplateResponse(request, "registration/simple_message.html", {
+            'message': _("Whoops, we're not sure what happened there. Maybe you should try again."),
+            'error': True
+        }, status=500)
 
     login(request, user)
     return render(request, "registration/simple_message.html", {
-        'message': _("Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address.")})
+        'message': _("Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address."),
+        'error': True
+    })
 
 
 @require_http_methods(["POST"])
@@ -92,8 +108,10 @@ def update_profile(request):
             profile.save()
         except (ValueError, IntegrityError):
             logger.error("Unable to save a user profile")
-            return render(request, "registration/simple_message.html", {
-                'message': _("We're not sure what happened there. Maybe you should try again.")})
+            return TemplateResponse(request, "registration/simple_message.html", {
+                'message': _("We're not sure what happened there. Maybe you should try again."),
+                'error': True
+            }, status=500)
 
         return render(request, "registration/simple_message.html", {
             'message': _("Thanks for keeping us up to date!")})
