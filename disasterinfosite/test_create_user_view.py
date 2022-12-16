@@ -7,9 +7,11 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.auth.models import User
 import unittest
 from unittest.mock import patch
+import logging
 
 request_url = '/accounts/create_user/'
 
+logger = logging.getLogger(__name__)
 
 class CreateUserViewTestCase(TestCase):
     def makeRequest(self, body):
@@ -30,7 +32,7 @@ class CreateUserViewTestCase(TestCase):
                               "DELETE", "OPTIONS", "TRACE", "CONNECT", "ASDF"]
         for method in disallowed_methods:
             request.method = method
-            self.assertEqual(403, create_user(request).status_code)
+            self.assertEqual(405, create_user(request).status_code)
 
     def testDuplicateUserError(self):
         """ Errors arising from creating a duplicate user are handled """
@@ -46,10 +48,11 @@ class CreateUserViewTestCase(TestCase):
         }
         create_user(self.makeRequest(request_body))
         self.assertEqual(409, create_user(
-            self.makeRequest(request_body)).status_code)
+            self.makeRequest(request_body)).status_code
+        )
 
     def testUserCreationFails(self):
-        """ It returns a 400 when creating a new user fails """
+        """ It handles the case when creating a new user fails """
         request_body = {
             "invalid_field": "foo"
         }
@@ -58,7 +61,7 @@ class CreateUserViewTestCase(TestCase):
 
     @patch.object(UserProfile, "save", side_effect=ValueError())
     def testProfileSaveFails(self, mock_profile):
-        """ It returns a 500 when saving the newly created profile fails """
+        """ It returns a 500 and an error message when saving the newly created profile fails """
         request_body = {
             "username": "test_profile_save",
             "email": "test",

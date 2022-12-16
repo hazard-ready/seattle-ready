@@ -33,6 +33,7 @@ else:
 
 # Application definition
 INSTALLED_APPS = (
+    'disasterinfosite.apps.DisasterInfoConfig',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +43,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'embed_video',
-    'disasterinfosite.apps.DisasterInfoConfig',
     'solo',
     'webpack_loader'
 )
@@ -123,14 +123,23 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request'
+                'django.template.context_processors.request',
+                'disasterinfosite.context_processors.global_site_settings'
             ]
         },
     },
 ]
 
-# Parse database configuration from $DATABASE_URL
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # Send emails through MailChimp, for password resets
+    EMAIL_HOST = os.environ['EMAIL_HOST']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
+# Parse database configuration from $DATABASE_URL
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
