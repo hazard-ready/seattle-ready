@@ -14,10 +14,6 @@ urlpatterns = [
     # API urls
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/create_user/', views.create_user, name="create_user"),
-    # path('accounts/password_reset/', name='password_reset'),
-    # path('accounts/password_reset/done/', name='password_reset_done'),
-    # path('accounts/reset/<uidb64>/<token>/', name='password_reset_confirm'),
-    # path('accounts/reset/done/', name='password_reset_complete'),
 
     # Our own user account actions
     path('accounts/update_profile/', views.update_profile, name="update_profile"),
