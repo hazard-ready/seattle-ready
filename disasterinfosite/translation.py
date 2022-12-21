@@ -1,10 +1,23 @@
-from modeltranslation.translator import register, translator, TranslationOptions
-from .models import SiteSettings, ShapefileGroup, PastEventsPhoto, DataOverviewImage, TextSnugget, EmbedSnugget, SlideshowSnugget, SnuggetPopOut, SnuggetSection, PreparednessAction
+from modeltranslation.translator import (register,
+                                         translator,
+                                         TranslationOptions)
+from .models import (SiteSettings,
+                     ShapefileGroup,
+                     PastEventsPhoto,
+                     DataOverviewImage,
+                     TextSnugget,
+                     EmbedSnugget,
+                     SlideshowSnugget,
+                     SnuggetPopOut,
+                     SnuggetSection,
+                     PreparednessAction,
+                     PreparednessLink)
 
 
 @register(SiteSettings)
 class SiteSettingsTranslationOptions(TranslationOptions):
-    fields = ('about_text', 'site_title', 'site_description',
+    fields = ('about_text',
+              'site_title', 'site_description',
               'intro_text', 'who_made_this', 'area_name')
 
 
@@ -50,5 +63,10 @@ class SnuggetSectionTranslationOptions(TranslationOptions):
 
 @register(PreparednessAction)
 class PreparednessActionTranslationOptions(TranslationOptions):
-    fields = ('title', 'content_text', 'link_text',
+    fields = ('title', 'content_text',
               'happy_text', 'useful_text', 'property_text')
+
+
+@register(PreparednessLink)
+class PreparednessActionTranslationOptions(TranslationOptions):
+    fields = ('text',)

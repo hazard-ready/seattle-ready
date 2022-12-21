@@ -63,18 +63,20 @@
                 <img class="prepare__icon" src="{% webpack_static 'build/icon-home.svg' %}" alt=""> {{ item.property_text }}
               </p>
               {% endif %}
-              {% if item.link %}
-              <div class="prepare-item__link">
-                <a href="{{ item.link }}" target="_blank" rel="noopener">
-                  {% if item.link_icon %}
-                    <img class="prepare-item__link-icon" alt="" src="{{ item.link_icon.url }}">
-                  {% endif %}
-                  {% if item.link_text %}
-                    {{ item.link_text }}
-                  {% endif %}
-                </a>
-              </div>
-              {% endif %}
+              {% with links=item.preparednesslink_set.all %}
+                  {% for link in links %}
+                    <div class="prepare-item__link">
+                      <a href="{{ link.url }}" target="_blank" rel="noopener">
+                        {% if item.link_icon %}
+                          <img class="prepare-item__link-icon" alt="" src="{{ link.url }}">
+                        {% endif %}
+                        {% if link.text %}
+                          {{ link.text }}
+                        {% endif %}
+                      </a>
+                    </div>
+                  {% endfor %}
+              {% endwith %}
             </div>
           {% endfor %}
         </div>
@@ -112,16 +114,19 @@
               <td class="center-align">{% if item.property_text %}<img class="print-table__icon" src="{% webpack_static 'build/icon-check.svg' %}" alt="{% trans 'helps protect property' %}">{% endif %}
               </td>
               <td class="center-align">{{ item.cost | show_cost }}</td>
-              <td class="resources">{% if item.link %}
-                  <a href="{{ item.link }}" target="_blank">
-                    {% if item.link_icon %}
-                      <img class="prepare-item__link-icon" alt="" src="{{ item.link_icon.url }}">
-                    {% endif %}
-                    {% if item.link_text %}
-                      {{ item.link_text }}
-                    {% endif %}
-                  </a>
-                {% endif %}
+              <td class="resources">
+                {% with links=item.preparednesslink_set.all %}
+                  {% for link in links %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener">
+                      {% if item.link_icon %}
+                        <img class="prepare-item__link-icon" alt="" src="{{ link.url }}">
+                      {% endif %}
+                      {% if link.text %}
+                        {{ link.text }}
+                      {% endif %}
+                    </a>
+                  {% endfor %}
+                {% endwith %}
               </td>
             </tr>
           {% endfor %}

@@ -10,7 +10,8 @@ from solo.models import SingletonModel
 from django.core.files.storage import FileSystemStorage
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from django.contrib.postgres.validators import RangeMinValueValidator, RangeMaxValueValidator
+from django.contrib.postgres.validators import (
+    RangeMinValueValidator, RangeMaxValueValidator)
 
 
 SNUG_TEXT = 0
@@ -36,17 +37,25 @@ class PreparednessAction(models.Model):
     useful_text = models.TextField(default="")
     property_text = models.TextField(default="")
     content_text = models.TextField(default="")
-    link_text = models.TextField(default="")
     link_icon = models.ImageField(upload_to="prepare_images")
-    link = models.URLField(default="")
     slug = models.TextField(default="")
 
     def __str__(self):
         return self.title
 
 
+class PreparednessLink(models.Model):
+    text = models.TextField(default="")
+    url = models.URLField(default="")
+    action = models.ForeignKey(PreparednessAction, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text + "(" + self.url + ") action: " + self.action
+
+
 class UserProfile(models.Model):
-    """ A model representing a user's information that isn't their username, password, or email address """
+    """ A model representing a user's information that isn't their
+    username, password, or email address """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address1 = models.CharField(max_length=200, blank=True)
     address2 = models.CharField(max_length=200, blank=True)
@@ -59,7 +68,15 @@ class UserProfile(models.Model):
         verbose_name = "User Profile"
 
     def __str__(self):
-        return "{0}: {1}, {2} {3}, {4} {5}: {6}".format(self.user, self.address1, self.address2, self.city, self.state, self.zip_code, self.actions_taken.all().values_list('title', flat=True))
+        return "{0}: {1}, {2} {3}, {4} {5}: {6}".format(
+            self.user,
+            self.address1,
+            self.address2,
+            self.city,
+            self.state,
+            self.zip_code,
+            self.actions_taken.all().values_list('title', flat=True)
+        )
 
 
 class SiteSettings(SingletonModel):
@@ -67,7 +84,7 @@ class SiteSettings(SingletonModel):
     area_name = models.CharField(
         max_length=100,
         default="the affected area",
-        help_text="Describe the entire area that this app covers, e.g. 'Oregon' or 'Missoula County'."
+        help_text="Describe the entire area that this app covers, e.g. 'Oregon' or 'Missoula County'."  # noqa: ES501
     )
     about_text = models.TextField(
         default="Information about your organization goes here.",
@@ -92,15 +109,15 @@ class SiteSettings(SingletonModel):
     )
     intro_text = models.TextField(
         default="A natural disaster could strike your area at any time.",
-        help_text="A description of what we are trying to help people prepare for, or the goal of your site."
+        help_text="A description of what we are trying to help people prepare for, or the goal of your site."  # noqa: ES501
     )
     who_made_this = models.TextField(
-        default="Information about the creators and maintainers of this particular site.",
-        help_text="Include information about who you are and how to contact you."
+        default="Information about the creators and maintainers of this particular site.",  # noqa: ES501
+        help_text="Include information about who you are and how to contact you."  # noqa: ES501
     )
     data_download = models.URLField(
         blank=True,
-        help_text="A link where people can download a zipfile of all the data that powers this site."
+        help_text="A link where people can download a zipfile of all the data that powers this site."  # noqa: ES501
     )
 
     def __unicode__(self):
@@ -111,7 +128,8 @@ class SiteSettings(SingletonModel):
 
 
 class Location(SingletonModel):
-    """A singleton model to represent the location covered by this website's data"""
+    """A singleton model to represent the location
+    covered by this website's data"""
 
     def __unicode__(self):
         return u"Location Information"
@@ -121,7 +139,7 @@ class Location(SingletonModel):
         bounds = {
             ######################################################
             # GENERATED CODE GOES HERE
-            # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
+            # DO NOT MANUALLY EDIT CODE IN THIS SECTION- IT WILL BE OVERWRITTEN
             # locationsList
             'FireHazardPotential_2020_220619': FireHazardPotential_2020_220619.objects.data_bounds(),
             'EQNisqually_2001_171004': EQNisqually_2001_171004.objects.data_bounds(),
@@ -166,7 +184,8 @@ class Location(SingletonModel):
                 east.append(box[2])
                 north.append(box[3])
 
-        # The largest box that contains all the bounding boxes, how Leaflet wants it.
+        # The largest box that contains all the bounding boxes,
+        # how Leaflet wants it.
         return [[min(south), min(west)], [max(north), max(east)]]
 
     class Meta:
@@ -188,10 +207,12 @@ class ShapefileGroup(models.Model):
     display_name = models.CharField(max_length=50, default="")
     order_of_appearance = models.IntegerField(
         default=0,
-        help_text="The order, from top to bottom, in which you would like this group to appear, when applicable."
+        help_text="The order, from top to bottom, in which you would like this group to appear, when applicable."  # noqa: ES501
     )
     note = models.TextField(
-        blank=True, help_text='A note that appears above all snuggets in this section. Use for data caveats or warnings.')
+        blank=True,
+        help_text='A note that appears above all snuggets in this section. Use for data caveats or warnings.'  # noqa: ES501
+    )
 
     def __str__(self):
         return self.name
@@ -200,6 +221,8 @@ class ShapefileGroup(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsClasses
+
+
 class FireHazardPotential_2020_220619(models.Model):
     def getGroup():
         return ShapefileGroup.objects.get_or_create(name='fire')[0]
@@ -208,9 +231,12 @@ class FireHazardPotential_2020_220619(models.Model):
     bbox = models.PolygonField(srid=4326)
     objects = RasterManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
-        return str(self.rast.name) + ',	' + str(self.bbox) 
+        return str(self.rast.name) + ', ' + str(self.bbox)
+
 
 class EQNisqually_2001_171004(models.Model):
     def getGroup():
@@ -220,9 +246,12 @@ class EQNisqually_2001_171004(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class FireWUI_2021_220914(models.Model):
     def getGroup():
@@ -232,9 +261,12 @@ class FireWUI_2021_220914(models.Model):
     bbox = models.PolygonField(srid=4326)
     objects = RasterManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
-        return str(self.rast.name) + ',	' + str(self.bbox) 
+        return str(self.rast.name) + ', ' + str(self.bbox)
+
 
 class Flood_kingco(models.Model):
     def getGroup():
@@ -244,9 +276,12 @@ class Flood_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQTsunami_2022_220619(models.Model):
     def getGroup():
@@ -256,9 +291,12 @@ class EQTsunami_2022_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQLiquefaction_2019_220619(models.Model):
     def getGroup():
@@ -268,9 +306,12 @@ class EQLiquefaction_2019_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQCascadia_2020_220619(models.Model):
     def getGroup():
@@ -280,9 +321,12 @@ class EQCascadia_2020_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Flood100yr500yr_2020_220907(models.Model):
     def getGroup():
@@ -292,9 +336,12 @@ class Flood100yr500yr_2020_220907(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Volcano_kingco(models.Model):
     def getGroup():
@@ -304,9 +351,12 @@ class Volcano_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class LSSteepPotential_2018_220701(models.Model):
     def getGroup():
@@ -316,9 +366,12 @@ class LSSteepPotential_2018_220701(models.Model):
     bbox = models.PolygonField(srid=4326)
     objects = RasterManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
-        return str(self.rast.name) + ',	' + str(self.bbox) 
+        return str(self.rast.name) + ', ' + str(self.bbox)
+
 
 class EQSeattleNorth_2017_220619(models.Model):
     def getGroup():
@@ -328,9 +381,12 @@ class EQSeattleNorth_2017_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Fire_kingco(models.Model):
     def getGroup():
@@ -340,9 +396,12 @@ class Fire_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class LSHistorical_2020_220701(models.Model):
     def getGroup():
@@ -352,9 +411,12 @@ class LSHistorical_2020_220701(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class FloodSandbag_2016_220710(models.Model):
     def getGroup():
@@ -364,9 +426,12 @@ class FloodSandbag_2016_220710(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Summer_kingco(models.Model):
     def getGroup():
@@ -376,9 +441,12 @@ class Summer_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQUrm_2022_220710(models.Model):
     def getGroup():
@@ -388,9 +456,12 @@ class EQUrm_2022_220710(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQTsunami_2022_220707(models.Model):
     def getGroup():
@@ -400,9 +471,12 @@ class EQTsunami_2022_220707(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQ_kingco(models.Model):
     def getGroup():
@@ -412,9 +486,12 @@ class EQ_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Volcano_2016_220619(models.Model):
     def getGroup():
@@ -424,9 +501,12 @@ class Volcano_2016_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class EQCascadiaDisplaced_2017_220619(models.Model):
     def getGroup():
@@ -436,9 +516,12 @@ class EQCascadiaDisplaced_2017_220619(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class FloodDamInund_2013_220710(models.Model):
     def getGroup():
@@ -448,9 +531,12 @@ class FloodDamInund_2013_220710(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class FloodCMZ_2015_220703(models.Model):
     def getGroup():
@@ -460,9 +546,12 @@ class FloodCMZ_2015_220703(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Heat_2020_20220803(models.Model):
     def getGroup():
@@ -472,9 +561,12 @@ class Heat_2020_20220803(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class Winter_kingco(models.Model):
     def getGroup():
@@ -484,9 +576,12 @@ class Winter_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
+
 
 class LS_kingco(models.Model):
     def getGroup():
@@ -496,7 +591,9 @@ class LS_kingco(models.Model):
     geom = models.MultiPolygonField(srid=4326)
     objects = ShapeManager()
 
-    group = models.ForeignKey(ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+    group = models.ForeignKey(
+        ShapefileGroup, default=getGroup, on_delete=models.PROTECT)
+
     def __str__(self):
         return str(self.lookup_val)
 
@@ -515,12 +612,17 @@ class SnuggetType(models.Model):
 class SnuggetSection(models.Model):
     name = models.CharField(max_length=50)
     display_name = models.CharField(
-        max_length=50, help_text="The name to show for this section", default="")
+        max_length=50,
+        help_text="The name to show for this section",
+        default=""
+    )
     collapsible = models.BooleanField(
-        default=True, help_text='Whether this section of the data is collapsible')
+        default=True,
+        help_text='Whether this section of the data is collapsible'
+    )
     order_of_appearance = models.IntegerField(
         default=0,
-        help_text="The order in which you'd like this to appear in the tab. 0 is at the top."
+        help_text="The order in which you'd like this to appear in the tab. 0 is at the top."  # noqa: ES501
     )
 
     def __str__(self):
@@ -550,10 +652,14 @@ def default_display_name(sender, instance, *args, **kwargs):
         instance.display_name = instance.name
 
 
-# looks up a point in a set of rasters and returns the first non-NODATA value it finds
-# or None if there are no rasters, the point is not within any of them or it's in a NODATA pixel.
-# raster algebra taken from the django-raster project version 0.6 at
-# https://github.com/geodesign/django-raster/blob/master/raster/utils.py
+"""
+looks up a point in a set of rasters and returns the first non-NODATA value it finds
+ or None if there are no rasters, the point is not within any of them or it's in a NODATA pixel.
+ raster algebra taken from the django-raster project version 0.6 at
+ https://github.com/geodesign/django-raster/blob/master/raster/utils.py
+ """
+
+
 def rasterPointLookup(rasterCollection, lng, lat, band=0):
     # if we have no data at all, then save time and return None immediately
     sampleBBOX = rasterCollection.objects.only("bbox").first().bbox
@@ -564,18 +670,25 @@ def rasterPointLookup(rasterCollection, lng, lat, band=0):
         'POINT({0} {1})'.format(lng, lat), srs=sampleBBOX.srs)
     vectorPoint = Point(lng, lat, srid=sampleBBOX.srid)
 
-    # Using the filter here lets PostGIS do an indexed search on the bbox field, which is much faster than stepping through the objects.
-    # Note that it will almost always only return one raster, but there could theoretically be 2 or 4 if our point is perfectly on a tile boundary.
-    # In that instance, we return the first non-NODATA value we find.
-    for tile in rasterCollection.objects.filter(bbox__contains=vectorPoint).all():
+    """ Using the filter here lets PostGIS do an indexed search on the bbox
+    field, which is much faster than stepping through the objects.
+    Note that it will almost always only return one raster, but there could
+    theoretically be 2 or 4 if our point is perfectly on a tile boundary.
+    In that instance, we return the first non-NODATA value we find.
+    """
+    for tile in rasterCollection.objects.filter(
+            bbox__contains=vectorPoint).all():
         # only bother to check for data if we're within the bounds
         rst = tile.rast
-        offset = (abs(
-            rst.origin.x - rasterPoint.coords[0]), abs(rst.origin.y - rasterPoint.coords[1]))
+        offset = (
+            abs(rst.origin.x - rasterPoint.coords[0]),
+            abs(rst.origin.y - rasterPoint.coords[1])
+        )
         offset_idx = [int(offset[0] / abs(rst.scale.x)),
                       int(offset[1] / abs(rst.scale.y))]
 
-        # points very close to the boundary can get rounded to 1 pixel beyond it, so fix that here
+        # points very close to the boundary can get
+        # rounded to 1 pixel beyond it, so fix that here
         if offset_idx[0] == rst.width:
             offset_idx[0] -= 1
         if offset_idx[1] == rst.height:
@@ -596,30 +709,52 @@ class Snugget(models.Model):
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsFilters
     FireHazardPotential_2020_220619_filter = models.IntegerField(null=True)
-    EQNisqually_2001_171004_filter = models.ForeignKey(EQNisqually_2001_171004, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQNisqually_2001_171004_filter = models.ForeignKey(
+        EQNisqually_2001_171004, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     FireWUI_2021_220914_filter = models.IntegerField(null=True)
-    Flood_kingco_filter = models.ForeignKey(Flood_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQTsunami_2022_220619_filter = models.ForeignKey(EQTsunami_2022_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQLiquefaction_2019_220619_filter = models.ForeignKey(EQLiquefaction_2019_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQCascadia_2020_220619_filter = models.ForeignKey(EQCascadia_2020_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Flood100yr500yr_2020_220907_filter = models.ForeignKey(Flood100yr500yr_2020_220907, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Volcano_kingco_filter = models.ForeignKey(Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Flood_kingco_filter = models.ForeignKey(
+        Flood_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQTsunami_2022_220619_filter = models.ForeignKey(
+        EQTsunami_2022_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQLiquefaction_2019_220619_filter = models.ForeignKey(
+        EQLiquefaction_2019_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQCascadia_2020_220619_filter = models.ForeignKey(
+        EQCascadia_2020_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Flood100yr500yr_2020_220907_filter = models.ForeignKey(
+        Flood100yr500yr_2020_220907, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Volcano_kingco_filter = models.ForeignKey(
+        Volcano_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
     LSSteepPotential_2018_220701_filter = models.IntegerField(null=True)
-    EQSeattleNorth_2017_220619_filter = models.ForeignKey(EQSeattleNorth_2017_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Fire_kingco_filter = models.ForeignKey(Fire_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    LSHistorical_2020_220701_filter = models.ForeignKey(LSHistorical_2020_220701, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    FloodSandbag_2016_220710_filter = models.ForeignKey(FloodSandbag_2016_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Summer_kingco_filter = models.ForeignKey(Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQUrm_2022_220710_filter = models.ForeignKey(EQUrm_2022_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQTsunami_2022_220707_filter = models.ForeignKey(EQTsunami_2022_220707, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQ_kingco_filter = models.ForeignKey(EQ_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Volcano_2016_220619_filter = models.ForeignKey(Volcano_2016_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    EQCascadiaDisplaced_2017_220619_filter = models.ForeignKey(EQCascadiaDisplaced_2017_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    FloodDamInund_2013_220710_filter = models.ForeignKey(FloodDamInund_2013_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    FloodCMZ_2015_220703_filter = models.ForeignKey(FloodCMZ_2015_220703, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Heat_2020_20220803_filter = models.ForeignKey(Heat_2020_20220803, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    Winter_kingco_filter = models.ForeignKey(Winter_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
-    LS_kingco_filter = models.ForeignKey(LS_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQSeattleNorth_2017_220619_filter = models.ForeignKey(
+        EQSeattleNorth_2017_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Fire_kingco_filter = models.ForeignKey(
+        Fire_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LSHistorical_2020_220701_filter = models.ForeignKey(
+        LSHistorical_2020_220701, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    FloodSandbag_2016_220710_filter = models.ForeignKey(
+        FloodSandbag_2016_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Summer_kingco_filter = models.ForeignKey(
+        Summer_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQUrm_2022_220710_filter = models.ForeignKey(
+        EQUrm_2022_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQTsunami_2022_220707_filter = models.ForeignKey(
+        EQTsunami_2022_220707, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQ_kingco_filter = models.ForeignKey(
+        EQ_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Volcano_2016_220619_filter = models.ForeignKey(
+        Volcano_2016_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    EQCascadiaDisplaced_2017_220619_filter = models.ForeignKey(
+        EQCascadiaDisplaced_2017_220619, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    FloodDamInund_2013_220710_filter = models.ForeignKey(
+        FloodDamInund_2013_220710, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    FloodCMZ_2015_220703_filter = models.ForeignKey(
+        FloodCMZ_2015_220703, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Heat_2020_20220803_filter = models.ForeignKey(
+        Heat_2020_20220803, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    Winter_kingco_filter = models.ForeignKey(
+        Winter_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
+    LS_kingco_filter = models.ForeignKey(
+        LS_kingco, related_name='+', on_delete=models.PROTECT, blank=True, null=True)
 # END OF GENERATED CODE BLOCK
 ######################################################
 
@@ -645,175 +780,260 @@ class Snugget(models.Model):
 # GENERATED CODE GOES HERE
 # DO NOT MANUALLY EDIT CODE IN THIS SECTION - IT WILL BE OVERWRITTEN
 # modelsGeoFilters
-        FireHazardPotential_2020_220619_rating = rasterPointLookup(FireHazardPotential_2020_220619, lng, lat)
+        FireHazardPotential_2020_220619_rating = rasterPointLookup(
+            FireHazardPotential_2020_220619, lng, lat)
         if FireHazardPotential_2020_220619_rating is not None:
-            FireHazardPotential_2020_220619_snugget = Snugget.objects.filter(FireHazardPotential_2020_220619_filter__exact=FireHazardPotential_2020_220619_rating).order_by('order').select_subclasses()
+            FireHazardPotential_2020_220619_snugget = Snugget.objects.filter(
+                FireHazardPotential_2020_220619_filter__exact=FireHazardPotential_2020_220619_rating).order_by('order').select_subclasses()
             if FireHazardPotential_2020_220619_snugget:
-                groupsDict[FireHazardPotential_2020_220619.getGroup()].extend(FireHazardPotential_2020_220619_snugget)
+                groupsDict[FireHazardPotential_2020_220619.getGroup()].extend(
+                    FireHazardPotential_2020_220619_snugget)
 
-        qs_EQNisqually_2001_171004 = EQNisqually_2001_171004.objects.filter(geom__contains=pnt)
-        EQNisqually_2001_171004_rating = qs_EQNisqually_2001_171004.values_list('lookup_val', flat=True)
+        qs_EQNisqually_2001_171004 = EQNisqually_2001_171004.objects.filter(
+            geom__contains=pnt)
+        EQNisqually_2001_171004_rating = qs_EQNisqually_2001_171004.values_list(
+            'lookup_val', flat=True)
         for rating in EQNisqually_2001_171004_rating:
-            EQNisqually_2001_171004_snugget = Snugget.objects.filter(EQNisqually_2001_171004_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQNisqually_2001_171004_snugget = Snugget.objects.filter(
+                EQNisqually_2001_171004_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQNisqually_2001_171004_snugget:
-                groupsDict[EQNisqually_2001_171004.getGroup()].extend(EQNisqually_2001_171004_snugget)
+                groupsDict[EQNisqually_2001_171004.getGroup()].extend(
+                    EQNisqually_2001_171004_snugget)
 
-        FireWUI_2021_220914_rating = rasterPointLookup(FireWUI_2021_220914, lng, lat)
+        FireWUI_2021_220914_rating = rasterPointLookup(
+            FireWUI_2021_220914, lng, lat)
         if FireWUI_2021_220914_rating is not None:
-            FireWUI_2021_220914_snugget = Snugget.objects.filter(FireWUI_2021_220914_filter__exact=FireWUI_2021_220914_rating).order_by('order').select_subclasses()
+            FireWUI_2021_220914_snugget = Snugget.objects.filter(
+                FireWUI_2021_220914_filter__exact=FireWUI_2021_220914_rating).order_by('order').select_subclasses()
             if FireWUI_2021_220914_snugget:
-                groupsDict[FireWUI_2021_220914.getGroup()].extend(FireWUI_2021_220914_snugget)
+                groupsDict[FireWUI_2021_220914.getGroup()].extend(
+                    FireWUI_2021_220914_snugget)
 
         qs_Flood_kingco = Flood_kingco.objects.filter(geom__contains=pnt)
-        Flood_kingco_rating = qs_Flood_kingco.values_list('lookup_val', flat=True)
+        Flood_kingco_rating = qs_Flood_kingco.values_list(
+            'lookup_val', flat=True)
         for rating in Flood_kingco_rating:
-            Flood_kingco_snugget = Snugget.objects.filter(Flood_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Flood_kingco_snugget = Snugget.objects.filter(
+                Flood_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Flood_kingco_snugget:
-                groupsDict[Flood_kingco.getGroup()].extend(Flood_kingco_snugget)
+                groupsDict[Flood_kingco.getGroup()].extend(
+                    Flood_kingco_snugget)
 
-        qs_EQTsunami_2022_220619 = EQTsunami_2022_220619.objects.filter(geom__contains=pnt)
-        EQTsunami_2022_220619_rating = qs_EQTsunami_2022_220619.values_list('lookup_val', flat=True)
+        qs_EQTsunami_2022_220619 = EQTsunami_2022_220619.objects.filter(
+            geom__contains=pnt)
+        EQTsunami_2022_220619_rating = qs_EQTsunami_2022_220619.values_list(
+            'lookup_val', flat=True)
         for rating in EQTsunami_2022_220619_rating:
-            EQTsunami_2022_220619_snugget = Snugget.objects.filter(EQTsunami_2022_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQTsunami_2022_220619_snugget = Snugget.objects.filter(
+                EQTsunami_2022_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQTsunami_2022_220619_snugget:
-                groupsDict[EQTsunami_2022_220619.getGroup()].extend(EQTsunami_2022_220619_snugget)
+                groupsDict[EQTsunami_2022_220619.getGroup()].extend(
+                    EQTsunami_2022_220619_snugget)
 
-        qs_EQLiquefaction_2019_220619 = EQLiquefaction_2019_220619.objects.filter(geom__contains=pnt)
-        EQLiquefaction_2019_220619_rating = qs_EQLiquefaction_2019_220619.values_list('lookup_val', flat=True)
+        qs_EQLiquefaction_2019_220619 = EQLiquefaction_2019_220619.objects.filter(
+            geom__contains=pnt)
+        EQLiquefaction_2019_220619_rating = qs_EQLiquefaction_2019_220619.values_list(
+            'lookup_val', flat=True)
         for rating in EQLiquefaction_2019_220619_rating:
-            EQLiquefaction_2019_220619_snugget = Snugget.objects.filter(EQLiquefaction_2019_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQLiquefaction_2019_220619_snugget = Snugget.objects.filter(
+                EQLiquefaction_2019_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQLiquefaction_2019_220619_snugget:
-                groupsDict[EQLiquefaction_2019_220619.getGroup()].extend(EQLiquefaction_2019_220619_snugget)
+                groupsDict[EQLiquefaction_2019_220619.getGroup()].extend(
+                    EQLiquefaction_2019_220619_snugget)
 
-        qs_EQCascadia_2020_220619 = EQCascadia_2020_220619.objects.filter(geom__contains=pnt)
-        EQCascadia_2020_220619_rating = qs_EQCascadia_2020_220619.values_list('lookup_val', flat=True)
+        qs_EQCascadia_2020_220619 = EQCascadia_2020_220619.objects.filter(
+            geom__contains=pnt)
+        EQCascadia_2020_220619_rating = qs_EQCascadia_2020_220619.values_list(
+            'lookup_val', flat=True)
         for rating in EQCascadia_2020_220619_rating:
-            EQCascadia_2020_220619_snugget = Snugget.objects.filter(EQCascadia_2020_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQCascadia_2020_220619_snugget = Snugget.objects.filter(
+                EQCascadia_2020_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQCascadia_2020_220619_snugget:
-                groupsDict[EQCascadia_2020_220619.getGroup()].extend(EQCascadia_2020_220619_snugget)
+                groupsDict[EQCascadia_2020_220619.getGroup()].extend(
+                    EQCascadia_2020_220619_snugget)
 
-        qs_Flood100yr500yr_2020_220907 = Flood100yr500yr_2020_220907.objects.filter(geom__contains=pnt)
-        Flood100yr500yr_2020_220907_rating = qs_Flood100yr500yr_2020_220907.values_list('lookup_val', flat=True)
+        qs_Flood100yr500yr_2020_220907 = Flood100yr500yr_2020_220907.objects.filter(
+            geom__contains=pnt)
+        Flood100yr500yr_2020_220907_rating = qs_Flood100yr500yr_2020_220907.values_list(
+            'lookup_val', flat=True)
         for rating in Flood100yr500yr_2020_220907_rating:
-            Flood100yr500yr_2020_220907_snugget = Snugget.objects.filter(Flood100yr500yr_2020_220907_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Flood100yr500yr_2020_220907_snugget = Snugget.objects.filter(
+                Flood100yr500yr_2020_220907_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Flood100yr500yr_2020_220907_snugget:
-                groupsDict[Flood100yr500yr_2020_220907.getGroup()].extend(Flood100yr500yr_2020_220907_snugget)
+                groupsDict[Flood100yr500yr_2020_220907.getGroup()].extend(
+                    Flood100yr500yr_2020_220907_snugget)
 
         qs_Volcano_kingco = Volcano_kingco.objects.filter(geom__contains=pnt)
-        Volcano_kingco_rating = qs_Volcano_kingco.values_list('lookup_val', flat=True)
+        Volcano_kingco_rating = qs_Volcano_kingco.values_list(
+            'lookup_val', flat=True)
         for rating in Volcano_kingco_rating:
-            Volcano_kingco_snugget = Snugget.objects.filter(Volcano_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Volcano_kingco_snugget = Snugget.objects.filter(
+                Volcano_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Volcano_kingco_snugget:
-                groupsDict[Volcano_kingco.getGroup()].extend(Volcano_kingco_snugget)
+                groupsDict[Volcano_kingco.getGroup()].extend(
+                    Volcano_kingco_snugget)
 
-        LSSteepPotential_2018_220701_rating = rasterPointLookup(LSSteepPotential_2018_220701, lng, lat)
+        LSSteepPotential_2018_220701_rating = rasterPointLookup(
+            LSSteepPotential_2018_220701, lng, lat)
         if LSSteepPotential_2018_220701_rating is not None:
-            LSSteepPotential_2018_220701_snugget = Snugget.objects.filter(LSSteepPotential_2018_220701_filter__exact=LSSteepPotential_2018_220701_rating).order_by('order').select_subclasses()
+            LSSteepPotential_2018_220701_snugget = Snugget.objects.filter(
+                LSSteepPotential_2018_220701_filter__exact=LSSteepPotential_2018_220701_rating).order_by('order').select_subclasses()
             if LSSteepPotential_2018_220701_snugget:
-                groupsDict[LSSteepPotential_2018_220701.getGroup()].extend(LSSteepPotential_2018_220701_snugget)
+                groupsDict[LSSteepPotential_2018_220701.getGroup()].extend(
+                    LSSteepPotential_2018_220701_snugget)
 
-        qs_EQSeattleNorth_2017_220619 = EQSeattleNorth_2017_220619.objects.filter(geom__contains=pnt)
-        EQSeattleNorth_2017_220619_rating = qs_EQSeattleNorth_2017_220619.values_list('lookup_val', flat=True)
+        qs_EQSeattleNorth_2017_220619 = EQSeattleNorth_2017_220619.objects.filter(
+            geom__contains=pnt)
+        EQSeattleNorth_2017_220619_rating = qs_EQSeattleNorth_2017_220619.values_list(
+            'lookup_val', flat=True)
         for rating in EQSeattleNorth_2017_220619_rating:
-            EQSeattleNorth_2017_220619_snugget = Snugget.objects.filter(EQSeattleNorth_2017_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQSeattleNorth_2017_220619_snugget = Snugget.objects.filter(
+                EQSeattleNorth_2017_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQSeattleNorth_2017_220619_snugget:
-                groupsDict[EQSeattleNorth_2017_220619.getGroup()].extend(EQSeattleNorth_2017_220619_snugget)
+                groupsDict[EQSeattleNorth_2017_220619.getGroup()].extend(
+                    EQSeattleNorth_2017_220619_snugget)
 
         qs_Fire_kingco = Fire_kingco.objects.filter(geom__contains=pnt)
-        Fire_kingco_rating = qs_Fire_kingco.values_list('lookup_val', flat=True)
+        Fire_kingco_rating = qs_Fire_kingco.values_list(
+            'lookup_val', flat=True)
         for rating in Fire_kingco_rating:
-            Fire_kingco_snugget = Snugget.objects.filter(Fire_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Fire_kingco_snugget = Snugget.objects.filter(
+                Fire_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Fire_kingco_snugget:
                 groupsDict[Fire_kingco.getGroup()].extend(Fire_kingco_snugget)
 
-        qs_LSHistorical_2020_220701 = LSHistorical_2020_220701.objects.filter(geom__contains=pnt)
-        LSHistorical_2020_220701_rating = qs_LSHistorical_2020_220701.values_list('lookup_val', flat=True)
+        qs_LSHistorical_2020_220701 = LSHistorical_2020_220701.objects.filter(
+            geom__contains=pnt)
+        LSHistorical_2020_220701_rating = qs_LSHistorical_2020_220701.values_list(
+            'lookup_val', flat=True)
         for rating in LSHistorical_2020_220701_rating:
-            LSHistorical_2020_220701_snugget = Snugget.objects.filter(LSHistorical_2020_220701_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            LSHistorical_2020_220701_snugget = Snugget.objects.filter(
+                LSHistorical_2020_220701_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if LSHistorical_2020_220701_snugget:
-                groupsDict[LSHistorical_2020_220701.getGroup()].extend(LSHistorical_2020_220701_snugget)
+                groupsDict[LSHistorical_2020_220701.getGroup()].extend(
+                    LSHistorical_2020_220701_snugget)
 
-        qs_FloodSandbag_2016_220710 = FloodSandbag_2016_220710.objects.filter(geom__contains=pnt)
-        FloodSandbag_2016_220710_rating = qs_FloodSandbag_2016_220710.values_list('lookup_val', flat=True)
+        qs_FloodSandbag_2016_220710 = FloodSandbag_2016_220710.objects.filter(
+            geom__contains=pnt)
+        FloodSandbag_2016_220710_rating = qs_FloodSandbag_2016_220710.values_list(
+            'lookup_val', flat=True)
         for rating in FloodSandbag_2016_220710_rating:
-            FloodSandbag_2016_220710_snugget = Snugget.objects.filter(FloodSandbag_2016_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            FloodSandbag_2016_220710_snugget = Snugget.objects.filter(
+                FloodSandbag_2016_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if FloodSandbag_2016_220710_snugget:
-                groupsDict[FloodSandbag_2016_220710.getGroup()].extend(FloodSandbag_2016_220710_snugget)
+                groupsDict[FloodSandbag_2016_220710.getGroup()].extend(
+                    FloodSandbag_2016_220710_snugget)
 
         qs_Summer_kingco = Summer_kingco.objects.filter(geom__contains=pnt)
-        Summer_kingco_rating = qs_Summer_kingco.values_list('lookup_val', flat=True)
+        Summer_kingco_rating = qs_Summer_kingco.values_list(
+            'lookup_val', flat=True)
         for rating in Summer_kingco_rating:
-            Summer_kingco_snugget = Snugget.objects.filter(Summer_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Summer_kingco_snugget = Snugget.objects.filter(
+                Summer_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Summer_kingco_snugget:
-                groupsDict[Summer_kingco.getGroup()].extend(Summer_kingco_snugget)
+                groupsDict[Summer_kingco.getGroup()].extend(
+                    Summer_kingco_snugget)
 
-        qs_EQUrm_2022_220710 = EQUrm_2022_220710.objects.filter(geom__contains=pnt)
-        EQUrm_2022_220710_rating = qs_EQUrm_2022_220710.values_list('lookup_val', flat=True)
+        qs_EQUrm_2022_220710 = EQUrm_2022_220710.objects.filter(
+            geom__contains=pnt)
+        EQUrm_2022_220710_rating = qs_EQUrm_2022_220710.values_list(
+            'lookup_val', flat=True)
         for rating in EQUrm_2022_220710_rating:
-            EQUrm_2022_220710_snugget = Snugget.objects.filter(EQUrm_2022_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQUrm_2022_220710_snugget = Snugget.objects.filter(
+                EQUrm_2022_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQUrm_2022_220710_snugget:
-                groupsDict[EQUrm_2022_220710.getGroup()].extend(EQUrm_2022_220710_snugget)
+                groupsDict[EQUrm_2022_220710.getGroup()].extend(
+                    EQUrm_2022_220710_snugget)
 
-        qs_EQTsunami_2022_220707 = EQTsunami_2022_220707.objects.filter(geom__contains=pnt)
-        EQTsunami_2022_220707_rating = qs_EQTsunami_2022_220707.values_list('lookup_val', flat=True)
+        qs_EQTsunami_2022_220707 = EQTsunami_2022_220707.objects.filter(
+            geom__contains=pnt)
+        EQTsunami_2022_220707_rating = qs_EQTsunami_2022_220707.values_list(
+            'lookup_val', flat=True)
         for rating in EQTsunami_2022_220707_rating:
-            EQTsunami_2022_220707_snugget = Snugget.objects.filter(EQTsunami_2022_220707_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQTsunami_2022_220707_snugget = Snugget.objects.filter(
+                EQTsunami_2022_220707_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQTsunami_2022_220707_snugget:
-                groupsDict[EQTsunami_2022_220707.getGroup()].extend(EQTsunami_2022_220707_snugget)
+                groupsDict[EQTsunami_2022_220707.getGroup()].extend(
+                    EQTsunami_2022_220707_snugget)
 
         qs_EQ_kingco = EQ_kingco.objects.filter(geom__contains=pnt)
         EQ_kingco_rating = qs_EQ_kingco.values_list('lookup_val', flat=True)
         for rating in EQ_kingco_rating:
-            EQ_kingco_snugget = Snugget.objects.filter(EQ_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQ_kingco_snugget = Snugget.objects.filter(
+                EQ_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQ_kingco_snugget:
                 groupsDict[EQ_kingco.getGroup()].extend(EQ_kingco_snugget)
 
-        qs_Volcano_2016_220619 = Volcano_2016_220619.objects.filter(geom__contains=pnt)
-        Volcano_2016_220619_rating = qs_Volcano_2016_220619.values_list('lookup_val', flat=True)
+        qs_Volcano_2016_220619 = Volcano_2016_220619.objects.filter(
+            geom__contains=pnt)
+        Volcano_2016_220619_rating = qs_Volcano_2016_220619.values_list(
+            'lookup_val', flat=True)
         for rating in Volcano_2016_220619_rating:
-            Volcano_2016_220619_snugget = Snugget.objects.filter(Volcano_2016_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Volcano_2016_220619_snugget = Snugget.objects.filter(
+                Volcano_2016_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Volcano_2016_220619_snugget:
-                groupsDict[Volcano_2016_220619.getGroup()].extend(Volcano_2016_220619_snugget)
+                groupsDict[Volcano_2016_220619.getGroup()].extend(
+                    Volcano_2016_220619_snugget)
 
-        qs_EQCascadiaDisplaced_2017_220619 = EQCascadiaDisplaced_2017_220619.objects.filter(geom__contains=pnt)
-        EQCascadiaDisplaced_2017_220619_rating = qs_EQCascadiaDisplaced_2017_220619.values_list('lookup_val', flat=True)
+        qs_EQCascadiaDisplaced_2017_220619 = EQCascadiaDisplaced_2017_220619.objects.filter(
+            geom__contains=pnt)
+        EQCascadiaDisplaced_2017_220619_rating = qs_EQCascadiaDisplaced_2017_220619.values_list(
+            'lookup_val', flat=True)
         for rating in EQCascadiaDisplaced_2017_220619_rating:
-            EQCascadiaDisplaced_2017_220619_snugget = Snugget.objects.filter(EQCascadiaDisplaced_2017_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            EQCascadiaDisplaced_2017_220619_snugget = Snugget.objects.filter(
+                EQCascadiaDisplaced_2017_220619_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if EQCascadiaDisplaced_2017_220619_snugget:
-                groupsDict[EQCascadiaDisplaced_2017_220619.getGroup()].extend(EQCascadiaDisplaced_2017_220619_snugget)
+                groupsDict[EQCascadiaDisplaced_2017_220619.getGroup()].extend(
+                    EQCascadiaDisplaced_2017_220619_snugget)
 
-        qs_FloodDamInund_2013_220710 = FloodDamInund_2013_220710.objects.filter(geom__contains=pnt)
-        FloodDamInund_2013_220710_rating = qs_FloodDamInund_2013_220710.values_list('lookup_val', flat=True)
+        qs_FloodDamInund_2013_220710 = FloodDamInund_2013_220710.objects.filter(
+            geom__contains=pnt)
+        FloodDamInund_2013_220710_rating = qs_FloodDamInund_2013_220710.values_list(
+            'lookup_val', flat=True)
         for rating in FloodDamInund_2013_220710_rating:
-            FloodDamInund_2013_220710_snugget = Snugget.objects.filter(FloodDamInund_2013_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            FloodDamInund_2013_220710_snugget = Snugget.objects.filter(
+                FloodDamInund_2013_220710_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if FloodDamInund_2013_220710_snugget:
-                groupsDict[FloodDamInund_2013_220710.getGroup()].extend(FloodDamInund_2013_220710_snugget)
+                groupsDict[FloodDamInund_2013_220710.getGroup()].extend(
+                    FloodDamInund_2013_220710_snugget)
 
-        qs_FloodCMZ_2015_220703 = FloodCMZ_2015_220703.objects.filter(geom__contains=pnt)
-        FloodCMZ_2015_220703_rating = qs_FloodCMZ_2015_220703.values_list('lookup_val', flat=True)
+        qs_FloodCMZ_2015_220703 = FloodCMZ_2015_220703.objects.filter(
+            geom__contains=pnt)
+        FloodCMZ_2015_220703_rating = qs_FloodCMZ_2015_220703.values_list(
+            'lookup_val', flat=True)
         for rating in FloodCMZ_2015_220703_rating:
-            FloodCMZ_2015_220703_snugget = Snugget.objects.filter(FloodCMZ_2015_220703_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            FloodCMZ_2015_220703_snugget = Snugget.objects.filter(
+                FloodCMZ_2015_220703_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if FloodCMZ_2015_220703_snugget:
-                groupsDict[FloodCMZ_2015_220703.getGroup()].extend(FloodCMZ_2015_220703_snugget)
+                groupsDict[FloodCMZ_2015_220703.getGroup()].extend(
+                    FloodCMZ_2015_220703_snugget)
 
-        qs_Heat_2020_20220803 = Heat_2020_20220803.objects.filter(geom__contains=pnt)
-        Heat_2020_20220803_rating = qs_Heat_2020_20220803.values_list('lookup_val', flat=True)
+        qs_Heat_2020_20220803 = Heat_2020_20220803.objects.filter(
+            geom__contains=pnt)
+        Heat_2020_20220803_rating = qs_Heat_2020_20220803.values_list(
+            'lookup_val', flat=True)
         for rating in Heat_2020_20220803_rating:
-            Heat_2020_20220803_snugget = Snugget.objects.filter(Heat_2020_20220803_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Heat_2020_20220803_snugget = Snugget.objects.filter(
+                Heat_2020_20220803_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Heat_2020_20220803_snugget:
-                groupsDict[Heat_2020_20220803.getGroup()].extend(Heat_2020_20220803_snugget)
+                groupsDict[Heat_2020_20220803.getGroup()].extend(
+                    Heat_2020_20220803_snugget)
 
         qs_Winter_kingco = Winter_kingco.objects.filter(geom__contains=pnt)
-        Winter_kingco_rating = qs_Winter_kingco.values_list('lookup_val', flat=True)
+        Winter_kingco_rating = qs_Winter_kingco.values_list(
+            'lookup_val', flat=True)
         for rating in Winter_kingco_rating:
-            Winter_kingco_snugget = Snugget.objects.filter(Winter_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            Winter_kingco_snugget = Snugget.objects.filter(
+                Winter_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if Winter_kingco_snugget:
-                groupsDict[Winter_kingco.getGroup()].extend(Winter_kingco_snugget)
+                groupsDict[Winter_kingco.getGroup()].extend(
+                    Winter_kingco_snugget)
 
         qs_LS_kingco = LS_kingco.objects.filter(geom__contains=pnt)
         LS_kingco_rating = qs_LS_kingco.values_list('lookup_val', flat=True)
         for rating in LS_kingco_rating:
-            LS_kingco_snugget = Snugget.objects.filter(LS_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
+            LS_kingco_snugget = Snugget.objects.filter(
+                LS_kingco_filter__lookup_val__exact=rating).order_by('order').select_subclasses()
             if LS_kingco_snugget:
                 groupsDict[LS_kingco.getGroup()].extend(LS_kingco_snugget)
 
