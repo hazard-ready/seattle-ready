@@ -138,6 +138,10 @@ else:
     EMAIL_HOST = os.environ['EMAIL_HOST']
     EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+
+DEFAULT_FROM_EMAIL = 'help@hazardready.org'
 
 # Parse database configuration from $DATABASE_URL
 DATABASES = {}
