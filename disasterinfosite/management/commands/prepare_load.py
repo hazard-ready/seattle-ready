@@ -3,7 +3,7 @@ import os
 from django.core.files import File
 from django.core.management.base import BaseCommand
 
-from disasterinfosite.models import PreparednessAction
+from disasterinfosite.models import PreparednessAction, PreparednessLink
 from disasterinfosite.management.commands._load_helpers import (
     runLoader,
     includeTranslatedFields
@@ -36,7 +36,19 @@ optionalFields = [
     'property-ru',
     'property-so',
     'property-vi',
-    'external_icon'
+    'external_icon',
+    'external_text_1-es',
+    'external_text_1-cn',
+    'external_text_1-ru',
+    'external_text_1-so',
+    'external_text_1-vi',
+    'external_link_2',
+    'external_text_2',
+    'external_text_2-es',
+    'external_text_2-cn',
+    'external_text_2-ru',
+    'external_text_2-so',
+    'external_text_2-vi'
 ]
 
 
@@ -60,8 +72,6 @@ def processRow(row, overwriteAll):
         'useful_text': row['useful'],
         'property_text': row['property'],
         'content_text': row['text'],
-        'link_text': row['external_text'],
-        'link': row['external_link'],
         'slug': row['slug']
     }
 
@@ -70,7 +80,6 @@ def processRow(row, overwriteAll):
     kwargs = includeTranslatedFields(row, 'happy', 'happy_text', kwargs)
     kwargs = includeTranslatedFields(row, 'useful', 'useful_text', kwargs)
     kwargs = includeTranslatedFields(row, 'property', 'property_text', kwargs)
-    kwargs = includeTranslatedFields(row, 'external_text', 'link_text', kwargs)
 
     pa = PreparednessAction.objects.create(**kwargs)
     pa.save()
@@ -86,6 +95,26 @@ def processRow(row, overwriteAll):
         with open(imageFile, 'rb') as f:
             data = File(f)
             pa.link_icon.save(row["external_icon"], data, True)
+
+    link_kwargs = {
+        'text': row['external_text_1'],
+        'url': row['external_link_1'],
+        'action': pa
+    }
+    link_kwargs = includeTranslatedFields(
+        row, 'external_text_1', 'text', link_kwargs)
+    link = PreparednessLink.objects.create(**link_kwargs)
+
+    # an optional second link
+    if row["external_text_2"]:
+        link_kwargs = {
+            'text': row['external_text_2'],
+            'url': row['external_link_2'],
+            'action': pa
+        }
+        link_kwargs = includeTranslatedFields(
+            row, 'external_text_2', 'text', link_kwargs)
+        link = PreparednessLink.objects.create(**link_kwargs)
 
     print('Created preparedness section:', pa.title)
 
