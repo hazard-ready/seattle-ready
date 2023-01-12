@@ -18,6 +18,7 @@ require("../img/locate-me.svg");
 
 require("./users");
 require("./sections");
+var utils = require("./utils");
 
 // IE11 polyfills
 require("url-polyfill");
@@ -185,37 +186,6 @@ function setStopHeight(heroContainer) {
   return headerHeight + informationHeight - 20;
 }
 
-function lazyLoadVideos() {
-  $(".video").each(function (idx) {
-    var self = $(this);
-    var embedCode = self.data("embed");
-    // Load the video preview thumbnails asynchronously
-    var preview = new Image();
-    preview.src = "https://img.youtube.com/vi/" + embedCode + "/sddefault.jpg";
-    preview.alt = "";
-    $(preview).on("load", function () {
-      self.append(preview);
-    });
-
-    self.click(function () {
-      var iframe = $(document.createElement("iframe"));
-
-      iframe.attr("frameborder", 0);
-      iframe.attr("allowfullscreen", "");
-      iframe.attr(
-        "src",
-        "https://www.youtube.com/embed/" +
-          embedCode +
-          "?rel=0&showinfo=0&autoplay=1"
-      );
-
-      // Swap out the static image and the play button for the video when someone clicks on it.
-      self.empty();
-      self.append(iframe);
-    });
-  });
-}
-
 $(document).ready(function () {
   var infoContainer = $(".information-container--found-content");
   var heroContainer = $(".hero-container");
@@ -292,7 +262,7 @@ $(document).ready(function () {
       stopHeight = setStopHeight(heroContainer);
     });
 
-    lazyLoadVideos();
+    utils.lazyLoadVideos();
   }
 
   // Set up input box
