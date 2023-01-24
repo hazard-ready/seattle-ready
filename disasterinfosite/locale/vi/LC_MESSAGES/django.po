@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-13 16:50-0700\n"
+"POT-Creation-Date: 2023-01-24 20:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,59 +18,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: settings.py:82
+#: settings.py:97
 msgid "Chinese"
 msgstr ""
 
-#: settings.py:83
+#: settings.py:98
 msgid "English"
 msgstr ""
 
-#: settings.py:84
+#: settings.py:99
 msgid "Russian"
 msgstr ""
 
-#: settings.py:85
+#: settings.py:100
 msgid "Somali"
 msgstr ""
 
-#: settings.py:86
+#: settings.py:101
 msgid "Spanish"
 msgstr ""
 
-#: settings.py:87
+#: settings.py:102
 msgid "Vietnamese"
 msgstr ""
 
-#: templates/found_content.html:9
-msgid ""
-"Look below the map to see information for your location, or enter another "
-"location."
+#: templates/about.html:17
+msgid "The Hazard Ready Team"
 msgstr ""
-"Hãy nhìn vào bản đồ dưới đây để xem thông tin về vị trí của bạn, hoặc nhập "
-"vào một vị trí khác."
 
-#: templates/found_content.html:26
-msgid "Results for this location"
-msgstr "Kết quả cho địa điểm này"
+#: templates/about.html:27
+msgid ""
+"Carson has a B.Sc. and M.Sc. in Geology from Western Washington University "
+"and the University of Montana. She is now working on her PhD at Boise State "
+"University where she studies how to best communicate natural hazard risk "
+"information to broad audiences. She writes the content and processes the "
+"data for each HazardReady site."
+msgstr ""
 
-#: templates/found_content.html:58
-msgid "Historical Images"
-msgstr "Hình Ảnh Lịch Sử"
+#: templates/about.html:44
+msgid ""
+"Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. "
+"Her research on tectonics and earthquake mechanics led to an interest in how "
+"human communities are affected by natural disasters, and inspires her "
+"ongoing efforts to help people better understand and prepare for them. She "
+"writes and lectures on the ethics of science communication as well as on her "
+"basic geophysical research."
+msgstr ""
 
-#: templates/found_content.html:76
-msgid "Supply Kit"
-msgstr "Bộ Vật Dụng Cần Thiết"
+#: templates/about.html:60
+msgid ""
+"Grant Kier has a M.Sc. in geology from the University of Colorado. He is "
+"broadly interested in community resilience in the context of manmade and "
+"natural changes. He also has a background in business practices and "
+"currently works on economic development, fostering small and startup "
+"companies in western Montana."
+msgstr ""
 
-#: templates/found_content.html:81
-msgid "Important Links"
-msgstr "Các Liên Kết Quan Trọng"
+#: templates/about.html:67
+msgid "The Hazard Ready Project"
+msgstr ""
 
-#: templates/geek_box.html:6
-msgid "How does it work?"
-msgstr "Trang web hoạt động như thế nào?"
-
-#: templates/geek_box.html:8
+#: templates/about.html:81
 #, python-format
 msgid ""
 "%(title)s is designed to help educate and prepare people for disasters that "
@@ -79,15 +87,14 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"%(title)s được thiết kế nhằm góp phần giáo dục "
-"và chuẩn bị cho mọi người cách ứng phó với các thảm hoạ xảy ra trong khu vực "
-"của họ. Thảm hoạ không xảy ra một cách đồng đều tại các khu vực, do vậy "
-"chúng tôi nhận thấy việc quan trọng là cung cấp thông tin cụ thể cho một địa "
-"điểm nhằm chuẩn bị một cách phù hợp. %(title)s sắp xếp thông "
-"tin hiện tại và tập hợp thông tin theo cách để bất kỳ cư dân nào thuộc "
-"%(area_name)s cũng có thể dễ dàng hiểu được."
+"%(title)s được thiết kế nhằm góp phần giáo dục và chuẩn bị cho mọi người "
+"cách ứng phó với các thảm hoạ xảy ra trong khu vực của họ. Thảm hoạ không "
+"xảy ra một cách đồng đều tại các khu vực, do vậy chúng tôi nhận thấy việc "
+"quan trọng là cung cấp thông tin cụ thể cho một địa điểm nhằm chuẩn bị một "
+"cách phù hợp. %(title)s sắp xếp thông tin hiện tại và tập hợp thông tin theo "
+"cách để bất kỳ cư dân nào thuộc %(area_name)s cũng có thể dễ dàng hiểu được."
 
-#: templates/geek_box.html:11
+#: templates/about.html:84
 #, python-format
 msgid ""
 "This site uses the most up-to-date hazard risk data available for "
@@ -98,48 +105,135 @@ msgid ""
 "are based on best information from the American Red Cross and the Federal "
 "Emergency Management Agency."
 msgstr ""
-"Trang web này sử dụng hầu hết dữ liệu cập nhật về các nguy "
-"cơ xảy ra hiểm hoạ có sẵn cho %(area_name)s. Người dùng trang web "
-"này phải chịu trách nhiệm xác nhận bất kỳ thông tin cụ thể nào với các nguồn "
-"dữ liệu gốc. Mặc dù các dữ liệu này thể hiện việc đánh giá cập nhật nhất về "
-"các hiểm hoạ, nhưng chúng cũng không dự đoán được các sự kiện tương lai. "
-"Việc mô tả nguy cơ và cách chuẩn bị cho các nguy cơ đó được dựa trên thông "
-"tin tốt nhất có được từ Hội Chữ Thập Đỏ và Cơ Quan Quản Lý Trường Hợp Khẩn "
-"Cấp Liên Bang."
+"Trang web này sử dụng hầu hết dữ liệu cập nhật về các nguy cơ xảy ra hiểm "
+"hoạ có sẵn cho %(area_name)s. Người dùng trang web này phải chịu trách nhiệm "
+"xác nhận bất kỳ thông tin cụ thể nào với các nguồn dữ liệu gốc. Mặc dù các "
+"dữ liệu này thể hiện việc đánh giá cập nhật nhất về các hiểm hoạ, nhưng "
+"chúng cũng không dự đoán được các sự kiện tương lai. Việc mô tả nguy cơ và "
+"cách chuẩn bị cho các nguy cơ đó được dựa trên thông tin tốt nhất có được từ "
+"Hội Chữ Thập Đỏ và Cơ Quan Quản Lý Trường Hợp Khẩn Cấp Liên Bang."
 
-#: templates/geek_box.html:15
-#, python-format
+#: templates/about.html:88
+msgid "build/flowchart.jpg"
+msgstr ""
+
+#: templates/about.html:91
+msgid ""
+"How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant "
+"and up-to-date data on natural hazards for your region from trusted sources "
+"like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners "
+"(community groups & emergency managers) to ensure the data and infomration "
+"are accurate. 3. Process data. Make the data compatible with Hazard Ready "
+"software. 4. Build content. Write the webpage text, gather images and "
+"videos, locate local resources for each hazard and region. 5. Feedback and "
+"focus groups. Discuss content and designs to ensure the information fits "
+"each community's needs. 6. Revise, revise, revise and launch site!"
+msgstr ""
+
+#: templates/about.html:99
+#, fuzzy, python-format
+#| msgid ""
+#| "Data used for %(title)s is available for download <a "
+#| "href=\"%(download)s\" target=\"_blank\">here</a>."
 msgid ""
 "Data used for %(title)s is available for download <a href=\"%(download)s\" "
-"target=\"_blank\">here</a>."
+"target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
-"Dữ liệu sử dụng cho %(title)s có sẵn để "
-"tải về <a href=\"%(download)s\" target=\"_blank\">tại đây</"
-"a>."
+"Dữ liệu sử dụng cho %(title)s có sẵn để tải về <a href=\"%(download)s\" "
+"target=\"_blank\">tại đây</a>."
 
-#: templates/geek_box.html:20
-#, python-format
-msgid ""
-"Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for more "
-"information."
+#: templates/data.html:16
+msgid "Data sources for Hazard Ready"
 msgstr ""
-"Bạn có câu hỏi? <a href=\"mailto:%(email)s\">Hãy gửi email cho người tạo lập</a> để biết "
-"thêm thông tin."
 
-#: templates/geek_box.html:26
+#: templates/data.html:20
 msgid "Quick Data Overview"
 msgstr "Tổng Quan Nhanh Về Dữ Liệu"
 
-#: templates/geek_box.html:28
+#: templates/data.html:22
 #, python-format
 msgid "Take a look at some overviews of the data we used for %(area_name)s:"
-msgstr "Hãy xem một số bản tổng quan về dữ liệu mà chúng tôi sử dụng cho %(area_name)s:"
+msgstr ""
+"Hãy xem một số bản tổng quan về dữ liệu mà chúng tôi sử dụng cho "
+"%(area_name)s:"
 
-#: templates/geek_box.html:38
+#: templates/data.html:38
+msgid "Questions or concerns about the data? Contact:"
+msgstr ""
+
+#: templates/data.html:40
+msgid "flood"
+msgstr ""
+
+#: templates/found_content.html:11
+#, fuzzy
+#| msgid "What to Expect"
+msgid "What to expect for"
+msgstr "Điều Gì Có Thể Xảy Ra"
+
+#: templates/found_content.html:17
+msgid "try&nbsp;a&nbsp;new&nbsp;address"
+msgstr ""
+
+#: templates/found_content.html:35
+#, fuzzy
+#| msgid "How to Prepare"
+msgid "Prepare!"
+msgstr "Cách Chuẩn Bị"
+
+#: templates/found_content.html:48
+#, python-format
+msgid "An intensity meter at %(percentage)s%%"
+msgstr ""
+
+#: templates/found_content.html:56
+msgid "Light shaking&nbsp;&mdash; No damage"
+msgstr ""
+
+#: templates/found_content.html:58
+msgid "Very Low Hazard"
+msgstr ""
+
+#: templates/found_content.html:63
+msgid "Violent shaking&nbsp;&mdash; Heavy damage"
+msgstr ""
+
+#: templates/found_content.html:65
+msgid "Very High Hazard"
+msgstr ""
+
+#: templates/geek_box.html:7
 msgid "Who made this?"
 msgstr "Ai tạo ra bản tổng quan này?"
 
-#: templates/index.html:11
+#: templates/geek_box.html:11
+#, fuzzy, python-format
+#| msgid ""
+#| "Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for "
+#| "more information."
+msgid ""
+"\n"
+"                Have questions? View the <a href=\"%(about_url)s\" "
+"target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the "
+"Hazard Ready creators</a> for more information.\n"
+"            "
+msgstr ""
+"Bạn có câu hỏi? <a href=\"mailto:%(email)s\">Hãy gửi email cho người tạo "
+"lập</a> để biết thêm thông tin."
+
+#: templates/geek_box.html:15
+#, fuzzy, python-format
+#| msgid ""
+#| "Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for "
+#| "more information."
+msgid ""
+"Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
+"a> page for more information.\""
+msgstr ""
+"Bạn có câu hỏi? <a href=\"mailto:%(email)s\">Hãy gửi email cho người tạo "
+"lập</a> để biết thêm thông tin."
+
+#: templates/head-meta.html:12 templates/header.html:25
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
@@ -147,11 +241,31 @@ msgstr ""
 "Nhập địa chỉ của bạn để xem báo cáo đã được cá nhân hoá về các nguy cơ và "
 "cách chuẩn bị."
 
-#: templates/index.html:31
-msgid "Sign Up / Log In"
-msgstr "Đăng Ký / Đăng Nhập"
+#: templates/header.html:16 templates/header.html:42
+msgid "About"
+msgstr ""
 
-#: templates/index.html:43 templates/no_content_found.html:8
+#: templates/header.html:23
+msgid "Find Me"
+msgstr "Tìm Vị Trí Của Tôi"
+
+#: templates/header.html:26
+msgid "Enter an address."
+msgstr ""
+
+#: templates/header.html:36
+msgid "We had a problem finding that location."
+msgstr ""
+
+#: templates/index.html:19
+msgid "Natural disasters can strike at any time."
+msgstr ""
+
+#: templates/index.html:21
+msgid "Get a personalized report"
+msgstr ""
+
+#: templates/index.html:22
 msgid ""
 "Give a location by typing in the box below, clicking on the map, or clicking "
 "'find me'. You'll get a personalized report on your natural hazard risks and "
@@ -162,43 +276,36 @@ msgstr ""
 "nhân hoá về các nguy cơ xảy ra hiểm hoạ thiên nhiên của mình và những bước "
 "mà bạn có thể thực hiện để chuẩn bị."
 
-#: templates/index.html:55
-msgid "Location"
-msgstr "Vị Trí"
-
-#: templates/index.html:57
-msgid "Your address, your city"
-msgstr "Địa chỉ, thành phố của bạn"
-
-#: templates/index.html:64
-msgid "Find Me"
-msgstr "Tìm Vị Trí Của Tôi"
-
-#: templates/index.html:81
+#: templates/index.html:23
 msgid "What are my risks?"
 msgstr "Những nguy cơ của tôi là gì?"
 
-#: templates/index.html:82
+#: templates/index.html:24
 msgid "What to Expect"
 msgstr "Điều Gì Có Thể Xảy Ra"
 
-#: templates/index.html:84
-#, python-format
+#: templates/index.html:25
+#, fuzzy, python-format
+#| msgid ""
+#| "%(title)s gives you an idea of which natural disasters you might "
+#| "experience in the future based on a location in %(area_name)s.\n"
+#| "          "
 msgid ""
-"%(title)s gives you an idea of which natural disasters you might experience "
-"in the future based on a location in %(area_name)s.\n"
-"          "
+" %(site_title)s gives you an idea of which\n"
+"              natural disasters you might experience in the future based on "
+"a\n"
+"              location in %(area_name)s. "
 msgstr ""
-"%(title)s cung cấp cho bạn một cái nhìn về các "
-"thảm hoạ thiên nhiên mà bạn có thể sẽ phải đối mặt trong tương lai dựa vào "
-"một vị trí tại %(area_name)s.\n"
+"%(title)s cung cấp cho bạn một cái nhìn về các thảm hoạ thiên nhiên mà bạn "
+"có thể sẽ phải đối mặt trong tương lai dựa vào một vị trí tại "
+"%(area_name)s.\n"
 "          "
 
-#: templates/index.html:88
+#: templates/index.html:28
 msgid "How to Prepare"
 msgstr "Cách Chuẩn Bị"
 
-#: templates/index.html:90
+#: templates/index.html:29
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -206,39 +313,85 @@ msgstr ""
 "Bạn có sức mạnh để tạo ra sự thay đổi. Tìm hiểu cách bạn có thể bảo vệ những "
 "người thân yêu và gia đình của mình trước khi thảm hoạ tiếp theo xảy ra."
 
-#: templates/index.html:93
+#: templates/index.html:30
 msgid "In Recent History"
 msgstr "Lịch Sử Gần Đây"
 
-#: templates/index.html:95
-#, python-format
+#: templates/index.html:31
+#, fuzzy, python-format
+#| msgid ""
+#| "Find out which disasters have struck %(area_name)s in the past, what "
+#| "impact they had, and where they happened.\n"
+#| "          "
 msgid ""
-"Find out which disasters have struck %(area_name)s in the past, what impact "
-"they had, and where they happened.\n"
-"          "
+" Find out which disasters have struck %(settings.area_name)s in the past, "
+"what impact they had, and where\n"
+"              they happened. "
 msgstr ""
-"Tìm hiểu các thảm hoạ nào đã tấn công %(area_name)s "
-"trong quá khứ, tác động của các thảm hoạ đó và nơi chúng xảy ra.\n"
+"Tìm hiểu các thảm hoạ nào đã tấn công %(area_name)s trong quá khứ, tác động "
+"của các thảm hoạ đó và nơi chúng xảy ra.\n"
 "          "
 
-#: templates/index.html:110
+#: templates/index.html:44
+msgid "About the Data"
+msgstr ""
+
+#: templates/index.html:46
+#, fuzzy, python-format
+#| msgid ""
+#| "This site uses the most up-to-date hazard risk data available for "
+#| "%(area_name)s. The user of this site is responsible for verifying any "
+#| "particular information with the original data sources. Although these "
+#| "data represent the best current assessment of hazards, they are not "
+#| "predictive of future events. The descriptions of risk and how to prepare "
+#| "for those risks are based on best information from the American Red Cross "
+#| "and the Federal Emergency Management Agency."
+msgid ""
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original <a href=\"%(data_source_link)s\" "
+"target=\"_blank\">data sources</a>. Although these data represent the best "
+"current assessment of hazards, they are not predictive of future events. The "
+"descriptions of risk and how to prepare for those risks are based on best "
+"information from the American Red Cross and the Federal Emergency Management "
+"Agency."
+msgstr ""
+"Trang web này sử dụng hầu hết dữ liệu cập nhật về các nguy cơ xảy ra hiểm "
+"hoạ có sẵn cho %(area_name)s. Người dùng trang web này phải chịu trách nhiệm "
+"xác nhận bất kỳ thông tin cụ thể nào với các nguồn dữ liệu gốc. Mặc dù các "
+"dữ liệu này thể hiện việc đánh giá cập nhật nhất về các hiểm hoạ, nhưng "
+"chúng cũng không dự đoán được các sự kiện tương lai. Việc mô tả nguy cơ và "
+"cách chuẩn bị cho các nguy cơ đó được dựa trên thông tin tốt nhất có được từ "
+"Hội Chữ Thập Đỏ và Cơ Quan Quản Lý Trường Hợp Khẩn Cấp Liên Bang."
+
+#: templates/index.html:64
 msgid "Getting results for your location..."
 msgstr "Xem kết quả cho địa điểm của bạn…"
 
-#: templates/language_selector.html:15
+#: templates/language_selector.html:27
 msgid "Language"
 msgstr "Ngôn ngữ"
 
-#: templates/no_content_found.html:27
+#: templates/no_content_found.html:6
+#, fuzzy
+#| msgid "No information available."
+msgid "No information available for"
+msgstr "Không có thông tin."
+
+#: templates/no_content_found.html:9
+msgid "Wrong address? Start over"
+msgstr ""
+
+#: templates/no_content_found.html:20
 msgid "No information available."
 msgstr "Không có thông tin."
 
-#: templates/no_content_found.html:30
-#, python-format         "
+#: templates/no_content_found.html:22
+#, python-format
 msgid "It looks like your location is outside of %(area_name)s."
 msgstr "Có vẻ như địa điểm của bạn nằm bên ngoài %(area_name)s."
 
-#: templates/no_content_found.html:33
+#: templates/no_content_found.html:23
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -247,130 +400,306 @@ msgstr ""
 "liệu cung cấp nền tảng hoạt động cho trang web vẫn chưa có sẵn cho các nơi "
 "khác."
 
-#: templates/supply-kit.html:3
-msgid "Experts suggest you have the following:"
-msgstr "Các chuyên gia khuyên bạn nên có:"
+#: templates/prepare.html:19
+msgid "Take the first step toward getting prepared"
+msgstr ""
 
-#: templates/supply-kit.html:8
-msgid "Days of supplies"
-msgstr "Nhu yếu phẩm cho nhiều ngày"
+#: templates/prepare.html:22
+msgid ""
+"There are a few simple steps we can take to make our families and community "
+"more prepared for emergencies. It doesn't have to be expensive or difficult. "
+"You may have already done some of it! You can use the checklist at the "
+"bottom of this page to keep track of how much you've done."
+msgstr ""
 
-#: templates/supply-kit.html:8 templates/supply-kit.html:13
-#: templates/supply-kit.html:18
-msgid "per person"
-msgstr "cho một người"
+#: templates/prepare.html:87
+msgid "This activity"
+msgstr ""
 
-#: templates/supply-kit.html:13
-msgid "Gallons of water"
-msgstr "Nhiều gallon nước"
+#: templates/prepare.html:88
+msgid "Print Checklist"
+msgstr ""
 
-#: templates/supply-kit.html:18
-msgid "Meals"
-msgstr "Các bữa ăn"
+#: templates/prepare.html:92
+msgid "Completed?"
+msgstr ""
 
-#: templates/user_interactions.html:3
-msgid "Log Out"
-msgstr "Đăng Xuất"
+#: templates/prepare.html:93
+msgid "Activity"
+msgstr ""
 
-#: templates/user_interactions.html:4
+#: templates/prepare.html:94 templates/prepare.html:110
+msgid "reduces emotional and physical harm"
+msgstr ""
+
+#: templates/prepare.html:96 templates/prepare.html:112
+msgid "is useful for other situations"
+msgstr ""
+
+#: templates/prepare.html:98 templates/prepare.html:114
+msgid "helps protect property"
+msgstr ""
+
+#: templates/prepare.html:100
+msgid "costs"
+msgstr ""
+
+#: templates/prepare.html:102
+msgid "Resources"
+msgstr ""
+
+#: templates/prepare.html:136
+msgid "Key:"
+msgstr ""
+
+#: templates/prepare.html:145
+msgid "or more"
+msgstr ""
+
+#: templates/registration/login.html:3
+#: templates/registration/user_interactions.html:3
 msgid "Log In"
 msgstr "Đăng Nhập"
 
-#: templates/user_interactions.html:5
-msgid "Sign Up"
-msgstr "Đăng Ký"
-
-#: templates/user_interactions.html:6
-msgid "Update My Info"
-msgstr "Cập Nhật Thông Tin của Tôi"
-
-#: templates/user_interactions.html:7
+#: templates/registration/login.html:4
+#: templates/registration/user_interactions.html:5
+#: templates/registration/user_profile.html:26
+#: templates/registration/user_signup.html:4
 msgid "Cancel"
 msgstr "Huỷ"
 
-#: templates/user_interactions.html:13
-msgid "Welcome back!"
-msgstr "Chào mừng quay trở lại!"
-
-#: templates/user_interactions.html:15
-#, python-format
-msgid "If your username isn't %(username)s, you might want to log out."
-msgstr "Nếu tên người dùng của bạn không phải là %(username)s, bạn nên đăng xuất."
-
-#: templates/user_interactions.html:28
-msgid "Why should you sign up?"
-msgstr "Vì sao bạn nên đăng ký?"
-
-#: templates/user_interactions.html:30
-msgid ""
-"Sign up for free to access customized hazard preparedness information. By "
-"providing your address, you will get updates about seasonal hazards and "
-"ongoing incidents specific to your location. We want you to be better "
-"prepared so you can keep your family, friends, and neighbors safe when a "
-"disaster strikes! Personal information will be protected and secure."
-msgstr ""
-"Đăng ký miễn phí để truy cập thông tin chuẩn bị ứng phó với hiểm họa đã được "
-"tuỳ chỉnh. Nhờ cung cấp địa chỉ của mình, bạn sẽ nhận được các thông tin cập "
-"nhật về các hiểm họa theo mùa và các sự cố đang diễn ra tại vị trí của bạn. "
-"Chúng tôi mong muốn bạn có sự chuẩn bị tốt hơn để có thể bảo đảm sự an toàn "
-"cho gia đình, bạn bè và hàng xóm của bạn khi một thảm họa xảy ra! Thông tin "
-"cá nhân sẽ được bảo vệ và bảo mật."
-
-#: templates/user_interactions.html:39
+#: templates/registration/login.html:8
+#: templates/registration/password_change_form.html:13
 msgid "Required."
 msgstr "Bắt Buộc."
 
-#: templates/user_interactions.html:42
+#: templates/registration/login.html:12
 msgid "Username (your email address)"
 msgstr "Tên Người Dùng (địa chỉ email của bạn)"
 
-#: templates/user_interactions.html:45
+#: templates/registration/login.html:15
 msgid "Password"
 msgstr "Mật Khẩu"
 
-#: templates/user_interactions.html:56
+#: templates/registration/login.html:26
+#, python-format
 msgid ""
-"Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
-"org\">Email us.</a>"
+"Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
 msgstr ""
-"Bạn cần trợ giúp (VD: đặt lại mật khẩu) phải không? <a href="
-"\"mailto:help@hazardready.org\">Gửi email cho chúng tôi.</a>"
 
-#: templates/user_interactions.html:63
-msgid "Email address (this will be your username)"
-msgstr "Địa chỉ email (đây sẽ là tên người dùng của bạn)"
+#: templates/registration/password_change_done.html:10
+msgid "Your password was changed."
+msgstr ""
 
-#: templates/user_interactions.html:68
-msgid "Password (more than 8 characters long, please)"
-msgstr "Mật khẩu (vui lòng đặt mật khẩu có độ dài trên 8 ký tự)"
+#: templates/registration/password_change_form.html:12
+msgid ""
+"Please enter your old password, for security’s sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
 
-#: templates/user_interactions.html:73 templates/user_interactions.html:141
+#: templates/registration/password_change_form.html:18
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+
+#: templates/registration/password_change_form.html:44
+#: templates/registration/password_reset_confirm.html:30
+msgid "Change my password"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Your password has been set."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:12
+msgid "Enter a new password"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:15
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:21
+#, fuzzy
+#| msgid "Password"
+msgid "New password:"
+msgstr "Mật Khẩu"
+
+#: templates/registration/password_reset_confirm.html:26
+msgid "Confirm password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:37
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:10
+msgid "Please check your email."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:11
+msgid ""
+"We’ve emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:13
+msgid ""
+"If you don’t receive an email, please make sure you’ve entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: templates/registration/password_reset_form.html:11
+msgid "Reset your password"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:12
+msgid ""
+"Forgotten your password? Enter your email address below, and we’ll email "
+"instructions for setting a new one."
+msgstr ""
+
+#: templates/registration/password_reset_form.html:17
+msgid "Email address:"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:21
+msgid "Reset my password"
+msgstr ""
+
+#: templates/registration/user_interactions.html:4
+#: templates/registration/user_signup.html:3
+msgid "Sign Up"
+msgstr "Đăng Ký"
+
+#: templates/registration/user_interactions.html:6
+msgid "Log Out"
+msgstr "Đăng Xuất"
+
+#: templates/registration/user_interactions.html:7
+msgid "Update My Info"
+msgstr "Cập Nhật Thông Tin của Tôi"
+
+#: templates/registration/user_interactions.html:23
+#, fuzzy, python-format
+#| msgid "Welcome back, %(username)s!"
+msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
+msgstr "Chào mừng quay trở lại, %(username)s!"
+
+#: templates/registration/user_interactions.html:25
+msgid "We're logging you in. Just a moment..."
+msgstr "Chúng tôi đang đăng nhập cho bạn. Xin chờ trong giây lát..."
+
+#: templates/registration/user_interactions.html:33
+msgid "Welcome back!"
+msgstr "Chào mừng quay trở lại!"
+
+#: templates/registration/user_interactions.html:35
+#, fuzzy, python-format
+#| msgid "If your username isn't %(username)s, you might want to log out."
+msgid ""
+"If your username isn't <span class=\"username\">%(username)s</span>, you "
+"might want to log out."
+msgstr ""
+"Nếu tên người dùng của bạn không phải là %(username)s, bạn nên đăng xuất."
+
+#: templates/registration/user_interactions.html:43
+msgid "Receive Important Updates"
+msgstr ""
+
+#: templates/registration/user_interactions.html:45
+msgid ""
+"Keep your family, friends, and neighbors safe. Sign up to get email updates "
+"about seasonal hazards like fires, floods, and snow storms. If a natural "
+"disaster happens in your area, we’ll send you updates so you can stay "
+"informed. We’ll ask for your email address and physical address. Your "
+"information will be secure, and we won’t contact you for any other reason."
+msgstr ""
+
+#: templates/registration/user_profile.html:4
+#, fuzzy
+#| msgid "Other Address Information"
+msgid "Update Your Information"
+msgstr "Các Thông Tin Khác về Địa Chỉ"
+
+#: templates/registration/user_profile.html:8
+#: templates/registration/user_signup.html:17
 msgid "Street Address"
 msgstr "Địa Chỉ Đường"
 
-#: templates/user_interactions.html:78 templates/user_interactions.html:146
+#: templates/registration/user_profile.html:11
+#: templates/registration/user_signup.html:20
 msgid "Other Address Information"
 msgstr "Các Thông Tin Khác về Địa Chỉ"
 
-#: templates/user_interactions.html:83 templates/user_interactions.html:151
+#: templates/registration/user_profile.html:14
+#: templates/registration/user_signup.html:23
 msgid "City"
 msgstr "Thành Phố"
 
-#: templates/user_interactions.html:88 templates/user_interactions.html:156
+#: templates/registration/user_profile.html:17
+#: templates/registration/user_signup.html:26
 msgid "State"
 msgstr "Tiểu Bang"
 
-#: templates/user_interactions.html:93 templates/user_interactions.html:161
+#: templates/registration/user_profile.html:20
+#: templates/registration/user_signup.html:29
 msgid "Zip Code"
 msgstr "Mã Bưu Chính"
 
-#: templates/user_interactions.html:103
+#: templates/registration/user_profile.html:25
+msgid "Update"
+msgstr "Cập nhật"
+
+#: templates/registration/user_signup.html:11
+msgid "Email address (this will be your username)"
+msgstr "Địa chỉ email (đây sẽ là tên người dùng của bạn)"
+
+#: templates/registration/user_signup.html:14
+msgid "Password (more than 8 characters long, please)"
+msgstr "Mật khẩu (vui lòng đặt mật khẩu có độ dài trên 8 ký tự)"
+
+#: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
 "Bạn cần trợ giúp phải không? <a href=\"mailto:help@hazardready.org\">Gửi "
 "email cho chúng tôi.</a>"
 
-#: templates/user_interactions.html:109
+#: templatetags/show_cost.py:8
+msgid "Free!"
+msgstr ""
+
+#: templatetags/show_cost.py:13 templatetags/show_cost.py:23
+#: templatetags/show_cost_header.py:13
+msgid "Unknown"
+msgstr ""
+
+#: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
+msgid "Get Started - It’s Free!"
+msgstr ""
+
+#: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
+msgid "Next Steps"
+msgstr ""
+
+#: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
+msgid "Keep Going"
+msgstr ""
+
+#: views.py:49
+msgid "That email address has already been used. Try logging in instead."
+msgstr ""
+
+#: views.py:57 views.py:74 views.py:85
+msgid "Whoops, we're not sure what happened there. Maybe you should try again."
+msgstr ""
+"Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử lại."
+
+#: views.py:91
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
@@ -379,28 +708,87 @@ msgstr ""
 "liên quan. Bạn có thể quay lại vào bất kỳ lúc nào để cập nhật địa chỉ của "
 "mình."
 
-#: templates/user_interactions.html:116
-#, python-format
-msgid "Welcome back, %(username)s!"
-msgstr "Chào mừng quay trở lại, %(username)s!"
+#: views.py:112
+#, fuzzy
+#| msgid ""
+#| "Whoops, we're not sure what happened there. Maybe you should try again."
+msgid "We're not sure what happened there. Maybe you should try again."
+msgstr ""
+"Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử lại."
 
-#: templates/user_interactions.html:124
-msgid "We're logging you in. Just a moment..."
-msgstr "Chúng tôi đang đăng nhập cho bạn. Xin chờ trong giây lát..."
-
-#: templates/user_interactions.html:130
-msgid "Whoops, it looks like that username or password didn't work."
-msgstr "Ồ, có vẻ như tên người dùng hoặc mật khẩu không đúng."
-
-#: templates/user_interactions.html:166
-msgid "Update"
-msgstr "Cập nhật"
-
-#: templates/user_interactions.html:173
+#: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Cảm ơn bạn đã cập nhật thông tin cho chúng tôi!"
 
-#: templates/user_interactions.html:179
-msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr ""
-"Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử lại."
+#~ msgid ""
+#~ "Look below the map to see information for your location, or enter another "
+#~ "location."
+#~ msgstr ""
+#~ "Hãy nhìn vào bản đồ dưới đây để xem thông tin về vị trí của bạn, hoặc "
+#~ "nhập vào một vị trí khác."
+
+#~ msgid "Results for this location"
+#~ msgstr "Kết quả cho địa điểm này"
+
+#~ msgid "Historical Images"
+#~ msgstr "Hình Ảnh Lịch Sử"
+
+#~ msgid "Supply Kit"
+#~ msgstr "Bộ Vật Dụng Cần Thiết"
+
+#~ msgid "Important Links"
+#~ msgstr "Các Liên Kết Quan Trọng"
+
+#~ msgid "How does it work?"
+#~ msgstr "Trang web hoạt động như thế nào?"
+
+#~ msgid "Sign Up / Log In"
+#~ msgstr "Đăng Ký / Đăng Nhập"
+
+#~ msgid "Location"
+#~ msgstr "Vị Trí"
+
+#~ msgid "Your address, your city"
+#~ msgstr "Địa chỉ, thành phố của bạn"
+
+#~ msgid "Experts suggest you have the following:"
+#~ msgstr "Các chuyên gia khuyên bạn nên có:"
+
+#~ msgid "Days of supplies"
+#~ msgstr "Nhu yếu phẩm cho nhiều ngày"
+
+#~ msgid "per person"
+#~ msgstr "cho một người"
+
+#~ msgid "Gallons of water"
+#~ msgstr "Nhiều gallon nước"
+
+#~ msgid "Meals"
+#~ msgstr "Các bữa ăn"
+
+#~ msgid "Why should you sign up?"
+#~ msgstr "Vì sao bạn nên đăng ký?"
+
+#~ msgid ""
+#~ "Sign up for free to access customized hazard preparedness information. By "
+#~ "providing your address, you will get updates about seasonal hazards and "
+#~ "ongoing incidents specific to your location. We want you to be better "
+#~ "prepared so you can keep your family, friends, and neighbors safe when a "
+#~ "disaster strikes! Personal information will be protected and secure."
+#~ msgstr ""
+#~ "Đăng ký miễn phí để truy cập thông tin chuẩn bị ứng phó với hiểm họa đã "
+#~ "được tuỳ chỉnh. Nhờ cung cấp địa chỉ của mình, bạn sẽ nhận được các thông "
+#~ "tin cập nhật về các hiểm họa theo mùa và các sự cố đang diễn ra tại vị "
+#~ "trí của bạn. Chúng tôi mong muốn bạn có sự chuẩn bị tốt hơn để có thể bảo "
+#~ "đảm sự an toàn cho gia đình, bạn bè và hàng xóm của bạn khi một thảm họa "
+#~ "xảy ra! Thông tin cá nhân sẽ được bảo vệ và bảo mật."
+
+#~ msgid ""
+#~ "Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
+#~ "org\">Email us.</a>"
+#~ msgstr ""
+#~ "Bạn cần trợ giúp (VD: đặt lại mật khẩu) phải không? <a href=\"mailto:"
+#~ "help@hazardready.org\">Gửi email cho chúng tôi.</a>"
+
+#~ msgid "Whoops, it looks like that username or password didn't work."
+#~ msgstr "Ồ, có vẻ như tên người dùng hoặc mật khẩu không đúng."
