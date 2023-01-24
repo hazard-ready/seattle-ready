@@ -12,8 +12,7 @@ ADMINS = [
     ('Melinda Minch', 'melinda@melindaminch.com')
 ]
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
@@ -159,8 +158,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static asset configuration
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,

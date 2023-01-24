@@ -95,6 +95,13 @@ h2 {
   @include breakpoint(large) {
     font-size: 32px;
   }
+
+  .description {
+    text-transform: none;
+    font-size: 24px;
+    color: $dark-grey;
+    font-family: $sans-serif;
+  }
 }
 
 .h2--sans-serif {
