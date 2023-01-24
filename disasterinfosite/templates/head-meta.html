@@ -4,13 +4,13 @@
 {% load render_bundle from webpack_loader %}
 
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:url" content="{{ settings.site_url }}"/>
-  <meta property="og:title" content="{{ settings.site_description }}">
+  <meta property="og:title" content="{{ settings.site_title }}">
   {% trans "Enter your location for a personalized report on your risks and how to prepare." as meta_description %}
-  <meta property="og:description" content="{{ settings.intro_text }} {{ meta_description }}">
+  <meta property="og:description" content="{{ settings.site_description }} {{ settings.intro_text }} {{ meta_description }}">
 
   <title>{{ settings.site_title }}</title>
 

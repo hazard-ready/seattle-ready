@@ -14,13 +14,22 @@
       <div class="hero-container">
         <div class="map-info-container">
           {% block info-instructions %}
-          <div class="information-container">
-            <h2 class="caps">{{ settings.site_description }}</h2>
-            <p>{{ settings.intro_text | safe }}</p>
+          <div class="information-container information-container--landing">
+            <h2 class="caps">{{ settings.site_title }} <br><span class="description">{{ settings.site_description }}</span></h2>
             <h3 class="information-header">{% trans "Natural disasters can strike at any time." %}</h3>
-            {% trans "The more you know about the hazards that are likely in your area, the better you'll be able to understand your risks and prepare." %}
+            {{ settings.intro_text | safe }}
             <h3 class="information-header">{% trans 'Get a personalized report' %}</h3>
-            {% trans 'Find out which natural hazards are likely in your area and steps you can take to prepare. Type your location in the search box at the top of the page, select a location on the map, or click “FIND ME.”' %}
+            {% trans "Give a location by typing in the box below, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare." %}
+            <h2 class="caps">{% trans "What are my risks?" %}</h2>
+            <h3 class="information-header">{% trans "What to Expect" %}</h3>
+              {% blocktrans with site_title=settings.site_title area_name=settings.area_name %} {{ site_title }} gives you an idea of which
+              natural disasters you might experience in the future based on a
+              location in {{ area_name }}. {% endblocktrans %}
+            <h3 class="information-header">{% trans "How to Prepare" %}</h3>
+              {% trans "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits." %}
+            <h3 class="information-header">{% trans "In Recent History" %}</h3>
+              {% blocktrans %} Find out which disasters have struck {{ settings.area_name }} in the past, what impact they had, and where
+              they happened. {% endblocktrans %}
           </div>
           {% endblock info-instructions %}
 
