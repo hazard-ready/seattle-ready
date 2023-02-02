@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-24 20:07+0000\n"
+"POT-Creation-Date: 2023-02-02 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,27 +20,35 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: settings.py:97
-msgid "Chinese"
-msgstr ""
-
-#: settings.py:98
-msgid "English"
-msgstr ""
-
-#: settings.py:99
-msgid "Russian"
-msgstr ""
-
 #: settings.py:100
-msgid "Somali"
+msgid "Arabic"
 msgstr ""
 
 #: settings.py:101
-msgid "Spanish"
+msgid "Chinese"
 msgstr ""
 
 #: settings.py:102
+msgid "English"
+msgstr ""
+
+#: settings.py:103
+msgid "Korean"
+msgstr ""
+
+#: settings.py:104
+msgid "Russian"
+msgstr ""
+
+#: settings.py:105
+msgid "Somali"
+msgstr ""
+
+#: settings.py:106
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:107
 msgid "Vietnamese"
 msgstr ""
 
@@ -698,7 +706,7 @@ msgstr ""
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
 
-#: views.py:57 views.py:74 views.py:85
+#: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr "Ой! Похоже, что-то пошло не так. Повторите попытку."
 
@@ -710,87 +718,12 @@ msgstr ""
 "Благодарим за регистрацию! Мы будем присылать вам актуальные новости и "
 "информацию. Вы можете вернуться в любое время, чтобы обновить свой адрес."
 
-#: views.py:112
-#, fuzzy
-#| msgid ""
-#| "Whoops, we're not sure what happened there. Maybe you should try again."
-msgid "We're not sure what happened there. Maybe you should try again."
-msgstr "Ой! Похоже, что-то пошло не так. Повторите попытку."
-
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Спасибо, что держите нас в курсе!"
 
-#~ msgid ""
-#~ "Look below the map to see information for your location, or enter another "
-#~ "location."
-#~ msgstr ""
-#~ "Посмотрите ниже карты, чтобы увидеть информацию для вашего "
-#~ "местоположения, или введите другое местоположение."
-
-#~ msgid "Results for this location"
-#~ msgstr "Результаты для этого местоположения"
-
-#~ msgid "Historical Images"
-#~ msgstr "Исторические изображения"
-
-#~ msgid "Supply Kit"
-#~ msgstr "Комплект принадлежностей"
-
-#~ msgid "Important Links"
-#~ msgstr "Важные ссылки"
-
-#~ msgid "How does it work?"
-#~ msgstr "Как это работает?"
-
-#~ msgid "Sign Up / Log In"
-#~ msgstr "Регистрация или вход"
-
-#~ msgid "Location"
-#~ msgstr "Местоположение"
-
-#~ msgid "Your address, your city"
-#~ msgstr "Ваш адрес, ваш город"
-
-#~ msgid "Experts suggest you have the following:"
-#~ msgstr "Эксперты рекомендуют иметь при себе следующее:"
-
-#~ msgid "Days of supplies"
-#~ msgstr "провиант на несколько дней"
-
-#~ msgid "per person"
-#~ msgstr "на каждого человека"
-
-#~ msgid "Gallons of water"
-#~ msgstr "как можно больше воды"
-
-#~ msgid "Meals"
-#~ msgstr "продукты питания"
-
-#~ msgid "Why should you sign up?"
-#~ msgstr "Зачем следует зарегистрироваться?"
-
-#~ msgid ""
-#~ "Sign up for free to access customized hazard preparedness information. By "
-#~ "providing your address, you will get updates about seasonal hazards and "
-#~ "ongoing incidents specific to your location. We want you to be better "
-#~ "prepared so you can keep your family, friends, and neighbors safe when a "
-#~ "disaster strikes! Personal information will be protected and secure."
-#~ msgstr ""
-#~ "Пройдите бесплатную регистрацию, чтобы получить доступ к "
-#~ "персонализированной информации о готовности к опасности. Указав свой "
-#~ "адрес, вы будете получать последнюю информацию о сезонных опасностях и "
-#~ "текущих происшествиях, характерных для вашего местоположения. Мы хотим, "
-#~ "чтобы вы были лучше подготовлены и смогли обеспечить безопасность своей "
-#~ "семьи, друзей и соседей при наступлении бедствия! Личная информация будет "
-#~ "защищена."
-
-#~ msgid ""
-#~ "Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
-#~ "org\">Email us.</a>"
-#~ msgstr ""
-#~ "Нужна помощь (например, со сбросом пароля)? <a href=\"mailto:"
-#~ "help@hazardready.org\">Напишите нам.</a>"
-
-#~ msgid "Whoops, it looks like that username or password didn't work."
-#~ msgstr "Ой! Неверное имя пользователя или пароль."
+#, fuzzy
+#~| msgid ""
+#~| "Whoops, we're not sure what happened there. Maybe you should try again."
+#~ msgid "We're not sure what happened there. Maybe you should try again."
+#~ msgstr "Ой! Похоже, что-то пошло не так. Повторите попытку."

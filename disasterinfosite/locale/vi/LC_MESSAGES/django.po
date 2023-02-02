@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-24 20:07+0000\n"
+"POT-Creation-Date: 2023-02-02 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: settings.py:97
-msgid "Chinese"
-msgstr ""
-
-#: settings.py:98
-msgid "English"
-msgstr ""
-
-#: settings.py:99
-msgid "Russian"
-msgstr ""
-
 #: settings.py:100
-msgid "Somali"
+msgid "Arabic"
 msgstr ""
 
 #: settings.py:101
-msgid "Spanish"
+msgid "Chinese"
 msgstr ""
 
 #: settings.py:102
+msgid "English"
+msgstr ""
+
+#: settings.py:103
+msgid "Korean"
+msgstr ""
+
+#: settings.py:104
+msgid "Russian"
+msgstr ""
+
+#: settings.py:105
+msgid "Somali"
+msgstr ""
+
+#: settings.py:106
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:107
 msgid "Vietnamese"
 msgstr ""
 
@@ -694,7 +702,7 @@ msgstr ""
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
 
-#: views.py:57 views.py:74 views.py:85
+#: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr ""
 "Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử lại."
@@ -708,87 +716,14 @@ msgstr ""
 "liên quan. Bạn có thể quay lại vào bất kỳ lúc nào để cập nhật địa chỉ của "
 "mình."
 
-#: views.py:112
-#, fuzzy
-#| msgid ""
-#| "Whoops, we're not sure what happened there. Maybe you should try again."
-msgid "We're not sure what happened there. Maybe you should try again."
-msgstr ""
-"Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử lại."
-
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Cảm ơn bạn đã cập nhật thông tin cho chúng tôi!"
 
-#~ msgid ""
-#~ "Look below the map to see information for your location, or enter another "
-#~ "location."
+#, fuzzy
+#~| msgid ""
+#~| "Whoops, we're not sure what happened there. Maybe you should try again."
+#~ msgid "We're not sure what happened there. Maybe you should try again."
 #~ msgstr ""
-#~ "Hãy nhìn vào bản đồ dưới đây để xem thông tin về vị trí của bạn, hoặc "
-#~ "nhập vào một vị trí khác."
-
-#~ msgid "Results for this location"
-#~ msgstr "Kết quả cho địa điểm này"
-
-#~ msgid "Historical Images"
-#~ msgstr "Hình Ảnh Lịch Sử"
-
-#~ msgid "Supply Kit"
-#~ msgstr "Bộ Vật Dụng Cần Thiết"
-
-#~ msgid "Important Links"
-#~ msgstr "Các Liên Kết Quan Trọng"
-
-#~ msgid "How does it work?"
-#~ msgstr "Trang web hoạt động như thế nào?"
-
-#~ msgid "Sign Up / Log In"
-#~ msgstr "Đăng Ký / Đăng Nhập"
-
-#~ msgid "Location"
-#~ msgstr "Vị Trí"
-
-#~ msgid "Your address, your city"
-#~ msgstr "Địa chỉ, thành phố của bạn"
-
-#~ msgid "Experts suggest you have the following:"
-#~ msgstr "Các chuyên gia khuyên bạn nên có:"
-
-#~ msgid "Days of supplies"
-#~ msgstr "Nhu yếu phẩm cho nhiều ngày"
-
-#~ msgid "per person"
-#~ msgstr "cho một người"
-
-#~ msgid "Gallons of water"
-#~ msgstr "Nhiều gallon nước"
-
-#~ msgid "Meals"
-#~ msgstr "Các bữa ăn"
-
-#~ msgid "Why should you sign up?"
-#~ msgstr "Vì sao bạn nên đăng ký?"
-
-#~ msgid ""
-#~ "Sign up for free to access customized hazard preparedness information. By "
-#~ "providing your address, you will get updates about seasonal hazards and "
-#~ "ongoing incidents specific to your location. We want you to be better "
-#~ "prepared so you can keep your family, friends, and neighbors safe when a "
-#~ "disaster strikes! Personal information will be protected and secure."
-#~ msgstr ""
-#~ "Đăng ký miễn phí để truy cập thông tin chuẩn bị ứng phó với hiểm họa đã "
-#~ "được tuỳ chỉnh. Nhờ cung cấp địa chỉ của mình, bạn sẽ nhận được các thông "
-#~ "tin cập nhật về các hiểm họa theo mùa và các sự cố đang diễn ra tại vị "
-#~ "trí của bạn. Chúng tôi mong muốn bạn có sự chuẩn bị tốt hơn để có thể bảo "
-#~ "đảm sự an toàn cho gia đình, bạn bè và hàng xóm của bạn khi một thảm họa "
-#~ "xảy ra! Thông tin cá nhân sẽ được bảo vệ và bảo mật."
-
-#~ msgid ""
-#~ "Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
-#~ "org\">Email us.</a>"
-#~ msgstr ""
-#~ "Bạn cần trợ giúp (VD: đặt lại mật khẩu) phải không? <a href=\"mailto:"
-#~ "help@hazardready.org\">Gửi email cho chúng tôi.</a>"
-
-#~ msgid "Whoops, it looks like that username or password didn't work."
-#~ msgstr "Ồ, có vẻ như tên người dùng hoặc mật khẩu không đúng."
+#~ "Ồ, chúng tôi không chắc về những gì đã xảy ra tại đó. Có lẽ bạn nên thử "
+#~ "lại."
