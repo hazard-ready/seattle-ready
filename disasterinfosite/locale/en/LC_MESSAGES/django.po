@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-24 20:07+0000\n"
+"POT-Creation-Date: 2023-02-02 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:97
-msgid "Chinese"
-msgstr ""
-
-#: settings.py:98
-msgid "English"
-msgstr ""
-
-#: settings.py:99
-msgid "Russian"
-msgstr ""
-
 #: settings.py:100
-msgid "Somali"
+msgid "Arabic"
 msgstr ""
 
 #: settings.py:101
-msgid "Spanish"
+msgid "Chinese"
 msgstr ""
 
 #: settings.py:102
+msgid "English"
+msgstr ""
+
+#: settings.py:103
+msgid "Korean"
+msgstr ""
+
+#: settings.py:104
+msgid "Russian"
+msgstr ""
+
+#: settings.py:105
+msgid "Somali"
+msgstr ""
+
+#: settings.py:106
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:107
 msgid "Vietnamese"
 msgstr ""
 
@@ -608,7 +616,7 @@ msgstr ""
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
 
-#: views.py:57 views.py:74 views.py:85
+#: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr ""
 
@@ -616,10 +624,6 @@ msgstr ""
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
-msgstr ""
-
-#: views.py:112
-msgid "We're not sure what happened there. Maybe you should try again."
 msgstr ""
 
 #: views.py:117

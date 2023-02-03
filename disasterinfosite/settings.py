@@ -73,7 +73,8 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 LANGUAGE_CODE = 'en'
 USE_L10N = True
 
-# Somali is not an officially supported language in Django, so this is a patch to add it.
+# Somali is not an officially supported language in Django,
+# so this is a patch to add it.
 django.conf.locale.LANG_INFO['so'] = {
     'bidi': False,
     'code': 'so',
@@ -81,12 +82,14 @@ django.conf.locale.LANG_INFO['so'] = {
     'name_local': u'af Soomaali',
 }
 
-# Add an alias for Chinese = cn, as well, for neatness. This is the same as simplified Chinese.
+# Add an alias for Chinese = cn, as well, for neatness.
+# In our app, this is the same as traditional Chinese.
+# The usual code for this is `zh-hant`.
 django.conf.locale.LANG_INFO['cn'] = {
     'bidi': False,
     'code': 'cn',
     'name': 'Chinese',
-    'name_local': '简体中文',
+    'name_local': '简体中文', # todo: is this valid for traditional Chinese?
 }
 
 
@@ -94,8 +97,10 @@ def gettext(s): return s
 
 
 LANGUAGES = (
-    ('cn', gettext('Chinese')),
+    ("ar", gettext("Arabic")),
+    ('cn', gettext('Chinese')),  # Traditional Chinese
     ('en', gettext('English')),
+    ("ko", gettext("Korean")),
     ('ru', gettext('Russian')),
     ('so', gettext('Somali')),
     ('es', gettext('Spanish')),
@@ -133,10 +138,11 @@ TEMPLATES = [
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
-    # Send emails through MailChimp, for password resets
-    EMAIL_HOST = os.environ['EMAIL_HOST']
-    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+    # Send emails through MailChimp, for password resets,
+    # with some backup env values
+    EMAIL_HOST = os.environ.get('EMAIL_HOST', 'http://localhost')
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', "default_email_user")
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', "default_email_password")
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
 
@@ -172,13 +178,16 @@ WEBPACK_LOADER = {
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
 if DEBUG:
-    # Use this setting if the app is being served at the domain root (e.g. hazardready.org/ )
+    # Use this setting if the app is being served at the domain root
+    # (e.g. hazardready.org/ )
     STATIC_URL = '/static/'
 else:
-    # If the app is being served in a subdirectory of the domain (e.g. foo.com/SUBDIR/ ) then use a variant of:
+    # If the app is being served in a subdirectory of the domain
+    # (e.g. foo.com/SUBDIR/ ) then use a variant of:
     # STATIC_URL = '/SUBDIR/static/'
-    # So for our current test server, eldang.eldan.co.uk/zr/ , we need:
-    # STATIC_URL = '/zr/static/'
+    # So for our current test server,
+    # testing.hazardready.org/seattle/ , we need:
+    # STATIC_URL = '/seattle/static/'
     FORCE_SCRIPT_NAME = '/seattle/'
     STATIC_URL = '/seattle/static/'
 

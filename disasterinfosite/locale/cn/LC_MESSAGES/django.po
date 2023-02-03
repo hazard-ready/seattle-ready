@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-24 20:07+0000\n"
+"POT-Creation-Date: 2023-02-02 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: settings.py:97
-msgid "Chinese"
-msgstr ""
-
-#: settings.py:98
-msgid "English"
-msgstr ""
-
-#: settings.py:99
-msgid "Russian"
-msgstr ""
-
 #: settings.py:100
-msgid "Somali"
+msgid "Arabic"
 msgstr ""
 
 #: settings.py:101
-msgid "Spanish"
+msgid "Chinese"
 msgstr ""
 
 #: settings.py:102
+msgid "English"
+msgstr ""
+
+#: settings.py:103
+msgid "Korean"
+msgstr ""
+
+#: settings.py:104
+msgid "Russian"
+msgstr ""
+
+#: settings.py:105
+msgid "Somali"
+msgstr ""
+
+#: settings.py:106
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:107
 msgid "Vietnamese"
 msgstr ""
 
@@ -666,7 +674,7 @@ msgstr ""
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
 
-#: views.py:57 views.py:74 views.py:85
+#: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr "糟糕，我们不确定那里发生了什么。或许您应当重试。"
 
@@ -676,81 +684,12 @@ msgid ""
 "information. You can come back anytime to update your address."
 msgstr "谢谢注册！我们将向您通知相关新闻和信息。您可以随时回来更新您的地址。"
 
-#: views.py:112
-#, fuzzy
-#| msgid ""
-#| "Whoops, we're not sure what happened there. Maybe you should try again."
-msgid "We're not sure what happened there. Maybe you should try again."
-msgstr "糟糕，我们不确定那里发生了什么。或许您应当重试。"
-
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "谢谢您通知我们！"
 
-#~ msgid ""
-#~ "Look below the map to see information for your location, or enter another "
-#~ "location."
-#~ msgstr "查看下面的地图，了解您的位置信息或输入其他位置。"
-
-#~ msgid "Results for this location"
-#~ msgstr "该地方结果"
-
-#~ msgid "Historical Images"
-#~ msgstr "历史影像"
-
-#~ msgid "Supply Kit"
-#~ msgstr "应急包"
-
-#~ msgid "Important Links"
-#~ msgstr "重要链接"
-
-#~ msgid "How does it work?"
-#~ msgstr "如何操作？"
-
-#~ msgid "Sign Up / Log In"
-#~ msgstr "注册 / 登录"
-
-#~ msgid "Location"
-#~ msgstr "位置"
-
-#~ msgid "Your address, your city"
-#~ msgstr "您的地址，所在城市"
-
-#~ msgid "Experts suggest you have the following:"
-#~ msgstr "专家建议您拥有："
-
-#~ msgid "Days of supplies"
-#~ msgstr "天的用品"
-
-#~ msgid "per person"
-#~ msgstr "每人"
-
-#~ msgid "Gallons of water"
-#~ msgstr "加仑的水"
-
-#~ msgid "Meals"
-#~ msgstr "饭"
-
-#~ msgid "Why should you sign up?"
-#~ msgstr "为什么您应当注册？"
-
-#~ msgid ""
-#~ "Sign up for free to access customized hazard preparedness information. By "
-#~ "providing your address, you will get updates about seasonal hazards and "
-#~ "ongoing incidents specific to your location. We want you to be better "
-#~ "prepared so you can keep your family, friends, and neighbors safe when a "
-#~ "disaster strikes! Personal information will be protected and secure."
-#~ msgstr ""
-#~ "免费注册，获取定制的危害准备信息。通过提供您的地址，您将获得关于季节性危害"
-#~ "和您所在位置的当前事故的信息。我们希望您准备地更好，以便在灾害发生时，您能"
-#~ "够确保您的家人、朋友和邻居安全！个人信息将受到保护和保密。"
-
-#~ msgid ""
-#~ "Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
-#~ "org\">Email us.</a>"
-#~ msgstr ""
-#~ "需要帮助（如密码重置）？<a href=\"mailto:help@hazardready.org\">发电子邮件"
-#~ "给我们。</a>"
-
-#~ msgid "Whoops, it looks like that username or password didn't work."
-#~ msgstr "糟糕，用户名或密码不正确。"
+#, fuzzy
+#~| msgid ""
+#~| "Whoops, we're not sure what happened there. Maybe you should try again."
+#~ msgid "We're not sure what happened there. Maybe you should try again."
+#~ msgstr "糟糕，我们不确定那里发生了什么。或许您应当重试。"

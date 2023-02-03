@@ -109,7 +109,7 @@ def update_profile(request):
         except (ValueError, IntegrityError):
             logger.error("Unable to save a user profile")
             return TemplateResponse(request, "registration/simple_message.html", {
-                'message': _("We're not sure what happened there. Maybe you should try again."),
+                'message': _("Whoops, we're not sure what happened there. Maybe you should try again."),
                 'error': True
             }, status=500)
 

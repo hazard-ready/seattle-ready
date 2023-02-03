@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-24 20:07+0000\n"
+"POT-Creation-Date: 2023-02-02 21:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,27 +16,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:97
-msgid "Chinese"
-msgstr ""
-
-#: settings.py:98
-msgid "English"
-msgstr ""
-
-#: settings.py:99
-msgid "Russian"
-msgstr ""
-
 #: settings.py:100
-msgid "Somali"
+msgid "Arabic"
 msgstr ""
 
 #: settings.py:101
-msgid "Spanish"
+msgid "Chinese"
 msgstr ""
 
 #: settings.py:102
+msgid "English"
+msgstr ""
+
+#: settings.py:103
+msgid "Korean"
+msgstr ""
+
+#: settings.py:104
+msgid "Russian"
+msgstr ""
+
+#: settings.py:105
+msgid "Somali"
+msgstr ""
+
+#: settings.py:106
+msgid "Spanish"
+msgstr ""
+
+#: settings.py:107
 msgid "Vietnamese"
 msgstr ""
 
@@ -687,7 +695,7 @@ msgstr ""
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
 
-#: views.py:57 views.py:74 views.py:85
+#: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr ""
 "Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo markale."
@@ -701,88 +709,14 @@ msgstr ""
 "aqbaaraha la xiriiro iyo warbixinta. Xili walba ayaad soo laaban kartaa si "
 "aad u cusbooneysid ciwaankaaga."
 
-#: views.py:112
-#, fuzzy
-#| msgid ""
-#| "Whoops, we're not sure what happened there. Maybe you should try again."
-msgid "We're not sure what happened there. Maybe you should try again."
-msgstr ""
-"Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo markale."
-
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Waad ku mahadsantahay nasoo ogeysiintaada!"
 
-#~ msgid ""
-#~ "Look below the map to see information for your location, or enter another "
-#~ "location."
+#, fuzzy
+#~| msgid ""
+#~| "Whoops, we're not sure what happened there. Maybe you should try again."
+#~ msgid "We're not sure what happened there. Maybe you should try again."
 #~ msgstr ""
-#~ "Fiir qariirada hoose si aad u aragtid warbixinta goobtaada, ama geli goob "
-#~ "kale."
-
-#~ msgid "Results for this location"
-#~ msgstr "Natiijooyinka goobtaan"
-
-#~ msgid "Historical Images"
-#~ msgstr "Sawirada Taariiqiga ah"
-
-#~ msgid "Supply Kit"
-#~ msgstr "Qalabka Qeybinta"
-
-#~ msgid "Important Links"
-#~ msgstr "Qadadka Muhiimka ah"
-
-#~ msgid "How does it work?"
-#~ msgstr "Sidee ayay u shaqeysaa?"
-
-#~ msgid "Sign Up / Log In"
-#~ msgstr "Iska Diiwaangeli / Gal"
-
-#~ msgid "Location"
-#~ msgstr "Meesha"
-
-#~ msgid "Your address, your city"
-#~ msgstr "Ciwaankaaga, caasimadaada"
-
-#~ msgid "Experts suggest you have the following:"
-#~ msgstr "Qubarayaasha waxay soo jeedinayaan sida xigto:"
-
-#~ msgid "Days of supplies"
-#~ msgstr "Maalmaha saadadka"
-
-#~ msgid "per person"
-#~ msgstr "qofkiiba"
-
-#~ msgid "Gallons of water"
-#~ msgstr "Galoon biyo ah"
-
-#~ msgid "Meals"
-#~ msgstr "Cuntooyinka"
-
-#~ msgid "Why should you sign up?"
-#~ msgstr "Maxaad isaga diiwaangelineysaa?"
-
-#~ msgid ""
-#~ "Sign up for free to access customized hazard preparedness information. By "
-#~ "providing your address, you will get updates about seasonal hazards and "
-#~ "ongoing incidents specific to your location. We want you to be better "
-#~ "prepared so you can keep your family, friends, and neighbors safe when a "
-#~ "disaster strikes! Personal information will be protected and secure."
-#~ msgstr ""
-#~ "Isaga diiwaangeli si bilaash ah si aad u gashid warbixinta u "
-#~ "diyaargarowga halista la habeeyay. Adiga oo sheegayo ciwaankaaga, waxaad "
-#~ "heleysaa aqbaaraha ku saabsan halisaha iyo shilalka socdo ee gaarka u ah "
-#~ "goobtaada. Waxaan rabnaa inaad si wanaagsan ugu diyaargarowdid si markaas "
-#~ "aad ugu haysid badbaado qoyskaaga, saaxibada, iyo dariska marka ay "
-#~ "timaado masiibo! Warbixin gaar ah waa la illaalinayaa oo badbaado ah."
-
-#~ msgid ""
-#~ "Need some help (like a password reset)? <a href=\"mailto:help@hazardready."
-#~ "org\">Email us.</a>"
-#~ msgstr ""
-#~ "Ma u baahantahay caawin yar (sida tirida furaha)? <a href=\"mailto:"
-#~ "help@hazardready.org\">I-meel noo soo dir.</a>"
-
-#~ msgid "Whoops, it looks like that username or password didn't work."
-#~ msgstr ""
-#~ "Whoops, waxay u muqataa in magaca isticmaalaha ama furaha uusan shaqeynin."
+#~ "Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo "
+#~ "markale."
