@@ -87,8 +87,13 @@ function showGeocodeError() {
   $(".geocode-error-message").removeClass("hide");
 }
 
-function hideGeocodeError() {
+function showGeocodeDisabled() {
+  $(".geocode-disabled-message").removeClass("hide");
+}
+
+function hideGeocodeErrors() {
   $(".geocode-error-message").addClass("hide");
+  $(".geocode-disabled-message").addClass("hide");
 }
 
 function reverseGeocodeLocation(lat, lng) {
@@ -268,7 +273,7 @@ $(document).ready(function () {
   // Set up input box
   $locationInput = $("#location-text");
   var $locationSubmit = $("#location-submit");
-  var $autoLocationButton = $(".auto-location-submit");
+  var $autoLocationButton = $("#auto-location");
   if (mapElement) {
     if (map !== undefined && map !== null) {
       // sometimes we already have one and I don't know why
@@ -290,15 +295,14 @@ $(document).ready(function () {
   }
 
   // Hide a geocoding error message every time, if there is one
-  $locationInput.on("click", hideGeocodeError);
+  $locationInput.on("click", hideGeocodeErrors);
 
   // Set up autocomplete when someone clicks in the input field
   $locationInput.one("click", function () {
-    var input = document.getElementById("location-text");
     $locationInput.prop("placeholder", "");
     var autocomplete = placeSearch({
       key: MAPQUEST_KEY,
-      container: input,
+      container: $locationInput[0],
       useDeviceLocation: !!navigator.geolocation,
     });
     $locationInput.focus();
@@ -359,11 +363,11 @@ $(document).ready(function () {
 
   // auto location (the Find Me button)
   $autoLocationButton.click(function () {
-    hideGeocodeError();
+    hideGeocodeErrors();
     disableForm();
 
     if (!navigator.geolocation) {
-      showGeocodeError();
+      showGeocodeDisabled();
       enableForm();
     } else {
       navigator.geolocation.getCurrentPosition(
@@ -374,8 +378,12 @@ $(document).ready(function () {
           submitLocation(lat, lng);
         },
         function (error) {
-          console.log("Error finding your location: " + error.message);
-          showGeocodeError();
+          if (error.code == 1) {
+            // user denied the geolocation prompt
+            showGeocodeDisabled();
+          } else {
+            showGeocodeError();
+          }
           enableForm();
         },
         { timeout: 8000 }
