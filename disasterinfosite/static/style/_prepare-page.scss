@@ -40,16 +40,18 @@
 .prepare-container {
   background-color: $white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 20px;
   padding: 5px 10px;
 
   @include breakpoint(medium) {
+    flex-direction: row;
     margin-top: 30px;
     padding: 5px 20px;
   }
 
   @include breakpoint(large) {
+    flex-direction: row;
     margin-top: 30px;
     padding: 5px 40px;
   }
@@ -82,14 +84,15 @@
 }
 
 .prepare-detail {
-  border-left: 2px solid $light-grey;
-  padding: 10px 0 10px 10px;
+  padding: 10px;
 
   @include breakpoint(medium) {
+    border-left: 2px solid $light-grey;
     padding: 20px 0 20px 20px;
   }
 
   @include breakpoint(large) {
+    border-left: 2px solid $light-grey;
     padding: 40px 0 40px 40px;
 
   }
@@ -122,6 +125,7 @@
 .print-container {
   background-color: $white;
   overflow-x: scroll;
+  margin-top: 20px;
   padding: 5px 10px;
 
   @include breakpoint(medium) {
@@ -137,8 +141,15 @@
 
 .print-header {
   display: flex;
-  height: 60px;
+  flex-direction: column-reverse;
   font-weight: $font-weight-bold;
+  height: auto;
+
+  @include breakpoint(medium-and-up) {
+    flex-direction: row;
+    height: 60px;
+
+  }
 }
 
 .print-button {
