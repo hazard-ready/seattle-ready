@@ -24,6 +24,8 @@ optionalFields = [
     'happy-ru',
     'happy-so',
     'happy-vi',
+    'happy-ar',
+    'happy-ko',
     'useful',
     'useful-es',
     'useful-cn',
