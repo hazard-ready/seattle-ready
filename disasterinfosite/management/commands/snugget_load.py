@@ -43,7 +43,12 @@ optionalFields = ['heading',
                   'text-so',
                   'pop_out_txt-so',
                   'text-vi',
-                  'pop_out_txt-vi']
+                  'pop_out_txt-vi',
+                  'text-ko',
+                  'pop_out_txt-ko',
+                  'text-ar',
+                  'pop_out_txt-ar',
+                  ]
 
 defaults = {
     "intensity": None,
@@ -162,7 +167,8 @@ def getShapefileFilter(shapefile, filterVal):
         if shapefile.objects.filter(**kwargs).exists():
             return shapefile.objects.get(**kwargs)
         else:
-            print("Could not find a filter field named", fieldName, "with the value", filterVal, "for", shapefile)
+            print("Could not find a filter field named", fieldName,
+                  "with the value", filterVal, "for", shapefile)
     return None
 
 
