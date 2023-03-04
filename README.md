@@ -259,11 +259,12 @@ This assumes `python` is the command configured to run the correct python versio
 1. `python import.py` to process the data and update some Django code to fit. For each data source, the script will prompt you for two things:
    - Which field to use to look up snuggets (see [Adding New Data](#adding-new-data) below for definition). If there is a field named `lookup_val`, that will be used by default
    - Whether you want to group the content from this data source in a tab with content from any others. If you want a dataset to have its own unique tab, just press return at this prompt. If you want to group 2 or more datasets together under 1 tab (e.g. if you have a shapefile for wildfire probability and another with historical wildfire information), just enter the same group name for both at this prompt. Note that these group names are only used in the code--headings displayed to the user come from the "snugget" file loaded in step 6 below--and should contain only letters, no spaces or punctuation.
-1. `python manage.py makemigrations` - this and the next 2 steps combined load the new data into the database.
+1. `python manage.py makemigrations` - this and the next few steps combined load the new data into the database.
 1. `python manage.py migrate`
 1. `python manage.py data_load`
 1. `python manage.py snugget_load`
 1. `python manage.py prepare_load`
+1. `python manage.py data_overview_load`
 
 The parts that have `snugget_load` and `prepare_load` are to import text that will be displayed in the site. See [Adding New Data](#adding-new-data) below for an explanation of "snuggets" and the format of this file.
 
@@ -399,7 +400,7 @@ If you have some data that fits that automated import model and some that does n
 Upload photos to show in a photo gallery in the search results, under Past Events. Make sure that the heading you enter here matches the heading that the photos will appear under.
 
 ###### Data Overview Images
-In the box at the bottom of every page, there's a section called 'Quick Data Overview'. That's where these will show up, as links that open in a new tab or window. The link_text field is what the link says, like 'Earthquakes: Distance from a Fault', and you can upload the appropriate image here.
+There are a bunch of thumbnails on the data page, under a section called 'Data Overview Images'. That's where these will show up, as links that open in a new tab or window. The link_text field is what the link/caption says, like 'Earthquakes: Distance from a Fault'. The image field is the thumbnail image and the pdf field is for the full-fidelity PDF. You can use the 'data_overview_load' management task to load these from a spreadsheet if you like.
 
 ###### Shapefile Groups
 When you imported data, you were asked for a group name for your shapefiles, so that you can present, say, all your earthquake data togther, all your volcano data together, and so on. This is the place where you can choose display names for those groups that show up on the site, and configure the order in which they will appear on the page with all the content. You can also add a note at the top of the section that they appear in.
