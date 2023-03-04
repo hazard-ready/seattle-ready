@@ -34,3 +34,13 @@
     margin: 40px 0;
   }
 }
+
+.risks-header {
+  color: $dark-accent;
+  font-size: 28px;
+  font-weight: $font-weight-semibold;
+
+  @include breakpoint(large) {
+    font-size: 32px;
+  }
+}
