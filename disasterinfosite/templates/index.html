@@ -19,17 +19,7 @@
             <h3 class="information-header">{% trans "Natural disasters can strike at any time." %}</h3>
             {{ settings.intro_text | safe }}
             <h3 class="information-header">{% trans 'Get a personalized report' %}</h3>
-            {% trans "Give a location by typing in the box below, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare." %}
-            <h2 class="caps">{% trans "What are my risks?" %}</h2>
-            <h3 class="information-header">{% trans "What to Expect" %}</h3>
-              {% blocktrans with site_title=settings.site_title area_name=settings.area_name %} {{ site_title }} gives you an idea of which
-              natural disasters you might experience in the future based on a
-              location in {{ area_name }}. {% endblocktrans %}
-            <h3 class="information-header">{% trans "How to Prepare" %}</h3>
-              {% trans "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits." %}
-            <h3 class="information-header">{% trans "In Recent History" %}</h3>
-              {% blocktrans %} Find out which disasters have struck {{ settings.area_name }} in the past, what impact they had, and where
-              they happened. {% endblocktrans %}
+            {% trans "Give a location by typing in the box at the top of the, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare." %}
           </div>
           {% endblock info-instructions %}
 
@@ -39,6 +29,20 @@
             </div>
           {% endblock map-container %}
         </div>
+        {% block risks %}
+          <div role="region">
+            <h3 class="h3--sans-serif risks-header">{% trans "What are my risks?" %}</h3>
+            <h4>{% trans "What to Expect" %}</h4>
+              {% blocktrans with site_title=settings.site_title area_name=settings.area_name %} {{ site_title }} gives you an idea of which
+              natural disasters you might experience in the future based on a
+              location in {{ area_name }}. {% endblocktrans %}
+            <h4>{% trans "How to Prepare" %}</h4>
+              {% trans "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits." %}
+            <h4>{% trans "In Recent History" %}</h4>
+              {% blocktrans %} Find out which disasters have struck {{ settings.area_name }} in the past, what impact they had, and where
+              they happened. {% endblocktrans %}
+          </div>
+        {% endblock risks %}
         {% block disclaimer %}
         <div class="disclaimer-container" role="region" aria-label="disclaimer">
           <h3 class="information-header">{% trans 'About the Data' %}</h3>
