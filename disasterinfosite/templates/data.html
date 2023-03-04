@@ -11,37 +11,126 @@
 
 <body>
 {% include "about-header.html" %}
-
   <div class="content-container">
-    <h2>{% trans "Data sources for Hazard Ready" %}</h2>
-    <div class="data-source-container">
-      {% if quick_data_overview %}
-        <div class="hazard-sources">
-        <h3 class="hazard-source">{% trans "Quick Data Overview" %}</h3>
-        <p>
-            {% blocktrans with area_name=settings.area_name %}Take a look at some overviews of the data we used for {{ area_name }}:{% endblocktrans %}
-        </p>
-        <div class="data__list">
-            {% for item in quick_data_overview %}
-                <div class="data__image">
-                  <a target="_blank" rel="noopener" href="{{ item }}">
-                    {{ item.link_text }}
-                    <img class="data__thumbnail" src="{{ item }}" alt="A map of King County, Washington, indicating hazard intensity">
-                  </a>
-                </div>
-            {% endfor %}
+    <h2>{% trans "Data overview images for Seattle and King County Ready" %}</h2>
+    <div class="data__list">
+      {% for item in quick_data_overview %}
+        <div class="data__image">
+          <a target="_blank" rel="noopener" href="{{ item.pdf.url }}">
+            {{ item.link_text }}
+            <img class="data__thumbnail" src="{{ item }}" alt="{% trans 'A map of King County, Washington, indicating hazard intensity' %}">
+          </a>
         </div>
-      </div>
-    {% endif %}
-
-    <div class="data-source-container">
-      {% trans 'Questions or concerns about the data? Contact:' %}
-      <ul>
-        <li><a href="https://msc.fema.gov/portal/resources/contact" target="_blank" rel="noopener">Federal Emergency Management Agency (FEMA)</a> - <i>{% trans 'flood' %}</i></li>
-      </ul>
+      {% endfor %}
     </div>
   </div>
-
+  <div class="content-container">
+    <h2>{% trans "Data sources for Seattle and King County Ready" %}</h2>
+    <div class="data-source-container">
+      <div class="hazard-sources">
+        <h4 class="hazard-header quake">{% trans 'Earthquake' %}</h4>
+        <h5>M6.8 2001 Nisqually Earthquake Shaking</h5>
+        <p class="hazard-source">
+         U.S. Geological Survey, M 6.8 - 7 km SSE of Longbranch, Washington,
+          <a href="https://earthquake.usgs.gov/earthquakes/eventpage/uw10530748/executive" target="_blank" rel="noopener">https://earthquake.usgs.gov/earthquakes/eventpage/uw10530748/executive</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Seattle Fault Earthquake Scenario</h5>
+        <p class="hazard-source">
+          Petersen, M.D., Moschetti, M.P., Powers, P.M., Mueller, C.S., Haller, K.M., Frankel, A.D., Zeng, Yuehua, Rezaeian, Sanaz, Harmsen, S.C., Boyd, O.S., Field, Ned, Chen, Rui, Rukstales, K.S., Luco, Nico, Wheeler, R.L., Williams, R.A., and Olsen, A.H. (2014). Documentation for the 2014 update of the United States national seismic hazard maps: U.S. Geological Survey Open-File Report 2014–1091. p. 243. <a href="http://dx.doi.org/10.3133/ofr20141091" target="_blank" rel="noopener">http://dx.doi.org/10.3133/ofr20141091</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Cascadia Shaking Scenario</h5>
+        <p class="hazard-source">
+          Wirth, E. A., Grant, A., Marafi, N. A., and Frankel, A. D. (2021). Ensemble ShakeMaps for magnitude 9 earthquakes on the Cascadia subduction zone, Seismological Research Letters, <a href="https://doi.org/10.1785/0220200240" target="_blank" rel="noopener">https://doi.org/10.1785/0220200240</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Cascadia Displaced Households</h5>
+        <p class="hazard-source">
+          Washington Geological Survey. (2017). Seismic scenario catalog—GIS data, August 2017: Washington Geological Survey, version 1.0, originally created March 2010. <a href="https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases" target="_blank" rel="noopener">https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Liquefaction</h5>
+        <p class="hazard-source">
+          Palmer, Stephen P.; Magsino, Sammantha L.; Bilderback, Eric L.; Poelstra, James L.; Folger, Derek S.; Niggemann, Rebecca A. (2007). Liquefaction susceptibility and site class maps of Washington State, by county: Washington Division of Geology and Earth Resources Open File Report 2004-20. <a href="https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases" target="_blank" rel="noopener">https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Tsunami</h5>
+        <p class="hazard-source">
+          Washington Geological Survey. (2022). Tsunami hazard--GIS data: Washington Geological Survey Digital Data Series 22, version 1.4, February 2022. Previously released January 2022. <a href="https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_tsunami_hazard.zip" target="_blank" rel="noopener">https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_tsunami_hazard.zip</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+      </div>
+      <div class="hazard-sources">
+        <h4 class="hazard-header volcano">{% trans 'Volcano' %}</h4>
+        <p class="hazard-source">
+          Washington Geological Survey. (2016). Simplified volcanic hazards, adapted from U.S. Geological Survey--GIS data: Washington Division of Geology and Earth Resources, version 1.0, May, 2016. <a href="https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases" target="_blank" rel="noopener">https://www.dnr.wa.gov/programs-and-services/geology/publications-and-data/gis-data-and-databases</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+      </div>
+      <div class="hazard-sources">
+        <h4 class="hazard-header landslide">{% trans 'Landslide' %}</h4>
+        <h5>Historical Landslides</h5>
+        <p class="hazard-source">
+          Washington Geological Survey. (2020). Landslide Compilation--GIS data, February 2020: Washington Geological Survey Digital Data Series 12, version 5.2, previously released January, 2019. <a href="https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_landslide_compilation.zip" target="_blank" rel="noopener">https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_landslide_compilation.zip</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <p class="hazard-source">
+          Washington Geological Survey. (2020). Landslide protocol inventory mapping--GIS data, February, 2020: Washington Geological Survey Digital Data Series 19, version 2.0, previously released January, 2019. <a href="https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_landslide_inventory.zip" target="_blank" rel="noopener">https://fortress.wa.gov/dnr/geologydata/publications/data_download/ger_portal_landslide_inventory.zip</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <h5>Steep Slope Potential</h5>
+        <p class="hazard-source">
+          King County GIS. (2016). Potential steep slope hazard areas: King County, King County, WA. <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::potential-steep-slope-hazard-areas-steep-slope-hazard-area/about" target="_blank" rel="noopener">https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::potential-steep-slope-hazard-areas-steep-slope-hazard-area/about</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+        <p class="hazard-source">
+          City of Seattle. (2012). Potential Landslide Areas: City of Seattle, Seattle, WA. <a href="https://data.seattle.gov/dataset/Potential-Landslide-Areas/qbkw-5p37" target="_blank" rel="noopener">https://data.seattle.gov/dataset/Potential-Landslide-Areas/qbkw-5p37</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+        </p>
+    </div>
+    <div class="hazard-sources">
+      <h4 class="hazard-header flood">{% trans 'Flood' %}</h4>
+      <h5>Flood Hazard Zones</h5>
+      <p class="hazard-source">
+        King County GIS. (2020). FEMA 500 Year Floodplain in King County: King County, King County, WA. <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::fema-500-year-floodplain-in-king-county-fema-floodplain-500yr-area/about" target="_blank" rel="noopener">https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::fema-500-year-floodplain-in-king-county-fema-floodplain-500yr-area/about</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+      </p>
+      <h5>Channel Migration Zones</h5>
+      <p class="hazard-source">
+        King County GIS. (2005). Channel Migration Areas in King County: King County, King County, WA. <a href="https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::channel-migration-areas-chnlmigr-area/about" target="_blank" rel="noopener">https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::channel-migration-areas-chnlmigr-area/about</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+      </p>
+      <h5>Dam Inundation Maps</h5>
+      <p class="hazard-source">
+        King County GIS. (2013). Culmback and South Fork Tolt River, Dam Inundation Hazus Update.
+        West Consultants Inc. (2011). Lake Youngs Dam Break Analysis.
+      </p>
+    </div>
+    <div class="hazard-sources">
+      <h4 class="hazard-header wildfire">{% trans 'Wildfire' %}</h4>
+      <h5>Wildland Urban Interface (WUI) Zones</h5>
+      <p class="hazard-source">
+        Washington Department of Natural Resources. (2020). Washington Wildland Urban Interface (WUI): Washington Department of Natural Resources, Wildfire Division. <a href="https://www.arcgis.com/home/item.html?id=81033d352eb5401cb559fa999f9d6931" target="_blank" rel="noopener">https://www.arcgis.com/home/item.html?id=81033d352eb5401cb559fa999f9d6931</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+      </p>
+      <h5>Fire Hazard Potential</h5>
+      <p class="hazard-source">
+        Dillon, G.K., Gilbertson-Day, J.W. (2020). Wildfire Hazard Potential for the United States (270-m), version 2020. 3rd Edition. Fort Collins, CO: Forest Service Research Data Archive. <a href="https://doi.org/10.2737/RDS-2015-0047-3" target="_blank" rel="noopener">https://doi.org/10.2737/RDS-2015-0047-3</a>, {% trans 'Accessed' %}: {% trans 'June' %} 31, 2022.
+      </p>
+    </div>
+    <div class="hazard-sources">
+      <h4 class="hazard-header summer">{% trans 'Summer Weather' %}</h4>
+      <p class="hazard-source">
+        CAPA Strategies, 2020, Seattle and King County Heat Watch Report, <a href="https://osf.io/nkgx9?view_only=d304510b100f421883b4c6d85518edf9" target="_blank" rel="noopener">https://osf.io/nkgx9?view_only=d304510b100f421883b4c6d85518edf9</a>.
+      </p>
+  </div>
+  <div class="data-source-container">
+    <h3>{% trans 'Questions or concerns about the data? Contact:' %}</h3>
+    <ul>
+      <li>
+        <a href="https://msc.fema.gov/portal/resources/contact" target="_blank" rel="noopener">Federal Emergency Management Agency (FEMA)</a> - <i>{% trans 'flood' %}</i>
+      </li>
+      <li>
+        <a href="https://www.dnr.wa.gov/contact-us" target="_blank" rel="noopener">Washington Department of Natural Resources (DNR)</a> - <i>{% trans 'earthquake' %}, {% trans 'landslide' %}, {% trans 'tsunami' %}, {% trans 'volcano' %}</i>
+      </li>
+      <li>
+        <a href="https://answers.usgs.gov/" target="_blank" rel="noopener">United States Geological Survey (USGS)</a> - <i>{% trans 'earthquake' %}, {% trans 'volcano' %}</i>
+      </li>
+      <li>
+        <a href="https://www.fs.usda.gov/rds/archive/contactus" target="_blank" rel="noopener">United States Department of Agriculture and United State Forest Service</a> - <i>{% trans 'wildfire' %}</i>
+      </li>
+      <li>
+        <a href="https://www.dnr.wa.gov/geology" target="_blank" rel="noopener">Washington Geological Survey</a> - <i>{% trans 'earthquake' %}, {% trans 'volcano' %}, {% trans 'landslide' %}</i>
+      </li>
+    </ul>
+  </div>
 {% include "geek_box.html" %}
 {% include "page-end-meta.html" with file="data" %}
 
