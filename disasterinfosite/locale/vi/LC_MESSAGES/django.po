@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 21:23+0000\n"
+"POT-Creation-Date: 2023-03-04 01:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,27 +150,136 @@ msgstr ""
 "Dữ liệu sử dụng cho %(title)s có sẵn để tải về <a href=\"%(download)s\" "
 "target=\"_blank\">tại đây</a>."
 
-#: templates/data.html:16
-msgid "Data sources for Hazard Ready"
+#: templates/data.html:15
+msgid "Data overview images for Seattle and King County Ready"
 msgstr ""
 
-#: templates/data.html:20
-msgid "Quick Data Overview"
-msgstr "Tổng Quan Nhanh Về Dữ Liệu"
-
-#: templates/data.html:22
-#, python-format
-msgid "Take a look at some overviews of the data we used for %(area_name)s:"
+#: templates/data.html:21
+msgid "A map of King County, Washington, indicating hazard intensity"
 msgstr ""
-"Hãy xem một số bản tổng quan về dữ liệu mà chúng tôi sử dụng cho "
-"%(area_name)s:"
 
-#: templates/data.html:38
+#: templates/data.html:28
+msgid "Data sources for Seattle and King County Ready"
+msgstr ""
+
+#: templates/data.html:31
+msgid "Earthquake"
+msgstr ""
+
+#: templates/data.html:32
+msgid "M6.8 2001 Nisqually Earthquake Shaking"
+msgstr ""
+
+#: templates/data.html:35 templates/data.html:39 templates/data.html:43
+#: templates/data.html:47 templates/data.html:51 templates/data.html:55
+#: templates/data.html:61 templates/data.html:68 templates/data.html:71
+#: templates/data.html:75 templates/data.html:78 templates/data.html:85
+#: templates/data.html:89 templates/data.html:101 templates/data.html:105
+msgid "Accessed"
+msgstr ""
+
+#: templates/data.html:35 templates/data.html:39 templates/data.html:43
+#: templates/data.html:47 templates/data.html:51 templates/data.html:55
+#: templates/data.html:61 templates/data.html:68 templates/data.html:71
+#: templates/data.html:75 templates/data.html:78 templates/data.html:85
+#: templates/data.html:89 templates/data.html:101 templates/data.html:105
+msgid "June"
+msgstr ""
+
+#: templates/data.html:37
+msgid "Seattle Fault Earthquake Scenario"
+msgstr ""
+
+#: templates/data.html:41
+msgid "Cascadia Shaking Scenario"
+msgstr ""
+
+#: templates/data.html:45
+msgid "Cascadia Displaced Households"
+msgstr ""
+
+#: templates/data.html:49
+msgid "Liquefaction"
+msgstr ""
+
+#: templates/data.html:53
+msgid "Tsunami"
+msgstr ""
+
+#: templates/data.html:59
+msgid "Volcano"
+msgstr ""
+
+#: templates/data.html:65
+msgid "Landslide"
+msgstr ""
+
+#: templates/data.html:66
+msgid "Historical Landslides"
+msgstr ""
+
+#: templates/data.html:73
+msgid "Steep Slope Potential"
+msgstr ""
+
+#: templates/data.html:82
+msgid "Flood"
+msgstr ""
+
+#: templates/data.html:83
+msgid "Flood Hazard Zones"
+msgstr ""
+
+#: templates/data.html:87
+msgid "Channel Migration Zones"
+msgstr ""
+
+#: templates/data.html:91
+msgid "Dam Inundation Maps"
+msgstr ""
+
+#: templates/data.html:98
+msgid "Wildfire"
+msgstr ""
+
+#: templates/data.html:99
+msgid "Wildland Urban Interface (WUI) Zones"
+msgstr ""
+
+#: templates/data.html:103
+msgid "Fire Hazard Potential"
+msgstr ""
+
+#: templates/data.html:109
+msgid "Summer Weather"
+msgstr ""
+
+#: templates/data.html:115
 msgid "Questions or concerns about the data? Contact:"
 msgstr ""
 
-#: templates/data.html:40
+#: templates/data.html:118
 msgid "flood"
+msgstr ""
+
+#: templates/data.html:121 templates/data.html:124 templates/data.html:130
+msgid "earthquake"
+msgstr ""
+
+#: templates/data.html:121 templates/data.html:130
+msgid "landslide"
+msgstr ""
+
+#: templates/data.html:121
+msgid "tsunami"
+msgstr ""
+
+#: templates/data.html:121 templates/data.html:124 templates/data.html:130
+msgid "volcano"
+msgstr ""
+
+#: templates/data.html:127
+msgid "wildfire"
 msgstr ""
 
 #: templates/found_content.html:11
@@ -249,7 +358,7 @@ msgstr ""
 "Nhập địa chỉ của bạn để xem báo cáo đã được cá nhân hoá về các nguy cơ và "
 "cách chuẩn bị."
 
-#: templates/header.html:16 templates/header.html:42
+#: templates/header.html:16 templates/header.html:47
 msgid "About"
 msgstr ""
 
@@ -257,12 +366,18 @@ msgstr ""
 msgid "Find Me"
 msgstr "Tìm Vị Trí Của Tôi"
 
-#: templates/header.html:26
+#: templates/header.html:27
 msgid "Enter an address."
 msgstr ""
 
-#: templates/header.html:36
+#: templates/header.html:38
 msgid "We had a problem finding that location."
+msgstr ""
+
+#: templates/header.html:41
+msgid ""
+"Please allow your web browser to access your location in order to use Find "
+"Me."
 msgstr ""
 
 #: templates/index.html:19
@@ -719,6 +834,15 @@ msgstr ""
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Cảm ơn bạn đã cập nhật thông tin cho chúng tôi!"
+
+#~ msgid "Quick Data Overview"
+#~ msgstr "Tổng Quan Nhanh Về Dữ Liệu"
+
+#, python-format
+#~ msgid "Take a look at some overviews of the data we used for %(area_name)s:"
+#~ msgstr ""
+#~ "Hãy xem một số bản tổng quan về dữ liệu mà chúng tôi sử dụng cho "
+#~ "%(area_name)s:"
 
 #, fuzzy
 #~| msgid ""

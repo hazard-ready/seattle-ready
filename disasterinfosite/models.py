@@ -1098,6 +1098,7 @@ class PastEventsPhoto(models.Model):
 class DataOverviewImage(models.Model):
     link_text = models.CharField(default="", max_length=100)
     image = models.ImageField(upload_to="data", storage=OverwriteStorage())
+    pdf = models.FileField(upload_to="data", storage=OverwriteStorage(), null=True)
 
     def __str__(self):
         return self.image.url
