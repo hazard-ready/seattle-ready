@@ -104,6 +104,7 @@
 }
 
 .prepare-item__link {
+  margin-bottom: 12px;
   text-align: right;
 
   a {
@@ -194,6 +195,13 @@
   a:focus, a:hover {
     color: $bright-accent;
     text-decoration: none;
+  }
+
+  .resources {
+    li {
+      color: $light-accent;
+      margin-bottom: 10px;
+    }
   }
 }
 
