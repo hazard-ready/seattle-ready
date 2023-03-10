@@ -116,16 +116,20 @@
               <td class="center-align">{{ item.cost | show_cost }}</td>
               <td class="resources">
                 {% with links=item.preparednesslink_set.all %}
+                  <ul>
                   {% for link in links %}
-                    <a href="{{ link.url }}" target="_blank" rel="noopener"><br>
-                      {% if item.link_icon %}
-                        <img class="prepare-item__link-icon" alt="" src="{{ link.url }}">
-                      {% endif %}
-                      {% if link.text %}
-                        {{ link.text }}
-                      {% endif %}
-                    </a>
+                    <li>
+                      <a href="{{ link.url }}" target="_blank" rel="noopener">
+                        {% if item.link_icon %}
+                          <img class="prepare-item__link-icon" alt="" src="{{ link.url }}">
+                        {% endif %}
+                        {% if link.text %}
+                          {{ link.text }}
+                        {% endif %}
+                      </a>
+                    </li>
                   {% endfor %}
+                  </ul>
                 {% endwith %}
               </td>
             </tr>
