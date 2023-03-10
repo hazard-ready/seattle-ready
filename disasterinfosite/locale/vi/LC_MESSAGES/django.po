@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-04 01:18+0000\n"
+"POT-Creation-Date: 2023-03-10 00:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -292,30 +292,30 @@ msgstr "Điều Gì Có Thể Xảy Ra"
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
 msgstr ""
 
-#: templates/found_content.html:35
+#: templates/found_content.html:36
 #, fuzzy
 #| msgid "How to Prepare"
 msgid "Prepare!"
 msgstr "Cách Chuẩn Bị"
 
-#: templates/found_content.html:48
+#: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
 msgstr ""
 
-#: templates/found_content.html:56
+#: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
 msgstr ""
 
-#: templates/found_content.html:58
+#: templates/found_content.html:59
 msgid "Very Low Hazard"
 msgstr ""
 
-#: templates/found_content.html:63
+#: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
 msgstr ""
 
-#: templates/found_content.html:65
+#: templates/found_content.html:66
 msgid "Very High Hazard"
 msgstr ""
 
@@ -389,25 +389,30 @@ msgid "Get a personalized report"
 msgstr ""
 
 #: templates/index.html:22
+#, fuzzy
+#| msgid ""
+#| "Give a location by typing in the box below, clicking on the map, or "
+#| "clicking 'find me'. You'll get a personalized report on your natural "
+#| "hazard risks and steps you can take to prepare."
 msgid ""
-"Give a location by typing in the box below, clicking on the map, or clicking "
-"'find me'. You'll get a personalized report on your natural hazard risks and "
-"steps you can take to prepare."
+"Give a location by typing in the box at the top of the, clicking on the map, "
+"or clicking 'find me'. You'll get a personalized report on your natural "
+"hazard risks and steps you can take to prepare."
 msgstr ""
 "Cung cấp một vị trí bằng cách nhập liệu vào ô dưới đây, bấm trên bản đồ, "
 "hoặc bấm vào 'tìm vị trí của tôi'. Bạn sẽ nhận được một báo cáo đã được cá "
 "nhân hoá về các nguy cơ xảy ra hiểm hoạ thiên nhiên của mình và những bước "
 "mà bạn có thể thực hiện để chuẩn bị."
 
-#: templates/index.html:23
+#: templates/index.html:34
 msgid "What are my risks?"
 msgstr "Những nguy cơ của tôi là gì?"
 
-#: templates/index.html:24
+#: templates/index.html:35
 msgid "What to Expect"
 msgstr "Điều Gì Có Thể Xảy Ra"
 
-#: templates/index.html:25
+#: templates/index.html:36
 #, fuzzy, python-format
 #| msgid ""
 #| "%(title)s gives you an idea of which natural disasters you might "
@@ -424,11 +429,11 @@ msgstr ""
 "%(area_name)s.\n"
 "          "
 
-#: templates/index.html:28
+#: templates/index.html:39
 msgid "How to Prepare"
 msgstr "Cách Chuẩn Bị"
 
-#: templates/index.html:29
+#: templates/index.html:40
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -436,11 +441,11 @@ msgstr ""
 "Bạn có sức mạnh để tạo ra sự thay đổi. Tìm hiểu cách bạn có thể bảo vệ những "
 "người thân yêu và gia đình của mình trước khi thảm hoạ tiếp theo xảy ra."
 
-#: templates/index.html:30
+#: templates/index.html:41
 msgid "In Recent History"
 msgstr "Lịch Sử Gần Đây"
 
-#: templates/index.html:31
+#: templates/index.html:42
 #, fuzzy, python-format
 #| msgid ""
 #| "Find out which disasters have struck %(area_name)s in the past, what "
@@ -455,11 +460,11 @@ msgstr ""
 "của các thảm hoạ đó và nơi chúng xảy ra.\n"
 "          "
 
-#: templates/index.html:44
+#: templates/index.html:48
 msgid "About the Data"
 msgstr ""
 
-#: templates/index.html:46
+#: templates/index.html:50
 #, fuzzy, python-format
 #| msgid ""
 #| "This site uses the most up-to-date hazard risk data available for "
@@ -487,7 +492,7 @@ msgstr ""
 "cách chuẩn bị cho các nguy cơ đó được dựa trên thông tin tốt nhất có được từ "
 "Hội Chữ Thập Đỏ và Cơ Quan Quản Lý Trường Hợp Khẩn Cấp Liên Bang."
 
-#: templates/index.html:64
+#: templates/index.html:68
 msgid "Getting results for your location..."
 msgstr "Xem kết quả cho địa điểm của bạn…"
 
@@ -505,16 +510,16 @@ msgstr "Không có thông tin."
 msgid "Wrong address? Start over"
 msgstr ""
 
-#: templates/no_content_found.html:20
+#: templates/no_content_found.html:21
 msgid "No information available."
 msgstr "Không có thông tin."
 
-#: templates/no_content_found.html:22
+#: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
 msgstr "Có vẻ như địa điểm của bạn nằm bên ngoài %(area_name)s."
 
-#: templates/no_content_found.html:23
+#: templates/no_content_found.html:24
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -571,11 +576,11 @@ msgstr ""
 msgid "Resources"
 msgstr ""
 
-#: templates/prepare.html:136
+#: templates/prepare.html:140
 msgid "Key:"
 msgstr ""
 
-#: templates/prepare.html:145
+#: templates/prepare.html:149
 msgid "or more"
 msgstr ""
 

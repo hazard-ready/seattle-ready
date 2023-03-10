@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-04 01:18+0000\n"
+"POT-Creation-Date: 2023-03-10 00:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -290,30 +290,30 @@ msgstr "Waxa La filanayo"
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
 msgstr ""
 
-#: templates/found_content.html:35
+#: templates/found_content.html:36
 #, fuzzy
 #| msgid "How to Prepare"
 msgid "Prepare!"
 msgstr "Sida loo Diyaargaroobo"
 
-#: templates/found_content.html:48
+#: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
 msgstr ""
 
-#: templates/found_content.html:56
+#: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
 msgstr ""
 
-#: templates/found_content.html:58
+#: templates/found_content.html:59
 msgid "Very Low Hazard"
 msgstr ""
 
-#: templates/found_content.html:63
+#: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
 msgstr ""
 
-#: templates/found_content.html:65
+#: templates/found_content.html:66
 msgid "Very High Hazard"
 msgstr ""
 
@@ -386,24 +386,29 @@ msgid "Get a personalized report"
 msgstr ""
 
 #: templates/index.html:22
+#, fuzzy
+#| msgid ""
+#| "Give a location by typing in the box below, clicking on the map, or "
+#| "clicking 'find me'. You'll get a personalized report on your natural "
+#| "hazard risks and steps you can take to prepare."
 msgid ""
-"Give a location by typing in the box below, clicking on the map, or clicking "
-"'find me'. You'll get a personalized report on your natural hazard risks and "
-"steps you can take to prepare."
+"Give a location by typing in the box at the top of the, clicking on the map, "
+"or clicking 'find me'. You'll get a personalized report on your natural "
+"hazard risks and steps you can take to prepare."
 msgstr ""
 "Sii booska adiga oo ku qorayo sanduuqa hoose, oo riixayo qariirada, ama "
 "riixayo 'iga hel'. Waxaad heleysaa wargelin la gaareeyay ee qataraha halista "
 "dabiiciga iyo tallaabooyinka aad qaadi kartid si aad u diyaar garowdid."
 
-#: templates/index.html:23
+#: templates/index.html:34
 msgid "What are my risks?"
 msgstr "Waa maxay halisaheyga?"
 
-#: templates/index.html:24
+#: templates/index.html:35
 msgid "What to Expect"
 msgstr "Waxa La filanayo"
 
-#: templates/index.html:25
+#: templates/index.html:36
 #, fuzzy, python-format
 #| msgid ""
 #| "%(title)s gives you an idea of which natural disasters you might "
@@ -419,11 +424,11 @@ msgstr ""
 "kartaa mustaqbalka sida ku saleysan goobta ee %(area_name)s.\n"
 "          "
 
-#: templates/index.html:28
+#: templates/index.html:39
 msgid "How to Prepare"
 msgstr "Sida loo Diyaargaroobo"
 
-#: templates/index.html:29
+#: templates/index.html:40
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -431,11 +436,11 @@ msgstr ""
 "Waxaad leedahay awood isbadel lagu sameynayo. Ogow sida aad u illaali kartid "
 "dadka aad jaceshahay iyo guriga ka hor inta aysan dhufan masiibada xigto."
 
-#: templates/index.html:30
+#: templates/index.html:41
 msgid "In Recent History"
 msgstr "Taariiqda Hadeer"
 
-#: templates/index.html:31
+#: templates/index.html:42
 #, fuzzy, python-format
 #| msgid ""
 #| "Find out which disasters have struck %(area_name)s in the past, what "
@@ -449,11 +454,11 @@ msgstr ""
 "Ogow masiibooyinkee ayaa dhuftay %(area_name)s waqtiga la soo dhaafay, "
 "saameynada ay heleen, iyo halka ay dhacday."
 
-#: templates/index.html:44
+#: templates/index.html:48
 msgid "About the Data"
 msgstr ""
 
-#: templates/index.html:46
+#: templates/index.html:50
 #, fuzzy, python-format
 #| msgid ""
 #| "This site uses the most up-to-date hazard risk data available for "
@@ -481,7 +486,7 @@ msgstr ""
 "wanaagsan ee ka imaaneyso American Red Cross iyo Hay’ada Maamulka Gurmadka "
 "Faderaalka."
 
-#: templates/index.html:64
+#: templates/index.html:68
 msgid "Getting results for your location..."
 msgstr "Helida natiijooyinka goobtaada…"
 
@@ -499,16 +504,16 @@ msgstr "Ma jiro warbixin la heli karo."
 msgid "Wrong address? Start over"
 msgstr ""
 
-#: templates/no_content_found.html:20
+#: templates/no_content_found.html:21
 msgid "No information available."
 msgstr "Ma jiro warbixin la heli karo."
 
-#: templates/no_content_found.html:22
+#: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
 msgstr "Waxay u muuqataa in goobtaada ay banaanka ka tahay %(area_name)s."
 
-#: templates/no_content_found.html:23
+#: templates/no_content_found.html:24
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
@@ -564,11 +569,11 @@ msgstr ""
 msgid "Resources"
 msgstr ""
 
-#: templates/prepare.html:136
+#: templates/prepare.html:140
 msgid "Key:"
 msgstr ""
 
-#: templates/prepare.html:145
+#: templates/prepare.html:149
 msgid "or more"
 msgstr ""
 
