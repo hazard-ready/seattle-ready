@@ -12,6 +12,16 @@
   {% trans "Enter your location for a personalized report on your risks and how to prepare." as meta_description %}
   <meta property="og:description" content="{{ settings.site_description }} {{ settings.intro_text }} {{ meta_description }}">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1BD1N0PXZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y1BD1N0PXZ');
+  </script>
+
   <title>{{ settings.site_title }}</title>
 
   <style>html{visibility: hidden; opacity:0;}</style>
@@ -26,14 +36,3 @@
 
   <link rel="shortcut icon" href="{% webpack_static 'build/favicon.ico' %}"/>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1BD1N0PXZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y1BD1N0PXZ');
-</script>
-
