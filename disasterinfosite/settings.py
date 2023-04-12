@@ -192,7 +192,15 @@ else:
     STATIC_URL = '/seattle/static/'
 
 WHITENOISE_STATIC_PREFIX = '/static/'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 
 # Specially for GeoDjango on Heroku
 GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')

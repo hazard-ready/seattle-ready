@@ -126,12 +126,6 @@ Note that these may appear in different sections or be mutually exclusive, which
   Title: Seattle Office of Emergency Management
   Link: ```The <a href="http://www.seattle.gov/emergency-management" target="_blank">Seattle OEM</a> website has many great resources for finding out more.```
 
-### Supply kit
-
-###### days
-  10
-###### text
-Supply kit text goes here
 
 ### Location Information
 
@@ -205,8 +199,8 @@ Set up a virtual environment so that you can freely install python modules witho
 While management and data loading files are in this project's root directory, everything else is in `/disasterinfosite`.
 
 ## Written using:
-- Postgres version: 13.6
-- Python version: 3.9
+- Postgres version: 14.7
+- Python version: 3.11.2
 
 ## File structure
 - `/disasterinfosite/data` contains the data sources (shapefiles and/or rasters) and text content (snuggets - see [Adding New Data](#adding-new-data) below for explanation) that will be loaded.
