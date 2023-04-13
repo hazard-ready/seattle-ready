@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-10 01:06+0000\n"
+"POT-Creation-Date: 2023-04-13 23:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,10 +323,6 @@ msgid ""
 "prepare."
 msgstr ""
 
-#: templates/header.html:16 templates/header.html:47
-msgid "About"
-msgstr ""
-
 #: templates/header.html:23
 msgid "Find Me"
 msgstr ""
@@ -343,6 +339,14 @@ msgstr ""
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
+msgstr ""
+
+#: templates/header_links.html:4
+msgid "About"
+msgstr ""
+
+#: templates/header_links.html:7
+msgid "Data"
 msgstr ""
 
 #: templates/index.html:19
