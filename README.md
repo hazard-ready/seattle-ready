@@ -200,7 +200,7 @@ While management and data loading files are in this project's root directory, ev
 
 ## Written using:
 - Postgres version: 14.7
-- Python version: 3.11.2
+- Python version: 3.11.3
 
 ## File structure
 - `/disasterinfosite/data` contains the data sources (shapefiles and/or rasters) and text content (snuggets - see [Adding New Data](#adding-new-data) below for explanation) that will be loaded.
