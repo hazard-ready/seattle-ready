@@ -100,7 +100,7 @@ header {
   font-family: $sans-serif;
   font-size: 16px;
   line-height: $small-header-line-height;
-  margin: 0;
+  margin: 0 5px;
 
   @include breakpoint(medium) {
     margin: 15px 5px 0 5px;
@@ -122,7 +122,7 @@ header {
   position: relative;
 
   @include breakpoint(large) {
-    margin: 10px auto;
+    margin: 0 10px auto;
     flex: 1 0 auto;
   }
 
