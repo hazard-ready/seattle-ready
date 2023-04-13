@@ -251,6 +251,7 @@
 
 .past-photos {
   max-width: 100%;
+  padding: 0 25px;
 
   @include breakpoint(large) {
     width: 345px;
@@ -275,28 +276,28 @@
 }
 
 /* Arrows for photo slider */
-.slick-prev {
-  left: 0 !important;
-  top: 36%;
+.slick-prev,
+.slick-next {
   width: 36px;
   z-index: 9;
+
+  &:hover, &:focus {
+    border: none;
+  }
+}
+
+.slick-prev {
+  left: -10px !important;
 }
 
 .slick-next {
-  right: 0 !important;
-  top: 36%;
-  width: 36px;
-  z-index: 9;
+  right: -10px !important;
 }
 
 .slick-prev::before,
 .slick-next::before {
-  color: #ccc;
+  color: $medium-grey;
   font-size: 36px;
-
-  &:hover {
-    color: #fff;
-  }
 }
 
 @media print {
