@@ -3,10 +3,12 @@
 
 {% load render_bundle from webpack_loader %}
 {% load webpack_static from webpack_loader %}
-{% get_current_language as SELECTED_LANGUAGE_CODE %}
 
-<!doctype html>
-<html class="no-js" lang="{{ SELECTED_LANGUAGE_CODE }}">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
 {% include "head-meta.html" with file="about" %}
 
 <body>
