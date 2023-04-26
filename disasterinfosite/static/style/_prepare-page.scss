@@ -87,12 +87,12 @@
   padding: 10px;
 
   @include breakpoint(medium) {
-    border-left: 2px solid $light-grey;
+    border-inline-start: 2px solid $light-grey;
     padding: 20px 0 20px 20px;
   }
 
   @include breakpoint(large) {
-    border-left: 2px solid $light-grey;
+    border-inline-start: 2px solid $light-grey;
     padding: 40px 0 40px 40px;
 
   }
@@ -105,7 +105,7 @@
 
 .prepare-item__link {
   margin-bottom: 12px;
-  text-align: right;
+  text-align: end;
 
   a {
     color: $soft-black;
@@ -156,7 +156,7 @@
 .print-button {
   cursor: pointer;
   margin-top: 12px;
-  text-align: right;
+  text-align: end;
 }
 
 .print-header__activity {
@@ -171,7 +171,7 @@
     border-bottom: 2px solid $light-grey;
     color: $dark-grey;
     padding: 10px;
-    text-align: left;
+    text-align: start;
     vertical-align: bottom;
   }
 

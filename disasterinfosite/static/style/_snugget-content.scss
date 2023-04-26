@@ -31,12 +31,12 @@
   display: flex; // Fold caret aside wrapped text nicely on smaller sizes
   border-bottom: 2px solid $light-grey;
   cursor: pointer;
-  margin-left: 5px;
+  margin-inline-start: 5px;
 }
 
 .caret {
   vertical-align: middle;
-  margin-right: 10px;
+  margin-inline-end: 10px;
 }
 
 .caret--up {
@@ -87,11 +87,11 @@
     @include breakpoint(large) {
       margin: 10px 0;
     }
-    padding-left: 0;
+    padding-inline-start: 0;
   }
 
   li {
-    margin-left: 20px;
+    margin-inline-start: 20px;
     margin-bottom: 10px;
   }
 
@@ -151,7 +151,7 @@
     text-align: center;
 
     @include breakpoint(large) {
-      text-align: left;
+      text-align: start;
     }
   }
 
@@ -244,7 +244,7 @@
 
 .intensity-caption--high {
   right: 0;
-  text-align: right;
+  text-align: end;
 }
 
 /* Historical photos */
