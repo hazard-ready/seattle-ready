@@ -165,7 +165,7 @@ header {
 }
 
 .mq-input-icon {
-  right: 4px;
+  inset-inline-end: 4px;
 
   &:focus,
   &:focus-within,
@@ -247,7 +247,7 @@ header {
   color: $error-red;
   position: absolute;
   bottom: -60px;
-  left: 5px;
+  inset-inline-start: 5px;
 }
 
 /* Language Picker */

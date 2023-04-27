@@ -18,17 +18,12 @@
 
 .hero__text {
   position: absolute;
-  left: 10px;
+  inset-inline-start: 10px;
   top: 0;
   width: 70%;
 
-  &:dir(rtl) {
-    left: auto;
-    right: 10px;
-  }
-
   @include breakpoint(medium) {
-    left: 20px;
+    inset-inline-start: 20px;
     width: 60%;
   }
 
