@@ -115,27 +115,27 @@
 .bio__other {
   @include breakpoint(medium) {
     flex: 1 1 auto;
-    margin-left: 10px;
+    margin-inline-start: 10px;
   }
 
   @include breakpoint(large) {
     flex: 3 1 auto;
-    margin-left: 40px;
+    margin-inline-start: 40px;
   }
 }
 
 .bio__other--reverse {
   @include breakpoint(medium-and-up) {
-    margin-left: 0;
-    margin-right: 10px;
+    margin-inline-start: 0;
+    margin-inline-end: 10px;
 
     h4 {
-      text-align: right;
+      text-align: end;
     }
   }
 
   @include breakpoint(large) {
-    margin-right: 40px;
+    margin-inline-end: 40px;
   }
 }
 
@@ -162,5 +162,5 @@
 }
 
 .bio__links--reverse {
-  text-align: right;
+  text-align: end;
 }

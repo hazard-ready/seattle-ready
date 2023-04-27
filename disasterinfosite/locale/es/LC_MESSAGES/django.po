@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 23:31+0000\n"
+"POT-Creation-Date: 2023-04-27 20:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Vietnamese"
 msgstr ""
 
-#: templates/about.html:17
+#: templates/about.html:19
 msgid "The Hazard Ready Team"
 msgstr ""
 
-#: templates/about.html:27
+#: templates/about.html:29
 msgid ""
 "Carson has a B.Sc. and M.Sc. in Geology from Western Washington University "
 "and the University of Montana. She is now working on her PhD at Boise State "
@@ -63,7 +63,7 @@ msgid ""
 "data for each HazardReady site."
 msgstr ""
 
-#: templates/about.html:44
+#: templates/about.html:46
 msgid ""
 "Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. "
 "Her research on tectonics and earthquake mechanics led to an interest in how "
@@ -73,7 +73,7 @@ msgid ""
 "basic geophysical research."
 msgstr ""
 
-#: templates/about.html:60
+#: templates/about.html:62
 msgid ""
 "Grant Kier has a M.Sc. in geology from the University of Colorado. He is "
 "broadly interested in community resilience in the context of manmade and "
@@ -82,11 +82,15 @@ msgid ""
 "companies in western Montana."
 msgstr ""
 
-#: templates/about.html:67
+#: templates/about.html:69
 msgid "The Hazard Ready Project"
 msgstr ""
 
-#: templates/about.html:81
+#: templates/about.html:72
+msgid "Hazard Ready homepage"
+msgstr ""
+
+#: templates/about.html:82
 #, python-format
 msgid ""
 "%(title)s is designed to help educate and prepare people for disasters that "
@@ -102,7 +106,7 @@ msgstr ""
 "información actualizada y la presenta de tal manera que sea accesible para "
 "cualquier residente de %(area_name)s."
 
-#: templates/about.html:84
+#: templates/about.html:85
 #, python-format
 msgid ""
 "This site uses the most up-to-date hazard risk data available for "
@@ -121,11 +125,11 @@ msgstr ""
 "cómo prepararse se basan en la mejor información de la Cruz Roja "
 "Estadounidense y la Agencia Federal de Gestión de Emergencias."
 
-#: templates/about.html:88
+#: templates/about.html:89
 msgid "build/flowchart.jpg"
 msgstr ""
 
-#: templates/about.html:91
+#: templates/about.html:92
 msgid ""
 "How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant "
 "and up-to-date data on natural hazards for your region from trusted sources "
@@ -138,7 +142,7 @@ msgid ""
 "each community's needs. 6. Revise, revise, revise and launch site!"
 msgstr ""
 
-#: templates/about.html:99
+#: templates/about.html:100
 #, fuzzy, python-format
 #| msgid ""
 #| "Data used for %(title)s is available for download <a "
@@ -150,135 +154,135 @@ msgstr ""
 "La información utilizada para %(title)s se puede descargar <a "
 "href=\"%(download)s\" target=\"_blank\">aquí</a>"
 
-#: templates/data.html:15
+#: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
 msgstr ""
 
-#: templates/data.html:21
+#: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
 msgstr ""
 
-#: templates/data.html:28
+#: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
 msgstr ""
 
-#: templates/data.html:31
+#: templates/data.html:33
 msgid "Earthquake"
 msgstr ""
 
-#: templates/data.html:32
+#: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
 msgstr ""
 
-#: templates/data.html:35 templates/data.html:39 templates/data.html:43
-#: templates/data.html:47 templates/data.html:51 templates/data.html:55
-#: templates/data.html:61 templates/data.html:68 templates/data.html:71
-#: templates/data.html:75 templates/data.html:78 templates/data.html:85
-#: templates/data.html:89 templates/data.html:101 templates/data.html:105
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
 msgstr ""
 
-#: templates/data.html:35 templates/data.html:39 templates/data.html:43
-#: templates/data.html:47 templates/data.html:51 templates/data.html:55
-#: templates/data.html:61 templates/data.html:68 templates/data.html:71
-#: templates/data.html:75 templates/data.html:78 templates/data.html:85
-#: templates/data.html:89 templates/data.html:101 templates/data.html:105
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
 msgstr ""
 
-#: templates/data.html:37
+#: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
 msgstr ""
 
-#: templates/data.html:41
+#: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
 msgstr ""
 
-#: templates/data.html:45
+#: templates/data.html:47
 msgid "Cascadia Displaced Households"
 msgstr ""
 
-#: templates/data.html:49
+#: templates/data.html:51
 msgid "Liquefaction"
 msgstr ""
 
-#: templates/data.html:53
+#: templates/data.html:55
 msgid "Tsunami"
 msgstr ""
 
-#: templates/data.html:59
+#: templates/data.html:61
 msgid "Volcano"
 msgstr ""
 
-#: templates/data.html:65
+#: templates/data.html:67
 msgid "Landslide"
 msgstr ""
 
-#: templates/data.html:66
+#: templates/data.html:68
 msgid "Historical Landslides"
 msgstr ""
 
-#: templates/data.html:73
+#: templates/data.html:75
 msgid "Steep Slope Potential"
 msgstr ""
 
-#: templates/data.html:82
+#: templates/data.html:84
 msgid "Flood"
 msgstr ""
 
-#: templates/data.html:83
+#: templates/data.html:85
 msgid "Flood Hazard Zones"
 msgstr ""
 
-#: templates/data.html:87
+#: templates/data.html:89
 msgid "Channel Migration Zones"
 msgstr ""
 
-#: templates/data.html:91
+#: templates/data.html:93
 msgid "Dam Inundation Maps"
 msgstr ""
 
-#: templates/data.html:98
+#: templates/data.html:100
 msgid "Wildfire"
 msgstr ""
 
-#: templates/data.html:99
+#: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
 msgstr ""
 
-#: templates/data.html:103
+#: templates/data.html:105
 msgid "Fire Hazard Potential"
 msgstr ""
 
-#: templates/data.html:109
+#: templates/data.html:111
 msgid "Summer Weather"
 msgstr ""
 
-#: templates/data.html:115
+#: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
 msgstr ""
 
-#: templates/data.html:118
+#: templates/data.html:120
 msgid "flood"
 msgstr ""
 
-#: templates/data.html:121 templates/data.html:124 templates/data.html:130
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
 msgstr ""
 
-#: templates/data.html:121 templates/data.html:130
+#: templates/data.html:123 templates/data.html:132
 msgid "landslide"
 msgstr ""
 
-#: templates/data.html:121
+#: templates/data.html:123
 msgid "tsunami"
 msgstr ""
 
-#: templates/data.html:121 templates/data.html:124 templates/data.html:130
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
 msgstr ""
 
-#: templates/data.html:127
+#: templates/data.html:129
 msgid "wildfire"
 msgstr ""
 
@@ -384,15 +388,15 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: templates/index.html:19
+#: templates/index.html:21
 msgid "Natural disasters can strike at any time."
 msgstr ""
 
-#: templates/index.html:21
+#: templates/index.html:23
 msgid "Get a personalized report"
 msgstr ""
 
-#: templates/index.html:22
+#: templates/index.html:24
 #, fuzzy
 #| msgid ""
 #| "Give a location by typing in the box below, clicking on the map, or "
@@ -408,15 +412,15 @@ msgstr ""
 "personalizado sobre sus riesgos naturales y los pasos que puede llevar a "
 "cabo para prepararse."
 
-#: templates/index.html:34
+#: templates/index.html:36
 msgid "What are my risks?"
 msgstr "¿Cuáles son mis riesgos?"
 
-#: templates/index.html:35
+#: templates/index.html:37
 msgid "What to Expect"
 msgstr "Qué esperar"
 
-#: templates/index.html:36
+#: templates/index.html:38
 #, fuzzy, python-format
 #| msgid ""
 #| "%(title)s gives you an idea of which natural disasters you might "
@@ -431,11 +435,11 @@ msgstr ""
 "%(title)s le da una idea de los desastres naturales que puede sufrir en el "
 "futuro según la ubicación en %(area_name)s."
 
-#: templates/index.html:39
+#: templates/index.html:41
 msgid "How to Prepare"
 msgstr "Cómo prepararse"
 
-#: templates/index.html:40
+#: templates/index.html:42
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
@@ -443,11 +447,11 @@ msgstr ""
 "Usted tiene la capacidad de hacer una diferencia. Descubra cómo puede "
 "proteger a sus seres queridos y su casa antes del próximo desastre."
 
-#: templates/index.html:41
+#: templates/index.html:43
 msgid "In Recent History"
 msgstr "En el pasado reciente"
 
-#: templates/index.html:42
+#: templates/index.html:44
 #, fuzzy, python-format
 #| msgid ""
 #| "Find out which disasters have struck %(area_name)s in the past, what "
@@ -462,11 +466,11 @@ msgstr ""
 "tuvieron y dónde ocurrieron.\n"
 "          "
 
-#: templates/index.html:48
+#: templates/index.html:50
 msgid "About the Data"
 msgstr ""
 
-#: templates/index.html:50
+#: templates/index.html:52
 #, fuzzy, python-format
 #| msgid ""
 #| "This site uses the most up-to-date hazard risk data available for "
@@ -494,7 +498,7 @@ msgstr ""
 "cómo prepararse se basan en la mejor información de la Cruz Roja "
 "Estadounidense y la Agencia Federal de Gestión de Emergencias."
 
-#: templates/index.html:68
+#: templates/index.html:70
 msgid "Getting results for your location..."
 msgstr "Obtener resultados para su ubicación…"
 
@@ -529,11 +533,11 @@ msgstr ""
 "Mientras que valoramos y fomentamos la resiliencia en todos lados, los datos "
 "que impulsan este sitio aún no están disponibles para otros lugares."
 
-#: templates/prepare.html:19
+#: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
 msgstr ""
 
-#: templates/prepare.html:22
+#: templates/prepare.html:24
 msgid ""
 "There are a few simple steps we can take to make our families and community "
 "more prepared for emergencies. It doesn't have to be expensive or difficult. "
@@ -541,47 +545,47 @@ msgid ""
 "bottom of this page to keep track of how much you've done."
 msgstr ""
 
-#: templates/prepare.html:87
+#: templates/prepare.html:89
 msgid "This activity"
 msgstr ""
 
-#: templates/prepare.html:88
+#: templates/prepare.html:90
 msgid "Print Checklist"
 msgstr ""
 
-#: templates/prepare.html:92
+#: templates/prepare.html:94
 msgid "Completed?"
 msgstr ""
 
-#: templates/prepare.html:93
+#: templates/prepare.html:95
 msgid "Activity"
 msgstr ""
 
-#: templates/prepare.html:94 templates/prepare.html:110
+#: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
 msgstr ""
 
-#: templates/prepare.html:96 templates/prepare.html:112
+#: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
 msgstr ""
 
-#: templates/prepare.html:98 templates/prepare.html:114
+#: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
 msgstr ""
 
-#: templates/prepare.html:100
+#: templates/prepare.html:102
 msgid "costs"
 msgstr ""
 
-#: templates/prepare.html:102
+#: templates/prepare.html:104
 msgid "Resources"
 msgstr ""
 
-#: templates/prepare.html:140
+#: templates/prepare.html:142
 msgid "Key:"
 msgstr ""
 
-#: templates/prepare.html:149
+#: templates/prepare.html:151
 msgid "or more"
 msgstr ""
 
@@ -598,7 +602,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: templates/registration/login.html:8
-#: templates/registration/password_change_form.html:13
+#: templates/registration/password_change_form.html:16
 msgid "Required."
 msgstr "Obligatorio."
 
@@ -616,88 +620,88 @@ msgid ""
 "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
 msgstr ""
 
-#: templates/registration/password_change_done.html:10
+#: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
 msgstr ""
 
-#: templates/registration/password_change_form.html:12
+#: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
 
-#: templates/registration/password_change_form.html:18
+#: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/registration/password_change_form.html:44
-#: templates/registration/password_reset_confirm.html:30
+#: templates/registration/password_change_form.html:47
+#: templates/registration/password_reset_confirm.html:33
 msgid "Change my password"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_confirm.html:18
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:21
+#: templates/registration/password_reset_confirm.html:24
 #, fuzzy
 #| msgid "Password"
 msgid "New password:"
 msgstr "Contraseña"
 
-#: templates/registration/password_reset_confirm.html:26
+#: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:37
+#: templates/registration/password_reset_confirm.html:40
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
 
-#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
 msgstr ""
 
-#: templates/registration/password_reset_done.html:11
+#: templates/registration/password_reset_done.html:14
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
 
-#: templates/registration/password_reset_done.html:13
+#: templates/registration/password_reset_done.html:16
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:11
+#: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:12
+#: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:17
+#: templates/registration/password_reset_form.html:20
 msgid "Email address:"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:21
+#: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
 msgstr ""
 

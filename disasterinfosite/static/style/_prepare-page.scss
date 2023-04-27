@@ -18,12 +18,12 @@
 
 .hero__text {
   position: absolute;
-  left: 10px;
+  inset-inline-start: 10px;
   top: 0;
   width: 70%;
 
   @include breakpoint(medium) {
-    left: 20px;
+    inset-inline-start: 20px;
     width: 60%;
   }
 
@@ -87,13 +87,15 @@
   padding: 10px;
 
   @include breakpoint(medium) {
-    border-left: 2px solid $light-grey;
-    padding: 20px 0 20px 20px;
+    border-inline-start: 2px solid $light-grey;
+    padding: 20px;
+    padding-inline-end: 0;
   }
 
   @include breakpoint(large) {
-    border-left: 2px solid $light-grey;
-    padding: 40px 0 40px 40px;
+    border-inline-start: 2px solid $light-grey;
+    padding: 40px;
+    padding-inline-end: 0;
 
   }
 }
@@ -105,7 +107,7 @@
 
 .prepare-item__link {
   margin-bottom: 12px;
-  text-align: right;
+  text-align: end;
 
   a {
     color: $soft-black;
@@ -156,7 +158,7 @@
 .print-button {
   cursor: pointer;
   margin-top: 12px;
-  text-align: right;
+  text-align: end;
 }
 
 .print-header__activity {
@@ -171,7 +173,7 @@
     border-bottom: 2px solid $light-grey;
     color: $dark-grey;
     padding: 10px;
-    text-align: left;
+    text-align: start;
     vertical-align: bottom;
   }
 

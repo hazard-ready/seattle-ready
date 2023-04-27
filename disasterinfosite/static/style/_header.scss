@@ -3,7 +3,7 @@ header {
   display: flex;
   background-color: $white;
   flex-direction: column;
-  padding: 2px 2px 10px 2px;
+  padding: 2px 2px 10px;
 
   @include breakpoint(medium-and-up) {
     padding: 5px;
@@ -26,13 +26,13 @@ header {
 
   @include breakpoint(medium) {
     display: flex;
-    margin: 0 5px 0 0;
+    margin-inline-end: 5px;
     min-width: 195px;
   }
 
   @include breakpoint(large) {
     display: flex;
-    margin: 0 5px 0 0;
+    margin-inline-end: 5px;
     min-width: unset;
   }
 }
@@ -44,21 +44,21 @@ header {
 .logo--header {
   display: inline-block;
   /* Nestle the text a little closer to the logo. */
-  margin-right: -20px;
+  margin-inline-end: -20px;
   max-height: 48px;
 
   @include breakpoint(medium) {
-    margin-right: -13px;
+    margin-inline-end: -13px;
     max-height: 60px;
   }
 
   @include breakpoint(large) {
-    margin-right: 0;
+    margin-inline-end: 0;
     max-height: 65px;
   }
 
   @include breakpoint(xlarge) {
-    margin-right: -15px;
+    margin-inline-end: -15px;
   }
 }
 
@@ -74,11 +74,11 @@ header {
     }
 
     @include breakpoint(large) {
-      margin-right: 0.25rem;
+      margin-inline-end: 0.25rem;
     }
 
     @include breakpoint(xlarge) {
-      margin-right: 0.75rem;
+      margin-inline-end: 0.75rem;
     }
   }
 
@@ -87,12 +87,16 @@ header {
 .header__about {
   align-items: baseline;
   flex-shrink: 0;
-  margin: 0.25rem 0 0 auto;
+  margin: 0;
+  margin-top: 0.25rem;
+  margin-inline-start: auto;
 }
 
 .header__about--small {
   justify-content: flex-end;
-  margin: 0 2rem 0 auto;
+  margin: 0;
+  margin-inline-end: 2rem;
+  margin-inline-start: auto;
 }
 
 .about__link {
@@ -103,12 +107,14 @@ header {
   margin: 0 5px;
 
   @include breakpoint(medium) {
-    margin: 15px 5px 0 5px;
+    margin: 15px 5px 0;
   }
 
   @include breakpoint(large) {
     font-size: 18px;
-    margin: 18px 0 0 10px;
+    margin: 0;
+    margin-top: 18px;
+    margin-inline-start: 10px;
   }
 }
 
@@ -139,10 +145,13 @@ header {
 .mq-input {
   border: none;
   height: 50px;
-  margin: 0 2px 2px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-inline-end: 2px;
+  margin-inline-start: 8px;
   outline: none;
-  padding-left: 0;
-  padding-right: 35px;
+  padding-inline-start: 0;
+  padding-inline-end: 35px;
   width: 100%;
   z-index: $z-index-bottom;
 
@@ -156,7 +165,7 @@ header {
 }
 
 .mq-input-icon {
-  right: 4px;
+  inset-inline-end: 4px;
 
   &:focus,
   &:focus-within,
@@ -170,8 +179,8 @@ header {
 #location-submit {
   background-color: $light-accent;
   border: 1px solid $light-accent;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
   flex-shrink: 0;
   padding: 4px 8px;
 
@@ -191,8 +200,9 @@ header {
   flex: 0 1 140px;
   font-weight: 600;
   line-height: 1.4;
-  margin-left: auto;
-  padding: 0 4px 0 0;
+  margin-inline-start: auto;
+  padding: 0;
+  padding-inline-end: 4px;
   transition: color 1s;
   width: min-content;
   z-index: $z-index-next;
@@ -237,37 +247,37 @@ header {
   color: $error-red;
   position: absolute;
   bottom: -60px;
-  left: 5px;
+  inset-inline-start: 5px;
 }
 
 /* Language Picker */
 
 .language__form {
   width: auto;
-  margin-left: 10px;
+  margin-inline-start: 10px;
 
   @include breakpoint(medium) {
-    margin-left: 15px;
+    margin-inline-start: 15px;
     margin-top: 15px;
   }
 
   @include breakpoint(large) {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   @include breakpoint(xlarge) {
-    margin-left: 15px;
+    margin-inline-start: 15px;
   }
 }
 
 .language-icon {
-  margin-right: 5px;
+  margin-inline-end: 5px;
   vertical-align: top;
 }
 
 .language-icon--select {
   vertical-align: middle;
-  margin-left: 10px;
+  margin-inline-start: 10px;
 }
 
 .language__button {
