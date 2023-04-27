@@ -28,7 +28,7 @@
         opacity: 0.8;
         position: absolute;
         top: 50%;
-        left: 50%; // centers the button in rtl and rtl text direction
+        left: 50%; // centers the button in ltr and rtl text direction
         transform: translate3d( -50%, -50%, 0 );
 
         &:before {
@@ -38,7 +38,7 @@
             border-color: transparent transparent transparent $white;
             position: absolute;
             top: 50%;
-            left: 50%; // centers the button in rtl and rtl text direction
+            left: 50%; // centers the button in ltr and rtl text direction
             transform: translate3d( -50%, -50%, 0 );
         }
     }
