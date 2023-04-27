@@ -34,7 +34,7 @@
         &:before {
             content: "";
             border-style: solid;
-            border-width: 15px 0 15px 26px; // play buttons are not generally flipped apparently
+            border-width: 15px 0 15px 26px; // play buttons are not generally flipped for an rtl language apparently
             border-color: transparent transparent transparent $white;
             position: absolute;
             top: 50%;
