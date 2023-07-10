@@ -1,160 +1,120 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-27 20:40+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2023-07-10 19:40\n"
+"Last-Translator: \n"
+"Language-Team: Korean\n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: seattle-ready\n"
+"X-Crowdin-Project-ID: 525328\n"
+"X-Crowdin-Language: ko\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 37\n"
 
 #: settings.py:100
 msgid "Arabic"
-msgstr ""
+msgstr "아랍어"
 
 #: settings.py:101
 msgid "Chinese"
-msgstr ""
+msgstr "중국어"
 
 #: settings.py:102
 msgid "English"
-msgstr ""
+msgstr "영어"
 
 #: settings.py:103
 msgid "Korean"
-msgstr ""
+msgstr "한국어"
 
 #: settings.py:104
 msgid "Russian"
-msgstr ""
+msgstr "러시아어"
 
 #: settings.py:105
 msgid "Somali"
-msgstr ""
+msgstr "소말리아어"
 
 #: settings.py:106
 msgid "Spanish"
-msgstr ""
+msgstr "스페인어"
 
 #: settings.py:107
 msgid "Vietnamese"
-msgstr ""
+msgstr "베트남어"
 
 #: templates/about.html:19
 msgid "The Hazard Ready Team"
-msgstr ""
+msgstr "재해 대비 팀"
 
 #: templates/about.html:29
-msgid ""
-"Carson has a B.Sc. and M.Sc. in Geology from Western Washington University "
-"and the University of Montana. She is now working on her PhD at Boise State "
-"University where she studies how to best communicate natural hazard risk "
-"information to broad audiences. She writes the content and processes the "
-"data for each HazardReady site."
-msgstr ""
+msgid "Carson has a B.Sc. and M.Sc. in Geology from Western Washington University and the University of Montana. She is now working on her PhD at Boise State University where she studies how to best communicate natural hazard risk information to broad audiences. She writes the content and processes the data for each HazardReady site."
+msgstr "Carson은 Western Washington University 및 University of Montana에서 지질학 학사 및 석사 과정을 수료했습니다. 그녀는 현재 Boise State University에서 박사 과정을 밟으며 대중에게 자연재해 위험에 관한 정보를 전달하는 최적의 방법을 연구하고 있습니다. Carson은 각 HazardReady 사이트를 위한 콘텐츠를 작성하고 데이터를 처리합니다."
 
 #: templates/about.html:46
-msgid ""
-"Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. "
-"Her research on tectonics and earthquake mechanics led to an interest in how "
-"human communities are affected by natural disasters, and inspires her "
-"ongoing efforts to help people better understand and prepare for them. She "
-"writes and lectures on the ethics of science communication as well as on her "
-"basic geophysical research."
-msgstr ""
+msgid "Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. Her research on tectonics and earthquake mechanics led to an interest in how human communities are affected by natural disasters, and inspires her ongoing efforts to help people better understand and prepare for them. She writes and lectures on the ethics of science communication as well as on her basic geophysical research."
+msgstr "Rebecca Bendick은 University of Colorado에서 지구 물리학 박사 학위를 받았습니다. 그녀는 구조 지질학 및 지진학을 연구하면서 자연재해로 인해 인류 공동체가 어떤 영향을 받는지 관심을 가지게 되었고, 사람들이 자연재해를 더 잘 이해하고 대비할 수 있도록 지속적인 노력을 기울이고 있습니다. Rebecca는 과학 커뮤니케이션에서의 윤리는 물론 기본적인 지구 물리학 연구에 대한 글을 작성하고 강의를 진행합니다."
 
 #: templates/about.html:62
-msgid ""
-"Grant Kier has a M.Sc. in geology from the University of Colorado. He is "
-"broadly interested in community resilience in the context of manmade and "
-"natural changes. He also has a background in business practices and "
-"currently works on economic development, fostering small and startup "
-"companies in western Montana."
-msgstr ""
+msgid "Grant Kier has a M.Sc. in geology from the University of Colorado. He is broadly interested in community resilience in the context of manmade and natural changes. He also has a background in business practices and currently works on economic development, fostering small and startup companies in western Montana."
+msgstr "Grant Kier는 University of Colorado에서 지질학 석사 학위를 받았습니다. 그는 인위적 변화와 자연적 변화의 맥락에서 지역사회의 회복력에 대해 폭넓은 관심을 가지고 있습니다. 또한 사업 관행에 대한 배경 지식을 바탕으로 현재 몬태나 주 서부에 있는 중소기업과 스타트업을 육성하면서 경제 개발과 관련된 일을 하고 있습니다."
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
-msgstr ""
+msgstr "재해 대비 프로젝트"
 
 #: templates/about.html:72
 msgid "Hazard Ready homepage"
-msgstr ""
+msgstr "재해 대비 홈페이지"
 
 #: templates/about.html:82
 #, python-format
-msgid ""
-"%(title)s is designed to help educate and prepare people for disasters that "
-"occur in their area. Disasters don’t strike locations equally so we found it "
-"important to give location specific information in order to properly "
-"prepare. %(title)s organizes current information and packages it in a way "
-"that makes it accessible for any %(area_name)s resident."
-msgstr ""
+msgid "%(title)s is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. %(title)s organizes current information and packages it in a way that makes it accessible for any %(area_name)s resident."
+msgstr "%(title)s은(는) 지역 주민이 해당 지역에서 발생할 수 있는 재해에 대비할 수 있도록 정보를 제공할 목적으로 제작되었습니다. 재해는 모든 지역에서 동일하게 발생하는 것이 아니므로 지역마다 자주 발행하는 재해에 적절히 대비할 수 있는 정보를 제공하는 것이 중요합니다. %(title)s은(는) 최신 정보를 취합하여 이를 %(area_name)s 주민이 쉽게 이용할 수 있는 방식으로 제공하고 있습니다."
 
 #: templates/about.html:85
 #, python-format
-msgid ""
-"This site uses the most up-to-date hazard risk data available for "
-"%(area_name)s. The user of this site is responsible for verifying any "
-"particular information with the original data sources. Although these data "
-"represent the best current assessment of hazards, they are not predictive of "
-"future events. The descriptions of risk and how to prepare for those risks "
-"are based on best information from the American Red Cross and the Federal "
-"Emergency Management Agency."
-msgstr ""
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "이 사이트는 %(area_name)s 지역에 해당하는 최신 재해 위험 데이터를 사용합니다. 이 사이트에서 인용하는 특정 데이터의 원본 데이터 출처를 검증하는 것은 사이트 사용자의 몫입니다. 이러한 데이터는 위험에 대한 최신 분석을 제공하지만 미래를 예측하지는 않습니다. 위험에 대한 설명과 그러한 위험을 대처하는 방법은 American Red Cross 및 Federal Emergency Management Agency에서 제공하는 정보를 기반으로 합니다."
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
-msgstr ""
+msgstr "build/flowchart.jpg"
 
 #: templates/about.html:92
-msgid ""
-"How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant "
-"and up-to-date data on natural hazards for your region from trusted sources "
-"like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners "
-"(community groups & emergency managers) to ensure the data and infomration "
-"are accurate. 3. Process data. Make the data compatible with Hazard Ready "
-"software. 4. Build content. Write the webpage text, gather images and "
-"videos, locate local resources for each hazard and region. 5. Feedback and "
-"focus groups. Discuss content and designs to ensure the information fits "
-"each community's needs. 6. Revise, revise, revise and launch site!"
-msgstr ""
+msgid "How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant and up-to-date data on natural hazards for your region from trusted sources like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners (community groups & emergency managers) to ensure the data and infomration are accurate. 3. Process data. Make the data compatible with Hazard Ready software. 4. Build content. Write the webpage text, gather images and videos, locate local resources for each hazard and region. 5. Feedback and focus groups. Discuss content and designs to ensure the information fits each community's needs. 6. Revise, revise, revise and launch site!"
+msgstr "Hazard Ready 사이트를 구축하는 방법: 1. 데이터 수집: FEMA, NOAA, USGS와 같이 신뢰할 수 있는 기관에서 해당 지역과 연관된 자연재해와 가장 관련성이 높은 최신 데이터를 찾습니다. 2. 품질 확인: 지역 파트너(지역사회 단체 및 비상사태 관리자)와 함께 수집한 데이터가 정확한지 확인합니다. 3. 데이터 처리: 데이터가 Hazard Ready 소프트웨어와 호환되도록 처리합니다. 4. 콘텐츠 제작: 웹페이지 텍스트를 작성하고, 이미지와 동영상을 수집하고, 각 위험과 지역에 관한 리소스를 찾습니다. 5. 피드백 및 포커스 그룹: 콘텐츠와 디자인에 대해 논의하여 사이트에서 제공하는 정보가 각 지역사회에 적합한지 확인합니다. 6. 반복적인 수정을 거쳐 사이트를 출시합니다!"
 
 #: templates/about.html:100
 #, python-format
-msgid ""
-"Data used for %(title)s is available for download <a href=\"%(download)s\" "
-"target=\"_blank\" rel=\"noopener\">here</a>."
-msgstr ""
+msgid "Data used for %(title)s is available for download <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">here</a>."
+msgstr "%(title)s에서 사용하는 데이터는 <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">여기</a>에서 다운로드할 수 있습니다."
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
-msgstr ""
+msgstr "Seattle and King County Ready의 데이터 개요 이미지"
 
 #: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
-msgstr ""
+msgstr "재해 강도가 표시된 워싱턴 주 King County 지도"
 
 #: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
-msgstr ""
+msgstr "Seattle and King County Ready 데이터 출처"
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr ""
+msgstr "지진"
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr ""
+msgstr "2001년에 발생한 Nisqually 지진(규모 6.8)"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -162,7 +122,7 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr ""
+msgstr "액세스 날짜"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -170,588 +130,538 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr ""
+msgstr "6월"
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
-msgstr ""
+msgstr "시애틀 단층 지진 시나리오"
 
 #: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
-msgstr ""
+msgstr "Cascadia 진동 시나리오"
 
 #: templates/data.html:47
 msgid "Cascadia Displaced Households"
-msgstr ""
+msgstr "Cascadia 지진 피해 가구"
 
 #: templates/data.html:51
 msgid "Liquefaction"
-msgstr ""
+msgstr "액화 현상"
 
 #: templates/data.html:55
 msgid "Tsunami"
-msgstr ""
+msgstr "지진해일"
 
 #: templates/data.html:61
 msgid "Volcano"
-msgstr ""
+msgstr "화산"
 
 #: templates/data.html:67
 msgid "Landslide"
-msgstr ""
+msgstr "산사태"
 
 #: templates/data.html:68
 msgid "Historical Landslides"
-msgstr ""
+msgstr "과거에 발생한 산사태"
 
 #: templates/data.html:75
 msgid "Steep Slope Potential"
-msgstr ""
+msgstr "잠재적으로 위험한 가파른 경사지"
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr ""
+msgstr "홍수"
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
-msgstr ""
+msgstr "홍수 재해 지역"
 
 #: templates/data.html:89
 msgid "Channel Migration Zones"
-msgstr ""
+msgstr "물길 이동 지역"
 
 #: templates/data.html:93
 msgid "Dam Inundation Maps"
-msgstr ""
+msgstr "댐으로 인한 범람 지역 지도"
 
 #: templates/data.html:100
 msgid "Wildfire"
-msgstr ""
+msgstr "산불"
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr ""
+msgstr "도심-야생 완충(WUI) 지역"
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
-msgstr ""
+msgstr "잠재적인 화재 위험"
 
 #: templates/data.html:111
 msgid "Summer Weather"
-msgstr ""
+msgstr "여름철 날씨"
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr ""
+msgstr "데이터와 관련하여 궁금한 점이나 우려 사항이 있으십니까? 다음으로 문의해 주십시오."
 
 #: templates/data.html:120
 msgid "flood"
-msgstr ""
+msgstr "홍수"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
-msgstr ""
+msgstr "지진"
 
 #: templates/data.html:123 templates/data.html:132
 msgid "landslide"
-msgstr ""
+msgstr "산사태"
 
 #: templates/data.html:123
 msgid "tsunami"
-msgstr ""
+msgstr "지진해일"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
-msgstr ""
+msgstr "화산"
 
 #: templates/data.html:129
 msgid "wildfire"
-msgstr ""
+msgstr "산불"
 
 #: templates/found_content.html:11
 msgid "What to expect for"
-msgstr ""
+msgstr "이 지역에서 발생할 수 있는 현상"
 
 #: templates/found_content.html:17
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
-msgstr ""
+msgstr "새&nbsp;주소&nbsp;입력하기"
 
 #: templates/found_content.html:36
 msgid "Prepare!"
-msgstr ""
+msgstr "대처 방법"
 
 #: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
-msgstr ""
+msgstr "강도: %(percentage)s%%"
 
 #: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
-msgstr ""
+msgstr "경미한 진동&nbsp;&mdash; 피해 없음"
 
 #: templates/found_content.html:59
 msgid "Very Low Hazard"
-msgstr ""
+msgstr "매우 낮은 위험"
 
 #: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
-msgstr ""
+msgstr "격렬한 진동&nbsp;&mdash; 큰 피해"
 
 #: templates/found_content.html:66
 msgid "Very High Hazard"
-msgstr ""
+msgstr "매우 높은 위험"
 
 #: templates/geek_box.html:7
 msgid "Who made this?"
-msgstr ""
+msgstr "이 웹사이트는 누가 만들었습니까?"
 
 #: templates/geek_box.html:11
 #, python-format
-msgid ""
-"\n"
-"                Have questions? View the <a href=\"%(about_url)s\" "
-"target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the "
-"Hazard Ready creators</a> for more information.\n"
+msgid "\n"
+"                Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the Hazard Ready creators</a> for more information.\n"
 "            "
-msgstr ""
+msgstr "\n"
+"                궁금한 점이 있으십니까? <a href=\"%(about_url)s\" target=\"_blank\">정보</a> 페이지를 확인하거나 <a href=\"mailto:%(email)s\">Hazard Ready 제작자에게 이메일</a>을 보내 자세한 정보를 요청하십시오.            "
 
 #: templates/geek_box.html:15
 #, python-format
-msgid ""
-"Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
-"a> page for more information.\""
-msgstr ""
+msgid "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page for more information.\""
+msgstr "궁금한 점이 있으십니까? <a href=\"%(about_url)s\" target=\"_blank\">정보</a> 페이지에서 자세한 정보를 확인하십시오.\""
 
 #: templates/head-meta.html:12 templates/header.html:25
-msgid ""
-"Enter your location for a personalized report on your risks and how to "
-"prepare."
-msgstr ""
+msgid "Enter your location for a personalized report on your risks and how to prepare."
+msgstr "위험 및 대처 방법에 대한 맞춤형 보고서를 받으려면 해당 지역을 입력하십시오."
 
 #: templates/header.html:23
 msgid "Find Me"
-msgstr ""
+msgstr "내 위치 찾기"
 
 #: templates/header.html:27
 msgid "Enter an address."
-msgstr ""
+msgstr "주소를 입력하십시오."
 
 #: templates/header.html:38
 msgid "We had a problem finding that location."
-msgstr ""
+msgstr "문제가 발생하여 해당 위치를 찾을 수 없습니다."
 
 #: templates/header.html:41
-msgid ""
-"Please allow your web browser to access your location in order to use Find "
-"Me."
-msgstr ""
+msgid "Please allow your web browser to access your location in order to use Find Me."
+msgstr "내 위치 찾기 기능을 사용하려면 웹 브라우저에서 사용자의 위치를 추적할 수 있도록 허용하십시오."
 
 #: templates/header_links.html:4
 msgid "About"
-msgstr ""
+msgstr "정보"
 
 #: templates/header_links.html:7
 msgid "Data"
-msgstr ""
+msgstr "데이터"
 
 #: templates/index.html:21
 msgid "Natural disasters can strike at any time."
-msgstr ""
+msgstr "자연재해는 언제든지 발생할 수 있습니다."
 
 #: templates/index.html:23
 msgid "Get a personalized report"
-msgstr ""
+msgstr "맞춤형 보고서 받기"
 
 #: templates/index.html:24
-msgid ""
-"Give a location by typing in the box at the top of the page, clicking on the "
-"map, or clicking 'find me'. You'll get a personalized report on your natural "
-"hazard risks and steps you can take to prepare."
-msgstr ""
+msgid "Give a location by typing in the box at the top of the page, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare."
+msgstr "페이지 상단에 있는 상자에 사용자의 위치를 입력한 후 지도에서 위치를 클릭하거나 '내 위치 찾기'를 클릭하십시오. 사용자가 거주하는 지역에서 발생할 수 있는 자연재해와 대처 방법에 대한 맞춤형 보고서를 받을 수 있습니다."
 
 #: templates/index.html:36
 msgid "What are my risks?"
-msgstr ""
+msgstr "제가 어떤 위험에 노출되어 있습니까?"
 
 #: templates/index.html:37
 msgid "What to Expect"
-msgstr ""
+msgstr "발생 가능한 재해"
 
 #: templates/index.html:38
 #, python-format
-msgid ""
-" %(site_title)s gives you an idea of which\n"
-"              natural disasters you might experience in the future based on "
-"a\n"
+msgid " %(site_title)s gives you an idea of which\n"
+"              natural disasters you might experience in the future based on a\n"
 "              location in %(area_name)s. "
-msgstr ""
+msgstr " %(site_title)s은(는) %(area_name)s의\n"
+"              위치에 기반해 향후에 발생할 수 있는 자연재해에 대한\n"
+"              정보를 제공합니다. "
 
 #: templates/index.html:41
 msgid "How to Prepare"
-msgstr ""
+msgstr "대처 방법"
 
 #: templates/index.html:42
-msgid ""
-"You have the power to make a difference. Find out how you can protect your "
-"loved ones and home before the next disaster hits."
-msgstr ""
+msgid "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits."
+msgstr "대처 방법을 알면 큰 도움이 될 수 있습니다. 다음 재해가 발생하기 전에 사랑하는 가족과 집을 보호하는 방법에 대해 알아보십시오."
 
 #: templates/index.html:43
 msgid "In Recent History"
-msgstr ""
+msgstr "최근에 발생한 재해"
 
 #: templates/index.html:44
 #, python-format
-msgid ""
-" Find out which disasters have struck %(settings.area_name)s in the past, "
-"what impact they had, and where\n"
+msgid " Find out which disasters have struck %(settings.area_name)s in the past, what impact they had, and where\n"
 "              they happened. "
-msgstr ""
+msgstr " 과거에 %(settings.area_name)s 지역에서 발생한 재해와 그 영향, 그리고 재해가\n"
+"              발생한 위치를 살펴보십시오. "
 
 #: templates/index.html:50
 msgid "About the Data"
-msgstr ""
+msgstr "데이터 관련 정보"
 
 #: templates/index.html:52
 #, python-format
-msgid ""
-"This site uses the most up-to-date hazard risk data available for "
-"%(area_name)s. The user of this site is responsible for verifying any "
-"particular information with the original <a href=\"%(data_source_link)s\" "
-"target=\"_blank\">data sources</a>. Although these data represent the best "
-"current assessment of hazards, they are not predictive of future events. The "
-"descriptions of risk and how to prepare for those risks are based on best "
-"information from the American Red Cross and the Federal Emergency Management "
-"Agency."
-msgstr ""
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original <a href=\"%(data_source_link)s\" target=\"_blank\">data sources</a>. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "이 사이트는 %(area_name)s 지역에 해당하는 최신 재해 위험 데이터를 사용합니다. 이 사이트에서 인용하는 특정 데이터의 원본 <a href=\"%(data_source_link)s\" target=\"_blank\">데이터 출처</a>를 검증하는 것은 사이트 사용자의 몫입니다. 이러한 데이터는 위험에 대한 최신 분석을 제공하지만 미래를 예측하지는 않습니다. 위험에 대한 설명과 그러한 위험을 대처하는 방법은 American Red Cross 및 Federal Emergency Management Agency에서 제공하는 정보를 기반으로 합니다."
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "사용자 위치에 대한 검색 결과를 가져오는 중..."
 
 #: templates/language_selector.html:27
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
 #: templates/no_content_found.html:6
 msgid "No information available for"
-msgstr ""
+msgstr "정보 없음"
 
 #: templates/no_content_found.html:9
 msgid "Wrong address? Start over"
-msgstr ""
+msgstr "주소가 잘못되었습니까? 다시 입력하십시오."
 
 #: templates/no_content_found.html:21
 msgid "No information available."
-msgstr ""
+msgstr "정보가 없습니다."
 
 #: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
-msgstr ""
+msgstr "사용자의 위치가 %(area_name)s 지역을 벗어난 것 같습니다."
 
 #: templates/no_content_found.html:24
-msgid ""
-"While we value and promote resilience everywhere, the data that powers this "
-"site isn't available for other places yet."
-msgstr ""
+msgid "While we value and promote resilience everywhere, the data that powers this site isn't available for other places yet."
+msgstr "저희는 모든 곳에서 회복력을 중요하게 생각하고 장려하지만 이 사이트에서 제공되는 데이터는 아직 다른 곳에서는 사용할 수 없습니다."
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr ""
+msgstr "재해 대비를 위한 첫걸음"
 
 #: templates/prepare.html:24
-msgid ""
-"There are a few simple steps we can take to make our families and community "
-"more prepared for emergencies. It doesn't have to be expensive or difficult. "
-"You may have already done some of it! You can use the checklist at the "
-"bottom of this page to keep track of how much you've done."
-msgstr ""
+msgid "There are a few simple steps we can take to make our families and community more prepared for emergencies. It doesn't have to be expensive or difficult. You may have already done some of it! You can use the checklist at the bottom of this page to keep track of how much you've done."
+msgstr "몇 가지 간단한 방법으로 가족과 지역사회가 비상사태에 더 잘 대처하도록 할 수 있습니다. 이러한 조치는 비용이 많이 들거나 어렵지 않으며 일부는 이미 실천하고 있을 수 있습니다. 이 페이지 하단에 있는 체크리스트를 통해 재해에 얼마나 대비되어 있는지 확인해 보십시오."
 
 #: templates/prepare.html:89
 msgid "This activity"
-msgstr ""
+msgstr "이 활동은"
 
 #: templates/prepare.html:90
 msgid "Print Checklist"
-msgstr ""
+msgstr "체크리스트 인쇄"
 
 #: templates/prepare.html:94
 msgid "Completed?"
-msgstr ""
+msgstr "완료 여부"
 
 #: templates/prepare.html:95
 msgid "Activity"
-msgstr ""
+msgstr "활동"
 
 #: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
-msgstr ""
+msgstr "정신적인 피해와 육체적인 피해 감소"
 
 #: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
-msgstr ""
+msgstr "다른 상황에서도 유용하게 사용 가능"
 
 #: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
-msgstr ""
+msgstr "재산 보호에 도움"
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr ""
+msgstr "비용"
 
 #: templates/prepare.html:104
 msgid "Resources"
-msgstr ""
+msgstr "리소스"
 
 #: templates/prepare.html:142
 msgid "Key:"
-msgstr ""
+msgstr "키:"
 
 #: templates/prepare.html:151
 msgid "or more"
-msgstr ""
+msgstr "더 많은 정보 보기"
 
 #: templates/registration/login.html:3
 #: templates/registration/user_interactions.html:3
 msgid "Log In"
-msgstr ""
+msgstr "로그인"
 
 #: templates/registration/login.html:4
 #: templates/registration/user_interactions.html:5
 #: templates/registration/user_profile.html:26
 #: templates/registration/user_signup.html:4
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: templates/registration/login.html:8
 #: templates/registration/password_change_form.html:16
 msgid "Required."
-msgstr ""
+msgstr "필수 항목입니다."
 
 #: templates/registration/login.html:12
 msgid "Username (your email address)"
-msgstr ""
+msgstr "사용자 이름(이메일 주소)"
 
 #: templates/registration/login.html:15
 msgid "Password"
-msgstr ""
+msgstr "비밀번호"
 
 #: templates/registration/login.html:26
 #, python-format
-msgid ""
-"Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
-msgstr ""
+msgid "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
+msgstr "비밀번호를 잊어버리셨습니까? <a href=\"%(password_url)s\">여기</a>에서 비밀번호를 재설정하십시오."
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
-msgstr ""
+msgstr "비밀번호가 변경되었습니다."
 
 #: templates/registration/password_change_form.html:15
-msgid ""
-"Please enter your old password, for security’s sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
-msgstr ""
+msgid "Please enter your old password, for security’s sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "보안을 위해 기존 비밀번호를 입력한 다음 새 비밀번호가 올바른지 확인하기 위해 두 번 입력하십시오."
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "아래 오류를 수정하십시오."
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
 msgid "Change my password"
-msgstr ""
+msgstr "내 비밀번호 변경"
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
-msgstr ""
+msgstr "비밀번호가 설정되었습니다."
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
-msgstr ""
+msgstr "새 비밀번호 입력"
 
 #: templates/registration/password_reset_confirm.html:18
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "새 비밀번호가 올바르게 입력되었는지 확인하기 위해 두 번 입력하십시오."
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "New password:"
-msgstr ""
+msgstr "새 비밀번호:"
 
 #: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr ""
+msgstr "비밀번호 확인:"
 
 #: templates/registration/password_reset_confirm.html:40
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr ""
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "비밀번호 재설정 링크가 유효하지 않습니다. 이미 사용한 링크일 수 있습니다. 비밀번호 재설정을 다시 요청하십시오."
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
-msgstr ""
+msgstr "이메일을 확인하십시오."
 
 #: templates/registration/password_reset_done.html:14
-msgid ""
-"We’ve emailed you instructions for setting your password, if an account "
-"exists with the email you entered. You should receive them shortly."
-msgstr ""
+msgid "We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly."
+msgstr "사용자가 입력한 이메일 주소로 비밀번호 설정 안내가 포함된 이메일을 발송했습니다. 곧 이메일을 받으실 수 있습니다."
 
 #: templates/registration/password_reset_done.html:16
-msgid ""
-"If you don’t receive an email, please make sure you’ve entered the address "
-"you registered with, and check your spam folder."
-msgstr ""
+msgid "If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder."
+msgstr "이메일을 받지 못한 경우 등록한 이메일 주소를 정확하게 입력했는지 확인하고 스팸 폴더를 확인하십시오."
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
-msgstr ""
+msgstr "비밀번호 재설정"
 
 #: templates/registration/password_reset_form.html:15
-msgid ""
-"Forgotten your password? Enter your email address below, and we’ll email "
-"instructions for setting a new one."
-msgstr ""
+msgid "Forgotten your password? Enter your email address below, and we’ll email instructions for setting a new one."
+msgstr "비밀번호를 잊어버리셨습니까? 아래에 이메일 주소를 입력하면 비밀번호 재설정 안내가 포함된 이메일이 발송됩니다."
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr ""
+msgstr "이메일 주소:"
 
 #: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
-msgstr ""
+msgstr "비밀번호 재설정"
 
 #: templates/registration/user_interactions.html:4
 #: templates/registration/user_signup.html:3
 msgid "Sign Up"
-msgstr ""
+msgstr "가입하기"
 
 #: templates/registration/user_interactions.html:6
 msgid "Log Out"
-msgstr ""
+msgstr "로그아웃"
 
 #: templates/registration/user_interactions.html:7
 msgid "Update My Info"
-msgstr ""
+msgstr "내 정보 업데이트"
 
 #: templates/registration/user_interactions.html:23
 #, python-format
 msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
-msgstr ""
+msgstr "<span class=\"username\">%(username)s</span> 님, 안녕하세요!"
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
-msgstr ""
+msgstr "로그인하는 중입니다. 잠시만 기다려주십시오..."
 
 #: templates/registration/user_interactions.html:33
 msgid "Welcome back!"
-msgstr ""
+msgstr "안녕하세요!"
 
 #: templates/registration/user_interactions.html:35
 #, python-format
-msgid ""
-"If your username isn't <span class=\"username\">%(username)s</span>, you "
-"might want to log out."
-msgstr ""
+msgid "If your username isn't <span class=\"username\">%(username)s</span>, you might want to log out."
+msgstr "본인의 사용자 이름이 <span class=\"username\">%(username)s</span>이(가) 아닌 경우 로그아웃하시기 바랍니다."
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
-msgstr ""
+msgstr "중요한 업데이트 받기"
 
 #: templates/registration/user_interactions.html:45
-msgid ""
-"Keep your family, friends, and neighbors safe. Sign up to get email updates "
-"about seasonal hazards like fires, floods, and snow storms. If a natural "
-"disaster happens in your area, we’ll send you updates so you can stay "
-"informed. We’ll ask for your email address and physical address. Your "
-"information will be secure, and we won’t contact you for any other reason."
-msgstr ""
+msgid "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason."
+msgstr "가족과 친구, 이웃의 안전을 지켜주십시오. 가입하면 계절에 따른 화재, 홍수, 눈 폭풍 등의 재해 정보를 이메일로 업데이트받을 수 있습니다. 사용자가 거주하는 지역에서 자연재해가 발생할 경우 해당하는 최신 정보를 보내드립니다. 가입 시 사용자의 이메일 주소와 거주지 주소를 입력해야 합니다. 사용자의 정보는 안전하게 보관되며 저희는 다른 이유로 사용자에게 연락하지 않습니다."
 
 #: templates/registration/user_profile.html:4
 msgid "Update Your Information"
-msgstr ""
+msgstr "내 정보 업데이트"
 
 #: templates/registration/user_profile.html:8
 #: templates/registration/user_signup.html:17
 msgid "Street Address"
-msgstr ""
+msgstr "도로 주소"
 
 #: templates/registration/user_profile.html:11
 #: templates/registration/user_signup.html:20
 msgid "Other Address Information"
-msgstr ""
+msgstr "기타 주소 정보"
 
 #: templates/registration/user_profile.html:14
 #: templates/registration/user_signup.html:23
 msgid "City"
-msgstr ""
+msgstr "도시"
 
 #: templates/registration/user_profile.html:17
 #: templates/registration/user_signup.html:26
 msgid "State"
-msgstr ""
+msgstr "주"
 
 #: templates/registration/user_profile.html:20
 #: templates/registration/user_signup.html:29
 msgid "Zip Code"
-msgstr ""
+msgstr "우편번호"
 
 #: templates/registration/user_profile.html:25
 msgid "Update"
-msgstr ""
+msgstr "업데이트"
 
 #: templates/registration/user_signup.html:11
 msgid "Email address (this will be your username)"
-msgstr ""
+msgstr "이메일 주소(사용자 이름으로 사용됨)"
 
 #: templates/registration/user_signup.html:14
 msgid "Password (more than 8 characters long, please)"
-msgstr ""
+msgstr "비밀번호(최소 8자)"
 
 #: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
-msgstr ""
+msgstr "도움이 필요하십니까? <a href=\"mailto:help@hazardready.org\">이메일을 보내주십시오.</a>"
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
-msgstr ""
+msgstr "무료!"
 
 #: templatetags/show_cost.py:13 templatetags/show_cost.py:23
 #: templatetags/show_cost_header.py:13
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr ""
+msgstr "시작하기 - 무료입니다!"
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
-msgstr ""
+msgstr "다음 단계"
 
 #: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
 msgid "Keep Going"
-msgstr ""
+msgstr "계속하기"
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
-msgstr ""
+msgstr "이미 사용 중인 이메일 주소입니다. 로그인해 보십시오."
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr ""
+msgstr "죄송합니다. 알 수 없는 오류가 발생했습니다. 다시 시도해 보십시오."
 
 #: views.py:91
-msgid ""
-"Thanks for signing up! We'll get ahold of you with relevant news and "
-"information. You can come back anytime to update your address."
-msgstr ""
+msgid "Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address."
+msgstr "가입해 주셔서 감사합니다! 곧 관련 소식과 정보를 전해드리겠습니다. 언제든지 돌아와서 주소를 업데이트할 수 있습니다."
 
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
-msgstr ""
+msgstr "최신 정보로 업데이트해 주셔서 감사합니다!"
+
