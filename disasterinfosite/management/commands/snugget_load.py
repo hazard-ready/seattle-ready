@@ -261,11 +261,12 @@ def addSlideshow(folder, snugget):
     rowCount = 1
     for row in slides:
         rowCount += 1
-        photo = PastEventsPhoto.objects.create(
-            snugget=snugget,
-            caption=row["caption"],
-            caption_es=row["caption-es"]
-        )
+        args = {
+            'snugget': snugget,
+            'caption': row['caption']
+        }
+        kwargs = includeTranslatedFields(row, 'caption', 'caption', args)
+        photo = PastEventsPhoto.objects.create(**kwargs)
         if row["image"] != '':
             imageFile = os.path.join(folder, row["image"])
             with open(imageFile, 'rb') as f:
