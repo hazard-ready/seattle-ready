@@ -18,7 +18,11 @@
   }
 
   button {
-    margin-inline-end: 20px;
+    margin-inline-end: 0.5rem;
+
+    @include breakpoint(medium-and-up) {
+      margin-inline-end: 1.5rem;
+    }
   }
 }
 
