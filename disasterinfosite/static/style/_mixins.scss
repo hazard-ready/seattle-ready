@@ -1,7 +1,7 @@
 /* Breakpoints! */
 @mixin breakpoint($point) {
   @if $point == medium {
-    @media only screen and (min-width: 670px) and (max-width: 900px) {
+    @media only screen and (min-width: 670px) and (max-width: 899px) {
       @content;
     }
   } @else if $point == medium-and-up {
