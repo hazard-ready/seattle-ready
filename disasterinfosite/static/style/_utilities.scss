@@ -60,6 +60,15 @@
   }
 }
 
+.hide-for-large-down--flex {
+  display: none;
+
+  @include breakpoint(xlarge) {
+    display: flex;
+  }
+
+}
+
 .hide-for-xlarge--flex {
   display: flex;
 

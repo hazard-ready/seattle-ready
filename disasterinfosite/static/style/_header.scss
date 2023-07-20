@@ -53,7 +53,7 @@ header {
   }
 
   @include breakpoint(large-and-up) {
-    margin-inline-end: 0;
+    margin-inline-end: -13px;
     max-height: 65px;
   }
 
@@ -128,13 +128,10 @@ header {
   margin: 10px 5px 0;
   position: relative;
 
-  @include breakpoint(large-and-up) {
+  @include breakpoint(xlarge-and-up) {
     margin: 0 10px auto;
-    flex: 1 0 auto;
-  }
-
-  @include breakpoint(xlarge) {
     max-width: 600px;
+    flex: 1 0 auto;
   }
 }
 
