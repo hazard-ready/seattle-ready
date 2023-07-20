@@ -15,7 +15,7 @@
 .hide-for-medium-down {
   display: none;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     display: inline-block;
   }
 }
@@ -39,7 +39,7 @@
 .hide-for-medium-down--flex {
   display: none;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     display: flex;
   }
 }
@@ -55,7 +55,15 @@
 .hide-for-large--flex {
   display: flex;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
+    display: none;
+  }
+}
+
+.hide-for-xlarge--flex {
+  display: flex;
+
+  @include breakpoint(xlarge) {
     display: none;
   }
 }
@@ -93,7 +101,7 @@
     padding: 30px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin: 0 auto;
     max-width: 1080px;
     padding: 40px;

@@ -72,7 +72,7 @@ h1 {
   font-size: 28px;
   line-height: $big-header-line-height;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     font-size: 32px;
   }
 }
@@ -92,7 +92,7 @@ h2 {
   line-height: $big-header-line-height;
   padding-bottom: 20px;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     font-size: 32px;
   }
 
@@ -116,7 +116,7 @@ h3 {
   font-size: 21px;
   font-weight: $font-weight-bold;
   line-height: $small-header-line-height;
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     font-size: 24px;
   }
 }
@@ -134,7 +134,7 @@ h4 {
   font-weight: $font-weight-bold;
   line-height: $small-header-line-height;
   margin-bottom: 10px;
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     font-size: 24px;
   }
 }

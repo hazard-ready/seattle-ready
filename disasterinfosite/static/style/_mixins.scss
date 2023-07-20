@@ -8,7 +8,7 @@
     @media only screen and (min-width: 670px) {
       @content;
     }
-  } @else if $point == large {
+  } @else if $point == large-and-up {
     @media only screen and (min-width: 900px) {
       @content;
     }

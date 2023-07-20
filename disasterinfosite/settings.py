@@ -89,7 +89,7 @@ django.conf.locale.LANG_INFO['cn'] = {
     'bidi': False,
     'code': 'cn',
     'name': 'Chinese',
-    'name_local': '简体中文', # todo: is this valid for traditional Chinese?
+    'name_local': '繁體中文',
 }
 
 
