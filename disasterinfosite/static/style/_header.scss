@@ -241,8 +241,6 @@ header {
 .geocode-error-message,
 .geocode-disabled-message {
   color: $error-red;
-  position: absolute;
-  bottom: -60px;
   inset-inline-start: 5px;
 }
 

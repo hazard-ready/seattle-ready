@@ -34,12 +34,12 @@
         {{ find_me }}
       </button>
       <button id="location-submit"><img class="icon--search" src="{% webpack_static 'build/icon-search.png' %}" alt="search" title="Search at this location"></button>
-      <div class="geocode-error-message hide">
+    </div>
+    <div class="geocode-error-message hide">
         <p>{% trans "We had a problem finding that location." %}</p>
       </div>
       <div class="geocode-disabled-message hide">
         <p>{% trans "Please allow your web browser to access your location in order to use Find Me." %}</p>
-      </div>
     </div>
   {% endblock search %}
   <div class="header__about hide-for-large-down--flex">

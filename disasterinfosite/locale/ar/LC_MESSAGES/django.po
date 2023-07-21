@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 20:40+0000\n"
+"POT-Creation-Date: 2023-07-21 20:57+0000\n"
 "PO-Revision-Date: 2023-07-10 19:40\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
@@ -10,7 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Crowdin-Project: seattle-ready\n"
 "X-Crowdin-Project-ID: 525328\n"
 "X-Crowdin-Language: ar\n"
@@ -54,16 +55,45 @@ msgid "The Hazard Ready Team"
 msgstr "فريق Hazard Ready"
 
 #: templates/about.html:29
-msgid "Carson has a B.Sc. and M.Sc. in Geology from Western Washington University and the University of Montana. She is now working on her PhD at Boise State University where she studies how to best communicate natural hazard risk information to broad audiences. She writes the content and processes the data for each HazardReady site."
-msgstr "حصلت كارسون على بكالوريوس وماجستير في الجيولوجيا من جامعة واشنطن الغربية وجامعة مونتانا. تعمل حاليًا على الدكتوراه في جامعة بويز الحكومية حيث تدرس أفضل طريقة لنقل المعلومات حول المخاطر الطبيعية إلى جمهورٍ واسع. تتولى كتابة المحتوى ومعالجة البيانات لجميع مواقع HazardReady."
+msgid ""
+"Carson has a B.Sc. and M.Sc. in Geology from Western Washington University "
+"and the University of Montana. She is now working on her PhD at Boise State "
+"University where she studies how to best communicate natural hazard risk "
+"information to broad audiences. She writes the content and processes the "
+"data for each HazardReady site."
+msgstr ""
+"حصلت كارسون على بكالوريوس وماجستير في الجيولوجيا من جامعة واشنطن الغربية "
+"وجامعة مونتانا. تعمل حاليًا على الدكتوراه في جامعة بويز الحكومية حيث تدرس "
+"أفضل طريقة لنقل المعلومات حول المخاطر الطبيعية إلى جمهورٍ واسع. تتولى كتابة "
+"المحتوى ومعالجة البيانات لجميع مواقع HazardReady."
 
 #: templates/about.html:46
-msgid "Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. Her research on tectonics and earthquake mechanics led to an interest in how human communities are affected by natural disasters, and inspires her ongoing efforts to help people better understand and prepare for them. She writes and lectures on the ethics of science communication as well as on her basic geophysical research."
-msgstr "تحمل ريبيكا بينديك درجة الدكتوراه في الجيوفيزياء من جامعة كولورادو. قادت أبحاثها حول علم بنية الأرض وآليات الزلازل إلى ظهور اهتمام بكيفية تأثر المجتمعات البشرية بالكوارث الطبيعية، وتشجع جهودها المستمرة في مساعدة الناس على فهمها بصورة أفضل والاستعداد لها. وتكتب وتحاضر عن أخلاقيات التواصل العلمي بالإضافة إلى أبحاثها الأساسية في الجيوفيزياء."
+msgid ""
+"Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. "
+"Her research on tectonics and earthquake mechanics led to an interest in how "
+"human communities are affected by natural disasters, and inspires her "
+"ongoing efforts to help people better understand and prepare for them. She "
+"writes and lectures on the ethics of science communication as well as on her "
+"basic geophysical research."
+msgstr ""
+"تحمل ريبيكا بينديك درجة الدكتوراه في الجيوفيزياء من جامعة كولورادو. قادت "
+"أبحاثها حول علم بنية الأرض وآليات الزلازل إلى ظهور اهتمام بكيفية تأثر "
+"المجتمعات البشرية بالكوارث الطبيعية، وتشجع جهودها المستمرة في مساعدة الناس "
+"على فهمها بصورة أفضل والاستعداد لها. وتكتب وتحاضر عن أخلاقيات التواصل العلمي "
+"بالإضافة إلى أبحاثها الأساسية في الجيوفيزياء."
 
 #: templates/about.html:62
-msgid "Grant Kier has a M.Sc. in geology from the University of Colorado. He is broadly interested in community resilience in the context of manmade and natural changes. He also has a background in business practices and currently works on economic development, fostering small and startup companies in western Montana."
-msgstr "حصل غرانت كيير على الماجستير في الجيولوجيا من جامعة كولورادو. وهو مهتم بصورة كبيرة بقدرة المجتمعات على التكيف في سياق المتغيرات الطبيعية والناتجة عن عمل بشري. ويتمتع أيضًا بخلفية في الممارسات تجارية ويعمل حاليًا على التطوير الاقتصادي وتعزيز الشركات الصغيرة والناشئة في غرب مونتانا."
+msgid ""
+"Grant Kier has a M.Sc. in geology from the University of Colorado. He is "
+"broadly interested in community resilience in the context of manmade and "
+"natural changes. He also has a background in business practices and "
+"currently works on economic development, fostering small and startup "
+"companies in western Montana."
+msgstr ""
+"حصل غرانت كيير على الماجستير في الجيولوجيا من جامعة كولورادو. وهو مهتم بصورة "
+"كبيرة بقدرة المجتمعات على التكيف في سياق المتغيرات الطبيعية والناتجة عن عمل "
+"بشري. ويتمتع أيضًا بخلفية في الممارسات تجارية ويعمل حاليًا على التطوير "
+"الاقتصادي وتعزيز الشركات الصغيرة والناشئة في غرب مونتانا."
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
@@ -75,26 +105,71 @@ msgstr "صفحة Hazard Ready الرئيسية"
 
 #: templates/about.html:82
 #, python-format
-msgid "%(title)s is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. %(title)s organizes current information and packages it in a way that makes it accessible for any %(area_name)s resident."
-msgstr "صُمِّم %(title)s للمساعدة في تعليم الناس وإعدادهم للكوارث التي تحدث في منطقتهم. لا تضرب الكوارث المواقع بقدر مماثل، لذلك وجدنا أنه من المهم أن نعطي معلومات محددة عن الموقع من أجل الاستعداد بصورة سليمة. ينظم %(title)s المعلومات الحالية ويجمعها بطريقة تجعلها متاحة لأي ساكن في %(area_name)s."
+msgid ""
+"%(title)s is designed to help educate and prepare people for disasters that "
+"occur in their area. Disasters don’t strike locations equally so we found it "
+"important to give location specific information in order to properly "
+"prepare. %(title)s organizes current information and packages it in a way "
+"that makes it accessible for any %(area_name)s resident."
+msgstr ""
+"صُمِّم %(title)s للمساعدة في تعليم الناس وإعدادهم للكوارث التي تحدث في منطقتهم. "
+"لا تضرب الكوارث المواقع بقدر مماثل، لذلك وجدنا أنه من المهم أن نعطي معلومات "
+"محددة عن الموقع من أجل الاستعداد بصورة سليمة. ينظم %(title)s المعلومات "
+"الحالية ويجمعها بطريقة تجعلها متاحة لأي ساكن في %(area_name)s."
 
 #: templates/about.html:85
 #, python-format
-msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
-msgstr "يستخدم هذا الموقع أحدث البيانات عن المخاطر المتاحة لمنطقة %(area_name)s. يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع المصادر الأصلية للبيانات. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا أنها لا تتنبأ بالأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة الفيدرالية لإدارة الطوارئ."
+msgid ""
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original data sources. Although these data "
+"represent the best current assessment of hazards, they are not predictive of "
+"future events. The descriptions of risk and how to prepare for those risks "
+"are based on best information from the American Red Cross and the Federal "
+"Emergency Management Agency."
+msgstr ""
+"يستخدم هذا الموقع أحدث البيانات عن المخاطر المتاحة لمنطقة %(area_name)s. "
+"يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع المصادر الأصلية "
+"للبيانات. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا "
+"أنها لا تتنبأ بالأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك "
+"المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة "
+"الفيدرالية لإدارة الطوارئ."
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
 msgstr "build/flowchart.jpg"
 
 #: templates/about.html:92
-msgid "How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant and up-to-date data on natural hazards for your region from trusted sources like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners (community groups & emergency managers) to ensure the data and infomration are accurate. 3. Process data. Make the data compatible with Hazard Ready software. 4. Build content. Write the webpage text, gather images and videos, locate local resources for each hazard and region. 5. Feedback and focus groups. Discuss content and designs to ensure the information fits each community's needs. 6. Revise, revise, revise and launch site!"
-msgstr "كيف نبني مواقع Hazard Ready: 1- جمع البيانات. نحدد موقع أكثر البيانات ذات الصلة والأحدث المتعلقة بالمخاطر الطبيعية لمنطقتك من مصادر موثوقة مثل الوكالة الفيدرالية لإدارة الطوارئ (FEMA) والإدارة الوطنية للمحيطات والغلاف الجوي (NOAA) وهيئة المسح الجيولوجي الأمريكية (USGS). 2- فحص الجودة. نعمل مع شركاء محليين (مجموعات محلية ومديرين للطوارئ) من أجل ضمان دقة البيانات والمعلومات. 3- معالجة البيانات. نجعل البيانات ملائمة لبرامج Hazard Ready. 4- بناء المحتوى. نكتب نص الصفحة الإلكترونية، ونجمع الصور ومقاطع الفيديو، ونحدد موقع المصادر المحلية لكل خطر ومنطقة. 5- تقديم التعقيبات ومجموعات التركيز. مناقشة المحتوى والتصميمات من أجل ضمان أن تتلائم المعلومات مع احتياجات كل مجتمع. 6- المراجعة والمراجعة والمراجعة وإصدار الموقع!"
+msgid ""
+"How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant "
+"and up-to-date data on natural hazards for your region from trusted sources "
+"like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners "
+"(community groups & emergency managers) to ensure the data and infomration "
+"are accurate. 3. Process data. Make the data compatible with Hazard Ready "
+"software. 4. Build content. Write the webpage text, gather images and "
+"videos, locate local resources for each hazard and region. 5. Feedback and "
+"focus groups. Discuss content and designs to ensure the information fits "
+"each community's needs. 6. Revise, revise, revise and launch site!"
+msgstr ""
+"كيف نبني مواقع Hazard Ready: 1- جمع البيانات. نحدد موقع أكثر البيانات ذات "
+"الصلة والأحدث المتعلقة بالمخاطر الطبيعية لمنطقتك من مصادر موثوقة مثل الوكالة "
+"الفيدرالية لإدارة الطوارئ (FEMA) والإدارة الوطنية للمحيطات والغلاف الجوي "
+"(NOAA) وهيئة المسح الجيولوجي الأمريكية (USGS). 2- فحص الجودة. نعمل مع شركاء "
+"محليين (مجموعات محلية ومديرين للطوارئ) من أجل ضمان دقة البيانات والمعلومات. "
+"3- معالجة البيانات. نجعل البيانات ملائمة لبرامج Hazard Ready. 4- بناء "
+"المحتوى. نكتب نص الصفحة الإلكترونية، ونجمع الصور ومقاطع الفيديو، ونحدد موقع "
+"المصادر المحلية لكل خطر ومنطقة. 5- تقديم التعقيبات ومجموعات التركيز. مناقشة "
+"المحتوى والتصميمات من أجل ضمان أن تتلائم المعلومات مع احتياجات كل مجتمع. 6- "
+"المراجعة والمراجعة والمراجعة وإصدار الموقع!"
 
 #: templates/about.html:100
 #, python-format
-msgid "Data used for %(title)s is available for download <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">here</a>."
-msgstr "البيانات المستخدمة من أجل %(title)s متاحة للتنزيل <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">هنا</a>."
+msgid ""
+"Data used for %(title)s is available for download <a href=\"%(download)s\" "
+"target=\"_blank\" rel=\"noopener\">here</a>."
+msgstr ""
+"البيانات المستخدمة من أجل %(title)s متاحة للتنزيل <a href=\"%(download)s\" "
+"target=\"_blank\" rel=\"noopener\">هنا</a>."
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
@@ -267,20 +342,32 @@ msgstr "من تسبب بهذا؟"
 
 #: templates/geek_box.html:11
 #, python-format
-msgid "\n"
-"                Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the Hazard Ready creators</a> for more information.\n"
+msgid ""
+"\n"
+"                Have questions? View the <a href=\"%(about_url)s\" "
+"target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the "
+"Hazard Ready creators</a> for more information.\n"
 "            "
-msgstr "\n"
-" هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> النبذة أو<a href=\"mailto:%(email)s\">أرسل رسالة بريد إلكتروني إلى القائمين على Hazard Ready</a> للحصول على مزيدٍ من المعلومات.\n"
+msgstr ""
+"\n"
+" هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
+"النبذة أو<a href=\"mailto:%(email)s\">أرسل رسالة بريد إلكتروني إلى القائمين "
+"على Hazard Ready</a> للحصول على مزيدٍ من المعلومات.\n"
 "            "
 
 #: templates/geek_box.html:15
 #, python-format
-msgid "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page for more information.\""
-msgstr "هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> نبذة للحصول على مزيدٍ من المعلومات.\""
+msgid ""
+"Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
+"a> page for more information.\""
+msgstr ""
+"هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
+"نبذة للحصول على مزيدٍ من المعلومات.\""
 
 #: templates/head-meta.html:12 templates/header.html:25
-msgid "Enter your location for a personalized report on your risks and how to prepare."
+msgid ""
+"Enter your location for a personalized report on your risks and how to "
+"prepare."
 msgstr "أدخل موقعك للحصول على تقرير مخصص عن مخاطرك وكيفية الاستعداد."
 
 #: templates/header.html:23
@@ -296,8 +383,11 @@ msgid "We had a problem finding that location."
 msgstr "نواجه مشكلةً في العثور على ذلك الموقع."
 
 #: templates/header.html:41
-msgid "Please allow your web browser to access your location in order to use Find Me."
-msgstr "يرجى السماح للمتصفح للوصول إلى موقعك من أجل استخدام خاصية \"اعثر عليّ\"."
+msgid ""
+"Please allow your web browser to access your location in order to use Find "
+"Me."
+msgstr ""
+"يرجى السماح للمتصفح للوصول إلى موقعك من أجل استخدام خاصية \"اعثر عليّ\"."
 
 #: templates/header_links.html:4
 msgid "About"
@@ -316,8 +406,14 @@ msgid "Get a personalized report"
 msgstr "احصل على تقرير مخصص"
 
 #: templates/index.html:24
-msgid "Give a location by typing in the box at the top of the page, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare."
-msgstr "حدد موقعًا عبر الكتابة في المربع أعلى الصفحة مع الضغط على الخريطة أو مع الضغط على خاصية \"اعثر عليّ\". ستحصل على تقرير مخصص بشأن المخاطر الطبيعية والخطوات التي يمكنك اتخاذها من أجل الاستعداد."
+msgid ""
+"Give a location by typing in the box at the top of the page, clicking on the "
+"map, or clicking 'find me'. You'll get a personalized report on your natural "
+"hazard risks and steps you can take to prepare."
+msgstr ""
+"حدد موقعًا عبر الكتابة في المربع أعلى الصفحة مع الضغط على الخريطة أو مع الضغط "
+"على خاصية \"اعثر عليّ\". ستحصل على تقرير مخصص بشأن المخاطر الطبيعية والخطوات "
+"التي يمكنك اتخاذها من أجل الاستعداد."
 
 #: templates/index.html:36
 msgid "What are my risks?"
@@ -329,10 +425,13 @@ msgstr "ماذا تتوقع"
 
 #: templates/index.html:38
 #, python-format
-msgid " %(site_title)s gives you an idea of which\n"
-"              natural disasters you might experience in the future based on a\n"
+msgid ""
+" %(site_title)s gives you an idea of which\n"
+"              natural disasters you might experience in the future based on "
+"a\n"
 "              location in %(area_name)s. "
-msgstr " %(site_title)s يمنحك فكرةً عن أي\n"
+msgstr ""
+" %(site_title)s يمنحك فكرةً عن أي\n"
 "              الكوارث الطبيعية التي قد تواجهها في المستقبل استنادًا إلى\n"
 "              موقع في %(area_name)s. "
 
@@ -341,8 +440,12 @@ msgid "How to Prepare"
 msgstr "كيفية الاستعداد"
 
 #: templates/index.html:42
-msgid "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits."
-msgstr "أنت تتمتع بالقوة لإحداث فرق. اكتشف كيف يمكنك حماية أحبائك ومنزلك قبل حدوث الكارثة التالية."
+msgid ""
+"You have the power to make a difference. Find out how you can protect your "
+"loved ones and home before the next disaster hits."
+msgstr ""
+"أنت تتمتع بالقوة لإحداث فرق. اكتشف كيف يمكنك حماية أحبائك ومنزلك قبل حدوث "
+"الكارثة التالية."
 
 #: templates/index.html:43
 msgid "In Recent History"
@@ -350,9 +453,13 @@ msgstr "بالتاريخ الحديث"
 
 #: templates/index.html:44
 #, python-format
-msgid " Find out which disasters have struck %(settings.area_name)s in the past, what impact they had, and where\n"
+msgid ""
+" Find out which disasters have struck %(settings.area_name)s in the past, "
+"what impact they had, and where\n"
 "              they happened. "
-msgstr " اكتشف أي الكوارث قد ضربت %(settings.area_name)s في الماضي وأي أثر خلفته وأين \n"
+msgstr ""
+" اكتشف أي الكوارث قد ضربت %(settings.area_name)s في الماضي وأي أثر خلفته "
+"وأين \n"
 "              حدثت. "
 
 #: templates/index.html:50
@@ -361,8 +468,23 @@ msgstr "حول البيانات"
 
 #: templates/index.html:52
 #, python-format
-msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original <a href=\"%(data_source_link)s\" target=\"_blank\">data sources</a>. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
-msgstr "يستخدم هذا الموقع أحدث البيانات المتاحة عن المخاطر لمنطقة %(area_name)s. يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع <a href=\"%(data_source_link)s\" target=\"_blank\">المصادر الأصلية للبيانات</a>. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا أنها لا تتنبأ بتلك الأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة الفيدرالية لإدارة الطوارئ."
+msgid ""
+"This site uses the most up-to-date hazard risk data available for "
+"%(area_name)s. The user of this site is responsible for verifying any "
+"particular information with the original <a href=\"%(data_source_link)s\" "
+"target=\"_blank\">data sources</a>. Although these data represent the best "
+"current assessment of hazards, they are not predictive of future events. The "
+"descriptions of risk and how to prepare for those risks are based on best "
+"information from the American Red Cross and the Federal Emergency Management "
+"Agency."
+msgstr ""
+"يستخدم هذا الموقع أحدث البيانات المتاحة عن المخاطر لمنطقة %(area_name)s. "
+"يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع <a "
+"href=\"%(data_source_link)s\" target=\"_blank\">المصادر الأصلية للبيانات</"
+"a>. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا أنها لا "
+"تتنبأ بتلك الأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك "
+"المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة "
+"الفيدرالية لإدارة الطوارئ."
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
@@ -390,16 +512,28 @@ msgid "It looks like your location is outside of %(area_name)s."
 msgstr "يبدو أن موقعك خارج منطقة %(area_name)s."
 
 #: templates/no_content_found.html:24
-msgid "While we value and promote resilience everywhere, the data that powers this site isn't available for other places yet."
-msgstr "بينما نقدر التكيف وندعمه في كل مكان، إلا أن البيانات التي تدعم هذا الموقع ليست متاحة لأماكن أخرى بعد."
+msgid ""
+"While we value and promote resilience everywhere, the data that powers this "
+"site isn't available for other places yet."
+msgstr ""
+"بينما نقدر التكيف وندعمه في كل مكان، إلا أن البيانات التي تدعم هذا الموقع "
+"ليست متاحة لأماكن أخرى بعد."
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
 msgstr "اتخذ الخطوة الأولى للاستعداد"
 
 #: templates/prepare.html:24
-msgid "There are a few simple steps we can take to make our families and community more prepared for emergencies. It doesn't have to be expensive or difficult. You may have already done some of it! You can use the checklist at the bottom of this page to keep track of how much you've done."
-msgstr "هناك بعض الخطوات البسيطة التي يمكننا أن نتخذها من أجل جعل عائلاتنا ومجتمعنا مستعدين أكثر لحالات الطوارئ. لا يتعين أن يكون الأمر مكلفًا أو صعبًا. ربما قد اتخذت بعضًا من هذه الخطوات فعلاً! يمكنك استخدام قائمة التحقق في أسفل هذه الصفحة من أجل متابعة كم خطوة اتخذت."
+msgid ""
+"There are a few simple steps we can take to make our families and community "
+"more prepared for emergencies. It doesn't have to be expensive or difficult. "
+"You may have already done some of it! You can use the checklist at the "
+"bottom of this page to keep track of how much you've done."
+msgstr ""
+"هناك بعض الخطوات البسيطة التي يمكننا أن نتخذها من أجل جعل عائلاتنا ومجتمعنا "
+"مستعدين أكثر لحالات الطوارئ. لا يتعين أن يكون الأمر مكلفًا أو صعبًا. ربما قد "
+"اتخذت بعضًا من هذه الخطوات فعلاً! يمكنك استخدام قائمة التحقق في أسفل هذه "
+"الصفحة من أجل متابعة كم خطوة اتخذت."
 
 #: templates/prepare.html:89
 msgid "This activity"
@@ -472,16 +606,23 @@ msgstr "كلمة المرور"
 
 #: templates/registration/login.html:26
 #, python-format
-msgid "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
-msgstr "هل نسيت كلمة المرور الخاصة بك؟ أعد تعيينها <a href=\"%(password_url)s\">هنا</a>."
+msgid ""
+"Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
+msgstr ""
+"هل نسيت كلمة المرور الخاصة بك؟ أعد تعيينها <a href=\"%(password_url)s\">هنا</"
+"a>."
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
 msgstr "تم تغيير كلمة المرور الخاصة بك."
 
 #: templates/registration/password_change_form.html:15
-msgid "Please enter your old password, for security’s sake, and then enter your new password twice so we can verify you typed it in correctly."
-msgstr "يرجى إدخال كلمة المرور القديمة الخاصة بك لأغراض الأمان، ثم أدخل كلمة المرور الجديدة الخاصة بك مرتين، حتى نتمكن من التحقق من أنك كتبتها بصورة صحيحة."
+msgid ""
+"Please enter your old password, for security’s sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"يرجى إدخال كلمة المرور القديمة الخاصة بك لأغراض الأمان، ثم أدخل كلمة المرور "
+"الجديدة الخاصة بك مرتين، حتى نتمكن من التحقق من أنك كتبتها بصورة صحيحة."
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
@@ -495,6 +636,7 @@ msgstr[5] "يرجى تصحيح الأخطاء أدناه."
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
+#: templates/registration/user_profile.html:28
 msgid "Change my password"
 msgstr "تغيير كلمة المرور الخاصة بي"
 
@@ -507,8 +649,12 @@ msgid "Enter a new password"
 msgstr "أدخل كلمة مرور جديدة"
 
 #: templates/registration/password_reset_confirm.html:18
-msgid "Please enter your new password twice so we can verify you typed it in correctly."
-msgstr "يرجى إدخال كلمة المرور الجديدة الخاصة بك مرتين حتى نتمكن من التحقق من صحة ما كتبت بصورة صحيحة."
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"يرجى إدخال كلمة المرور الجديدة الخاصة بك مرتين حتى نتمكن من التحقق من صحة ما "
+"كتبت بصورة صحيحة."
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "New password:"
@@ -519,28 +665,44 @@ msgid "Confirm password:"
 msgstr "تأكيد كلمة المرور:"
 
 #: templates/registration/password_reset_confirm.html:40
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
-msgstr "رابط إعادة تعيين كلمة المرور كان غير صحيح، ربما لأنه تم استخدامه. يرجى طلب تعيين كلمة مرور جديدة."
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"رابط إعادة تعيين كلمة المرور كان غير صحيح، ربما لأنه تم استخدامه. يرجى طلب "
+"تعيين كلمة مرور جديدة."
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
 msgstr "يرجى التحقق من بريدك الإلكتروني."
 
 #: templates/registration/password_reset_done.html:14
-msgid "We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly."
-msgstr "لقد أرسلنا إليك عبر البريد الإلكتروني تعليمات لإعداد كلمة المرور الخاصة بك في حالة كان هناك حساب بالبريد الإلكتروني الذي أدخلته. ينبغي أن تتلقاها قريبًا."
+msgid ""
+"We’ve emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"لقد أرسلنا إليك عبر البريد الإلكتروني تعليمات لإعداد كلمة المرور الخاصة بك "
+"في حالة كان هناك حساب بالبريد الإلكتروني الذي أدخلته. ينبغي أن تتلقاها قريبًا."
 
 #: templates/registration/password_reset_done.html:16
-msgid "If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder."
-msgstr "إذا لم تتسلم رسالة عبر البريد الإلكتروني، فتحقق أنك أدخلت العنوان المسجل به، وتفقد مجلد رسائل البريد الإلكتروني العشوائي لديك."
+msgid ""
+"If you don’t receive an email, please make sure you’ve entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"إذا لم تتسلم رسالة عبر البريد الإلكتروني، فتحقق أنك أدخلت العنوان المسجل به، "
+"وتفقد مجلد رسائل البريد الإلكتروني العشوائي لديك."
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
 msgstr "إعادة تعيين كلمة المرور الخاصة بك"
 
 #: templates/registration/password_reset_form.html:15
-msgid "Forgotten your password? Enter your email address below, and we’ll email instructions for setting a new one."
-msgstr "هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان بريدك الإلكتروني أدناه، وسوف نرسل عبر البريد الإلكتروني تعليمات إعداد كلمة مرور جديدة."
+msgid ""
+"Forgotten your password? Enter your email address below, and we’ll email "
+"instructions for setting a new one."
+msgstr ""
+"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان بريدك الإلكتروني أدناه، وسوف نرسل "
+"عبر البريد الإلكتروني تعليمات إعداد كلمة مرور جديدة."
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
@@ -578,16 +740,30 @@ msgstr "مرحبًا بعودتك!"
 
 #: templates/registration/user_interactions.html:35
 #, python-format
-msgid "If your username isn't <span class=\"username\">%(username)s</span>, you might want to log out."
-msgstr "إذا لم يكن اسم المستخدم الخاص بك <span class=\"username\">%(username)s</span>، قد تحتاج إلى تسجيل الخروج."
+msgid ""
+"If your username isn't <span class=\"username\">%(username)s</span>, you "
+"might want to log out."
+msgstr ""
+"إذا لم يكن اسم المستخدم الخاص بك <span class=\"username\">%(username)s</"
+"span>، قد تحتاج إلى تسجيل الخروج."
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
 msgstr "تلقي تحديثات مهمة"
 
 #: templates/registration/user_interactions.html:45
-msgid "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason."
-msgstr "حافظ على سلامة عائلتك وأصدقائك وجيرانك. سجل للحصول على تحديثات عبر البريد الإلكتروني بشأن المخاطر الموسمية مثل الحرائق والفيضانات والعواصف الثلجية. إذا حدثت كارثة طبيعية في منطقتك، سوف نرسل إليك تحديثات حتى تتمكن من البقاء على اطلاع. سوف نطلب عنوان بريدك الإلكتروني وعنوانك الفعلي. ستكون بياناتك آمنة، ولن نتصل بك لأي سببٍ آخر."
+msgid ""
+"Keep your family, friends, and neighbors safe. Sign up to get email updates "
+"about seasonal hazards like fires, floods, and snow storms. If a natural "
+"disaster happens in your area, we’ll send you updates so you can stay "
+"informed. We’ll ask for your email address and physical address. Your "
+"information will be secure, and we won’t contact you for any other reason."
+msgstr ""
+"حافظ على سلامة عائلتك وأصدقائك وجيرانك. سجل للحصول على تحديثات عبر البريد "
+"الإلكتروني بشأن المخاطر الموسمية مثل الحرائق والفيضانات والعواصف الثلجية. "
+"إذا حدثت كارثة طبيعية في منطقتك، سوف نرسل إليك تحديثات حتى تتمكن من البقاء "
+"على اطلاع. سوف نطلب عنوان بريدك الإلكتروني وعنوانك الفعلي. ستكون بياناتك "
+"آمنة، ولن نتصل بك لأي سببٍ آخر."
 
 #: templates/registration/user_profile.html:4
 msgid "Update Your Information"
@@ -632,7 +808,9 @@ msgstr "كلمة المرور (أكثر من 8 حرف رجاءً)"
 
 #: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
-msgstr "هل تحتاج للمساعدة؟ <a href=\"mailto:help@hazardready.org\">أرسل بريدًا إلكترونيًا إلينا.</a>"
+msgstr ""
+"هل تحتاج للمساعدة؟ <a href=\"mailto:help@hazardready.org\">أرسل بريدًا "
+"إلكترونيًا إلينا.</a>"
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
@@ -664,10 +842,13 @@ msgid "Whoops, we're not sure what happened there. Maybe you should try again."
 msgstr "معذرةً، لسنا متيقنين مما حدث هناك. ربما ينبغي أن تحاول مرةً أخرى."
 
 #: views.py:91
-msgid "Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address."
-msgstr "شكرًا للتسجيل! سنتواصل معك بالأخبار والمعلومات ذات الصلة. يمكنك العودة في أي وقت من أجل تحديث عنوانك."
+msgid ""
+"Thanks for signing up! We'll get ahold of you with relevant news and "
+"information. You can come back anytime to update your address."
+msgstr ""
+"شكرًا للتسجيل! سنتواصل معك بالأخبار والمعلومات ذات الصلة. يمكنك العودة في أي "
+"وقت من أجل تحديث عنوانك."
 
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "شكرًا لإبقائنا على اطلاع بكل جديد!"
-
