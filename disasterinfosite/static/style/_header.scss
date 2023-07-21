@@ -10,11 +10,11 @@ header {
   }
 
   @include breakpoint(large-and-up) {
-    // flex-direction: row;
     padding: 5px 10px;
   }
 
   @include breakpoint(xlarge) {
+    flex-direction: row;
     padding: 5px 20px;
   }
 }
