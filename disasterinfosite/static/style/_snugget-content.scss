@@ -170,12 +170,12 @@
 }
 
 .popout__image {
-  width: 100%;
-  text-align: center;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 
   @include breakpoint(large-and-up) {
     min-width: 175px;
-    max-width: 100%;
   }
 }
 
@@ -246,7 +246,7 @@
   font-size: 14px;
   font-style: italic;
   position: absolute;
-  width: 32%;
+  width: 45%;
 
   @include breakpoint(medium-and-up) {
     width: auto;
