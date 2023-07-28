@@ -9,12 +9,12 @@ header {
     padding: 5px;
   }
 
-  @include breakpoint(large) {
-    flex-direction: row;
+  @include breakpoint(large-and-up) {
     padding: 5px 10px;
   }
 
   @include breakpoint(xlarge) {
+    flex-direction: row;
     padding: 5px 20px;
   }
 }
@@ -24,16 +24,14 @@ header {
   margin: 0;
   position: relative;
 
-  @include breakpoint(medium) {
+  @include breakpoint(medium-and-up) {
     display: flex;
     margin-inline-end: 5px;
     min-width: 195px;
   }
 
-  @include breakpoint(large) {
-    display: flex;
-    margin-inline-end: 5px;
-    min-width: unset;
+  @include breakpoint(large-and-up) {
+    min-width: unset
   }
 }
 
@@ -52,8 +50,8 @@ header {
     max-height: 60px;
   }
 
-  @include breakpoint(large) {
-    margin-inline-end: 0;
+  @include breakpoint(large-and-up) {
+    margin-inline-end: -13px;
     max-height: 65px;
   }
 
@@ -73,7 +71,7 @@ header {
       font-size: 21px;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint(large-and-up) {
       margin-inline-end: 0.25rem;
     }
 
@@ -95,7 +93,7 @@ header {
 .header__about--small {
   justify-content: flex-end;
   margin: 0;
-  margin-inline-end: 2rem;
+  margin-inline-end: 1rem;
   margin-inline-start: auto;
 }
 
@@ -110,11 +108,12 @@ header {
     margin: 15px 5px 0;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     font-size: 18px;
     margin: 0;
     margin-top: 18px;
     margin-inline-start: 10px;
+    margin-inline-end: 5px;
   }
 }
 
@@ -127,13 +126,10 @@ header {
   margin: 10px 5px 0;
   position: relative;
 
-  @include breakpoint(large) {
-    margin: 0 10px auto;
-    flex: 1 0 auto;
-  }
-
   @include breakpoint(xlarge) {
+    margin: 0 10px auto;
     max-width: 600px;
+    flex: 1 0 auto;
   }
 }
 
@@ -245,8 +241,6 @@ header {
 .geocode-error-message,
 .geocode-disabled-message {
   color: $error-red;
-  position: absolute;
-  bottom: -60px;
   inset-inline-start: 5px;
 }
 
@@ -261,7 +255,7 @@ header {
     margin-top: 15px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin-inline-start: 0;
   }
 

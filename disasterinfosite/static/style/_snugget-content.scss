@@ -11,7 +11,7 @@
     padding: 5px 20px 20px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin: 40px 0;
     padding: 5px 40px 40px;
   }
@@ -22,7 +22,7 @@
   color: $soft-black;
   margin: 20px 0 5px;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin: 20px 0 10px;
   }
 }
@@ -55,7 +55,7 @@
   max-height: 9000px;
   overflow: hidden;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     flex-direction: row;
   }
 }
@@ -84,7 +84,7 @@
   ul {
     margin: 5px 0;
 
-    @include breakpoint(large) {
+    @include breakpoint(large-and-up) {
       margin: 10px 0;
     }
     padding-inline-start: 0;
@@ -98,7 +98,7 @@
   p {
     margin: 5px 0;
 
-    @include breakpoint(large) {
+    @include breakpoint(large-and-up) {
       margin: 10px 0;
     }
   }
@@ -110,7 +110,7 @@
   flex: 0 0 auto;
   justify-content: space-between;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     /* width is to accommodate the youtube embed */
     width: 380px;
   }
@@ -138,7 +138,7 @@
   max-width: 100%;
   padding: 10px;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin-top: 0;
     margin-bottom: 20px;
     margin-inline-start: 10px;
@@ -150,7 +150,7 @@
     margin: 0;
     margin-top: 10px;
 
-    @include breakpoint(large) {
+    @include breakpoint(large-and-up) {
       font-size: 18px;
     }
   }
@@ -158,7 +158,7 @@
     margin: 0;
     text-align: center;
 
-    @include breakpoint(large) {
+    @include breakpoint(large-and-up) {
       text-align: start;
     }
   }
@@ -170,12 +170,12 @@
 }
 
 .popout__image {
-  width: 100%;
-  text-align: center;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     min-width: 175px;
-    max-width: 100%;
   }
 }
 
@@ -205,7 +205,7 @@
   );
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin-top: 50px;
   }
 }
@@ -246,7 +246,7 @@
   font-size: 14px;
   font-style: italic;
   position: absolute;
-  width: 32%;
+  width: 45%;
 
   @include breakpoint(medium-and-up) {
     width: auto;
@@ -268,7 +268,7 @@
   max-width: 100%;
   padding: 0 25px;
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     width: 345px;
   }
 }
@@ -281,7 +281,7 @@
     max-height: 380px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     max-height: 275px;
   }
 }

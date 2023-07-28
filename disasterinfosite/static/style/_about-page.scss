@@ -9,7 +9,7 @@
     padding: 5px 20px 20px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin: 40px 0;
     padding: 5px 40px 40px;
   }
@@ -82,7 +82,7 @@
     flex-direction: row;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin-bottom: 40px;
     padding: 40px;
   }
@@ -118,7 +118,7 @@
     margin-inline-start: 10px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     flex: 3 1 auto;
     margin-inline-start: 40px;
   }
@@ -134,7 +134,7 @@
     }
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     margin-inline-end: 40px;
   }
 }

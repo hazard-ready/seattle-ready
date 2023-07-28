@@ -27,7 +27,7 @@
     width: 60%;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     top: 30px;
   }
 }
@@ -50,7 +50,7 @@
     padding: 5px 20px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     flex-direction: row;
     margin-top: 30px;
     padding: 5px 40px;
@@ -92,7 +92,7 @@
     padding-inline-end: 0;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     border-inline-start: 2px solid $light-grey;
     padding: 40px;
     padding-inline-end: 0;
@@ -136,7 +136,7 @@
     padding: 5px 20px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     overflow-x: auto;
     padding: 5px 40px;
   }
@@ -221,7 +221,7 @@
     padding: 5px 20px;
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(large-and-up) {
     padding: 5px 40px;
   }
 }

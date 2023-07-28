@@ -1,56 +1,57 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 20:40+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2023-07-21 20:57+0000\n"
+"PO-Revision-Date: 2023-07-10 19:40\n"
+"Last-Translator: \n"
+"Language-Team: Somali\n"
+"Language: so_SO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: seattle-ready\n"
+"X-Crowdin-Project-ID: 525328\n"
+"X-Crowdin-Language: so\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 37\n"
 
 #: settings.py:100
 msgid "Arabic"
-msgstr ""
+msgstr "Carabi"
 
 #: settings.py:101
 msgid "Chinese"
-msgstr ""
+msgstr "Shiinays"
 
 #: settings.py:102
 msgid "English"
-msgstr ""
+msgstr "Ingiriis"
 
 #: settings.py:103
 msgid "Korean"
-msgstr ""
+msgstr "Kuuriyaan"
 
 #: settings.py:104
 msgid "Russian"
-msgstr ""
+msgstr "U dhashay Kuuriya"
 
 #: settings.py:105
 msgid "Somali"
-msgstr ""
+msgstr "Somali"
 
 #: settings.py:106
 msgid "Spanish"
-msgstr ""
+msgstr "Isbaanish"
 
 #: settings.py:107
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamese"
 
 #: templates/about.html:19
 msgid "The Hazard Ready Team"
-msgstr ""
+msgstr "Kooxda Diyaar Garawga Waxyeelada"
 
 #: templates/about.html:29
 msgid ""
@@ -60,6 +61,12 @@ msgid ""
 "information to broad audiences. She writes the content and processes the "
 "data for each HazardReady site."
 msgstr ""
+"Carson waxay ka haysataa B.Sc. iyo M.Sc. ee Jooloojiga Jaamacada Galbeedka "
+"Washington iyo Jaamacada Montana. Waxay iminka ka wadaa PhD Jaamacada "
+"Gobolka ee Boise oo waxay daraasad ku samaysaa sidaa ugu wanaagsan ee loogu "
+"sheego macluumaadka khatarta waxyeelada dabiiciga ah gudida daawadayaasha. "
+"Waxay qortay macluumaadka iyo nidaamyada xogta goob kasta oo Diyaargarawga "
+"Masiibada."
 
 #: templates/about.html:46
 msgid ""
@@ -70,6 +77,13 @@ msgid ""
 "writes and lectures on the ethics of science communication as well as on her "
 "basic geophysical research."
 msgstr ""
+"Rebecca Bendick waxay ka haysataa Ph.D. ah ee Jaamacada Colorado. "
+"Daraasadeeda tectonics iyo farsamooyinka dhul gariirka ayaa horseeday in la "
+"eego sida bulshooyinka bilaa aadanka ay u saameeyaan masiibooyinka qaran, oo "
+"waxay ku dhiiri gelisay dadaalkeeda joogtada ah ee dadka kale lagu caawinayo "
+"inay fahmaan oo u diyaar noqdaan. Waxay qortay oo ay ka dhigtaa anshaxa "
+"sayniska xidhiidhka iyo sidoo kale daraasadeena jiyoofisikaalka ee aas "
+"aasiga ah."
 
 #: templates/about.html:62
 msgid ""
@@ -79,14 +93,19 @@ msgid ""
 "currently works on economic development, fostering small and startup "
 "companies in western Montana."
 msgstr ""
+"Grant Kier waxa uu ka haysataa M.Sc. oo ah jeelooji Jaamacada Colorado. Waxa "
+"uu aad u daneeyaa adkaysiga bulshada ee macluumaadka isbedelka dadku keeney "
+"iyo dabiicga ah. Waxa uu sidoo kale hore uga shaqayn jiray nidaamka shaqo oo "
+"waxa uu ka shaqeeyaa wakhtigan hormarka dhaqaale, oo waxa uu la taliyaa "
+"shirkadaha yaryar iyo bilawga ah ee galbeedka Montana."
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
-msgstr ""
+msgstr "Mashruuca Diyaar Garawga Waxyeelada"
 
 #: templates/about.html:72
 msgid "Hazard Ready homepage"
-msgstr ""
+msgstr "Boga hore ee Diyaar Garawga Waxyeelada"
 
 #: templates/about.html:82
 #, python-format
@@ -97,11 +116,11 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"%(title)s waxaa loo naqshadeeyay inay ku caawiso barida iyo u diyaarinta "
-"dadka masiibooyinka ka dhaco aagooda. Masiibooyinka uma weeraraan goobaha si "
-"la mid ah marka waxaan u aragnay mid muhiim ah inaan siino warbixinta gaarka "
-"ah ee goobta si markaas si ku haboon loogu diyaargaroobo. %(title)s ayaa "
-"diyaariyo warbixin hadeer oo u xiro qaab looga geli karo dadka dagan "
+"%(title)s waxaa loo naqshadeeyay inay ku caawiso barista iyo u diyaarinta "
+"dadka masiibooyinka ka dhaco aagooda. Masiibooyinka uguma dhuftaan goobaha "
+"si isku mid ah marka waxaan u aragnay mid muhiim ah inaan siino warbixinta "
+"gaarka ah ee goobta si markaas si ku haboon loogu diyaar garoobo. %(title)s "
+"ayaa diyaariya warbixin cusub oo u xiro qaab looga geli karo dadka dagan "
 "%(area_name)s."
 
 #: templates/about.html:85
@@ -125,7 +144,7 @@ msgstr ""
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
-msgstr ""
+msgstr "build/flowchart.jpg"
 
 #: templates/about.html:92
 msgid ""
@@ -139,38 +158,47 @@ msgid ""
 "focus groups. Discuss content and designs to ensure the information fits "
 "each community's needs. 6. Revise, revise, revise and launch site!"
 msgstr ""
+"Sida loo dhiso Goobaha Diyaar Garawga Waxyeelada: 1. Uruurinta xogta. Goobta "
+"xogta ugu haboon ee ugu danbaysay ee masiibada dabiicga ah ee deegaankaaga "
+"ee isha lagu kalsoon yahay sida FEMA, NOAA, iyo USGS. 2. Eegitaanka "
+"Dhakhsaha ah. Kala shaqaynta cida gacan saarka lagala leeyahay deegaanka "
+"(kooxaha bulshada & maamulayaasha xaalada degdega ah) si loo xaqiijiyo in "
+"xogta iyo macluumaadku ay sax yihiin. 3. Ka shaqaynta xogta. In xogta la is "
+"waafajiyo sooftiweerka Diyaar Garawga Masiibada. 4. Dhisida xogta. Qorista "
+"qoraalka websaytka, uruurinta sawiro iyo fiidyawyo, helitaanka khayraadka "
+"deegaanka ee waxyeelo kasta iyo deegaanka. 5. Fikir ka dhiibashada iyo "
+"kooxda diirasada la saaray. Ka wada hadalka macluumaadka iyo nashqadaha lagu "
+"xaqiijinayo in macluumaadka uu ku haboon yahay baahiyaha bulshada. 6. "
+"Naqdin, nadqin, naqdin, iyo sii daynta websaytka!"
 
 #: templates/about.html:100
-#, fuzzy, python-format
-#| msgid ""
-#| "Data used for %(title)s is available for download <a "
-#| "href=\"%(download)s\" target=\"_blank\">here</a>."
+#, python-format
 msgid ""
 "Data used for %(title)s is available for download <a href=\"%(download)s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
-"Xogta loo isticmaalay %(title)s waxaa loo hli karaa ka dajiso <a "
-"href=\"%(download)s\" target=\"_blank\">halkaan</a>"
+"Xogta loo isticmaalo %(title)s waa lagala soo degi karaa <a "
+"href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">halkan</a>."
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
-msgstr ""
+msgstr "Xogta guudmarka sawirada Seattle iyo Degmada King ee Diyaar Garawga"
 
 #: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
-msgstr ""
+msgstr "Khariirada Degmada King, Washington, ee sheegeysa heerka khatarta"
 
 #: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
-msgstr ""
+msgstr "Ilaha xogta Seattle iyo Degmada King ee Diyaar Garawga"
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr ""
+msgstr "Dhul gariir"
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr ""
+msgstr "M6.8 2001 Gariirka Dhul Gariirka Nisqually"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -178,7 +206,7 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr ""
+msgstr "La Qiimeeyay"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -186,150 +214,143 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr ""
+msgstr "Juun"
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
-msgstr ""
+msgstr "Xaalado Mala Awaal ah oo Dhul Gariirka Tooska ah ee Seattle ah"
 
 #: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
-msgstr ""
+msgstr "Xaalad Gariir Cascadia"
 
 #: templates/data.html:47
 msgid "Cascadia Displaced Households"
-msgstr ""
+msgstr "Baraka Kaca Qoysaska Cascadia"
 
 #: templates/data.html:51
 msgid "Liquefaction"
-msgstr ""
+msgstr "Liquefaction"
 
 #: templates/data.html:55
 msgid "Tsunami"
-msgstr ""
+msgstr "Sunaami"
 
 #: templates/data.html:61
 msgid "Volcano"
-msgstr ""
+msgstr "Foolkaano"
 
 #: templates/data.html:67
 msgid "Landslide"
-msgstr ""
+msgstr "Dhulka go'"
 
 #: templates/data.html:68
 msgid "Historical Landslides"
-msgstr ""
+msgstr "Dhul Go'aha Hore"
 
 #: templates/data.html:75
 msgid "Steep Slope Potential"
-msgstr ""
+msgstr "Foorar Wayn oo Dhasha"
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr ""
+msgstr "Fatahaad"
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
-msgstr ""
+msgstr "Aagag Masiibada Daadka"
 
 #: templates/data.html:89
 msgid "Channel Migration Zones"
-msgstr ""
+msgstr "Aagag Loo Gudbiyo Wixii Yimaada"
 
 #: templates/data.html:93
 msgid "Dam Inundation Maps"
-msgstr ""
+msgstr "Khariirada Daadka Dhaamka"
 
 #: templates/data.html:100
 msgid "Wildfire"
-msgstr ""
+msgstr "Dabka duurka Qabsada"
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr ""
+msgstr "Aaga Dhaxgalka Magaalada Dabaysha (WUI)"
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
-msgstr ""
+msgstr "Waxyeelada Ka Iman Karta Dabka"
 
 #: templates/data.html:111
 msgid "Summer Weather"
-msgstr ""
+msgstr "Cimilada Xagaaga"
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr ""
+msgstr "Su'aalaha iyo walaacyada ku saabsan xogta? La xidhiidh:"
 
 #: templates/data.html:120
 msgid "flood"
-msgstr ""
+msgstr "daadad"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
-msgstr ""
+msgstr "dhul gariirka"
 
 #: templates/data.html:123 templates/data.html:132
 msgid "landslide"
-msgstr ""
+msgstr "dhulka go'"
 
 #: templates/data.html:123
 msgid "tsunami"
-msgstr ""
+msgstr "sunaami"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
-msgstr ""
+msgstr "foolkaanada"
 
 #: templates/data.html:129
 msgid "wildfire"
-msgstr ""
+msgstr "dabka duurka"
 
 #: templates/found_content.html:11
-#, fuzzy
-#| msgid "What to Expect"
 msgid "What to expect for"
-msgstr "Waxa La filanayo"
+msgstr "Waxa laga filan karo"
 
 #: templates/found_content.html:17
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
-msgstr ""
+msgstr "isku day&nbsp;a&nbsp;&nbsp;cinwaan cusub"
 
 #: templates/found_content.html:36
-#, fuzzy
-#| msgid "How to Prepare"
 msgid "Prepare!"
-msgstr "Sida loo Diyaargaroobo"
+msgstr "Diyaar noqoshada!"
 
 #: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
-msgstr ""
+msgstr "Mitirka inta uu le'eg yahay %(percentage)s%%"
 
 #: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
-msgstr ""
+msgstr "Gariir fudud&nbsp;&mdash; Bilaa waxyeelo"
 
 #: templates/found_content.html:59
 msgid "Very Low Hazard"
-msgstr ""
+msgstr "Waxyeelo Aad u Yar"
 
 #: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
-msgstr ""
+msgstr "Gariir daran&nbsp;&mdash; Waxyeelo culus"
 
 #: templates/found_content.html:66
 msgid "Very High Hazard"
-msgstr ""
+msgstr "Waxyeelo Aad u Saraysa"
 
 #: templates/geek_box.html:7
 msgid "Who made this?"
 msgstr "Yaa sameeyay midaan?"
 
 #: templates/geek_box.html:11
-#, fuzzy, python-format
-#| msgid ""
-#| "Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for "
-#| "more information."
+#, python-format
 msgid ""
 "\n"
 "                Have questions? View the <a href=\"%(about_url)s\" "
@@ -337,20 +358,21 @@ msgid ""
 "Hazard Ready creators</a> for more information.\n"
 "            "
 msgstr ""
-"Su’aalo ma qabtaa? <a href=\"mailto:%(email)s\">I-meel u dir aasaasayaasha</"
-"a> wixii warbixin dheeraad ah."
+"\n"
+"                Wax su'aalo ma qabtaa? Eeg <a href=\"%(about_url)s\" "
+"target=\"_blank\">Waxyaabaha</a> ku sabaasan bogga ama <a href=\"mailto:"
+"%(email)s\">iimayl u dir abuurayaasha Hazard Ready</a> wixii macluumaad "
+"dheeraad ah.\n"
+"            "
 
 #: templates/geek_box.html:15
-#, fuzzy, python-format
-#| msgid ""
-#| "Have questions? <a href=\"mailto:%(email)s\">Email the creators</a> for "
-#| "more information."
+#, python-format
 msgid ""
 "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
 "a> page for more information.\""
 msgstr ""
-"Su’aalo ma qabtaa? <a href=\"mailto:%(email)s\">I-meel u dir aasaasayaasha</"
-"a> wixii warbixin dheeraad ah."
+"Wax su'aalo ma qabtaa? Eeg <a href=\"%(about_url)s\" "
+"target=\"_blank\">Waxyaabaha</a> ku sabaasan bogga wixii macluumaad dheeraad"
 
 #: templates/head-meta.html:12 templates/header.html:25
 msgid ""
@@ -365,48 +387,46 @@ msgstr "Iga Hel"
 
 #: templates/header.html:27
 msgid "Enter an address."
-msgstr ""
+msgstr "Geli cinwaanka deegaanka"
 
 #: templates/header.html:38
 msgid "We had a problem finding that location."
-msgstr ""
+msgstr "Dhib ayaa naga haysata helista goobtaas."
 
 #: templates/header.html:41
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
 msgstr ""
+"Fadlan u ogolow barawsarkaaga shabakadu inuu galo goobtaada si aad u "
+"isticmaasho Find Me."
 
 #: templates/header_links.html:4
 msgid "About"
-msgstr ""
+msgstr "Ku saabsan"
 
 #: templates/header_links.html:7
 msgid "Data"
-msgstr ""
+msgstr "Xog"
 
 #: templates/index.html:21
 msgid "Natural disasters can strike at any time."
-msgstr ""
+msgstr "Masiibooyinka dabiiciga ahi waxay ku dhici karaan wakhti kasta."
 
 #: templates/index.html:23
 msgid "Get a personalized report"
-msgstr ""
+msgstr "Hel warbixin shakhsi ahaaneed"
 
 #: templates/index.html:24
-#, fuzzy
-#| msgid ""
-#| "Give a location by typing in the box below, clicking on the map, or "
-#| "clicking 'find me'. You'll get a personalized report on your natural "
-#| "hazard risks and steps you can take to prepare."
 msgid ""
 "Give a location by typing in the box at the top of the page, clicking on the "
 "map, or clicking 'find me'. You'll get a personalized report on your natural "
 "hazard risks and steps you can take to prepare."
 msgstr ""
-"Sii booska adiga oo ku qorayo sanduuqa hoose, oo riixayo qariirada, ama "
-"riixayo 'iga hel'. Waxaad heleysaa wargelin la gaareeyay ee qataraha halista "
-"dabiiciga iyo tallaabooyinka aad qaadi kartid si aad u diyaar garowdid."
+"Meel ku bixi adiga oo ku qoraya sanduuqa ku yaal bogga sare ee bogga, "
+"gujinaya khariidada, ama gujinaya 'find me'. Waxaad heli doontaa warbixin "
+"shakhsi ahaaneed oo ku saabsan khatartaada dabiiciga ah iyo tillaabooyinka "
+"aad qaadi karto si aad u diyaargarowdo."
 
 #: templates/index.html:36
 msgid "What are my risks?"
@@ -417,20 +437,17 @@ msgid "What to Expect"
 msgstr "Waxa La filanayo"
 
 #: templates/index.html:38
-#, fuzzy, python-format
-#| msgid ""
-#| "%(title)s gives you an idea of which natural disasters you might "
-#| "experience in the future based on a location in %(area_name)s.\n"
-#| "          "
+#, python-format
 msgid ""
 " %(site_title)s gives you an idea of which\n"
 "              natural disasters you might experience in the future based on "
 "a\n"
 "              location in %(area_name)s. "
 msgstr ""
-"%(title)s waxay ku siisaa afkaarta masiibooyinkee dabiici ah ayaad la kulmi "
-"kartaa mustaqbalka sida ku saleysan goobta ee %(area_name)s.\n"
-"          "
+" %(site_title)s waxa ay ku siinaysaa fikrad taas ah\n"
+"              masiibooyinka dabiiciga ah waxaa laga yaabaa inaad mustaqbalka "
+"la kulanto iyadoo lagu saleynayo a\n"
+"              goobta %(area_name)s. "
 
 #: templates/index.html:41
 msgid "How to Prepare"
@@ -449,33 +466,22 @@ msgid "In Recent History"
 msgstr "Taariiqda Hadeer"
 
 #: templates/index.html:44
-#, fuzzy, python-format
-#| msgid ""
-#| "Find out which disasters have struck %(area_name)s in the past, what "
-#| "impact they had, and where they happened.\n"
-#| "          "
+#, python-format
 msgid ""
 " Find out which disasters have struck %(settings.area_name)s in the past, "
 "what impact they had, and where\n"
 "              they happened. "
 msgstr ""
-"Ogow masiibooyinkee ayaa dhuftay %(area_name)s waqtiga la soo dhaafay, "
-"saameynada ay heleen, iyo halka ay dhacday."
+"Soo ogow masiibooyinka dhacay%(settings.area_name)s wakhti hore, maxaa "
+"saamayn ah oo ay ku yeesheen, iyo meesha\n"
+"              ay dhecaan. "
 
 #: templates/index.html:50
 msgid "About the Data"
-msgstr ""
+msgstr "Waxyaabaha ku saabsan Xogta"
 
 #: templates/index.html:52
-#, fuzzy, python-format
-#| msgid ""
-#| "This site uses the most up-to-date hazard risk data available for "
-#| "%(area_name)s. The user of this site is responsible for verifying any "
-#| "particular information with the original data sources. Although these "
-#| "data represent the best current assessment of hazards, they are not "
-#| "predictive of future events. The descriptions of risk and how to prepare "
-#| "for those risks are based on best information from the American Red Cross "
-#| "and the Federal Emergency Management Agency."
+#, python-format
 msgid ""
 "This site uses the most up-to-date hazard risk data available for "
 "%(area_name)s. The user of this site is responsible for verifying any "
@@ -486,13 +492,15 @@ msgid ""
 "information from the American Red Cross and the Federal Emergency Management "
 "Agency."
 msgstr ""
-"Aagaan wuxuu isticmaalaa xogta qataraha halista ugu cusub ee %(area_name)s. "
-"Isticmaalaha aagaan ayaa masuul ka ah xaqiijinta warbixin walboo gaar ah ee "
-"la socoto illaha xogta asalka. Inkastoo xogtaan ay matashi qiimeyta halisaha "
-"hadeer, laguma qiyaasin dhacdooyinka mustaqbalka. Sharaxaadaha halista iyo "
-"sida loogu diyaar garoobo halisahaas waxay ku saleysantahay warbixinta ugu "
-"wanaagsan ee ka imaaneyso American Red Cross iyo Hay’ada Maamulka Gurmadka "
-"Faderaalka."
+"Goobtani waxay isticmaashaa xogta khatarta khatarta ah ee ugu casrisan ee "
+"loo heli karo %(area_name)s. Isticmaalaha boggan ayaa mas'uul ka ah inuu ku "
+"xaqiijiyo macluumaad kasta oo gaar ah asalkal <a "
+"href=\"%(data_source_link)s\" target=\"_blank\">xigashada xogta</a>. Inkasta "
+"oo xogtani ay ka dhigan tahay qiimaynta hadda ugu wanaagsan ee khataraha, "
+"maaha kuwo saadaaliya dhacdooyinka mustaqbalka. Sharaxaadaha khatarta iyo "
+"sida loogu diyaargaroobo khatarahaas waxay ku salaysan yihiin macluumaadka "
+"ugu fiican ee Laanqayrta Cas ee Maraykanka iyo Hay'adda Maareynta Degdegga "
+"ah ee Federaalka."
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
@@ -503,14 +511,12 @@ msgid "Language"
 msgstr "Luuqada"
 
 #: templates/no_content_found.html:6
-#, fuzzy
-#| msgid "No information available."
 msgid "No information available for"
-msgstr "Ma jiro warbixin la heli karo."
+msgstr "Wax xog ah looma hayo"
 
 #: templates/no_content_found.html:9
 msgid "Wrong address? Start over"
-msgstr ""
+msgstr "Cinwaan khaldan? Dib u bilow"
 
 #: templates/no_content_found.html:21
 msgid "No information available."
@@ -531,7 +537,7 @@ msgstr ""
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr ""
+msgstr "Qaado talaabada ugu horeysa ee aad isku diyaarinayso"
 
 #: templates/prepare.html:24
 msgid ""
@@ -540,50 +546,55 @@ msgid ""
 "You may have already done some of it! You can use the checklist at the "
 "bottom of this page to keep track of how much you've done."
 msgstr ""
+"Waxaa jira dhowr tillaabo oo fudud oo aan qaadi karno si aan qoysaskeena iyo "
+"bulshadayada uga dhigno kuwa aad ugu diyaargarooba xaaladaha degdegga ah. Ma "
+"aha inay noqoto mid qaali ah ama adag. Waxaa laga yaabaa inaad hore u "
+"samaysay qaar ka mid ah! Waxaad isticmaali kartaa liiska hubinta ee hoose ee "
+"boggan si aad ula socoto inta aad samaysay."
 
 #: templates/prepare.html:89
 msgid "This activity"
-msgstr ""
+msgstr "Hawshan"
 
 #: templates/prepare.html:90
 msgid "Print Checklist"
-msgstr ""
+msgstr "Daabacaadda Liiska hubinta"
 
 #: templates/prepare.html:94
 msgid "Completed?"
-msgstr ""
+msgstr "La dhameeyay?"
 
 #: templates/prepare.html:95
 msgid "Activity"
-msgstr ""
+msgstr "Hawsha"
 
 #: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
-msgstr ""
+msgstr "waxay yaraynaysaa waxyeelada niyadeed iyo jidhka"
 
 #: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
-msgstr ""
+msgstr "waxay faa'iido u leedahay xaaladaha kale"
 
 #: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
-msgstr ""
+msgstr "waxay ka caawisaa ilaalinta hantida"
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr ""
+msgstr "kharashaadka"
 
 #: templates/prepare.html:104
 msgid "Resources"
-msgstr ""
+msgstr "Kheyraad"
 
 #: templates/prepare.html:142
 msgid "Key:"
-msgstr ""
+msgstr "Furaha:"
 
 #: templates/prepare.html:151
 msgid "or more"
-msgstr ""
+msgstr "iyo wax badan"
 
 #: templates/registration/login.html:3
 #: templates/registration/user_interactions.html:3
@@ -615,91 +626,104 @@ msgstr "Furaha"
 msgid ""
 "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
 msgstr ""
+"Ma illowday eraygaaga sirta ah? Dib u deji<a "
+"href=\"%(password_url)s\">halkan</a>."
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
-msgstr ""
+msgstr "Lambarkaaga sirta ah waa la badelay"
 
 #: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
+"Fadlan geli eraygaagii hore ee sirta ah, amniga dartiis, ka dibna geli "
+"eraygaaga sirta ah laba jeer si aan u xaqiijino inaad si sax ah u qortay."
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Fadlan sax khaladka hoose."
+msgstr[1] "Fadlan sax khaladka hoose."
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
+#: templates/registration/user_profile.html:28
 msgid "Change my password"
-msgstr ""
+msgstr "Badel lambarkayga sirta ah"
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
-msgstr ""
+msgstr "Lambarkaaga sirta ah waa la badelay."
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
-msgstr ""
+msgstr "Geli furaha sirta ah ee cusub"
 
 #: templates/registration/password_reset_confirm.html:18
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
+"Fadlan geli eraygaaga sirta ah laba jeer si aan u xaqiijino inaad si sax ah "
+"u qortay."
 
 #: templates/registration/password_reset_confirm.html:24
-#, fuzzy
-#| msgid "Password"
 msgid "New password:"
-msgstr "Furaha"
+msgstr "Lambarka sirta ah ee cusub:"
 
 #: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr ""
+msgstr "Xaqiiji lambarka sirta ah:"
 
 #: templates/registration/password_reset_confirm.html:40
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
+"Fadlan geli eraygaaga sirta ah laba jeer si aan u xaqiijino inaad si sax ah "
+"u qortay."
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
-msgstr ""
+msgstr "Fadlan hubi iimaylkaga."
 
 #: templates/registration/password_reset_done.html:14
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
+"Waxaan kuu soo dirnay iimaylka habraaca dejinta eraygaaga sirta ah, haddii "
+"akoon ku jiro iimaylka aad gelisay. Waa inaad heshaa wakhti yar."
 
 #: templates/registration/password_reset_done.html:16
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
+"Haddii aadan helin iimayl, fadlan hubi inaad gashay ciwaanka aad ka "
+"diwaangashan tahay, oo hubi galka fariimaha xun."
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
-msgstr ""
+msgstr "Markale samayso baaswoodhka"
 
 #: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
+"Miyaad ilowday baaswoodhka? Geli cinwaankaaga iimeelka hoos, oo waxa aanu "
+"iimeel kuugu so diri doonaa tilmaamaha samaysiga mid cusub."
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr ""
+msgstr "Cinwaanka iimeelka:"
 
 #: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
-msgstr ""
+msgstr "Markale samee baaswoodhkayga"
 
 #: templates/registration/user_interactions.html:4
 #: templates/registration/user_signup.html:3
@@ -715,10 +739,9 @@ msgid "Update My Info"
 msgstr "Cusbooneysii Warbixinteyda"
 
 #: templates/registration/user_interactions.html:23
-#, fuzzy, python-format
-#| msgid "Welcome back, %(username)s!"
+#, python-format
 msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
-msgstr "Soo noqod wanaagsan, %(username)s!"
+msgstr "Soo dhawaw markale, <span class=\"username\">%(username)s</span>!"
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
@@ -729,18 +752,17 @@ msgid "Welcome back!"
 msgstr "Soo dhawaasho wanaagsan!"
 
 #: templates/registration/user_interactions.html:35
-#, fuzzy, python-format
-#| msgid "If your username isn't %(username)s, you might want to log out."
+#, python-format
 msgid ""
 "If your username isn't <span class=\"username\">%(username)s</span>, you "
 "might want to log out."
 msgstr ""
-"Haddii magaca isticmaalahaaga %(username)s, waxaad rabi kartaa inaad ka "
-"baxdid."
+"Hadii magaca aad ku gashaa aanu ahayn <span class=\"username\">%(username)s</"
+"span>, waa inaad ka baxdaa."
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
-msgstr ""
+msgstr "Heli Mucluumaadka Muhiimka ah"
 
 #: templates/registration/user_interactions.html:45
 msgid ""
@@ -750,12 +772,17 @@ msgid ""
 "informed. We’ll ask for your email address and physical address. Your "
 "information will be secure, and we won’t contact you for any other reason."
 msgstr ""
+"Ilaali amaanka qoyskaaga, asxaabtaa iyo jaararkaaga. Kaliya isku duwaan geli "
+"iimeelkaaga si aad u hesho macluumaadka ugu danbeeyay ee waxyeelooyinka "
+"xiliyada ee sida dabka, daadadka, iyo barafka. Hadii masiibo dabiici ahi ay "
+"ka dhacdo aagaaga, waxa aanu kuu soo diri doonaa macluumaadka ugu danbeeyay "
+"si aad ula socoto. Waxa aanu ku waydiin doonaa cinwaankaaga iimeelka iyo "
+"cinwaanka meesha aad degan tahay. Macluumaadkaaga waxa uu ahaan doonaa maan, "
+"oo waxna kuula soo xidhiidhi mayno."
 
 #: templates/registration/user_profile.html:4
-#, fuzzy
-#| msgid "Other Address Information"
 msgid "Update Your Information"
-msgstr "Warbixinta Ciwaanka Kale"
+msgstr "Cusboonaysii Macluumaadkaaga"
 
 #: templates/registration/user_profile.html:8
 #: templates/registration/user_signup.html:17
@@ -802,28 +829,29 @@ msgstr ""
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
-msgstr ""
+msgstr "Bilaash!"
 
 #: templatetags/show_cost.py:13 templatetags/show_cost.py:23
 #: templatetags/show_cost_header.py:13
 msgid "Unknown"
-msgstr ""
+msgstr "Lama Garanayo"
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr ""
+msgstr "Bilaw - Waa bilaash!"
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
-msgstr ""
+msgstr "Talaabooyinka Xiga"
 
 #: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
 msgid "Keep Going"
-msgstr ""
+msgstr "Sii Soco"
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
+"Cinwaankaas iimeelka hore ayaa loo isticmaalaa. Isku day inaad gasho uun."
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
@@ -842,18 +870,3 @@ msgstr ""
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "Waad ku mahadsantahay nasoo ogeysiintaada!"
-
-#~ msgid "Quick Data Overview"
-#~ msgstr "Dulmarka Xogta Dhaqsida ah"
-
-#, python-format
-#~ msgid "Take a look at some overviews of the data we used for %(area_name)s:"
-#~ msgstr "Fiiri bal dulmarada qaarkood ee aan u isticmaalnay %(area_name)s:"
-
-#, fuzzy
-#~| msgid ""
-#~| "Whoops, we're not sure what happened there. Maybe you should try again."
-#~ msgid "We're not sure what happened there. Maybe you should try again."
-#~ msgstr ""
-#~ "Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo "
-#~ "markale."
