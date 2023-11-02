@@ -1,0 +1,670 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: seattle-ready\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-21 20:57+0000\n"
+"PO-Revision-Date: 2023-11-02 16:50\n"
+"Last-Translator: \n"
+"Language-Team: Spanish, Latin America\n"
+"Language: es_419\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: seattle-ready\n"
+"X-Crowdin-Project-ID: 525328\n"
+"X-Crowdin-Language: es-419\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 37\n"
+
+#: settings.py:100
+msgid "Arabic"
+msgstr "Árabe"
+
+#: settings.py:101
+msgid "Chinese"
+msgstr "Chino"
+
+#: settings.py:102
+msgid "English"
+msgstr "Inglés"
+
+#: settings.py:103
+msgid "Korean"
+msgstr "Coreano"
+
+#: settings.py:104
+msgid "Russian"
+msgstr "Ruso"
+
+#: settings.py:105
+msgid "Somali"
+msgstr "Somalí"
+
+#: settings.py:106
+msgid "Spanish"
+msgstr "Español"
+
+#: settings.py:107
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: templates/about.html:19
+msgid "The Hazard Ready Team"
+msgstr "El equipo de Hazard Ready"
+
+#: templates/about.html:29
+msgid "Carson has a B.Sc. and M.Sc. in Geology from Western Washington University and the University of Montana. She is now working on her PhD at Boise State University where she studies how to best communicate natural hazard risk information to broad audiences. She writes the content and processes the data for each HazardReady site."
+msgstr "Carson tiene una licenciatura y maestría en geología por la Western Washington University y la University of Montana. Actualmente está trabajando en su doctorado en Boise State University, donde estudia cómo comunicar mejor la información sobre riesgos naturales a un público amplio. Carson redacta el contenido y procesa los datos para cada sitio de HazardReady."
+
+#: templates/about.html:46
+msgid "Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. Her research on tectonics and earthquake mechanics led to an interest in how human communities are affected by natural disasters, and inspires her ongoing efforts to help people better understand and prepare for them. She writes and lectures on the ethics of science communication as well as on her basic geophysical research."
+msgstr "Rebecca Bendick es doctora en geofísica por University of Colorado. Sus investigaciones sobre movimientos tectónicos y mecánica sísmica la llevaron a interesarse en cómo los desastres naturales afectan a las comunidades humanas e inspira sus esfuerzos continuos para ayudar a que las personas los entiendan mejor y puedan preparase para ellos. Rebecca escribe y da clases sobre la ética de la comunicación científica, así como sobre sus investigaciones sobre geofísica básica."
+
+#: templates/about.html:62
+msgid "Grant Kier has a M.Sc. in geology from the University of Colorado. He is broadly interested in community resilience in the context of manmade and natural changes. He also has a background in business practices and currently works on economic development, fostering small and startup companies in western Montana."
+msgstr "Grant Kier tiene una maestría en geología de University of Colorado. Se interesa ampliamente por la capacidad de resiliencia comunitaria en el contexto de los cambios naturales y provocados por el ser humano. También cuenta con experiencia en prácticas empresariales y actualmente trabaja en desarrollo económico y fomento de empresas pequeñas y emergentes en el oeste de Montana."
+
+#: templates/about.html:69
+msgid "The Hazard Ready Project"
+msgstr "El proyecto Hazard Ready"
+
+#: templates/about.html:72
+msgid "Hazard Ready homepage"
+msgstr "Página principal de Hazard Ready"
+
+#: templates/about.html:82
+#, python-format
+msgid "%(title)s is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. %(title)s organizes current information and packages it in a way that makes it accessible for any %(area_name)s resident."
+msgstr "%(title)s está diseñado para ayudar a educar y preparar a las personas para los desastres que ocurren en su área. Los desastres no afectan a todos los lugares por igual, así que consideramos importante dar información sobre la ubicación específica para una preparación adecuada. %(title)s organiza la información actual y la presenta de tal manera que sea accesible para cualquier residente de %(area_name)s."
+
+#: templates/about.html:85
+#, python-format
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "Este sitio utiliza los datos de riesgos más actualizados disponibles para %(area_name)s. El usuario de este sitio tiene la responsabilidad de verificar toda información particular con las fuentes de datos originales. Si bien estos datos representan la mejor evaluación actual de los peligros, no predicen eventos futuros. Las descripciones de los riesgos y cómo prepararse para ellos se basan en la mejor información de la Cruz Roja Americana y la Agencia Federal para el Manejo de Emergencias."
+
+#: templates/about.html:89
+msgid "build/flowchart.jpg"
+msgstr "build/flowchart.jpg"
+
+#: templates/about.html:92
+msgid "How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant and up-to-date data on natural hazards for your region from trusted sources like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners (community groups & emergency managers) to ensure the data and infomration are accurate. 3. Process data. Make the data compatible with Hazard Ready software. 4. Build content. Write the webpage text, gather images and videos, locate local resources for each hazard and region. 5. Feedback and focus groups. Discuss content and designs to ensure the information fits each community's needs. 6. Revise, revise, revise and launch site!"
+msgstr "Cómo creamos los sitios de Hazard Ready: 1. Recopilación de datos. Localización de los datos más relevantes y actualizados sobre peligros naturales en su región de fuentes confiables como Federal Emergency Management Agency (FEMA, Agencia Federal para el Manejo de Emergencias), National Oceanic and Atmospheric Administration (NOAA, Oficina Nacional de Administración Oceánica y Atmosféric) y United States Geological Survey (USGS, Servicio Geológico de Estados Unidos). 2. Control de calidad. Trabajo con socios locales (grupos comunitarios y gestores de emergencia) para asegurar la precisión de los datos y la información. 3. Procesamiento de datos. Compatibilización de los datos con el software de Hazard Ready. 4. Creación de contenido. Redacción del texto del sitio web, recolección de imágenes y videos, localización de recursos locales para cada peligro y región. 5. Comentarios y grupos de discusión. Debate sobre el contenido y diseños para asegurar que la información se ajuste a las necesidades de cada comunidad. 6. Revisión, revisión, revisión ¡y lanzamiento del sitio!"
+
+#: templates/about.html:100
+#, python-format
+msgid "Data used for %(title)s is available for download <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">here</a>."
+msgstr "Los datos utilizados para %(title)s se pueden descargar <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">aquí</a>."
+
+#: templates/data.html:17
+msgid "Data overview images for Seattle and King County Ready"
+msgstr "Imágenes generales de datos para Seattle and King County Ready"
+
+#: templates/data.html:23
+msgid "A map of King County, Washington, indicating hazard intensity"
+msgstr "Un mapa del condado de King, Washington, que indica la intensidad del peligro"
+
+#: templates/data.html:30
+msgid "Data sources for Seattle and King County Ready"
+msgstr "Fuentes de datos de Seattle and King County Ready"
+
+#: templates/data.html:33
+msgid "Earthquake"
+msgstr "Terremoto"
+
+#: templates/data.html:34
+msgid "M6.8 2001 Nisqually Earthquake Shaking"
+msgstr "Sacudidas sísmicas de magnitud 6,8 en Nisqually (2001)"
+
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
+msgid "Accessed"
+msgstr "Visitado"
+
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
+msgid "June"
+msgstr "junio"
+
+#: templates/data.html:39
+msgid "Seattle Fault Earthquake Scenario"
+msgstr "Situación hipotética de terremoto en la falla de Seattle"
+
+#: templates/data.html:43
+msgid "Cascadia Shaking Scenario"
+msgstr "Situación hipotética de temblor en Cascadia"
+
+#: templates/data.html:47
+msgid "Cascadia Displaced Households"
+msgstr "Hogares desplazados en Cascadia"
+
+#: templates/data.html:51
+msgid "Liquefaction"
+msgstr "Licuefacción"
+
+#: templates/data.html:55
+msgid "Tsunami"
+msgstr "Tsunami"
+
+#: templates/data.html:61
+msgid "Volcano"
+msgstr "Volcán"
+
+#: templates/data.html:67
+msgid "Landslide"
+msgstr "Deslizamiento de tierra"
+
+#: templates/data.html:68
+msgid "Historical Landslides"
+msgstr "Historial de deslizamientos de tierra"
+
+#: templates/data.html:75
+msgid "Steep Slope Potential"
+msgstr "Potencial de peligro por pendiente pronunciada"
+
+#: templates/data.html:84
+msgid "Flood"
+msgstr "Inundación"
+
+#: templates/data.html:85
+msgid "Flood Hazard Zones"
+msgstr "Zonas en peligro de inundación"
+
+#: templates/data.html:89
+msgid "Channel Migration Zones"
+msgstr "Zonas de migración de cauces"
+
+#: templates/data.html:93
+msgid "Dam Inundation Maps"
+msgstr "Mapas de inundación de represas"
+
+#: templates/data.html:100
+msgid "Wildfire"
+msgstr "Incendio forestal"
+
+#: templates/data.html:101
+msgid "Wildland Urban Interface (WUI) Zones"
+msgstr "Zonas de interfaz urbano-forestal (WUI)"
+
+#: templates/data.html:105
+msgid "Fire Hazard Potential"
+msgstr "Potencial de riesgo de incendio"
+
+#: templates/data.html:111
+msgid "Summer Weather"
+msgstr "Clima de verano"
+
+#: templates/data.html:117
+msgid "Questions or concerns about the data? Contact:"
+msgstr "¿Tiene preguntas o inquietudes? Póngase en contacto con:"
+
+#: templates/data.html:120
+msgid "flood"
+msgstr "inundación"
+
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
+msgid "earthquake"
+msgstr "terremoto"
+
+#: templates/data.html:123 templates/data.html:132
+msgid "landslide"
+msgstr "deslizamiento de tierra"
+
+#: templates/data.html:123
+msgid "tsunami"
+msgstr "tsunami"
+
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
+msgid "volcano"
+msgstr "volcán"
+
+#: templates/data.html:129
+msgid "wildfire"
+msgstr "incendio forestal"
+
+#: templates/found_content.html:11
+msgid "What to expect for"
+msgstr "Qué esperar"
+
+#: templates/found_content.html:17
+msgid "try&nbsp;a&nbsp;new&nbsp;address"
+msgstr "intente con una nueva dirección"
+
+#: templates/found_content.html:36
+msgid "Prepare!"
+msgstr "¡Prepárese!"
+
+#: templates/found_content.html:49
+#, python-format
+msgid "An intensity meter at %(percentage)s%%"
+msgstr "Un medidor de intensidad en %(percentage)s%%"
+
+#: templates/found_content.html:57
+msgid "Light shaking&nbsp;&mdash; No damage"
+msgstr "Sacudidas leves&nbsp;&mdash; Ningún daño"
+
+#: templates/found_content.html:59
+msgid "Very Low Hazard"
+msgstr "Peligro muy bajo"
+
+#: templates/found_content.html:64
+msgid "Violent shaking&nbsp;&mdash; Heavy damage"
+msgstr "Sacudidas violentas&nbsp;&mdash; Daños graves"
+
+#: templates/found_content.html:66
+msgid "Very High Hazard"
+msgstr "Peligro muy alto"
+
+#: templates/geek_box.html:7
+msgid "Who made this?"
+msgstr "¿Quién hizo esto?"
+
+#: templates/geek_box.html:11
+#, python-format
+msgid "\n"
+"                Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the Hazard Ready creators</a> for more information.\n"
+"            "
+msgstr "\n"
+"                ¿Tiene preguntas? Consulte la página <a href=\"%(about_url)s\" target=\"_blank\">Acerca de</a> o <a href=\"mailto:%(email)s\">envíe un correo electrónico a los creadores de Hazard Ready</a> para obtener más información.\n\n"
+"            "
+
+#: templates/geek_box.html:15
+#, python-format
+msgid "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page for more information.\""
+msgstr "¿Tiene preguntas? Consulte la página <a href=\"%(about_url)s\" target=\"_blank\">Acerca de</a> para obtener más información.\""
+
+#: templates/head-meta.html:12 templates/header.html:25
+msgid "Enter your location for a personalized report on your risks and how to prepare."
+msgstr "Ingrese su ubicación para obtener un informe personalizado de sus riesgos y cómo prepararse."
+
+#: templates/header.html:23
+msgid "Find Me"
+msgstr "Buscar mi ubicación"
+
+#: templates/header.html:27
+msgid "Enter an address."
+msgstr "Ingrese una dirección."
+
+#: templates/header.html:38
+msgid "We had a problem finding that location."
+msgstr "Tuvimos un problema para encontrar esa ubicación."
+
+#: templates/header.html:41
+msgid "Please allow your web browser to access your location in order to use Find Me."
+msgstr "Permita que el explorador web acceda a su ubicación para usar la opción \"Buscar mi ubicación\"."
+
+#: templates/header_links.html:4
+msgid "About"
+msgstr "Acerca de"
+
+#: templates/header_links.html:7
+msgid "Data"
+msgstr "Datos"
+
+#: templates/index.html:21
+msgid "Natural disasters can strike at any time."
+msgstr "Los desastres naturales pueden ocurrir en cualquier momento."
+
+#: templates/index.html:23
+msgid "Get a personalized report"
+msgstr "Obtenga un informe personalizado"
+
+#: templates/index.html:24
+msgid "Give a location by typing in the box at the top of the page, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare."
+msgstr "Para ingresar una ubicación, escriba en el cuadro en la parte superior de la página, haga clic en el mapa o haga clic en \"Encontrar mi ubicación\". Recibirá un informe personalizado sobre sus riesgos de peligros naturales y los pasos que puede tomar para prepararse."
+
+#: templates/index.html:36
+msgid "What are my risks?"
+msgstr "¿Cuáles son mis riesgos?"
+
+#: templates/index.html:37
+msgid "What to Expect"
+msgstr "Qué esperar"
+
+#: templates/index.html:38
+#, python-format
+msgid " %(site_title)s gives you an idea of which\n"
+"              natural disasters you might experience in the future based on a\n"
+"              location in %(area_name)s. "
+msgstr " %(site_title)s le da una idea de qué\n"
+"              desastres naturales podría experimentar en el futuro según una\n"
+"              ubicación en %(area_name)s. "
+
+#: templates/index.html:41
+msgid "How to Prepare"
+msgstr "Cómo prepararse"
+
+#: templates/index.html:42
+msgid "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits."
+msgstr "Usted tiene el poder para marcar la diferencia. Descubra cómo puede proteger a sus seres queridos y su hogar antes de que se produzca el próximo desastre."
+
+#: templates/index.html:43
+msgid "In Recent History"
+msgstr "En la historia reciente"
+
+#: templates/index.html:44
+#, python-format
+msgid " Find out which disasters have struck %(settings.area_name)s in the past, what impact they had, and where\n"
+"              they happened. "
+msgstr " Descubra qué desastres se produjeron en %(settings.area_name)s en el pasado, cuál fue su impacto y dónde\n"
+"              sucedieron. "
+
+#: templates/index.html:50
+msgid "About the Data"
+msgstr "Acerca de los datos"
+
+#: templates/index.html:52
+#, python-format
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original <a href=\"%(data_source_link)s\" target=\"_blank\">data sources</a>. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "Este sitio utiliza los datos disponibles más actualizados de riesgo de peligros para %(area_name)s. El usuario de este sitio tiene la responsabilidad de verificar toda información particular con las <a href=\"%(data_source_link)s\" target=\"_blank\">fuentes de datos</a> originales. Si bien estos datos representan la mejor evaluación actual de los peligros, no predicen eventos futuros. Las descripciones de los riesgos y cómo prepararse para ellos se basan en la mejor información de la Cruz Roja Americana y la Agencia Federal para el Manejo de Emergencias."
+
+#: templates/index.html:70
+msgid "Getting results for your location..."
+msgstr "Obteniendo resultados para su ubicación…"
+
+#: templates/language_selector.html:27
+msgid "Language"
+msgstr "Idioma"
+
+#: templates/no_content_found.html:6
+msgid "No information available for"
+msgstr "No hay información disponible para"
+
+#: templates/no_content_found.html:9
+msgid "Wrong address? Start over"
+msgstr "¿La dirección es incorrecta? Vuelva a comenzar"
+
+#: templates/no_content_found.html:21
+msgid "No information available."
+msgstr "No hay información disponible."
+
+#: templates/no_content_found.html:23
+#, python-format
+msgid "It looks like your location is outside of %(area_name)s."
+msgstr "Parece que su ubicación está fuera de %(area_name)s."
+
+#: templates/no_content_found.html:24
+msgid "While we value and promote resilience everywhere, the data that powers this site isn't available for other places yet."
+msgstr "Aunque valoramos y promovemos la resiliencia en todas partes, los datos que impulsan este sitio aún no están disponibles para otros lugares."
+
+#: templates/prepare.html:21
+msgid "Take the first step toward getting prepared"
+msgstr "Dé el primer paso para prepararse"
+
+#: templates/prepare.html:24
+msgid "There are a few simple steps we can take to make our families and community more prepared for emergencies. It doesn't have to be expensive or difficult. You may have already done some of it! You can use the checklist at the bottom of this page to keep track of how much you've done."
+msgstr "Hay algunas medidas sencillas que podemos tomar para que nuestras familias y nuestra comunidad estén mejor preparadas para las emergencias. No tiene que ser costoso ni difícil. ¡Quizás ya ha tomado alguna de ellas! Puede utilizar la lista de verificación que aparece al final de esta página para hacer un seguimiento de cuánto ha hecho."
+
+#: templates/prepare.html:89
+msgid "This activity"
+msgstr "Esta actividad"
+
+#: templates/prepare.html:90
+msgid "Print Checklist"
+msgstr "Imprimir lista de verificación"
+
+#: templates/prepare.html:94
+msgid "Completed?"
+msgstr "¿Ya lo completó?"
+
+#: templates/prepare.html:95
+msgid "Activity"
+msgstr "Actividad"
+
+#: templates/prepare.html:96 templates/prepare.html:112
+msgid "reduces emotional and physical harm"
+msgstr "reduce el daño emocional y físico"
+
+#: templates/prepare.html:98 templates/prepare.html:114
+msgid "is useful for other situations"
+msgstr "es útil para otras situaciones"
+
+#: templates/prepare.html:100 templates/prepare.html:116
+msgid "helps protect property"
+msgstr "le ayuda a proteger su propiedad"
+
+#: templates/prepare.html:102
+msgid "costs"
+msgstr "costos"
+
+#: templates/prepare.html:104
+msgid "Resources"
+msgstr "Recursos"
+
+#: templates/prepare.html:142
+msgid "Key:"
+msgstr "Clave:"
+
+#: templates/prepare.html:151
+msgid "or more"
+msgstr "o más"
+
+#: templates/registration/login.html:3
+#: templates/registration/user_interactions.html:3
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: templates/registration/login.html:4
+#: templates/registration/user_interactions.html:5
+#: templates/registration/user_profile.html:26
+#: templates/registration/user_signup.html:4
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/registration/login.html:8
+#: templates/registration/password_change_form.html:16
+msgid "Required."
+msgstr "Obligatorio."
+
+#: templates/registration/login.html:12
+msgid "Username (your email address)"
+msgstr "Nombre de usuario (su dirección de correo electrónico)"
+
+#: templates/registration/login.html:15
+msgid "Password"
+msgstr "Contraseña"
+
+#: templates/registration/login.html:26
+#, python-format
+msgid "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
+msgstr "¿Olvidó su contraseña? Puede restablecerla <a href=\"%(password_url)s\">aquí</a>."
+
+#: templates/registration/password_change_done.html:13
+msgid "Your password was changed."
+msgstr "Se cambió su contraseña."
+
+#: templates/registration/password_change_form.html:15
+msgid "Please enter your old password, for security’s sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Introduzca su contraseña anterior por razones de seguridad y luego introduzca su nueva contraseña dos veces para que podamos verificar que la escribió correctamente."
+
+#: templates/registration/password_change_form.html:21
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Corrija el siguiente error."
+msgstr[1] "Corrija los siguientes errores."
+
+#: templates/registration/password_change_form.html:47
+#: templates/registration/password_reset_confirm.html:33
+#: templates/registration/user_profile.html:28
+msgid "Change my password"
+msgstr "Cambiar mi contraseña"
+
+#: templates/registration/password_reset_complete.html:13
+msgid "Your password has been set."
+msgstr "Se estableció su contraseña."
+
+#: templates/registration/password_reset_confirm.html:15
+msgid "Enter a new password"
+msgstr "Introduzca una nueva contraseña"
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Introduzca su nueva contraseña dos veces para que podamos verificar que la escribió correctamente."
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "New password:"
+msgstr "Nueva contraseña:"
+
+#: templates/registration/password_reset_confirm.html:29
+msgid "Confirm password:"
+msgstr "Confirmar contraseña:"
+
+#: templates/registration/password_reset_confirm.html:40
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "El vínculo de restablecimiento de contraseña no es válido, posiblemente porque ya se usó. Solicite un nuevo restablecimiento de contraseña."
+
+#: templates/registration/password_reset_done.html:13
+msgid "Please check your email."
+msgstr "Revise su correo electrónico."
+
+#: templates/registration/password_reset_done.html:14
+msgid "We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly."
+msgstr "Si existe una cuenta con el correo electrónico que introdujo, le enviaremos instrucciones por correo electrónico para establecer una contraseña. Debería recibirlas en breve."
+
+#: templates/registration/password_reset_done.html:16
+msgid "If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder."
+msgstr "Si no recibe un correo electrónico, asegúrese de haber introducido la dirección con la que se registró y revise su carpeta de correo no deseado."
+
+#: templates/registration/password_reset_form.html:14
+msgid "Reset your password"
+msgstr "Restablezca su contraseña"
+
+#: templates/registration/password_reset_form.html:15
+msgid "Forgotten your password? Enter your email address below, and we’ll email instructions for setting a new one."
+msgstr "¿Olvidó su contraseña? Introduzca su dirección de correo electrónico a continuación y le enviaremos instrucciones para establecer una nueva."
+
+#: templates/registration/password_reset_form.html:20
+msgid "Email address:"
+msgstr "Dirección de correo electrónico:"
+
+#: templates/registration/password_reset_form.html:24
+msgid "Reset my password"
+msgstr "Restablecer mi contraseña"
+
+#: templates/registration/user_interactions.html:4
+#: templates/registration/user_signup.html:3
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: templates/registration/user_interactions.html:6
+msgid "Log Out"
+msgstr "Cerrar sesión"
+
+#: templates/registration/user_interactions.html:7
+msgid "Update My Info"
+msgstr "Actualizar mi información"
+
+#: templates/registration/user_interactions.html:23
+#, python-format
+msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
+msgstr "¡Le damos la bienvenida, <span class=\"username\">%(username)s</span>!"
+
+#: templates/registration/user_interactions.html:25
+msgid "We're logging you in. Just a moment..."
+msgstr "Estamos iniciando su sesión. Espere un momento..."
+
+#: templates/registration/user_interactions.html:33
+msgid "Welcome back!"
+msgstr "¡Hola de nuevo!"
+
+#: templates/registration/user_interactions.html:35
+#, python-format
+msgid "If your username isn't <span class=\"username\">%(username)s</span>, you might want to log out."
+msgstr "Si su nombre de usuario no es <span class=\"username\">%(username)s</span>, le recomendamos que cierre la sesión."
+
+#: templates/registration/user_interactions.html:43
+msgid "Receive Important Updates"
+msgstr "Reciba actualizaciones importantes"
+
+#: templates/registration/user_interactions.html:45
+msgid "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason."
+msgstr "Mantenga a salvo a su familia, amigos y vecinos. Regístrese para recibir actualizaciones por correo electrónico sobre riesgos estacionales como incendios, inundaciones y tormentas de nieve. Si se produce un desastre natural en su zona, le enviaremos actualizaciones para que pueda mantenerse al tanto. Le pediremos su dirección de correo electrónico y su dirección física. Su información estará segura y no lo contactaremos por ningún otro motivo."
+
+#: templates/registration/user_profile.html:4
+msgid "Update Your Information"
+msgstr "Actualice su información"
+
+#: templates/registration/user_profile.html:8
+#: templates/registration/user_signup.html:17
+msgid "Street Address"
+msgstr "Dirección"
+
+#: templates/registration/user_profile.html:11
+#: templates/registration/user_signup.html:20
+msgid "Other Address Information"
+msgstr "Información de dirección adicional"
+
+#: templates/registration/user_profile.html:14
+#: templates/registration/user_signup.html:23
+msgid "City"
+msgstr "Ciudad"
+
+#: templates/registration/user_profile.html:17
+#: templates/registration/user_signup.html:26
+msgid "State"
+msgstr "Estado"
+
+#: templates/registration/user_profile.html:20
+#: templates/registration/user_signup.html:29
+msgid "Zip Code"
+msgstr "Código postal"
+
+#: templates/registration/user_profile.html:25
+msgid "Update"
+msgstr "Actualización"
+
+#: templates/registration/user_signup.html:11
+msgid "Email address (this will be your username)"
+msgstr "Dirección de correo electrónico (este será su nombre de usuario)"
+
+#: templates/registration/user_signup.html:14
+msgid "Password (more than 8 characters long, please)"
+msgstr "Contraseña (debe tener más de 8 caracteres)"
+
+#: templates/registration/user_signup.html:39
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
+msgstr "¿Necesita ayuda? <a href=\"mailto:help@hazardready.org\">Envíenos un correo electrónico.</a>"
+
+#: templatetags/show_cost.py:8
+msgid "Free!"
+msgstr "¡Gratis!"
+
+#: templatetags/show_cost.py:13 templatetags/show_cost.py:23
+#: templatetags/show_cost_header.py:13
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
+msgid "Get Started - It’s Free!"
+msgstr "Comience ahora. ¡Es gratis!"
+
+#: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
+msgid "Next Steps"
+msgstr "Próximos pasos"
+
+#: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
+msgid "Keep Going"
+msgstr "Siga adelante"
+
+#: views.py:49
+msgid "That email address has already been used. Try logging in instead."
+msgstr "Esa dirección de correo electrónico ya está en uso. Intente iniciar sesión."
+
+#: views.py:57 views.py:74 views.py:85 views.py:112
+msgid "Whoops, we're not sure what happened there. Maybe you should try again."
+msgstr "Ups, no estamos seguros de qué sucedió. Quizás deba intentarlo nuevamente."
+
+#: views.py:91
+msgid "Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address."
+msgstr "¡Gracias por registrarse! Nos pondremos en contacto con noticias e información relevante. Puede regresar en cualquier momento para actualizar su dirección."
+
+#: views.py:117
+msgid "Thanks for keeping us up to date!"
+msgstr "¡Gracias por mantenernos al día!"
+

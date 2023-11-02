@@ -1,58 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: seattle-ready\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 20:57+0000\n"
-"PO-Revision-Date: 2023-07-10 19:40\n"
-"Last-Translator: \n"
-"Language-Team: Arabic\n"
-"Language: ar_SA\n"
+"POT-Creation-Date: 2023-11-02 16:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Crowdin-Project: seattle-ready\n"
-"X-Crowdin-Project-ID: 525328\n"
-"X-Crowdin-Language: ar\n"
-"X-Crowdin-File: django.po\n"
-"X-Crowdin-File-ID: 37\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: settings.py:100
 msgid "Arabic"
-msgstr "العربية"
+msgstr ""
 
 #: settings.py:101
 msgid "Chinese"
-msgstr "الصينية"
+msgstr ""
 
 #: settings.py:102
 msgid "English"
-msgstr "الإنجليزية"
+msgstr ""
 
 #: settings.py:103
 msgid "Korean"
-msgstr "الكورية"
+msgstr ""
 
 #: settings.py:104
 msgid "Russian"
-msgstr "الروسية"
+msgstr ""
 
 #: settings.py:105
 msgid "Somali"
-msgstr "الصومالية"
+msgstr ""
 
 #: settings.py:106
 msgid "Spanish"
-msgstr "الإسبانية"
+msgstr ""
 
 #: settings.py:107
 msgid "Vietnamese"
-msgstr "الفيتنامية"
+msgstr ""
 
 #: templates/about.html:19
 msgid "The Hazard Ready Team"
-msgstr "فريق Hazard Ready"
+msgstr ""
 
 #: templates/about.html:29
 msgid ""
@@ -62,10 +63,6 @@ msgid ""
 "information to broad audiences. She writes the content and processes the "
 "data for each HazardReady site."
 msgstr ""
-"حصلت كارسون على بكالوريوس وماجستير في الجيولوجيا من جامعة واشنطن الغربية "
-"وجامعة مونتانا. تعمل حاليًا على الدكتوراه في جامعة بويز الحكومية حيث تدرس "
-"أفضل طريقة لنقل المعلومات حول المخاطر الطبيعية إلى جمهورٍ واسع. تتولى كتابة "
-"المحتوى ومعالجة البيانات لجميع مواقع HazardReady."
 
 #: templates/about.html:46
 msgid ""
@@ -76,11 +73,6 @@ msgid ""
 "writes and lectures on the ethics of science communication as well as on her "
 "basic geophysical research."
 msgstr ""
-"تحمل ريبيكا بينديك درجة الدكتوراه في الجيوفيزياء من جامعة كولورادو. قادت "
-"أبحاثها حول علم بنية الأرض وآليات الزلازل إلى ظهور اهتمام بكيفية تأثر "
-"المجتمعات البشرية بالكوارث الطبيعية، وتشجع جهودها المستمرة في مساعدة الناس "
-"على فهمها بصورة أفضل والاستعداد لها. وتكتب وتحاضر عن أخلاقيات التواصل العلمي "
-"بالإضافة إلى أبحاثها الأساسية في الجيوفيزياء."
 
 #: templates/about.html:62
 msgid ""
@@ -90,18 +82,14 @@ msgid ""
 "currently works on economic development, fostering small and startup "
 "companies in western Montana."
 msgstr ""
-"حصل غرانت كيير على الماجستير في الجيولوجيا من جامعة كولورادو. وهو مهتم بصورة "
-"كبيرة بقدرة المجتمعات على التكيف في سياق المتغيرات الطبيعية والناتجة عن عمل "
-"بشري. ويتمتع أيضًا بخلفية في الممارسات تجارية ويعمل حاليًا على التطوير "
-"الاقتصادي وتعزيز الشركات الصغيرة والناشئة في غرب مونتانا."
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
-msgstr "مشروع Hazard Ready"
+msgstr ""
 
 #: templates/about.html:72
 msgid "Hazard Ready homepage"
-msgstr "صفحة Hazard Ready الرئيسية"
+msgstr ""
 
 #: templates/about.html:82
 #, python-format
@@ -112,10 +100,6 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"صُمِّم %(title)s للمساعدة في تعليم الناس وإعدادهم للكوارث التي تحدث في منطقتهم. "
-"لا تضرب الكوارث المواقع بقدر مماثل، لذلك وجدنا أنه من المهم أن نعطي معلومات "
-"محددة عن الموقع من أجل الاستعداد بصورة سليمة. ينظم %(title)s المعلومات "
-"الحالية ويجمعها بطريقة تجعلها متاحة لأي ساكن في %(area_name)s."
 
 #: templates/about.html:85
 #, python-format
@@ -128,16 +112,10 @@ msgid ""
 "are based on best information from the American Red Cross and the Federal "
 "Emergency Management Agency."
 msgstr ""
-"يستخدم هذا الموقع أحدث البيانات عن المخاطر المتاحة لمنطقة %(area_name)s. "
-"يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع المصادر الأصلية "
-"للبيانات. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا "
-"أنها لا تتنبأ بالأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك "
-"المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة "
-"الفيدرالية لإدارة الطوارئ."
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
-msgstr "build/flowchart.jpg"
+msgstr ""
 
 #: templates/about.html:92
 msgid ""
@@ -151,16 +129,6 @@ msgid ""
 "focus groups. Discuss content and designs to ensure the information fits "
 "each community's needs. 6. Revise, revise, revise and launch site!"
 msgstr ""
-"كيف نبني مواقع Hazard Ready: 1- جمع البيانات. نحدد موقع أكثر البيانات ذات "
-"الصلة والأحدث المتعلقة بالمخاطر الطبيعية لمنطقتك من مصادر موثوقة مثل الوكالة "
-"الفيدرالية لإدارة الطوارئ (FEMA) والإدارة الوطنية للمحيطات والغلاف الجوي "
-"(NOAA) وهيئة المسح الجيولوجي الأمريكية (USGS). 2- فحص الجودة. نعمل مع شركاء "
-"محليين (مجموعات محلية ومديرين للطوارئ) من أجل ضمان دقة البيانات والمعلومات. "
-"3- معالجة البيانات. نجعل البيانات ملائمة لبرامج Hazard Ready. 4- بناء "
-"المحتوى. نكتب نص الصفحة الإلكترونية، ونجمع الصور ومقاطع الفيديو، ونحدد موقع "
-"المصادر المحلية لكل خطر ومنطقة. 5- تقديم التعقيبات ومجموعات التركيز. مناقشة "
-"المحتوى والتصميمات من أجل ضمان أن تتلائم المعلومات مع احتياجات كل مجتمع. 6- "
-"المراجعة والمراجعة والمراجعة وإصدار الموقع!"
 
 #: templates/about.html:100
 #, python-format
@@ -168,28 +136,26 @@ msgid ""
 "Data used for %(title)s is available for download <a href=\"%(download)s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
-"البيانات المستخدمة من أجل %(title)s متاحة للتنزيل <a href=\"%(download)s\" "
-"target=\"_blank\" rel=\"noopener\">هنا</a>."
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
-msgstr "صور للاستعراض العام للبيانات لفريق Ready في سياتل ومقاطعة كينغ"
+msgstr ""
 
 #: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
-msgstr "خريطة لمقاطعة كينغ، واشنطن، تشير إلى حدة الخطر"
+msgstr ""
 
 #: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
-msgstr "مصادر البيانات لفريق Ready في سياتل ومقاطعة كينغ"
+msgstr ""
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr "الزلزال"
+msgstr ""
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr "هزة زلزال نيسكوالي 2001 بقوة 6,8"
+msgstr ""
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -197,7 +163,7 @@ msgstr "هزة زلزال نيسكوالي 2001 بقوة 6,8"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr "تم منح الوصول"
+msgstr ""
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -205,140 +171,140 @@ msgstr "تم منح الوصول"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr "يونيو"
+msgstr ""
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
-msgstr "سيناريو الزلزال التصدعي في سياتل"
+msgstr ""
 
 #: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
-msgstr "سيناريو هزة كاساكاديا الأرضية"
+msgstr ""
 
 #: templates/data.html:47
 msgid "Cascadia Displaced Households"
-msgstr "أسر كاسكاديا المشردة"
+msgstr ""
 
 #: templates/data.html:51
 msgid "Liquefaction"
-msgstr "التميّع"
+msgstr ""
 
 #: templates/data.html:55
 msgid "Tsunami"
-msgstr "تسونامي"
+msgstr ""
 
 #: templates/data.html:61
 msgid "Volcano"
-msgstr "بركان"
+msgstr ""
 
 #: templates/data.html:67
 msgid "Landslide"
-msgstr "انهيار أرضي"
+msgstr ""
 
 #: templates/data.html:68
 msgid "Historical Landslides"
-msgstr "انهيارات أرضية تاريخية"
+msgstr ""
 
 #: templates/data.html:75
 msgid "Steep Slope Potential"
-msgstr "الانحدارات الحادة المحتملة"
+msgstr ""
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr "الفيضان"
+msgstr ""
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
-msgstr "مناطق مخاطر الفيضانات"
+msgstr ""
 
 #: templates/data.html:89
 msgid "Channel Migration Zones"
-msgstr "مناطق تراجع القنوات"
+msgstr ""
 
 #: templates/data.html:93
 msgid "Dam Inundation Maps"
-msgstr "خرائط غمر السد"
+msgstr ""
 
 #: templates/data.html:100
 msgid "Wildfire"
-msgstr "حرائق الغابات"
+msgstr ""
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr "مناطق الواجهة الحضرية البرية"
+msgstr ""
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
-msgstr "مخاطر الحرائق المحتملة"
+msgstr ""
 
 #: templates/data.html:111
 msgid "Summer Weather"
-msgstr "الطقس الصيفي"
+msgstr ""
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr "في حالة وجود أسئلة أو استفسارات بشأن البيانات؟ الاتصال:"
+msgstr ""
 
 #: templates/data.html:120
 msgid "flood"
-msgstr "الفيضان"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
-msgstr "الزلزال"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:132
 msgid "landslide"
-msgstr "انهيار أرضي"
+msgstr ""
 
 #: templates/data.html:123
 msgid "tsunami"
-msgstr "تسونامي"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
-msgstr "بركان"
+msgstr ""
 
 #: templates/data.html:129
 msgid "wildfire"
-msgstr "حرائق الغابات"
+msgstr ""
 
 #: templates/found_content.html:11
 msgid "What to expect for"
-msgstr "ماذا تتوقع بشأن"
+msgstr ""
 
 #: templates/found_content.html:17
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
-msgstr "حاول&nbsp;عنوانًا&nbsp;جديدًا&nbsp;"
+msgstr ""
 
 #: templates/found_content.html:36
 msgid "Prepare!"
-msgstr "استعد!"
+msgstr ""
 
 #: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
-msgstr "مقياس الحدة بنسبة %(percentage)s%%"
+msgstr ""
 
 #: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
-msgstr "هزة أرضية خفيفة&nbsp;&mdash; لا أضرار"
+msgstr ""
 
 #: templates/found_content.html:59
 msgid "Very Low Hazard"
-msgstr "خطر منخفض جدًا"
+msgstr ""
 
 #: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
-msgstr "هزة أرضية عنيفة&nbsp;&mdash; أضرار شديدة"
+msgstr ""
 
 #: templates/found_content.html:66
 msgid "Very High Hazard"
-msgstr "خطر شديد جدًا"
+msgstr ""
 
 #: templates/geek_box.html:7
 msgid "Who made this?"
-msgstr "من تسبب بهذا؟"
+msgstr ""
 
 #: templates/geek_box.html:11
 #, python-format
@@ -349,11 +315,6 @@ msgid ""
 "Hazard Ready creators</a> for more information.\n"
 "            "
 msgstr ""
-"\n"
-" هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
-"النبذة أو<a href=\"mailto:%(email)s\">أرسل رسالة بريد إلكتروني إلى القائمين "
-"على Hazard Ready</a> للحصول على مزيدٍ من المعلومات.\n"
-"            "
 
 #: templates/geek_box.html:15
 #, python-format
@@ -361,49 +322,46 @@ msgid ""
 "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
 "a> page for more information.\""
 msgstr ""
-"هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
-"نبذة للحصول على مزيدٍ من المعلومات.\""
 
 #: templates/head-meta.html:12 templates/header.html:25
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
-msgstr "أدخل موقعك للحصول على تقرير مخصص عن مخاطرك وكيفية الاستعداد."
+msgstr ""
 
 #: templates/header.html:23
 msgid "Find Me"
-msgstr "اعثر عليّ"
+msgstr ""
 
 #: templates/header.html:27
 msgid "Enter an address."
-msgstr "أدخل عنوانًا."
+msgstr ""
 
-#: templates/header.html:38
+#: templates/header.html:39
 msgid "We had a problem finding that location."
-msgstr "نواجه مشكلةً في العثور على ذلك الموقع."
+msgstr ""
 
-#: templates/header.html:41
+#: templates/header.html:42
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
 msgstr ""
-"يرجى السماح للمتصفح للوصول إلى موقعك من أجل استخدام خاصية \"اعثر عليّ\"."
 
 #: templates/header_links.html:4
 msgid "About"
-msgstr "نبذة"
+msgstr ""
 
 #: templates/header_links.html:7
 msgid "Data"
-msgstr "البيانات"
+msgstr ""
 
 #: templates/index.html:21
 msgid "Natural disasters can strike at any time."
-msgstr "يمكن أن تضرب الكوارث الطبيعية في أي وقت."
+msgstr ""
 
 #: templates/index.html:23
 msgid "Get a personalized report"
-msgstr "احصل على تقرير مخصص"
+msgstr ""
 
 #: templates/index.html:24
 msgid ""
@@ -411,17 +369,14 @@ msgid ""
 "map, or clicking 'find me'. You'll get a personalized report on your natural "
 "hazard risks and steps you can take to prepare."
 msgstr ""
-"حدد موقعًا عبر الكتابة في المربع أعلى الصفحة مع الضغط على الخريطة أو مع الضغط "
-"على خاصية \"اعثر عليّ\". ستحصل على تقرير مخصص بشأن المخاطر الطبيعية والخطوات "
-"التي يمكنك اتخاذها من أجل الاستعداد."
 
 #: templates/index.html:36
 msgid "What are my risks?"
-msgstr "ما هي المخاطر التي أواجهها؟"
+msgstr ""
 
 #: templates/index.html:37
 msgid "What to Expect"
-msgstr "ماذا تتوقع"
+msgstr ""
 
 #: templates/index.html:38
 #, python-format
@@ -431,25 +386,20 @@ msgid ""
 "a\n"
 "              location in %(area_name)s. "
 msgstr ""
-" %(site_title)s يمنحك فكرةً عن أي\n"
-"              الكوارث الطبيعية التي قد تواجهها في المستقبل استنادًا إلى\n"
-"              موقع في %(area_name)s. "
 
 #: templates/index.html:41
 msgid "How to Prepare"
-msgstr "كيفية الاستعداد"
+msgstr ""
 
 #: templates/index.html:42
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
 msgstr ""
-"أنت تتمتع بالقوة لإحداث فرق. اكتشف كيف يمكنك حماية أحبائك ومنزلك قبل حدوث "
-"الكارثة التالية."
 
 #: templates/index.html:43
 msgid "In Recent History"
-msgstr "بالتاريخ الحديث"
+msgstr ""
 
 #: templates/index.html:44
 #, python-format
@@ -458,13 +408,10 @@ msgid ""
 "what impact they had, and where\n"
 "              they happened. "
 msgstr ""
-" اكتشف أي الكوارث قد ضربت %(settings.area_name)s في الماضي وأي أثر خلفته "
-"وأين \n"
-"              حدثت. "
 
 #: templates/index.html:50
 msgid "About the Data"
-msgstr "حول البيانات"
+msgstr ""
 
 #: templates/index.html:52
 #, python-format
@@ -478,50 +425,41 @@ msgid ""
 "information from the American Red Cross and the Federal Emergency Management "
 "Agency."
 msgstr ""
-"يستخدم هذا الموقع أحدث البيانات المتاحة عن المخاطر لمنطقة %(area_name)s. "
-"يتحمل مستخدم هذا الموقع مسؤولية التحقق من صحة أي معلومات مع <a "
-"href=\"%(data_source_link)s\" target=\"_blank\">المصادر الأصلية للبيانات</"
-"a>. وعلى الرغم من أن هذه البيانات تمثل أفضل تقييم حالي للمخاطر، إلا أنها لا "
-"تتنبأ بتلك الأحداث المستقبلية. تستند توصيفات الخطر وكيفية الاستعداد لتلك "
-"المخاطر إلى أفضل المعلومات الواردة من الصليب الأحمر الأمريكي والوكالة "
-"الفيدرالية لإدارة الطوارئ."
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
-msgstr "الحصول على نتائج لموقعك..."
+msgstr ""
 
 #: templates/language_selector.html:27
 msgid "Language"
-msgstr "اللغة"
+msgstr ""
 
 #: templates/no_content_found.html:6
 msgid "No information available for"
-msgstr "لا توجد معلومات متوفرة من أجل"
+msgstr ""
 
 #: templates/no_content_found.html:9
 msgid "Wrong address? Start over"
-msgstr "عنوان خاطئ؟ ابدأ من جديد"
+msgstr ""
 
 #: templates/no_content_found.html:21
 msgid "No information available."
-msgstr "لا توجد معلومات متاحة."
+msgstr ""
 
 #: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
-msgstr "يبدو أن موقعك خارج منطقة %(area_name)s."
+msgstr ""
 
 #: templates/no_content_found.html:24
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
 msgstr ""
-"بينما نقدر التكيف وندعمه في كل مكان، إلا أن البيانات التي تدعم هذا الموقع "
-"ليست متاحة لأماكن أخرى بعد."
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr "اتخذ الخطوة الأولى للاستعداد"
+msgstr ""
 
 #: templates/prepare.html:24
 msgid ""
@@ -530,213 +468,191 @@ msgid ""
 "You may have already done some of it! You can use the checklist at the "
 "bottom of this page to keep track of how much you've done."
 msgstr ""
-"هناك بعض الخطوات البسيطة التي يمكننا أن نتخذها من أجل جعل عائلاتنا ومجتمعنا "
-"مستعدين أكثر لحالات الطوارئ. لا يتعين أن يكون الأمر مكلفًا أو صعبًا. ربما قد "
-"اتخذت بعضًا من هذه الخطوات فعلاً! يمكنك استخدام قائمة التحقق في أسفل هذه "
-"الصفحة من أجل متابعة كم خطوة اتخذت."
 
 #: templates/prepare.html:89
 msgid "This activity"
-msgstr "هذا النشاط"
+msgstr ""
 
 #: templates/prepare.html:90
 msgid "Print Checklist"
-msgstr "طباعة قائمة التحقق"
+msgstr ""
 
 #: templates/prepare.html:94
 msgid "Completed?"
-msgstr "انتهيت؟"
+msgstr ""
 
 #: templates/prepare.html:95
 msgid "Activity"
-msgstr "النشاط"
+msgstr ""
 
 #: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
-msgstr "يقلل الضرر المعنوي والجسدي"
+msgstr ""
 
 #: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
-msgstr "مفيد لمواقف أخرى"
+msgstr ""
 
 #: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
-msgstr "يساعد في حماية الممتلكات"
+msgstr ""
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr "التكاليف"
+msgstr ""
 
 #: templates/prepare.html:104
 msgid "Resources"
-msgstr "المصادر"
+msgstr ""
 
 #: templates/prepare.html:142
 msgid "Key:"
-msgstr "المفتاح:"
+msgstr ""
 
 #: templates/prepare.html:151
 msgid "or more"
-msgstr "أو أكثر"
+msgstr ""
 
 #: templates/registration/login.html:3
 #: templates/registration/user_interactions.html:3
 msgid "Log In"
-msgstr "تسجيل الدخول"
+msgstr ""
 
 #: templates/registration/login.html:4
 #: templates/registration/user_interactions.html:5
 #: templates/registration/user_profile.html:26
 #: templates/registration/user_signup.html:4
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr ""
 
 #: templates/registration/login.html:8
 #: templates/registration/password_change_form.html:16
 msgid "Required."
-msgstr "مطلوب."
+msgstr ""
 
 #: templates/registration/login.html:12
 msgid "Username (your email address)"
-msgstr "اسم المستخدم (عنوان بريدك الإلكتروني)"
+msgstr ""
 
 #: templates/registration/login.html:15
 msgid "Password"
-msgstr "كلمة المرور"
+msgstr ""
 
 #: templates/registration/login.html:26
 #, python-format
 msgid ""
 "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
 msgstr ""
-"هل نسيت كلمة المرور الخاصة بك؟ أعد تعيينها <a href=\"%(password_url)s\">هنا</"
-"a>."
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
-msgstr "تم تغيير كلمة المرور الخاصة بك."
+msgstr ""
 
 #: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
-"يرجى إدخال كلمة المرور القديمة الخاصة بك لأغراض الأمان، ثم أدخل كلمة المرور "
-"الجديدة الخاصة بك مرتين، حتى نتمكن من التحقق من أنك كتبتها بصورة صحيحة."
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] "يرجى تصحيح الخطأ أدناه."
-msgstr[1] "يرجى تصحيح الخطأ أدناه."
-msgstr[2] "يرجى تصحيح الخطئين أدناه."
-msgstr[3] "يرجى تصحيح الأخطاء أدناه."
-msgstr[4] "يرجى تصحيح الأخطاء أدناه."
-msgstr[5] "يرجى تصحيح الأخطاء أدناه."
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
 #: templates/registration/user_profile.html:28
 msgid "Change my password"
-msgstr "تغيير كلمة المرور الخاصة بي"
+msgstr ""
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
-msgstr "تم تغيير كلمة المرور الخاصة بك."
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
-msgstr "أدخل كلمة مرور جديدة"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:18
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
-"يرجى إدخال كلمة المرور الجديدة الخاصة بك مرتين حتى نتمكن من التحقق من صحة ما "
-"كتبت بصورة صحيحة."
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "New password:"
-msgstr "كلمة مرور جديدة:"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr "تأكيد كلمة المرور:"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:40
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
-"رابط إعادة تعيين كلمة المرور كان غير صحيح، ربما لأنه تم استخدامه. يرجى طلب "
-"تعيين كلمة مرور جديدة."
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
-msgstr "يرجى التحقق من بريدك الإلكتروني."
+msgstr ""
 
 #: templates/registration/password_reset_done.html:14
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
-"لقد أرسلنا إليك عبر البريد الإلكتروني تعليمات لإعداد كلمة المرور الخاصة بك "
-"في حالة كان هناك حساب بالبريد الإلكتروني الذي أدخلته. ينبغي أن تتلقاها قريبًا."
 
 #: templates/registration/password_reset_done.html:16
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
-"إذا لم تتسلم رسالة عبر البريد الإلكتروني، فتحقق أنك أدخلت العنوان المسجل به، "
-"وتفقد مجلد رسائل البريد الإلكتروني العشوائي لديك."
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
-msgstr "إعادة تعيين كلمة المرور الخاصة بك"
+msgstr ""
 
 #: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
-"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان بريدك الإلكتروني أدناه، وسوف نرسل "
-"عبر البريد الإلكتروني تعليمات إعداد كلمة مرور جديدة."
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr "عنوان البريد الإلكتروني:"
+msgstr ""
 
 #: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
-msgstr "إعادة تعيين كلمة المرور الخاصة بي"
+msgstr ""
 
 #: templates/registration/user_interactions.html:4
 #: templates/registration/user_signup.html:3
 msgid "Sign Up"
-msgstr "التسجيل"
+msgstr ""
 
 #: templates/registration/user_interactions.html:6
 msgid "Log Out"
-msgstr "تسجيل الخروج"
+msgstr ""
 
 #: templates/registration/user_interactions.html:7
 msgid "Update My Info"
-msgstr "تحديث معلوماتي"
+msgstr ""
 
 #: templates/registration/user_interactions.html:23
 #, python-format
 msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
-msgstr "مرحبًا بعودتك، <span class=\"username\">%(username)s</span>!"
+msgstr ""
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
-msgstr "نعمل على تسجيل دخولك. نحتاج دقيقةً فقط..."
+msgstr ""
 
 #: templates/registration/user_interactions.html:33
 msgid "Welcome back!"
-msgstr "مرحبًا بعودتك!"
+msgstr ""
 
 #: templates/registration/user_interactions.html:35
 #, python-format
@@ -744,12 +660,10 @@ msgid ""
 "If your username isn't <span class=\"username\">%(username)s</span>, you "
 "might want to log out."
 msgstr ""
-"إذا لم يكن اسم المستخدم الخاص بك <span class=\"username\">%(username)s</"
-"span>، قد تحتاج إلى تسجيل الخروج."
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
-msgstr "تلقي تحديثات مهمة"
+msgstr ""
 
 #: templates/registration/user_interactions.html:45
 msgid ""
@@ -759,96 +673,87 @@ msgid ""
 "informed. We’ll ask for your email address and physical address. Your "
 "information will be secure, and we won’t contact you for any other reason."
 msgstr ""
-"حافظ على سلامة عائلتك وأصدقائك وجيرانك. سجل للحصول على تحديثات عبر البريد "
-"الإلكتروني بشأن المخاطر الموسمية مثل الحرائق والفيضانات والعواصف الثلجية. "
-"إذا حدثت كارثة طبيعية في منطقتك، سوف نرسل إليك تحديثات حتى تتمكن من البقاء "
-"على اطلاع. سوف نطلب عنوان بريدك الإلكتروني وعنوانك الفعلي. ستكون بياناتك "
-"آمنة، ولن نتصل بك لأي سببٍ آخر."
 
 #: templates/registration/user_profile.html:4
 msgid "Update Your Information"
-msgstr "تحديث معلوماتك"
+msgstr ""
 
 #: templates/registration/user_profile.html:8
 #: templates/registration/user_signup.html:17
 msgid "Street Address"
-msgstr "عنوان الشارع"
+msgstr ""
 
 #: templates/registration/user_profile.html:11
 #: templates/registration/user_signup.html:20
 msgid "Other Address Information"
-msgstr "معلومات أخرى تخص العنوان"
+msgstr ""
 
 #: templates/registration/user_profile.html:14
 #: templates/registration/user_signup.html:23
 msgid "City"
-msgstr "المدينة"
+msgstr ""
 
 #: templates/registration/user_profile.html:17
 #: templates/registration/user_signup.html:26
 msgid "State"
-msgstr "الولاية"
+msgstr ""
 
 #: templates/registration/user_profile.html:20
 #: templates/registration/user_signup.html:29
 msgid "Zip Code"
-msgstr "الرمز البريدي"
+msgstr ""
 
 #: templates/registration/user_profile.html:25
 msgid "Update"
-msgstr "تحديث"
+msgstr ""
 
 #: templates/registration/user_signup.html:11
 msgid "Email address (this will be your username)"
-msgstr "عنوان البريد الإلكتروني (سيكون هذا اسم المستخدم الخاص بك)"
+msgstr ""
 
 #: templates/registration/user_signup.html:14
 msgid "Password (more than 8 characters long, please)"
-msgstr "كلمة المرور (أكثر من 8 حرف رجاءً)"
+msgstr ""
 
 #: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
-"هل تحتاج للمساعدة؟ <a href=\"mailto:help@hazardready.org\">أرسل بريدًا "
-"إلكترونيًا إلينا.</a>"
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
-msgstr "مجاني!"
+msgstr ""
 
 #: templatetags/show_cost.py:13 templatetags/show_cost.py:23
 #: templatetags/show_cost_header.py:13
 msgid "Unknown"
-msgstr "غير معروف"
+msgstr ""
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr "ابدأ - إنه مجانًا!"
+msgstr ""
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
-msgstr "الخطوات التالية"
+msgstr ""
 
 #: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
 msgid "Keep Going"
-msgstr "استمر"
+msgstr ""
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
-msgstr "تم استخدام عنوان البريد الإلكتروني ذلك. حاول تسجيل الدخول بدلاً من ذلك."
+msgstr ""
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr "معذرةً، لسنا متيقنين مما حدث هناك. ربما ينبغي أن تحاول مرةً أخرى."
+msgstr ""
 
 #: views.py:91
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
 msgstr ""
-"شكرًا للتسجيل! سنتواصل معك بالأخبار والمعلومات ذات الصلة. يمكنك العودة في أي "
-"وقت من أجل تحديث عنوانك."
 
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
-msgstr "شكرًا لإبقائنا على اطلاع بكل جديد!"
+msgstr ""

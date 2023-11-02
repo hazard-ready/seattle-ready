@@ -1,57 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: seattle-ready\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 20:57+0000\n"
-"PO-Revision-Date: 2023-07-06 21:00\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Traditional\n"
-"Language: zh_TW\n"
+"POT-Creation-Date: 2023-11-02 16:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: seattle-ready\n"
-"X-Crowdin-Project-ID: 525328\n"
-"X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: django.po\n"
-"X-Crowdin-File-ID: 37\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: settings.py:100
 msgid "Arabic"
-msgstr "العربية"
+msgstr ""
 
 #: settings.py:101
 msgid "Chinese"
-msgstr "中文"
+msgstr ""
 
 #: settings.py:102
 msgid "English"
-msgstr "English"
+msgstr ""
 
 #: settings.py:103
 msgid "Korean"
-msgstr "한국어"
+msgstr ""
 
 #: settings.py:104
 msgid "Russian"
-msgstr "русский"
+msgstr ""
 
 #: settings.py:105
 msgid "Somali"
-msgstr "Af-Soomaali"
+msgstr ""
 
 #: settings.py:106
 msgid "Spanish"
-msgstr "español"
+msgstr ""
 
 #: settings.py:107
 msgid "Vietnamese"
-msgstr "Tiếng Việt"
+msgstr ""
 
 #: templates/about.html:19
 msgid "The Hazard Ready Team"
-msgstr "Hazard Ready 團隊"
+msgstr ""
 
 #: templates/about.html:29
 msgid ""
@@ -61,10 +62,6 @@ msgid ""
 "information to broad audiences. She writes the content and processes the "
 "data for each HazardReady site."
 msgstr ""
-"Carson 擁有來自 Western Washington University 和 University of Montana 的地質"
-"學理學學士學位和理學碩士學位。她目前正在 Boise State University 攻讀博士學"
-"位，研究如何最好地向廣大受眾傳達自然災害風險資訊。她為每個 HazardReady 站點編"
-"纂內容並處理資料。"
 
 #: templates/about.html:46
 msgid ""
@@ -75,10 +72,6 @@ msgid ""
 "writes and lectures on the ethics of science communication as well as on her "
 "basic geophysical research."
 msgstr ""
-"Rebecca Bendick 擁有 University of Colorado 地球物理學博士學位。 她對構造學和"
-"地震力學的研究引發了人們對人類社群如何受到自然災害影響的興趣，並激勵她不斷努"
-"力幫助人們更好地瞭解自然災害並為其做好準備。她撰寫有關科學傳播倫理以及基礎地"
-"球物理研究的文章並組織講座。"
 
 #: templates/about.html:62
 msgid ""
@@ -88,17 +81,14 @@ msgid ""
 "currently works on economic development, fostering small and startup "
 "companies in western Montana."
 msgstr ""
-"Grant Kier 擁有 University of Colorado 地質學理學碩士學位。他對人為和自然變化"
-"背景下的社群復原力非常感興趣。他還擁有商業實踐背景，目前致力於經濟發展，在蒙"
-"大拿州西部培育小型和初創公司。"
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
-msgstr "Hazard Ready 專案"
+msgstr ""
 
 #: templates/about.html:72
 msgid "Hazard Ready homepage"
-msgstr "Hazard Ready 主頁"
+msgstr ""
 
 #: templates/about.html:82
 #, python-format
@@ -109,9 +99,6 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"%(title)s 旨在幫助人們進行教育並為其所在社群可能發生的災難做好準備。災難對不"
-"同地點的影響並不相同，因此我們發現提供特定地點的資訊以做好適當的準備非常重"
-"要。 %(title)s 組織當前資訊並將其打包，供 %(area_name)s 的居民任意獲取。"
 
 #: templates/about.html:85
 #, python-format
@@ -124,14 +111,10 @@ msgid ""
 "are based on best information from the American Red Cross and the Federal "
 "Emergency Management Agency."
 msgstr ""
-"本網站使用 %(area_name)s 可用的最新危險風險資料。本網站的使用者有責任使用原始"
-"資料源驗證任何特定資訊。儘管這些資料代表當前對危害的最佳評估，但它們並不能預"
-"測未來事件。對風險的描述以及如何為這些風險做好準備基於美國紅十字會和聯邦緊急"
-"事務管理局的最佳資訊。"
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
-msgstr "build/flowchart.jpg"
+msgstr ""
 
 #: templates/about.html:92
 msgid ""
@@ -145,12 +128,6 @@ msgid ""
 "focus groups. Discuss content and designs to ensure the information fits "
 "each community's needs. 6. Revise, revise, revise and launch site!"
 msgstr ""
-"我們如何建立 Hazard Ready 網站：1. 收集資料。從 FEMA、NOAA 和 USGS 等可信來源"
-"找到與您所在地區最相關和最新的自然災害資料。2. 品質檢查。與在地合作夥伴（社群"
-"團體和應急管理人員）合作，確保資料和資訊準確無誤。3. 處理資料。使資料與 "
-"Hazard Ready 軟體相容。4. 構建內容。編寫網頁文字，收集圖片和影片，為每個災害"
-"和區域定位本地資源。5. 回饋和焦點小組。討論內容和設計以確保資訊符合每個社群的"
-"需求。6.改版、改版、改版、上線！"
 
 #: templates/about.html:100
 #, python-format
@@ -158,28 +135,26 @@ msgid ""
 "Data used for %(title)s is available for download <a href=\"%(download)s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
-"%(title)s 使用的資料，<a href=\"%(download)s\" target=\"_blank\" "
-"rel=\"noopener\">按這裡下載</a>。"
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
-msgstr "「西雅圖和金縣就緒」的資料概覽圖像"
+msgstr ""
 
 #: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
-msgstr "華盛頓州金縣地圖，顯示災害強度"
+msgstr ""
 
 #: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
-msgstr "「西雅圖和金縣就緒」的資料源"
+msgstr ""
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr "地震"
+msgstr ""
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr "M6.8 2001 尼斯誇利地震"
+msgstr ""
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -187,7 +162,7 @@ msgstr "M6.8 2001 尼斯誇利地震"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr "已存取"
+msgstr ""
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -195,140 +170,140 @@ msgstr "已存取"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr "6 月"
+msgstr ""
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
-msgstr "西雅圖斷層地震情景"
+msgstr ""
 
 #: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
-msgstr "卡斯卡迪亞震動場景"
+msgstr ""
 
 #: templates/data.html:47
 msgid "Cascadia Displaced Households"
-msgstr "卡斯卡迪亞流離失所家庭"
+msgstr ""
 
 #: templates/data.html:51
 msgid "Liquefaction"
-msgstr "土壤液化"
+msgstr ""
 
 #: templates/data.html:55
 msgid "Tsunami"
-msgstr "海嘯"
+msgstr ""
 
 #: templates/data.html:61
 msgid "Volcano"
-msgstr "火山"
+msgstr ""
 
 #: templates/data.html:67
 msgid "Landslide"
-msgstr "山體滑坡"
+msgstr ""
 
 #: templates/data.html:68
 msgid "Historical Landslides"
-msgstr "歷史山體滑坡"
+msgstr ""
 
 #: templates/data.html:75
 msgid "Steep Slope Potential"
-msgstr "陡坡潛在風險"
+msgstr ""
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr "洪水"
+msgstr ""
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
-msgstr "洪水危險區"
+msgstr ""
 
 #: templates/data.html:89
 msgid "Channel Migration Zones"
-msgstr "水道遷移區"
+msgstr ""
 
 #: templates/data.html:93
 msgid "Dam Inundation Maps"
-msgstr "大壩淹沒地圖"
+msgstr ""
 
 #: templates/data.html:100
 msgid "Wildfire"
-msgstr "野火"
+msgstr ""
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr "荒地城市介面（WUI）分區"
+msgstr ""
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
-msgstr "火災潛在風險"
+msgstr ""
 
 #: templates/data.html:111
 msgid "Summer Weather"
-msgstr "夏季天氣"
+msgstr ""
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr "對資料有疑問或顧慮？請聯絡："
+msgstr ""
 
 #: templates/data.html:120
 msgid "flood"
-msgstr "洪水"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
-msgstr "地震"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:132
 msgid "landslide"
-msgstr "山體滑坡"
+msgstr ""
 
 #: templates/data.html:123
 msgid "tsunami"
-msgstr "海嘯"
+msgstr ""
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
-msgstr "火山"
+msgstr ""
 
 #: templates/data.html:129
 msgid "wildfire"
-msgstr "山火"
+msgstr ""
 
 #: templates/found_content.html:11
 msgid "What to expect for"
-msgstr "有何期待"
+msgstr ""
 
 #: templates/found_content.html:17
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
-msgstr "嘗試&nbsp;新&nbsp;地&nbsp;址"
+msgstr ""
 
 #: templates/found_content.html:36
 msgid "Prepare!"
-msgstr "做好準備！"
+msgstr ""
 
 #: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
-msgstr "%(percentage)s%% 的強度計"
+msgstr ""
 
 #: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
-msgstr "輕微搖晃&nbsp;&mdash;無損傷"
+msgstr ""
 
 #: templates/found_content.html:59
 msgid "Very Low Hazard"
-msgstr "危險極低"
+msgstr ""
 
 #: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
-msgstr "劇烈搖晃&nbsp;&mdash;重度損傷"
+msgstr ""
 
 #: templates/found_content.html:66
 msgid "Very High Hazard"
-msgstr "危險極高"
+msgstr ""
 
 #: templates/geek_box.html:7
 msgid "Who made this?"
-msgstr "這是誰製作的？"
+msgstr ""
 
 #: templates/geek_box.html:11
 #, python-format
@@ -339,11 +314,6 @@ msgid ""
 "Hazard Ready creators</a> for more information.\n"
 "            "
 msgstr ""
-"\n"
-"                有問題嗎？請檢視<a href=\"%(about_url)s\" target=\"_blank\">"
-"關於</a>頁面或<a href=\"mailto:%(email)s\">寫信給 Hazard Ready 創作者</a>以獲"
-"得更多資訊。\n"
-"            "
 
 #: templates/geek_box.html:15
 #, python-format
@@ -351,48 +321,46 @@ msgid ""
 "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
 "a> page for more information.\""
 msgstr ""
-"有問題嗎？請檢視<a href=\"%(about_url)s\" target=\"_blank\">關於</a>頁面獲得"
-"更多資訊。\""
 
 #: templates/head-meta.html:12 templates/header.html:25
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
-msgstr "輸入您所處的位置以獲得當地風險評估及如何應對的個人化報告。"
+msgstr ""
 
 #: templates/header.html:23
 msgid "Find Me"
-msgstr "查找"
+msgstr ""
 
 #: templates/header.html:27
 msgid "Enter an address."
-msgstr "輸入地址。"
+msgstr ""
 
-#: templates/header.html:38
+#: templates/header.html:39
 msgid "We had a problem finding that location."
-msgstr "在查找該地點時遇到問題。"
+msgstr ""
 
-#: templates/header.html:41
+#: templates/header.html:42
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
-msgstr "請允許您的網頁瀏覽器存取您的位置以使用「查找」功能。"
+msgstr ""
 
 #: templates/header_links.html:4
 msgid "About"
-msgstr "關於"
+msgstr ""
 
 #: templates/header_links.html:7
 msgid "Data"
-msgstr "資料"
+msgstr ""
 
 #: templates/index.html:21
 msgid "Natural disasters can strike at any time."
-msgstr "自然災害隨時可能發生。"
+msgstr ""
 
 #: templates/index.html:23
 msgid "Get a personalized report"
-msgstr "取得個人化報告"
+msgstr ""
 
 #: templates/index.html:24
 msgid ""
@@ -400,16 +368,14 @@ msgid ""
 "map, or clicking 'find me'. You'll get a personalized report on your natural "
 "hazard risks and steps you can take to prepare."
 msgstr ""
-"透過在頁面頂部的框中輸入、在地圖點按或按一下「查找」來提供位置。您將獲得一份"
-"關於您的自然災害風險以及可以採取的應對步驟的個人化報告。"
 
 #: templates/index.html:36
 msgid "What are my risks?"
-msgstr "我面臨哪些風險？"
+msgstr ""
 
 #: templates/index.html:37
 msgid "What to Expect"
-msgstr "有何期待"
+msgstr ""
 
 #: templates/index.html:38
 #, python-format
@@ -419,23 +385,20 @@ msgid ""
 "a\n"
 "              location in %(area_name)s. "
 msgstr ""
-" %(site_title)s 讓您根據\n"
-"              在 %(area_name)s 的具體位置瞭解\n"
-"              您將來可能會經歷哪些自然災害。"
 
 #: templates/index.html:41
 msgid "How to Prepare"
-msgstr "如何應對"
+msgstr ""
 
 #: templates/index.html:42
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
-msgstr "你有能力有所作為。瞭解如何在下一次災難襲來之前保護您的親人和家園。"
+msgstr ""
 
 #: templates/index.html:43
 msgid "In Recent History"
-msgstr "近期記錄"
+msgstr ""
 
 #: templates/index.html:44
 #, python-format
@@ -444,13 +407,10 @@ msgid ""
 "what impact they had, and where\n"
 "              they happened. "
 msgstr ""
-" 瞭解 %(settings.area_name)s 過去經歷過哪些災害，受到哪些影響，以及災害發生"
-"的\n"
-"              具體位置。"
 
 #: templates/index.html:50
 msgid "About the Data"
-msgstr "關於資料"
+msgstr ""
 
 #: templates/index.html:52
 #, python-format
@@ -464,48 +424,41 @@ msgid ""
 "information from the American Red Cross and the Federal Emergency Management "
 "Agency."
 msgstr ""
-"本網站使用 %(area_name)s 可用的最新危險風險資料。本網站的使用者有責任使用原始"
-"<a href=\"%(data_source_link)s\" target=\"_blank\">資料源</a>驗證任何特定資"
-"訊。儘管這些資料代表當前對危害的最佳評估，但它們並不能預測未來事件。對風險的"
-"描述以及如何為這些風險做好準備基於美國紅十字會和聯邦緊急事務管理局的最佳資"
-"訊。"
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
-msgstr "正在取得您的位置的結果…"
+msgstr ""
 
 #: templates/language_selector.html:27
 msgid "Language"
-msgstr "語言"
+msgstr ""
 
 #: templates/no_content_found.html:6
 msgid "No information available for"
-msgstr "無可用資訊："
+msgstr ""
 
 #: templates/no_content_found.html:9
 msgid "Wrong address? Start over"
-msgstr "地址錯誤？從頭再來"
+msgstr ""
 
 #: templates/no_content_found.html:21
 msgid "No information available."
-msgstr "無可用資訊。"
+msgstr ""
 
 #: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
-msgstr "似乎您的位置在 %(area_name)s 之外。"
+msgstr ""
 
 #: templates/no_content_found.html:24
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
 msgstr ""
-"儘管我們重視並支持在任何位置做好應對準備，但為本網站提供支援的資料尚不適用於"
-"其他地點。"
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr "邁出做好應對準備的第一步"
+msgstr ""
 
 #: templates/prepare.html:24
 msgid ""
@@ -514,198 +467,191 @@ msgid ""
 "You may have already done some of it! You can use the checklist at the "
 "bottom of this page to keep track of how much you've done."
 msgstr ""
-"我們可以採取一些簡單的步驟，讓我們的家庭和社群為緊急情況做好更充分的應對準"
-"備。這不一定很昂貴，也不一定很難完成。您可能已經完成了其中一些！ 您可以使用本"
-"頁底部的清單來跟踪已完成的工作量。"
 
 #: templates/prepare.html:89
 msgid "This activity"
-msgstr "此活動"
+msgstr ""
 
 #: templates/prepare.html:90
 msgid "Print Checklist"
-msgstr "列印檢查清單"
+msgstr ""
 
 #: templates/prepare.html:94
 msgid "Completed?"
-msgstr "已完成？"
+msgstr ""
 
 #: templates/prepare.html:95
 msgid "Activity"
-msgstr "活動"
+msgstr ""
 
 #: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
-msgstr "減少情緒和身體傷害"
+msgstr ""
 
 #: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
-msgstr "對於其他情況很有用"
+msgstr ""
 
 #: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
-msgstr "幫助保護資產"
+msgstr ""
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr "花費"
+msgstr ""
 
 #: templates/prepare.html:104
 msgid "Resources"
-msgstr "資源"
+msgstr ""
 
 #: templates/prepare.html:142
 msgid "Key:"
-msgstr "關鍵："
+msgstr ""
 
 #: templates/prepare.html:151
 msgid "or more"
-msgstr "或更多"
+msgstr ""
 
 #: templates/registration/login.html:3
 #: templates/registration/user_interactions.html:3
 msgid "Log In"
-msgstr "登入"
+msgstr ""
 
 #: templates/registration/login.html:4
 #: templates/registration/user_interactions.html:5
 #: templates/registration/user_profile.html:26
 #: templates/registration/user_signup.html:4
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: templates/registration/login.html:8
 #: templates/registration/password_change_form.html:16
 msgid "Required."
-msgstr "必需。"
+msgstr ""
 
 #: templates/registration/login.html:12
 msgid "Username (your email address)"
-msgstr "使用者名（您的電子郵件位址）"
+msgstr ""
 
 #: templates/registration/login.html:15
 msgid "Password"
-msgstr "密碼"
+msgstr ""
 
 #: templates/registration/login.html:26
 #, python-format
 msgid ""
 "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
-msgstr "忘記密碼了？在<a href=\"%(password_url)s\">這裡</a>重設。"
+msgstr ""
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
-msgstr "您的密碼已變更。"
+msgstr ""
 
 #: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
-msgstr "為保證安全，請輸入舊密碼，然後再輸入兩次新密碼以確認。"
+msgstr ""
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] "請修正下方的錯誤。"
+msgstr[0] ""
+msgstr[1] ""
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
 #: templates/registration/user_profile.html:28
 msgid "Change my password"
-msgstr "變更密碼"
+msgstr ""
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
-msgstr "您的密碼已設定。"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
-msgstr "輸入新密碼"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:18
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr "請輸入兩次新密碼以確認。"
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "New password:"
-msgstr "新密碼："
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr "確認密碼："
+msgstr ""
 
 #: templates/registration/password_reset_confirm.html:40
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
-msgstr "密碼重設連結無效，可能是因為它已被使用。可申請重設密碼。"
+msgstr ""
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
-msgstr "請檢查電子郵件。"
+msgstr ""
 
 #: templates/registration/password_reset_done.html:14
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
-"如果您輸入的電子郵件位址存在帳號，我們已透過電子郵件向您寄送了設定密碼的說"
-"明。您應該很快就會收到。"
 
 #: templates/registration/password_reset_done.html:16
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
-"如果您沒有收到電子郵件，請檢查輸入的位址是否正確，同時檢查垃圾郵件資料夾。"
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
-msgstr "重設密碼"
+msgstr ""
 
 #: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
-"忘記了密碼？在下方輸入您的電子郵件位址，我們將透過電子郵件寄送有關設定新電子"
-"郵件位址的說明。"
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr "電子郵件位址："
+msgstr ""
 
 #: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
-msgstr "重設密碼"
+msgstr ""
 
 #: templates/registration/user_interactions.html:4
 #: templates/registration/user_signup.html:3
 msgid "Sign Up"
-msgstr "註冊"
+msgstr ""
 
 #: templates/registration/user_interactions.html:6
 msgid "Log Out"
-msgstr "登出"
+msgstr ""
 
 #: templates/registration/user_interactions.html:7
 msgid "Update My Info"
-msgstr "更新我的資訊"
+msgstr ""
 
 #: templates/registration/user_interactions.html:23
 #, python-format
 msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
-msgstr "歡迎回來，<span class=\"username\">%(username)s</span>！"
+msgstr ""
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
-msgstr "正在登入，請稍等……"
+msgstr ""
 
 #: templates/registration/user_interactions.html:33
 msgid "Welcome back!"
-msgstr "歡迎回來！"
+msgstr ""
 
 #: templates/registration/user_interactions.html:35
 #, python-format
@@ -713,11 +659,10 @@ msgid ""
 "If your username isn't <span class=\"username\">%(username)s</span>, you "
 "might want to log out."
 msgstr ""
-"如果 <span class=\"username\">%(username)s</span> 不是你的使用者名，請登出。"
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
-msgstr "接收重要更新"
+msgstr ""
 
 #: templates/registration/user_interactions.html:45
 msgid ""
@@ -727,91 +672,87 @@ msgid ""
 "informed. We’ll ask for your email address and physical address. Your "
 "information will be secure, and we won’t contact you for any other reason."
 msgstr ""
-"確保您的家人、朋友和鄰居的安全。註冊以取得有關火災、洪水和暴風雪等季節性災害"
-"的電子郵件更新。如果您所在地區發生自然災害，我們會向您寄送最新資訊，以便您隨"
-"時瞭解情況。我們會詢問您的電子郵件位址和實際居住地址。您的資訊是安全的，我們"
-"不會因任何其他原因與您聯絡。"
 
 #: templates/registration/user_profile.html:4
 msgid "Update Your Information"
-msgstr "更新您的資訊"
+msgstr ""
 
 #: templates/registration/user_profile.html:8
 #: templates/registration/user_signup.html:17
 msgid "Street Address"
-msgstr "街道地址"
+msgstr ""
 
 #: templates/registration/user_profile.html:11
 #: templates/registration/user_signup.html:20
 msgid "Other Address Information"
-msgstr "其他地址資訊"
+msgstr ""
 
 #: templates/registration/user_profile.html:14
 #: templates/registration/user_signup.html:23
 msgid "City"
-msgstr "城市"
+msgstr ""
 
 #: templates/registration/user_profile.html:17
 #: templates/registration/user_signup.html:26
 msgid "State"
-msgstr "州"
+msgstr ""
 
 #: templates/registration/user_profile.html:20
 #: templates/registration/user_signup.html:29
 msgid "Zip Code"
-msgstr "郵遞區號"
+msgstr ""
 
 #: templates/registration/user_profile.html:25
 msgid "Update"
-msgstr "更新"
+msgstr ""
 
 #: templates/registration/user_signup.html:11
 msgid "Email address (this will be your username)"
-msgstr "電子郵件位址（這將成為您的使用者名）"
+msgstr ""
 
 #: templates/registration/user_signup.html:14
 msgid "Password (more than 8 characters long, please)"
-msgstr "密碼（長度應超過 8 字元）"
+msgstr ""
 
 #: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
-msgstr "需要幫助嗎？<a href=\"mailto:help@hazardready.org\">寫信給我們。</a>"
+msgstr ""
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
-msgstr "免費！"
+msgstr ""
 
 #: templatetags/show_cost.py:13 templatetags/show_cost.py:23
 #: templatetags/show_cost_header.py:13
 msgid "Unknown"
-msgstr "未知"
+msgstr ""
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr "立即開始——完全免費！"
+msgstr ""
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
-msgstr "後續步驟"
+msgstr ""
 
 #: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
 msgid "Keep Going"
-msgstr "繼續加油"
+msgstr ""
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
-msgstr "該電子郵件位址已被使用。請嘗試登入。"
+msgstr ""
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr "哎唷，我們不確定發生了什麼。請再試一次。"
+msgstr ""
 
 #: views.py:91
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
-msgstr "感謝註冊！我們將與您聯絡並提供相關新聞和資訊。您可以隨時回來更新地址。"
+msgstr ""
 
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
-msgstr "感謝您提供最新資訊！"
+msgstr ""

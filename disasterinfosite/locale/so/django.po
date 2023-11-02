@@ -1,0 +1,669 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: seattle-ready\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-21 20:57+0000\n"
+"PO-Revision-Date: 2023-11-02 16:50\n"
+"Last-Translator: \n"
+"Language-Team: Somali\n"
+"Language: so_SO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: seattle-ready\n"
+"X-Crowdin-Project-ID: 525328\n"
+"X-Crowdin-Language: so\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 37\n"
+
+#: settings.py:100
+msgid "Arabic"
+msgstr "Carabig"
+
+#: settings.py:101
+msgid "Chinese"
+msgstr "Af Shiine"
+
+#: settings.py:102
+msgid "English"
+msgstr "Ingiriisi"
+
+#: settings.py:103
+msgid "Korean"
+msgstr "Kuuriyaan"
+
+#: settings.py:104
+msgid "Russian"
+msgstr "Ruush"
+
+#: settings.py:105
+msgid "Somali"
+msgstr "Soomaali"
+
+#: settings.py:106
+msgid "Spanish"
+msgstr "Isbaanish"
+
+#: settings.py:107
+msgid "Vietnamese"
+msgstr "Fiidnaamiis"
+
+#: templates/about.html:19
+msgid "The Hazard Ready Team"
+msgstr "Kooxda Khatarta Diyaarka ah"
+
+#: templates/about.html:29
+msgid "Carson has a B.Sc. and M.Sc. in Geology from Western Washington University and the University of Montana. She is now working on her PhD at Boise State University where she studies how to best communicate natural hazard risk information to broad audiences. She writes the content and processes the data for each HazardReady site."
+msgstr "Carson waxa ay ka haysataa B.Sc. iyo M.Sc oo Cilmiga Dhulka ah Jaamacada Galbeedka Washington iyo Jaamacadda Montana. Hadda waxay ka shaqaynaysaa PhD-geeda ee Boise State University halkaasoo ay barato sida ugu wanaagsan ee looga wada xidhiidho macluumaadka khatarta halista dabiiciga ah si dad badan loo baraarujiyo. Waxay u qortaa macluumaad oo hirgelisaa xogta bog kasta oo HazardReady ah."
+
+#: templates/about.html:46
+msgid "Rebecca Bendick has a Ph.D. in geophysics from the University of Colorado. Her research on tectonics and earthquake mechanics led to an interest in how human communities are affected by natural disasters, and inspires her ongoing efforts to help people better understand and prepare for them. She writes and lectures on the ethics of science communication as well as on her basic geophysical research."
+msgstr "Rebecca Bendick waxay ka haysataa Ph.D. fisigiska dhulka Jaamcadda Colorado. Cilmi baadhideeda ku saabsan qaab dhismeedka oogada dhulka iyo qaabka dhul gariirka ee keentay xiisaha sida bulshooyinka aadamaha ay u saamayso masiibooyinka dabiiciga ah, oo waxya dhiirigelisaa dedaaladeeda joogta ah si dadka looga caawiyo inay si wanaagsan u fahmaan oo u diyaar garoobaan iyaga, Waxya qortaa khudbadaha anshaxa wada xidhiidhka sayniska siiba ku sabasan cilmi baadhideeda aasaasiga ah ee fisigiska dhulka."
+
+#: templates/about.html:62
+msgid "Grant Kier has a M.Sc. in geology from the University of Colorado. He is broadly interested in community resilience in the context of manmade and natural changes. He also has a background in business practices and currently works on economic development, fostering small and startup companies in western Montana."
+msgstr "Grant Kier waxa uu ka haystaa M.Sc cilmiga dhulka Jaamacadda Colorado. Si wayn waxa uu u xiiseeyaa adkaysiga aadamaha macnaha guud mark ala eego isbeddelada aadamahu keeno iyokuwa dabiiciga ah. Sidoo kale waxa leeyahay taariikh hore oo dhanka dhaqamada ganacsiga ah oo hadda waxa uu ka shaqeeyaa horumarinta dhaqaalaha, kobcinta shirkadaha ganacsiga yaryar iyo bilowga ah ah gudaha Galbeedka Montana."
+
+#: templates/about.html:69
+msgid "The Hazard Ready Project"
+msgstr "Mashruuca Khatarta Diyaarka ah"
+
+#: templates/about.html:72
+msgid "Hazard Ready homepage"
+msgstr "Bogga internatka Khatarta Diyaarka ah"
+
+#: templates/about.html:82
+#, python-format
+msgid "%(title)s is designed to help educate and prepare people for disasters that occur in their area. Disasters don’t strike locations equally so we found it important to give location specific information in order to properly prepare. %(title)s organizes current information and packages it in a way that makes it accessible for any %(area_name)s resident."
+msgstr "%(title)s waxaa loogu talo galay in la caawiyo wax barida iyo u diyaarinta dadka masiibada ka dhacda aagooda, Masiibooyinku kuma soo dha aan meelaha si isku mid ah markaas waxay nala noqotay muhiim inaanu siino goobta macluumaad gaar ah si qaab sax ah loogu diyaar garoobo. %(title)s waxa abaabushaa macluumaadka hadda iyo xidhmooyinka qaab ay ku heli karaan %(area_name)s qof kasta oo degen."
+
+#: templates/about.html:85
+#, python-format
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original data sources. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "Boggan wax auu isticmaala xogta khatarta halista ah ee ugu dambaysay ee %(area_name)s. Isticmaalaha boggan waxa uu ka masuul yahay xaqiijinta macluumaad kasta oo gaa ah oo wata ilaha asalka ah ee xogta. In kastoo xogtan ay ka dhigan tahay khatar qiyaasadii hadda ugu wanagasanayd, maaha saadaasha dhacdooyinka mustaqbalka. Faahfaahinta khatarta iyo sida loogu diyaar garoobo khatarahan waxay ku salaysan yihiin macluumaadka ugu wanaagsan ee ka soo baxay Laan qayrta Cas ee Maraykanka iyo Wakaalada Maamulka Gurmadka Federaalka."
+
+#: templates/about.html:89
+msgid "build/flowchart.jpg"
+msgstr "build/flowchart.jpg"
+
+#: templates/about.html:92
+msgid "How we build Hazard Ready Sites: 1. Gather data. Locate the most relevant and up-to-date data on natural hazards for your region from trusted sources like FEMA, NOAA, and the USGS. 2. Quality Check. Work with local partners (community groups & emergency managers) to ensure the data and infomration are accurate. 3. Process data. Make the data compatible with Hazard Ready software. 4. Build content. Write the webpage text, gather images and videos, locate local resources for each hazard and region. 5. Feedback and focus groups. Discuss content and designs to ensure the information fits each community's needs. 6. Revise, revise, revise and launch site!"
+msgstr "Sida aan u dhisno Baraha khadka ee Hazard Ready: 1. Xog ururin. Soo hel xogta ugu muhiimsan uguna dambeysay ee khataraha dabiiciga ah ee gobolkaaga ee ka imanaya ilo lagu kalsoon yahay sida FEMA, NOAA, iyo USGS. 2. Hubinta Tayada. La shaqee shabakadda maxaligaa (kooxaha bulshada & maareeyeyaasha xaaladaha degdegga ah) si loo hubiyo in xogta iyo macluumaadka ay yihiin kuwo sax ah. 3. Hirgeli xogta. Ka dhig xogta mid ku habboon software-ka Hazard Ready. 4. Dhis macluumaadka wargelinta. Qor qoraalka bogga, ururi sawirro iyo fiidiyowyo, hel ilaha deegaanka ee khatar kasta iyo gobol kasta. 5. Jawaab-celinta iyo kooxaha diiradda. Kala hadal macluumaadka iyo naqshadaynta si loo hubiyo in macluumaadku ku habboon yahay baahiyaha bulsho kasta. 6. Dib u eeg, dib u eeg, dib u eeg oo soo daabac bar-khadka!"
+
+#: templates/about.html:100
+#, python-format
+msgid "Data used for %(title)s is available for download <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">here</a>."
+msgstr "Xogta la isticmaalo %(title)s waxa laga soo dejin karaa <a href=\"%(download)s\" target=\"_blank\" rel=\"noopener\">halkan</a>."
+
+#: templates/data.html:17
+msgid "Data overview images for Seattle and King County Ready"
+msgstr "Sawrada guud marka xogta ee Seattle iyo Degmadda King ee diyaarka ah"
+
+#: templates/data.html:23
+msgid "A map of King County, Washington, indicating hazard intensity"
+msgstr "Khariidada Degmadda King, Washington, ee sheegaysa xooganaanta khatarta"
+
+#: templates/data.html:30
+msgid "Data sources for Seattle and King County Ready"
+msgstr "Ilaha xogta ee Seattle iyo Degmadda King ee diyaarka ah"
+
+#: templates/data.html:33
+msgid "Earthquake"
+msgstr "Dhulgariirka"
+
+#: templates/data.html:34
+msgid "M6.8 2001 Nisqually Earthquake Shaking"
+msgstr "M6.8 2001 Nisqually Dhul gariirka Ruxmaya"
+
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
+msgid "Accessed"
+msgstr "La soo galay"
+
+#: templates/data.html:37 templates/data.html:41 templates/data.html:45
+#: templates/data.html:49 templates/data.html:53 templates/data.html:57
+#: templates/data.html:63 templates/data.html:70 templates/data.html:73
+#: templates/data.html:77 templates/data.html:80 templates/data.html:87
+#: templates/data.html:91 templates/data.html:103 templates/data.html:107
+msgid "June"
+msgstr "Juune"
+
+#: templates/data.html:39
+msgid "Seattle Fault Earthquake Scenario"
+msgstr "Muuqaalka Dhulgariirka Seattle"
+
+#: templates/data.html:43
+msgid "Cascadia Shaking Scenario"
+msgstr "Muuqaal Dhulgariirka Cascadia"
+
+#: templates/data.html:47
+msgid "Cascadia Displaced Households"
+msgstr "Qoysaska Barakacay ee Cascadia"
+
+#: templates/data.html:51
+msgid "Liquefaction"
+msgstr "Samaysanka dareera gaas"
+
+#: templates/data.html:55
+msgid "Tsunami"
+msgstr "Sunaami"
+
+#: templates/data.html:61
+msgid "Volcano"
+msgstr "Folkaano"
+
+#: templates/data.html:67
+msgid "Landslide"
+msgstr "Dhul go'a"
+
+#: templates/data.html:68
+msgid "Historical Landslides"
+msgstr "Dhul go'a taariikhiga ah"
+
+#: templates/data.html:75
+msgid "Steep Slope Potential"
+msgstr "Tiirada Janjeedha ee Suuragalka ah"
+
+#: templates/data.html:84
+msgid "Flood"
+msgstr "Daadka"
+
+#: templates/data.html:85
+msgid "Flood Hazard Zones"
+msgstr "Aagaga Khatarta Daadka"
+
+#: templates/data.html:89
+msgid "Channel Migration Zones"
+msgstr "Kanaalada Socdaalka Kanaalka"
+
+#: templates/data.html:93
+msgid "Dam Inundation Maps"
+msgstr "Khariiradaha Fatahaada Daadka"
+
+#: templates/data.html:100
+msgid "Wildfire"
+msgstr "Dabka duurka ka kaca"
+
+#: templates/data.html:101
+msgid "Wildland Urban Interface (WUI) Zones"
+msgstr "Aagaga Wildland Urban Interface (WUI)"
+
+#: templates/data.html:105
+msgid "Fire Hazard Potential"
+msgstr "Suuragal-ahaanta Khatarta Dabka"
+
+#: templates/data.html:111
+msgid "Summer Weather"
+msgstr "Cimilada Xagaaga"
+
+#: templates/data.html:117
+msgid "Questions or concerns about the data? Contact:"
+msgstr "Su'aalaha ama walaacyada ku saabsan xogta? La xidhiidh:"
+
+#: templates/data.html:120
+msgid "flood"
+msgstr "daadka"
+
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
+msgid "earthquake"
+msgstr "dhul gariirka"
+
+#: templates/data.html:123 templates/data.html:132
+msgid "landslide"
+msgstr "dhul go'a"
+
+#: templates/data.html:123
+msgid "tsunami"
+msgstr "sunaami"
+
+#: templates/data.html:123 templates/data.html:126 templates/data.html:132
+msgid "volcano"
+msgstr "folkaano"
+
+#: templates/data.html:129
+msgid "wildfire"
+msgstr "dadka duurka ka kacay"
+
+#: templates/found_content.html:11
+msgid "What to expect for"
+msgstr "Waxa la filanayo"
+
+#: templates/found_content.html:17
+msgid "try&nbsp;a&nbsp;new&nbsp;address"
+msgstr "isku day&nbsp;a&nbsp;cinwaan&nbsp;cusub"
+
+#: templates/found_content.html:36
+msgid "Prepare!"
+msgstr "Diyaar garow!"
+
+#: templates/found_content.html:49
+#, python-format
+msgid "An intensity meter at %(percentage)s%%"
+msgstr "qiyaasta mitirka xooganaanta %(percentage)s%%"
+
+#: templates/found_content.html:57
+msgid "Light shaking&nbsp;&mdash; No damage"
+msgstr "Gariir khafiif ah&nbsp;&mdash; Waxyeelo ma jirto"
+
+#: templates/found_content.html:59
+msgid "Very Low Hazard"
+msgstr "Khatar aad u hoosaysa"
+
+#: templates/found_content.html:64
+msgid "Violent shaking&nbsp;&mdash; Heavy damage"
+msgstr "Gariir xoogan&nbsp;&mdash; Waxyeelo culus"
+
+#: templates/found_content.html:66
+msgid "Very High Hazard"
+msgstr "Khatar aad u Saraysa"
+
+#: templates/geek_box.html:7
+msgid "Who made this?"
+msgstr "Yaa sameeyay midaan?"
+
+#: templates/geek_box.html:11
+#, python-format
+msgid "\n"
+"                Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page or <a href=\"mailto:%(email)s\">email the Hazard Ready creators</a> for more information.\n"
+"            "
+msgstr "                Ma qabtaa su'aalo? Arag <a href=\"%(about_url)s\" target=\"_blank\">Ku saabsan</a> bogga ama <a href=\"mailto:%(email)s\">iimaylka sameeyayasha Khatarta Diyaarka ah</a> macluumaadka dheeraadka ah.\n"
+"            \n"
+
+#: templates/geek_box.html:15
+#, python-format
+msgid "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</a> page for more information.\""
+msgstr "Ma qabtaa su'aalo? Arag <a href=\"%(about_url)s\" target=\"_blank\"<a href=\"%(about_url)s\" target=\"_blank\">Ku sabasan</a> bogga macluumaadka dheeraadka ah.\""
+
+#: templates/head-meta.html:12 templates/header.html:25
+msgid "Enter your location for a personalized report on your risks and how to prepare."
+msgstr "U geli goobtaada wargelin shaqsiyeysan ee halisahaaga iyo sida loo diyaargaroobo."
+
+#: templates/header.html:23
+msgid "Find Me"
+msgstr "Iga Hel"
+
+#: templates/header.html:27
+msgid "Enter an address."
+msgstr "Geli cinwaanka."
+
+#: templates/header.html:38
+msgid "We had a problem finding that location."
+msgstr "Dhib ayaa naga haysata helida goobtaas."
+
+#: templates/header.html:41
+msgid "Please allow your web browser to access your location in order to use Find Me."
+msgstr "Fadlan oggolow barowsarkaaga shabakada inuu ogaado goobtaada si uu u isticmaalo Fine Me (i hel)."
+
+#: templates/header_links.html:4
+msgid "About"
+msgstr "Ku saabsan"
+
+#: templates/header_links.html:7
+msgid "Data"
+msgstr "Xogta"
+
+#: templates/index.html:21
+msgid "Natural disasters can strike at any time."
+msgstr "Masiibooyinka dabiiciga waxay soo dhici karaan wakhti kasta."
+
+#: templates/index.html:23
+msgid "Get a personalized report"
+msgstr "Hel warbixinta la gaar yeelay"
+
+#: templates/index.html:24
+msgid "Give a location by typing in the box at the top of the page, clicking on the map, or clicking 'find me'. You'll get a personalized report on your natural hazard risks and steps you can take to prepare."
+msgstr "Sii booska adiga oo ku qorayo sanduuqa xaga sare ee bogga,,adiga oo riixaya khariidada, ama riixayo 'find me'. Waxaad heleysaa wargelin la gaareeyay ee khataraha halista dabiiciga iyo tallaabooyinka aad qaadi kartid si aad u diyaar garowdid."
+
+#: templates/index.html:36
+msgid "What are my risks?"
+msgstr "Waa maxay halisaheyga?"
+
+#: templates/index.html:37
+msgid "What to Expect"
+msgstr "Waxa La filanayo"
+
+#: templates/index.html:38
+#, python-format
+msgid " %(site_title)s gives you an idea of which\n"
+"              natural disasters you might experience in the future based on a\n"
+"              location in %(area_name)s. "
+msgstr " %(site_title)s waxay ku siisaa fikrada ka ay tahay\n"
+"              masiibooyinka dabiiciga ah ee aad la kulmi karto mustaqbalka iyadoo ku salaysan\n"
+"              goobta gudaha %(area_name)s. "
+
+#: templates/index.html:41
+msgid "How to Prepare"
+msgstr "Sida loo Diyaargaroobo"
+
+#: templates/index.html:42
+msgid "You have the power to make a difference. Find out how you can protect your loved ones and home before the next disaster hits."
+msgstr "Waxaad leedahay awood isbadel lagu sameynayo. Ogow sida aad u illaalin kartid dadka aad jaceshahay iyo guriga ka hor inta aysan masiibada ku xigta dhufan."
+
+#: templates/index.html:43
+msgid "In Recent History"
+msgstr "Taariiqda Dhawaan lasoo dhaafay"
+
+#: templates/index.html:44
+#, python-format
+msgid " Find out which disasters have struck %(settings.area_name)s in the past, what impact they had, and where\n"
+"              they happened. "
+msgstr " Soo ogow masiibada soo dhacday %(settings.area_name)s xiligii hore, waxay thay saamaynta ay lahaayeen, iyo halka\n"
+"              ay ka dhaceen. "
+
+#: templates/index.html:50
+msgid "About the Data"
+msgstr "Ku saabsan Xogta"
+
+#: templates/index.html:52
+#, python-format
+msgid "This site uses the most up-to-date hazard risk data available for %(area_name)s. The user of this site is responsible for verifying any particular information with the original <a href=\"%(data_source_link)s\" target=\"_blank\">data sources</a>. Although these data represent the best current assessment of hazards, they are not predictive of future events. The descriptions of risk and how to prepare for those risks are based on best information from the American Red Cross and the Federal Emergency Management Agency."
+msgstr "Boggan waxa uu isticmaala xogta khatarta halista ugu dambaysay ee loo heli karo %(area_name)s. Isticmaalaha boggan waxa uu ka masuul yahay xaqiijinta macluumaadka asalka ah ee wata asalka <a href=\"%(data_source_link)s\" target=\"_blank\">ilaha xogta</a>. In kastoo xogtan ay ka dhigan tahay khatar qiyaasadii hadda ugu wanagasanayd, maaha saadaasha dhacdooyinka mustaqbalka. Faahfaahinta khatarta iyo sida loogu diyaar garoobo khatarahan waxay ku salaysan yihiin macluumaadka ugu wanaagsan ee ka soo baxay Laan qayrta Cas ee Maraykanka iyo Wakaalada Maamulka Gurmadka Federaalka."
+
+#: templates/index.html:70
+msgid "Getting results for your location..."
+msgstr "Helida natiijada goobtaada..."
+
+#: templates/language_selector.html:27
+msgid "Language"
+msgstr "Ciwaankaaga, caasimadaada"
+
+#: templates/no_content_found.html:6
+msgid "No information available for"
+msgstr "Ma jiro macluumaad loo heli karo"
+
+#: templates/no_content_found.html:9
+msgid "Wrong address? Start over"
+msgstr "Cinwaanka khaladka ah? Dib u soo bilow"
+
+#: templates/no_content_found.html:21
+msgid "No information available."
+msgstr "Ma jiro warbixin la heli karo."
+
+#: templates/no_content_found.html:23
+#, python-format
+msgid "It looks like your location is outside of %(area_name)s."
+msgstr "Waxay u eeg tahay in goobtaadu ay ka baxsan tahay %(area_name)s."
+
+#: templates/no_content_found.html:24
+msgid "While we value and promote resilience everywhere, the data that powers this site isn't available for other places yet."
+msgstr "Iyada oo aan qiimeyno oo aan sare u qaadno adkeysiga meel walba, xogta awooda siiso boggaan looma heli karo meelaha kale weli."
+
+#: templates/prepare.html:21
+msgid "Take the first step toward getting prepared"
+msgstr "Qaad tallaabada koowaad dhanka diyaar garowga"
+
+#: templates/prepare.html:24
+msgid "There are a few simple steps we can take to make our families and community more prepared for emergencies. It doesn't have to be expensive or difficult. You may have already done some of it! You can use the checklist at the bottom of this page to keep track of how much you've done."
+msgstr "Waxaa jira dhowr tallaabo oo fudud oo aynu qaadi karno si aynu uga dhigno qoysaskeena iyo bulshadeena kuwa aad ugu diyaarsan xaaladaha gurmadka. Maaha nay qaali ahaato ama adkaato. Waxaad hadda ka hor samaysay qayb ka mid ah! Waxaad isticmaali kartaa liiska magacyada xaga hoose ee bogga si aad u raad raacdo inta aad qabatay intay leegt ahay."
+
+#: templates/prepare.html:89
+msgid "This activity"
+msgstr "Hawshan"
+
+#: templates/prepare.html:90
+msgid "Print Checklist"
+msgstr "Daabac Liiska magacyada"
+
+#: templates/prepare.html:94
+msgid "Completed?"
+msgstr "La dhammaystiray?"
+
+#: templates/prepare.html:95
+msgid "Activity"
+msgstr "Hawsha"
+
+#: templates/prepare.html:96 templates/prepare.html:112
+msgid "reduces emotional and physical harm"
+msgstr "waxay yaraysaa waxyeelada dareenka iyo jidhka"
+
+#: templates/prepare.html:98 templates/prepare.html:114
+msgid "is useful for other situations"
+msgstr "waxay faa'iido u leedahay xaaladaha kale"
+
+#: templates/prepare.html:100 templates/prepare.html:116
+msgid "helps protect property"
+msgstr "waxay ka caawisaa u ilaalinta si sax ah"
+
+#: templates/prepare.html:102
+msgid "costs"
+msgstr "qiimayaasha"
+
+#: templates/prepare.html:104
+msgid "Resources"
+msgstr "Ilaha"
+
+#: templates/prepare.html:142
+msgid "Key:"
+msgstr "Muhiim:"
+
+#: templates/prepare.html:151
+msgid "or more"
+msgstr "ama wax ka badan"
+
+#: templates/registration/login.html:3
+#: templates/registration/user_interactions.html:3
+msgid "Log In"
+msgstr "Gal"
+
+#: templates/registration/login.html:4
+#: templates/registration/user_interactions.html:5
+#: templates/registration/user_profile.html:26
+#: templates/registration/user_signup.html:4
+msgid "Cancel"
+msgstr "Jooji"
+
+#: templates/registration/login.html:8
+#: templates/registration/password_change_form.html:16
+msgid "Required."
+msgstr "Loo baahanyahay."
+
+#: templates/registration/login.html:12
+msgid "Username (your email address)"
+msgstr "Magaca isticmaalaha (ciwaanka i-meelkaaga)"
+
+#: templates/registration/login.html:15
+msgid "Password"
+msgstr "Furaha"
+
+#: templates/registration/login.html:26
+#, python-format
+msgid "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
+msgstr "Miyaad ilowday fure-sireedkaaga? Dib uga samayso <a href=\"%(password_url)s\">halkan</a>."
+
+#: templates/registration/password_change_done.html:13
+msgid "Your password was changed."
+msgstr " Fure-sireedkaaga waa la beddelay."
+
+#: templates/registration/password_change_form.html:15
+msgid "Please enter your old password, for security’s sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Fadlan geli fure-sireedkaagii hore, ammaanka awgiis, oo ka dib geli erayayadaada cusub ee sirta ah labba jeer markaas waxaanu kuu xaqiijin karnaa inaad sax ugu qortay."
+
+#: templates/registration/password_change_form.html:21
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Fadlan sax khaladka hoose."
+msgstr[1] "Fadlan sax khaladka hoose."
+
+#: templates/registration/password_change_form.html:47
+#: templates/registration/password_reset_confirm.html:33
+#: templates/registration/user_profile.html:28
+msgid "Change my password"
+msgstr "Beddel fure-sireedkeyga"
+
+#: templates/registration/password_reset_complete.html:13
+msgid "Your password has been set."
+msgstr "Fure-sireedkaaga waa la sameeyay."
+
+#: templates/registration/password_reset_confirm.html:15
+msgid "Enter a new password"
+msgstr "Geli fure-sireed cusub"
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Fadlan geli erayadaada sirita ah ee cusub labba jeer markaas waxaanu xaqiijin karnaa inaad si sax ah ugu qortay."
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "New password:"
+msgstr "Fure-sireedka cusub:"
+
+#: templates/registration/password_reset_confirm.html:29
+msgid "Confirm password:"
+msgstr "Xaqiiji fure-sireedka:"
+
+#: templates/registration/password_reset_confirm.html:40
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr "Linkiga dib u samaynta fure-sireedka sax muu ahayn, suuragal ahaan sababtoo ah hadda ka hor ayaa la isticmaalay. Fadlan codso dib u samaynta fure-sireed cusub."
+
+#: templates/registration/password_reset_done.html:13
+msgid "Please check your email."
+msgstr "Fadlan fiiri iimaylkaaga."
+
+#: templates/registration/password_reset_done.html:14
+msgid "We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly."
+msgstr "Waxaanu iimayl kuugu soo dirnay tilmaamaha samaynta fure-sireedkaaga, haddii kootadaadu ka jirto iimayka aad gelisay. Waa inaad iyaga heshaa dhawaan."
+
+#: templates/registration/password_reset_done.html:16
+msgid "If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder."
+msgstr "Haddii aanad helin iimayl, fadlan hubso inaad gelisay cinwaanka aad ku diiwaan gelisay, oo ka eeg faylkaaga isbaamka."
+
+#: templates/registration/password_reset_form.html:14
+msgid "Reset your password"
+msgstr "Dib u samee fure-sireedkaaga"
+
+#: templates/registration/password_reset_form.html:15
+msgid "Forgotten your password? Enter your email address below, and we’ll email instructions for setting a new one."
+msgstr "Ma ilowdayfure-sireedkaaga? Geli cinwaankaaga iimaylka hoos, oo waxaanu iimayl kuugu soo diri doonaa tilmaamaha samaynta mid cusub."
+
+#: templates/registration/password_reset_form.html:20
+msgid "Email address:"
+msgstr "Cinwaanka iimaylka:"
+
+#: templates/registration/password_reset_form.html:24
+msgid "Reset my password"
+msgstr "Dib u samee fure-sireedkeyga"
+
+#: templates/registration/user_interactions.html:4
+#: templates/registration/user_signup.html:3
+msgid "Sign Up"
+msgstr "Iska diiwaangeli"
+
+#: templates/registration/user_interactions.html:6
+msgid "Log Out"
+msgstr "Ka Bax"
+
+#: templates/registration/user_interactions.html:7
+msgid "Update My Info"
+msgstr "Cusbooneysii Macluumaadkeyga"
+
+#: templates/registration/user_interactions.html:23
+#, python-format
+msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
+msgstr "Dib u soo dhawow <span class=\"username\">%(username)s</span>!"
+
+#: templates/registration/user_interactions.html:25
+msgid "We're logging you in. Just a moment..."
+msgstr "Waan ku gelineynaa. Wax yar sug..."
+
+#: templates/registration/user_interactions.html:33
+msgid "Welcome back!"
+msgstr "Soo dhawaasho wanaagsan!"
+
+#: templates/registration/user_interactions.html:35
+#, python-format
+msgid "If your username isn't <span class=\"username\">%(username)s</span>, you might want to log out."
+msgstr "Haddii magacaaga isticmaalahu aanu ahayn <span class=\"username\">%(username)s</span>, waxaad dooni kartaa inaad ka baxdo."
+
+#: templates/registration/user_interactions.html:43
+msgid "Receive Important Updates"
+msgstr "Hel Waxyaabihii muhiimka ahaa ee u dambeeyay"
+
+#: templates/registration/user_interactions.html:45
+msgid "Keep your family, friends, and neighbors safe. Sign up to get email updates about seasonal hazards like fires, floods, and snow storms. If a natural disaster happens in your area, we’ll send you updates so you can stay informed. We’ll ask for your email address and physical address. Your information will be secure, and we won’t contact you for any other reason."
+msgstr "Badbaado ka dhig qoyskaaga, saaxiibada, iyo jaarkaaga. Samayso kooto si aad u hesho waxyaabihii u dambeeyay iimayl ahaan ee ku saabsan khataraha xiliyada, sida dabka, daadka, iyo duufaanada barafka wata. Haddii masiibooyinku ka dhacaan aagaaga, waxaanu kuu soo diri doonaa wararkii u dambeeyay si aad uga warhayso. Waxaanu ku waydiin doonaa cinwaankaaga iimaylka iyo cinwaanka gurigaaga. Macluumaadkaagu waxay ahaan doonaan ammaan, oo kuulama soo xidhiidhi doono sabab kasta oo kale."
+
+#: templates/registration/user_profile.html:4
+msgid "Update Your Information"
+msgstr "Cusboonaysii macluumaadkaaga"
+
+#: templates/registration/user_profile.html:8
+#: templates/registration/user_signup.html:17
+msgid "Street Address"
+msgstr "Ciwaanka Wadada"
+
+#: templates/registration/user_profile.html:11
+#: templates/registration/user_signup.html:20
+msgid "Other Address Information"
+msgstr "Warbixinta Ciwaanka Kale"
+
+#: templates/registration/user_profile.html:14
+#: templates/registration/user_signup.html:23
+msgid "City"
+msgstr "Magaalada"
+
+#: templates/registration/user_profile.html:17
+#: templates/registration/user_signup.html:26
+msgid "State"
+msgstr "Gobolka"
+
+#: templates/registration/user_profile.html:20
+#: templates/registration/user_signup.html:29
+msgid "Zip Code"
+msgstr "Lambarka Boostada (Zip Code)"
+
+#: templates/registration/user_profile.html:25
+msgid "Update"
+msgstr "Cusbooneysii"
+
+#: templates/registration/user_signup.html:11
+msgid "Email address (this will be your username)"
+msgstr "Ciwaanka i-meelka(tani waxay noqoneysaa magaca isticmaalahaaga)"
+
+#: templates/registration/user_signup.html:14
+msgid "Password (more than 8 characters long, please)"
+msgstr "Furaha (ka badan 8 xarfood dhirir ah, fadlan)"
+
+#: templates/registration/user_signup.html:39
+msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
+msgstr "Ma u baahan tahay qayb caawimo ah? <a href=\"mailto:help@hazardready.org\">Iimayl noo soo dir.</a>"
+
+#: templatetags/show_cost.py:8
+msgid "Free!"
+msgstr "Bilaah!"
+
+#: templatetags/show_cost.py:13 templatetags/show_cost.py:23
+#: templatetags/show_cost_header.py:13
+msgid "Unknown"
+msgstr "Lama garanayo"
+
+#: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
+msgid "Get Started - It’s Free!"
+msgstr "Bilow - Waa Bilaash!"
+
+#: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
+msgid "Next Steps"
+msgstr "Tallaabooyinka Xiga"
+
+#: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
+msgid "Keep Going"
+msgstr "Sii wad"
+
+#: views.py:49
+msgid "That email address has already been used. Try logging in instead."
+msgstr "Cinwaanka iimaylka hadda ka hor ayaa la isticmaalay. Isku day inaad gasho taas beddelkeeda."
+
+#: views.py:57 views.py:74 views.py:85 views.py:112
+msgid "Whoops, we're not sure what happened there. Maybe you should try again."
+msgstr "Whoops, ma hubno waxa ka dhacay halkaas. Laga yaabo inaad isku daydo markale."
+
+#: views.py:91
+msgid "Thanks for signing up! We'll get ahold of you with relevant news and information. You can come back anytime to update your address."
+msgstr "Waad ku mahadsantahay iska diiwaangelintaada! Waan kula soo socodsiineynaa aqbaaraha la xiriiro iyo warbixinta. Xili walba ayaad soo laaban kartaa si aad u cusbooneysid ciwaankaaga."
+
+#: views.py:117
+msgid "Thanks for keeping us up to date!"
+msgstr "Waad ku mahadsantahay nasoo ogeysiintaada!"
+
