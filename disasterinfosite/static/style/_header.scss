@@ -93,8 +93,12 @@ header {
 .header__about--small {
   justify-content: flex-end;
   margin: 0;
-  margin-inline-end: 1rem;
+  margin-inline-end: 0.5rem;
   margin-inline-start: auto;
+
+  @include breakpoint(medium) {
+    margin-inline-end: 0;
+  }
 }
 
 .about__link {

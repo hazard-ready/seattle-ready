@@ -1,60 +1,59 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 16:55+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2023-11-03 21:22+0000\n"
+"PO-Revision-Date: 2023-11-02 16:50\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 "
+"&& n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 "
+"&& n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: seattle-ready\n"
+"X-Crowdin-Project-ID: 525328\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 37\n"
 
 #: settings.py:100
 msgid "Arabic"
-msgstr ""
+msgstr "Арабский"
 
 #: settings.py:101
 msgid "Chinese"
-msgstr ""
+msgstr "Китайский"
 
 #: settings.py:102
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: settings.py:103
 msgid "Korean"
-msgstr ""
+msgstr "Корейский"
 
 #: settings.py:104
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: settings.py:105
 msgid "Somali"
-msgstr ""
+msgstr "Сомалийский"
 
 #: settings.py:106
 msgid "Spanish"
-msgstr ""
+msgstr "Испанский"
 
 #: settings.py:107
 msgid "Vietnamese"
-msgstr ""
+msgstr "Вьетнамский"
 
 #: templates/about.html:19
 msgid "The Hazard Ready Team"
-msgstr ""
+msgstr "Команда Hazard Ready"
 
 #: templates/about.html:29
 msgid ""
@@ -64,6 +63,11 @@ msgid ""
 "information to broad audiences. She writes the content and processes the "
 "data for each HazardReady site."
 msgstr ""
+"Carson получила степень бакалавра и магистра геологических наук в Western "
+"Washington University и University of Montana и сейчас получает степень "
+"доктора наук в Boise State University. Она изучает эффективные способы "
+"оповещения населения о риске стихийных бедствий, создает содержание и "
+"подготавливает данные для каждого сайта HazardReady."
 
 #: templates/about.html:46
 msgid ""
@@ -74,6 +78,12 @@ msgid ""
 "writes and lectures on the ethics of science communication as well as on her "
 "basic geophysical research."
 msgstr ""
+"Rebecca Bendick получила степень доктора геофизических наук в  University of "
+"Colorado. Она изучала тектонику и механику землетрясений, после чего "
+"заинтересовалась темой влияния стихийных бедствий на сообщества. Предмет "
+"исследования вдохновляет ее на то, чтобы помогать людям узнавать о природных "
+"катаклизмах и готовиться к ним. Bendick — автор статей и лекций по "
+"геофизике, а также этике научной коммуникации."
 
 #: templates/about.html:62
 msgid ""
@@ -83,14 +93,19 @@ msgid ""
 "currently works on economic development, fostering small and startup "
 "companies in western Montana."
 msgstr ""
+"Grant Kier получил степень магистра геологических наук в University of "
+"Colorado. Он занимается развитием устойчивости сообществ в контексте "
+"природных и техногенных катаклизмов. Имеет опыт в сфере бизнес-процессов и "
+"сейчас работает специалистом по экономическому развитию региона западной "
+"Монтаны и поддержке стартапов и малых предприятий."
 
 #: templates/about.html:69
 msgid "The Hazard Ready Project"
-msgstr ""
+msgstr "Проект Hazard Ready"
 
 #: templates/about.html:72
 msgid "Hazard Ready homepage"
-msgstr ""
+msgstr "Главная страница Hazard Ready"
 
 #: templates/about.html:82
 #, python-format
@@ -101,6 +116,12 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
+"%(title)s помогает обучить людей и подготовить их к потенциальным бедствиям, "
+"которые могут случиться в их регионе. Бедствия развиваются по-разному в "
+"зависимости от места, поэтому важно предоставлять актуальную информацию для "
+"конкретных местоположений, чтобы люди могли соответственно подготовиться. "
+"%(title)s упорядочивает информацию так, чтобы она была доступна для любого "
+"жителя региона «%(area_name)s»."
 
 #: templates/about.html:85
 #, python-format
@@ -113,10 +134,18 @@ msgid ""
 "are based on best information from the American Red Cross and the Federal "
 "Emergency Management Agency."
 msgstr ""
+"На этом сайте предоставлены актуальные данные о риске стихийных бедствий, "
+"которые могут возникнуть в регионе «%(area_name)s». Пользователь сайта несет "
+"ответственность за сверку информации с первоначальными источниками данных. "
+"Хотя эти данные и являются наилучшей актуальной версией оценки стихийных "
+"бедствий, они не позволяют прогнозировать будущие события. Описания риска и "
+"подготовки к ним основаны на информации, полученной от Американского "
+"Красного Креста и Federal Emergency Management Agency (Федерального "
+"агентства по управлению в чрезвычайных ситуациях)."
 
 #: templates/about.html:89
 msgid "build/flowchart.jpg"
-msgstr ""
+msgstr "build/flowchart.jpg"
 
 #: templates/about.html:92
 msgid ""
@@ -130,6 +159,22 @@ msgid ""
 "focus groups. Discuss content and designs to ensure the information fits "
 "each community's needs. 6. Revise, revise, revise and launch site!"
 msgstr ""
+"Наполнение сайтов Hazard Ready проходит в несколько этапов. 1. Сбор данных. "
+"Мы получаем надежные и актуальные сведения о стихийных бедствиях в вашем "
+"регионе из проверенных источников, таких как Federal Emergency Management "
+"Agency (FEMA, Федеральное агентство по управлению в чрезвычайных ситуациях), "
+"National Oceanic and Atmospheric Administration (NOAA, Национальное "
+"управление океанических и атмосферных исследований) и United States "
+"Geological Survey (USGS, Геологи́ческая слу́жба США). 2. Проверка качества. Мы "
+"проверяем точность информации и данных через местных партнеров (группы "
+"активистов и координаторы действий в чрезвычайных ситуациях). 3. Обработка "
+"данных. Мы форматируем эти сведения для загрузки на сайты Hazard Ready. "
+"4. Создание содержания. Мы пишем текст для веб-страницы, подбираем "
+"изображения и видео, указываем местные источники для каждого стихийного "
+"бедствия и региона. 5. Обратная связь и фокус-группы. На этом этапе идет "
+"обсуждение содержания и дизайна — они должны отвечать потребностям каждого "
+"сообщества. 6. Проверка, повторная проверка и финальная проверка, и, "
+"наконец, публикация на сайте!"
 
 #: templates/about.html:100
 #, python-format
@@ -137,26 +182,32 @@ msgid ""
 "Data used for %(title)s is available for download <a href=\"%(download)s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
+"Данные, используемые для %(title)s, можно скачать <a href=\"%(download)s\" "
+"target=\"_blank\" rel=\"noopener\">здесь</a>."
 
 #: templates/data.html:17
 msgid "Data overview images for Seattle and King County Ready"
 msgstr ""
+"Изображения со сводными данными для сайта «Сиэтл и округ Кинг: готовность к "
+"бедствиям»"
 
 #: templates/data.html:23
 msgid "A map of King County, Washington, indicating hazard intensity"
 msgstr ""
+"Карта округа Кинг, штата Вашингтон, по зонам интенсивности стихийных бедствий"
 
 #: templates/data.html:30
 msgid "Data sources for Seattle and King County Ready"
 msgstr ""
+"Источники данных для сайта «Сиэтл и округ Кинг: готовность к бедствиям»"
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr ""
+msgstr "Землетрясение"
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr ""
+msgstr "Землетрясение магнитудой 6,8 в Нисквалли (2001 г.)"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -164,7 +215,7 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr ""
+msgstr "Доступ есть"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -172,140 +223,140 @@ msgstr ""
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
-msgstr ""
+msgstr "Сценарий землетрясения в области Сиэтлского разлома"
 
 #: templates/data.html:43
 msgid "Cascadia Shaking Scenario"
-msgstr ""
+msgstr "Сценарий землетрясения в зоне Каскадия"
 
 #: templates/data.html:47
 msgid "Cascadia Displaced Households"
-msgstr ""
+msgstr "Эвакуированные семьи в зоне Каскадия"
 
 #: templates/data.html:51
 msgid "Liquefaction"
-msgstr ""
+msgstr "Разжижение грунта"
 
 #: templates/data.html:55
 msgid "Tsunami"
-msgstr ""
+msgstr "Цунами"
 
 #: templates/data.html:61
 msgid "Volcano"
-msgstr ""
+msgstr "Вулкан"
 
 #: templates/data.html:67
 msgid "Landslide"
-msgstr ""
+msgstr "Оползни"
 
 #: templates/data.html:68
 msgid "Historical Landslides"
-msgstr ""
+msgstr "Значительные оползни в прошлом"
 
 #: templates/data.html:75
 msgid "Steep Slope Potential"
-msgstr ""
+msgstr "Вероятность оползней на крутых склонах"
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr ""
+msgstr "Наводнение"
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
-msgstr ""
+msgstr "Зоны затопления"
 
 #: templates/data.html:89
 msgid "Channel Migration Zones"
-msgstr ""
+msgstr "Зоны изменения русла реки"
 
 #: templates/data.html:93
 msgid "Dam Inundation Maps"
-msgstr ""
+msgstr "Карты с зонами затопления при прорыве плотин"
 
 #: templates/data.html:100
 msgid "Wildfire"
-msgstr ""
+msgstr "Лесной пожар"
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr ""
+msgstr "Области раздела дикой природы и города (WUI)"
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
-msgstr ""
+msgstr "Вероятность пожара"
 
 #: templates/data.html:111
 msgid "Summer Weather"
-msgstr ""
+msgstr "Летняя погода"
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr ""
+msgstr "У вас есть вопросы о данных или уточнения? Свяжитесь с нами:"
 
 #: templates/data.html:120
 msgid "flood"
-msgstr ""
+msgstr "Наводнение"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "earthquake"
-msgstr ""
+msgstr "землетрясение"
 
 #: templates/data.html:123 templates/data.html:132
 msgid "landslide"
-msgstr ""
+msgstr "оползень"
 
 #: templates/data.html:123
 msgid "tsunami"
-msgstr ""
+msgstr "цунами"
 
 #: templates/data.html:123 templates/data.html:126 templates/data.html:132
 msgid "volcano"
-msgstr ""
+msgstr "вулкан"
 
 #: templates/data.html:129
 msgid "wildfire"
-msgstr ""
+msgstr "лесной пожар"
 
 #: templates/found_content.html:11
 msgid "What to expect for"
-msgstr ""
+msgstr "Чего ожидать"
 
 #: templates/found_content.html:17
 msgid "try&nbsp;a&nbsp;new&nbsp;address"
-msgstr ""
+msgstr "Добавить новый адрес"
 
 #: templates/found_content.html:36
 msgid "Prepare!"
-msgstr ""
+msgstr "Будьте наготове!"
 
 #: templates/found_content.html:49
 #, python-format
 msgid "An intensity meter at %(percentage)s%%"
-msgstr ""
+msgstr "Шкала интенсивности: %(percentage)s%%"
 
 #: templates/found_content.html:57
 msgid "Light shaking&nbsp;&mdash; No damage"
-msgstr ""
+msgstr "Легкие толчки — разрушений нет"
 
 #: templates/found_content.html:59
 msgid "Very Low Hazard"
-msgstr ""
+msgstr "Очень низкий риск"
 
 #: templates/found_content.html:64
 msgid "Violent shaking&nbsp;&mdash; Heavy damage"
-msgstr ""
+msgstr "Опустошительные толчки — сильные разрушения"
 
 #: templates/found_content.html:66
 msgid "Very High Hazard"
-msgstr ""
+msgstr "Очень высокий риск"
 
 #: templates/geek_box.html:7
 msgid "Who made this?"
-msgstr ""
+msgstr "Кто это сделал?"
 
 #: templates/geek_box.html:11
 #, python-format
@@ -316,6 +367,11 @@ msgid ""
 "Hazard Ready creators</a> for more information.\n"
 "            "
 msgstr ""
+"\n"
+"                У вас есть вопросы? Перейдите на страницу <a "
+"href=\"%(about_url)s\" target=\"_blank\">О нас</a> или <a href=\"mailto:"
+"%(email)s\">напишите авторам проекта Hazard Ready</a>.\n"
+"            "
 
 #: templates/geek_box.html:15
 #, python-format
@@ -323,46 +379,52 @@ msgid ""
 "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
 "a> page for more information.\""
 msgstr ""
+"У вас есть вопросы? Узнайте больше о проекте на странице <a "
+"href=\"%(about_url)s\" target=\"_blank\">О нас</a>."
 
 #: templates/head-meta.html:12 templates/header.html:25
 msgid ""
 "Enter your location for a personalized report on your risks and how to "
 "prepare."
 msgstr ""
+"Введите свое местоположение, чтобы получить индивидуальный отчет о рисках в "
+"вашем регионе и о том, как подготовиться."
 
 #: templates/header.html:23
 msgid "Find Me"
-msgstr ""
+msgstr "Найти меня"
 
 #: templates/header.html:27
 msgid "Enter an address."
-msgstr ""
+msgstr "Введите адрес."
 
 #: templates/header.html:39
 msgid "We had a problem finding that location."
-msgstr ""
+msgstr "Мы не смогли найти ваше местоположение."
 
 #: templates/header.html:42
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
 msgstr ""
+"Чтобы использовать функцию Find Me (Найти меня), откройте браузеру доступ к "
+"вашему местоположению."
 
 #: templates/header_links.html:4
 msgid "About"
-msgstr ""
+msgstr "О нас"
 
 #: templates/header_links.html:7
 msgid "Data"
-msgstr ""
+msgstr "Данные"
 
 #: templates/index.html:21
 msgid "Natural disasters can strike at any time."
-msgstr ""
+msgstr "Стихийное бедствие может произойти в любое время."
 
 #: templates/index.html:23
 msgid "Get a personalized report"
-msgstr ""
+msgstr "Получите индивидуальный отчет"
 
 #: templates/index.html:24
 msgid ""
@@ -370,14 +432,17 @@ msgid ""
 "map, or clicking 'find me'. You'll get a personalized report on your natural "
 "hazard risks and steps you can take to prepare."
 msgstr ""
+"Укажите свое местоположение в поле вверху страницы, нажав на карту или "
+"кнопку Find me (Найти меня). Вы получите индивидуальный отчет о рисках, "
+"связанных со стихийными бедствиями, а также о том, как подготовиться."
 
 #: templates/index.html:36
 msgid "What are my risks?"
-msgstr ""
+msgstr "Каковы мои риски?"
 
 #: templates/index.html:37
 msgid "What to Expect"
-msgstr ""
+msgstr "Чего ожидать"
 
 #: templates/index.html:38
 #, python-format
@@ -387,20 +452,25 @@ msgid ""
 "a\n"
 "              location in %(area_name)s. "
 msgstr ""
+" С помощью сайта %(site_title)s вы узнаете о\n"
+"              возможных стихийных бедствиях с учетом вашего\n"
+"              местоположения в регионе %(area_name)s. "
 
 #: templates/index.html:41
 msgid "How to Prepare"
-msgstr ""
+msgstr "Как подготовиться"
 
 #: templates/index.html:42
 msgid ""
 "You have the power to make a difference. Find out how you can protect your "
 "loved ones and home before the next disaster hits."
 msgstr ""
+"У вас есть возможность изменить ход событий. Узнайте, как защитить своих "
+"близких и свой дом, пока не разразилось следующее бедствие."
 
 #: templates/index.html:43
 msgid "In Recent History"
-msgstr ""
+msgstr "Недавние события"
 
 #: templates/index.html:44
 #, python-format
@@ -409,10 +479,13 @@ msgid ""
 "what impact they had, and where\n"
 "              they happened. "
 msgstr ""
+" Узнайте, какие стихийные бедствия происходили в регионе "
+"%(settings.area_name)s в прошлом, какой урон они нанесли и\n"
+"              где именно случались. "
 
 #: templates/index.html:50
 msgid "About the Data"
-msgstr ""
+msgstr "О данных"
 
 #: templates/index.html:52
 #, python-format
@@ -426,41 +499,53 @@ msgid ""
 "information from the American Red Cross and the Federal Emergency Management "
 "Agency."
 msgstr ""
+"На этом сайте размещены самые актуальные данные о риске возникновения "
+"стихийных бедствий в регионе %(area_name)s. Пользователь сайта несет "
+"ответственность за сверку той или иной информации с исходными <a "
+"href=\"%(data_source_link)s\" target=\"_blank\">источниками данных</a>. Эти "
+"сведения представляют собой самую лучшую текущую оценку опасностей, но не "
+"позволяют предсказывать будущие события. Описания рисков и способов "
+"подготовки к ним основаны на самой качественной информации, полученной от "
+"Американского Красного Креста и Федерального агентства по управлению в "
+"чрезвычайных ситуациях."
 
 #: templates/index.html:70
 msgid "Getting results for your location..."
-msgstr ""
+msgstr "Получение результатов для вашего местоположения..."
 
 #: templates/language_selector.html:27
 msgid "Language"
-msgstr ""
+msgstr "Язык"
 
 #: templates/no_content_found.html:6
 msgid "No information available for"
-msgstr ""
+msgstr "Информация недоступна для:"
 
 #: templates/no_content_found.html:9
 msgid "Wrong address? Start over"
-msgstr ""
+msgstr "Неверный адрес? Попробуйте еще."
 
 #: templates/no_content_found.html:21
 msgid "No information available."
-msgstr ""
+msgstr "Нет доступной информации."
 
 #: templates/no_content_found.html:23
 #, python-format
 msgid "It looks like your location is outside of %(area_name)s."
 msgstr ""
+"Похоже, ваше местоположение находится за пределами региона «%(area_name)s»."
 
 #: templates/no_content_found.html:24
 msgid ""
 "While we value and promote resilience everywhere, the data that powers this "
 "site isn't available for other places yet."
 msgstr ""
+"Мы ценим и поддерживаем устойчивость во всем мире. Однако данные этого сайта "
+"недоступны для других местоположений."
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr ""
+msgstr "Сделайте первый шаг к подготовке"
 
 #: templates/prepare.html:24
 msgid ""
@@ -469,191 +554,210 @@ msgid ""
 "You may have already done some of it! You can use the checklist at the "
 "bottom of this page to keep track of how much you've done."
 msgstr ""
+"Чтобы подготовить свою семью или сообщество к чрезвычайным ситуациям, "
+"выполните несколько простых шагов. Это не обязательно должно быть дорого или "
+"сложно. Возможно, некоторые пункты вы уже выполнили. Посмотрите чек-лист "
+"внизу страницы и узнайте, насколько вы продвинулись."
 
 #: templates/prepare.html:89
 msgid "This activity"
-msgstr ""
+msgstr "Эта мера…"
 
 #: templates/prepare.html:90
 msgid "Print Checklist"
-msgstr ""
+msgstr "Распечатать чек-лист"
 
 #: templates/prepare.html:94
 msgid "Completed?"
-msgstr ""
+msgstr "Готово?"
 
 #: templates/prepare.html:95
 msgid "Activity"
-msgstr ""
+msgstr "Меры"
 
 #: templates/prepare.html:96 templates/prepare.html:112
 msgid "reduces emotional and physical harm"
-msgstr ""
+msgstr "уменьшает эмоциональный и физический вред"
 
 #: templates/prepare.html:98 templates/prepare.html:114
 msgid "is useful for other situations"
-msgstr ""
+msgstr "полезна в других ситуациях"
 
 #: templates/prepare.html:100 templates/prepare.html:116
 msgid "helps protect property"
-msgstr ""
+msgstr "помогает защитить имущество"
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr ""
+msgstr "ущерб"
 
 #: templates/prepare.html:104
 msgid "Resources"
-msgstr ""
+msgstr "Ресурсы"
 
 #: templates/prepare.html:142
 msgid "Key:"
-msgstr ""
+msgstr "Стоимость:"
 
 #: templates/prepare.html:151
 msgid "or more"
-msgstr ""
+msgstr "или больше"
 
 #: templates/registration/login.html:3
 #: templates/registration/user_interactions.html:3
 msgid "Log In"
-msgstr ""
+msgstr "Вход в систему"
 
 #: templates/registration/login.html:4
 #: templates/registration/user_interactions.html:5
 #: templates/registration/user_profile.html:26
 #: templates/registration/user_signup.html:4
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: templates/registration/login.html:8
 #: templates/registration/password_change_form.html:16
 msgid "Required."
-msgstr ""
+msgstr "Обязательно."
 
 #: templates/registration/login.html:12
 msgid "Username (your email address)"
-msgstr ""
+msgstr "Имя пользователя (адрес электронной почты)"
 
 #: templates/registration/login.html:15
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: templates/registration/login.html:26
 #, python-format
 msgid ""
 "Did you forget your password? Reset it <a href=\"%(password_url)s\">here</a>."
 msgstr ""
+"Забыли пароль? Установите новый по <a href=\"%(password_url)s\">этой ссылке</"
+"a>."
 
 #: templates/registration/password_change_done.html:13
 msgid "Your password was changed."
-msgstr ""
+msgstr "Пароль изменен."
 
 #: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
+"В целях безопасности введите сначала прежний пароль, а затем новый. Повторно "
+"введите новый пароль. Это нужно, чтобы избежать опечаток."
 
 #: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Исправьте ошибку ниже."
+msgstr[1] "Исправьте ошибки ниже."
+msgstr[2] "Исправьте ошибки ниже."
+msgstr[3] "Исправьте ошибки ниже."
 
 #: templates/registration/password_change_form.html:47
 #: templates/registration/password_reset_confirm.html:33
 #: templates/registration/user_profile.html:28
 msgid "Change my password"
-msgstr ""
+msgstr "Изменить пароль"
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Your password has been set."
-msgstr ""
+msgstr "Пароль сохранен."
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter a new password"
-msgstr ""
+msgstr "Введите новый пароль"
 
 #: templates/registration/password_reset_confirm.html:18
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr ""
+msgstr "Повторно введите новый пароль, чтобы избежать опечаток."
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "New password:"
-msgstr ""
+msgstr "Новый пароль:"
 
 #: templates/registration/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr ""
+msgstr "Подтвердите пароль:"
 
 #: templates/registration/password_reset_confirm.html:40
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
+"Ссылка для ввода нового пароля недействительна. Возможно, ее уже "
+"использовали. Запросите ссылку для ввода нового пароля еще раз."
 
 #: templates/registration/password_reset_done.html:13
 msgid "Please check your email."
-msgstr ""
+msgstr "Проверьте электронную почту."
 
 #: templates/registration/password_reset_done.html:14
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
+"Мы отправили на электронную почту, которую вы указали при создании учетной "
+"записи, письмо с инструкциями по установке пароля. Вы получите его в "
+"ближайшее время."
 
 #: templates/registration/password_reset_done.html:16
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
+"Если письмо не пришло, убедитесь, что вы ввели тот адрес электронной почты, "
+"на который зарегистрировали учетную запись. Также проверьте папку «Спам»."
 
 #: templates/registration/password_reset_form.html:14
 msgid "Reset your password"
-msgstr ""
+msgstr "Сбросьте пароль"
 
 #: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
+"Забыли пароль? Введите ниже адрес электронной почты, и мы отправим вам "
+"инструкции по его восстановлению."
 
 #: templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr ""
+msgstr "Адрес электронной почты:"
 
 #: templates/registration/password_reset_form.html:24
 msgid "Reset my password"
-msgstr ""
+msgstr "Сбросить пароль"
 
 #: templates/registration/user_interactions.html:4
 #: templates/registration/user_signup.html:3
 msgid "Sign Up"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/registration/user_interactions.html:6
 msgid "Log Out"
-msgstr ""
+msgstr "Выйти из системы"
 
 #: templates/registration/user_interactions.html:7
 msgid "Update My Info"
-msgstr ""
+msgstr "Обновить мою информацию"
 
 #: templates/registration/user_interactions.html:23
 #, python-format
 msgid "Welcome back, <span class=\"username\">%(username)s</span>!"
-msgstr ""
+msgstr "С возвращением, <span class=\"username\">%(username)s</span>!"
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
-msgstr ""
+msgstr "Выполняется вход в систему. Подождите немного..."
 
 #: templates/registration/user_interactions.html:33
 msgid "Welcome back!"
-msgstr ""
+msgstr "С возвращением!"
 
 #: templates/registration/user_interactions.html:35
 #, python-format
@@ -661,10 +765,12 @@ msgid ""
 "If your username isn't <span class=\"username\">%(username)s</span>, you "
 "might want to log out."
 msgstr ""
+"Если ваше имя пользователя не <span class=\"username\">%(username)s</span>, "
+"возможно, вам лучше выйти из этого аккаунта."
 
 #: templates/registration/user_interactions.html:43
 msgid "Receive Important Updates"
-msgstr ""
+msgstr "Получайте важные новости"
 
 #: templates/registration/user_interactions.html:45
 msgid ""
@@ -674,87 +780,98 @@ msgid ""
 "informed. We’ll ask for your email address and physical address. Your "
 "information will be secure, and we won’t contact you for any other reason."
 msgstr ""
+"Позаботьтесь о безопасности семьи, друзей и соседей. Подпишитесь на рассылку "
+"новостей о таких сезонных стихийных бедствиях, как пожары, наводнения и "
+"снежные бури. Если катаклизм случится в вашем районе, мы предоставим вам "
+"актуальную информацию. Для этого нам нужен ваш адрес электронной почты и "
+"фактического проживания. Не волнуйтесь, все ваши личные данные под надежной "
+"защитой. Мы не будем тревожить вас по причинам, не связанным с катаклизмами."
 
 #: templates/registration/user_profile.html:4
 msgid "Update Your Information"
-msgstr ""
+msgstr "Обновите свои данные"
 
 #: templates/registration/user_profile.html:8
 #: templates/registration/user_signup.html:17
 msgid "Street Address"
-msgstr ""
+msgstr "Улица и номер дома"
 
 #: templates/registration/user_profile.html:11
 #: templates/registration/user_signup.html:20
 msgid "Other Address Information"
-msgstr ""
+msgstr "Другие адресные данные"
 
 #: templates/registration/user_profile.html:14
 #: templates/registration/user_signup.html:23
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 #: templates/registration/user_profile.html:17
 #: templates/registration/user_signup.html:26
 msgid "State"
-msgstr ""
+msgstr "Штат"
 
 #: templates/registration/user_profile.html:20
 #: templates/registration/user_signup.html:29
 msgid "Zip Code"
-msgstr ""
+msgstr "Почтовый индекс"
 
 #: templates/registration/user_profile.html:25
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 #: templates/registration/user_signup.html:11
 msgid "Email address (this will be your username)"
-msgstr ""
+msgstr "Адрес электронной почты (это будет ваше имя пользователя)"
 
 #: templates/registration/user_signup.html:14
 msgid "Password (more than 8 characters long, please)"
-msgstr ""
+msgstr "Пароль (более 8 символов)"
 
 #: templates/registration/user_signup.html:39
 msgid "Need some help? <a href=\"mailto:help@hazardready.org\">Email us.</a>"
 msgstr ""
+"Нужна помощь? <a href=\"mailto:help@hazardready.org\">Напишите нам.</a>"
 
 #: templatetags/show_cost.py:8
 msgid "Free!"
-msgstr ""
+msgstr "Бесплатно!"
 
 #: templatetags/show_cost.py:13 templatetags/show_cost.py:23
 #: templatetags/show_cost_header.py:13
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестно"
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr ""
+msgstr "Начните — это бесплатно!"
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
-msgstr ""
+msgstr "Следующие шаги"
 
 #: templatetags/show_cost.py:20 templatetags/show_cost_header.py:10
 msgid "Keep Going"
-msgstr ""
+msgstr "Продолжайте"
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
 msgstr ""
+"Учетная запись с этим адресом электронной почты уже существует. Попробуйте "
+"выполнить вход."
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
-msgstr ""
+msgstr "Возникала ошибка. Повторите попытку."
 
 #: views.py:91
 msgid ""
 "Thanks for signing up! We'll get ahold of you with relevant news and "
 "information. You can come back anytime to update your address."
 msgstr ""
+"Благодарим за регистрацию! Мы будем присылать вам актуальные новости и "
+"информацию. Вы можете в любое время обновить свой адрес."
 
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
-msgstr ""
+msgstr "Спасибо, что держите нас в курсе!"
