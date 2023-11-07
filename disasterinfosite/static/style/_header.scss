@@ -62,7 +62,6 @@ header {
 
 .logo__text {
   display: inline;
-  vertical-align: top;
 
   h3 {
     margin: 0.75rem;
@@ -96,7 +95,7 @@ header {
   margin-inline-end: 0.5rem;
   margin-inline-start: auto;
 
-  @include breakpoint(medium) {
+  @include breakpoint(medium-and-up) {
     margin-inline-end: 0;
   }
 }
@@ -131,7 +130,7 @@ header {
   position: relative;
 
   @include breakpoint(xlarge) {
-    margin: 0 10px auto;
+    margin: 0 4px auto;
     max-width: 600px;
     flex: 1 0 auto;
   }
@@ -217,7 +216,7 @@ header {
     }
   }
 
-  @include breakpoint(large-and-up) {
+  @include breakpoint(xlarge) {
     flex: 0 1 120px;
   }
 }
@@ -261,10 +260,6 @@ header {
 
   @include breakpoint(large-and-up) {
     margin-inline-start: 0;
-  }
-
-  @include breakpoint(xlarge) {
-    margin-inline-start: 15px;
   }
 }
 
