@@ -610,9 +610,9 @@ class SnuggetType(models.Model):
 
 
 class SnuggetSection(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     display_name = models.CharField(
-        max_length=50,
+        max_length=100,
         help_text="The name to show for this section",
         default=""
     )
