@@ -32,6 +32,11 @@
   flex-grow: 2;
   padding: 10px;
 
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
   @include breakpoint(medium-and-up) {
     margin-inline-end: 20px;
   }
@@ -45,7 +50,6 @@
   input {
     margin: 5px 0 10px;
     display: block;
-    width: 100%;
   }
 }
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 20:57+0000\n"
+"POT-Creation-Date: 2023-11-02 16:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -335,11 +335,11 @@ msgstr ""
 msgid "Enter an address."
 msgstr ""
 
-#: templates/header.html:38
+#: templates/header.html:39
 msgid "We had a problem finding that location."
 msgstr ""
 
-#: templates/header.html:41
+#: templates/header.html:42
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."

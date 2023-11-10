@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 20:57+0000\n"
-"PO-Revision-Date: 2023-07-10 19:40\n"
+"POT-Creation-Date: 2023-11-03 21:22+0000\n"
+"PO-Revision-Date: 2023-11-02 16:50\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
 "Language: ar_SA\n"
@@ -112,10 +112,10 @@ msgid ""
 "prepare. %(title)s organizes current information and packages it in a way "
 "that makes it accessible for any %(area_name)s resident."
 msgstr ""
-"صُمِّم %(title)s للمساعدة في تعليم الناس وإعدادهم للكوارث التي تحدث في منطقتهم. "
-"لا تضرب الكوارث المواقع بقدر مماثل، لذلك وجدنا أنه من المهم أن نعطي معلومات "
-"محددة عن الموقع من أجل الاستعداد بصورة سليمة. ينظم %(title)s المعلومات "
-"الحالية ويجمعها بطريقة تجعلها متاحة لأي ساكن في %(area_name)s."
+"صُمِّمت %(title)s للمساعدة في تعليم الناس وإعدادهم للكوارث التي تحدث في "
+"منطقتهم. لا تضرب الكوارث المواقع بقدر مماثل، لذلك وجدنا أنه من المهم أن نعطي "
+"معلومات محددة عن الموقع من أجل الاستعداد بصورة سليمة. تنظم %(title)s "
+"المعلومات الحالية ويجمعها بطريقة تجعلها متاحة لأي ساكن في %(area_name)s."
 
 #: templates/about.html:85
 #, python-format
@@ -156,7 +156,7 @@ msgstr ""
 "الفيدرالية لإدارة الطوارئ (FEMA) والإدارة الوطنية للمحيطات والغلاف الجوي "
 "(NOAA) وهيئة المسح الجيولوجي الأمريكية (USGS). 2- فحص الجودة. نعمل مع شركاء "
 "محليين (مجموعات محلية ومديرين للطوارئ) من أجل ضمان دقة البيانات والمعلومات. "
-"3- معالجة البيانات. نجعل البيانات ملائمة لبرامج Hazard Ready. 4- بناء "
+"3- معالجة البيانات. نجعل البيانات ملائمة لبرامج Hazard Ready. 4-بناء "
 "المحتوى. نكتب نص الصفحة الإلكترونية، ونجمع الصور ومقاطع الفيديو، ونحدد موقع "
 "المصادر المحلية لكل خطر ومنطقة. 5- تقديم التعقيبات ومجموعات التركيز. مناقشة "
 "المحتوى والتصميمات من أجل ضمان أن تتلائم المعلومات مع احتياجات كل مجتمع. 6- "
@@ -185,11 +185,11 @@ msgstr "مصادر البيانات لفريق Ready في سياتل ومقاط�
 
 #: templates/data.html:33
 msgid "Earthquake"
-msgstr "الزلزال"
+msgstr "زلزال"
 
 #: templates/data.html:34
 msgid "M6.8 2001 Nisqually Earthquake Shaking"
-msgstr "هزة زلزال نيسكوالي 2001 بقوة 6,8"
+msgstr "هزة زلزال نيسكوالي 2001 بقوة 6.8"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -197,7 +197,7 @@ msgstr "هزة زلزال نيسكوالي 2001 بقوة 6,8"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "Accessed"
-msgstr "تم منح الوصول"
+msgstr "تم الوصول إليها"
 
 #: templates/data.html:37 templates/data.html:41 templates/data.html:45
 #: templates/data.html:49 templates/data.html:53 templates/data.html:57
@@ -205,7 +205,7 @@ msgstr "تم منح الوصول"
 #: templates/data.html:77 templates/data.html:80 templates/data.html:87
 #: templates/data.html:91 templates/data.html:103 templates/data.html:107
 msgid "June"
-msgstr "يونيو"
+msgstr "حزيران/يونيو"
 
 #: templates/data.html:39
 msgid "Seattle Fault Earthquake Scenario"
@@ -245,7 +245,7 @@ msgstr "الانحدارات الحادة المحتملة"
 
 #: templates/data.html:84
 msgid "Flood"
-msgstr "الفيضان"
+msgstr "فيضان"
 
 #: templates/data.html:85
 msgid "Flood Hazard Zones"
@@ -265,7 +265,7 @@ msgstr "حرائق الغابات"
 
 #: templates/data.html:101
 msgid "Wildland Urban Interface (WUI) Zones"
-msgstr "مناطق الواجهة الحضرية البرية"
+msgstr "مناطق الواجهة الحضرية البرية (WUI)"
 
 #: templates/data.html:105
 msgid "Fire Hazard Potential"
@@ -277,7 +277,7 @@ msgstr "الطقس الصيفي"
 
 #: templates/data.html:117
 msgid "Questions or concerns about the data? Contact:"
-msgstr "في حالة وجود أسئلة أو استفسارات بشأن البيانات؟ الاتصال:"
+msgstr "في حالة وجود أسئلة أو استفسارات بشأن البيانات؟ اتصل ب:"
 
 #: templates/data.html:120
 msgid "flood"
@@ -361,7 +361,7 @@ msgid ""
 "Have questions? View the <a href=\"%(about_url)s\" target=\"_blank\">About</"
 "a> page for more information.\""
 msgstr ""
-"هل لديك أسئلة؟ اعرض <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
+"هل لديك أسئلة؟ شاهد <a href=\"%(about_url)s\" target=\"_blank\">صفحة</a> "
 "نبذة للحصول على مزيدٍ من المعلومات.\""
 
 #: templates/head-meta.html:12 templates/header.html:25
@@ -378,11 +378,11 @@ msgstr "اعثر عليّ"
 msgid "Enter an address."
 msgstr "أدخل عنوانًا."
 
-#: templates/header.html:38
+#: templates/header.html:39
 msgid "We had a problem finding that location."
 msgstr "نواجه مشكلةً في العثور على ذلك الموقع."
 
-#: templates/header.html:41
+#: templates/header.html:42
 msgid ""
 "Please allow your web browser to access your location in order to use Find "
 "Me."
@@ -431,7 +431,7 @@ msgid ""
 "a\n"
 "              location in %(area_name)s. "
 msgstr ""
-" %(site_title)s يمنحك فكرةً عن أي\n"
+" %(site_title)s يمنحك فكرةً عن أي من\n"
 "              الكوارث الطبيعية التي قد تواجهها في المستقبل استنادًا إلى\n"
 "              موقع في %(area_name)s. "
 
@@ -521,7 +521,7 @@ msgstr ""
 
 #: templates/prepare.html:21
 msgid "Take the first step toward getting prepared"
-msgstr "اتخذ الخطوة الأولى للاستعداد"
+msgstr "اتخذ الخطوة الأولى نحو الاستعداد"
 
 #: templates/prepare.html:24
 msgid ""
@@ -565,7 +565,7 @@ msgstr "يساعد في حماية الممتلكات"
 
 #: templates/prepare.html:102
 msgid "costs"
-msgstr "التكاليف"
+msgstr "ألتكاليف"
 
 #: templates/prepare.html:104
 msgid "Resources"
@@ -629,7 +629,7 @@ msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
 msgstr[0] "يرجى تصحيح الخطأ أدناه."
 msgstr[1] "يرجى تصحيح الخطأ أدناه."
-msgstr[2] "يرجى تصحيح الخطئين أدناه."
+msgstr[2] "يرجى تصحيح الخطأين أدناه."
 msgstr[3] "يرجى تصحيح الأخطاء أدناه."
 msgstr[4] "يرجى تصحيح الأخطاء أدناه."
 msgstr[5] "يرجى تصحيح الأخطاء أدناه."
@@ -681,7 +681,7 @@ msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
-"لقد أرسلنا إليك عبر البريد الإلكتروني تعليمات لإعداد كلمة المرور الخاصة بك "
+"لقد أرسلنا إليك تعليمات عبر البريد الإلكتروني لإعداد كلمة المرور الخاصة بك "
 "في حالة كان هناك حساب بالبريد الإلكتروني الذي أدخلته. ينبغي أن تتلقاها قريبًا."
 
 #: templates/registration/password_reset_done.html:16
@@ -732,7 +732,7 @@ msgstr "مرحبًا بعودتك، <span class=\"username\">%(username)s</span>
 
 #: templates/registration/user_interactions.html:25
 msgid "We're logging you in. Just a moment..."
-msgstr "نعمل على تسجيل دخولك. نحتاج دقيقةً فقط..."
+msgstr "نعمل على تسجيل دخولك. انتظر لحظة..."
 
 #: templates/registration/user_interactions.html:33
 msgid "Welcome back!"
@@ -823,7 +823,7 @@ msgstr "غير معروف"
 
 #: templatetags/show_cost.py:18 templatetags/show_cost_header.py:8
 msgid "Get Started - It’s Free!"
-msgstr "ابدأ - إنه مجانًا!"
+msgstr "ابدأ - إنه مجاني!"
 
 #: templatetags/show_cost.py:19 templatetags/show_cost_header.py:9
 msgid "Next Steps"
@@ -835,7 +835,8 @@ msgstr "استمر"
 
 #: views.py:49
 msgid "That email address has already been used. Try logging in instead."
-msgstr "تم استخدام عنوان البريد الإلكتروني ذلك. حاول تسجيل الدخول بدلاً من ذلك."
+msgstr ""
+"لقد سبق استخدام عنوان البريد الإلكتروني ذلك. حاول تسجيل الدخول بدلاً من ذلك."
 
 #: views.py:57 views.py:74 views.py:85 views.py:112
 msgid "Whoops, we're not sure what happened there. Maybe you should try again."
