@@ -28,6 +28,7 @@ RUN echo "deb https://deb.nodesource.com/node_19.x bullseye main" > /etc/apt/sou
     libproj-dev       \
     gdal-bin          \
     libjpeg-dev       \
+    gettext           \
     g++               \
     libgdal-dev       \
     nodejs            \
