@@ -64,6 +64,10 @@ RUN rm -rf data && unzip data.zip
 RUN npm rebuild node-sass
 RUN npm install && npm run webpack
 
+# build translated files
+RUN python ../manage.py makemessages -a
+RUN python ../manage.py compilemessages
+
 WORKDIR /app
 
 RUN python manage.py collectstatic --noinput
