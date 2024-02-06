@@ -1,8 +1,10 @@
 require("normalize.css/normalize.css");
 require("leaflet/dist/leaflet.css");
+require("@geoapify/geocoder-autocomplete/styles/minimal.css");
 require("../style/app.scss");
 
-var boundaryShape = require("./boundary.json");
+const boundaryShape = require("./boundary.json");
+const geoapify = require("@geoapify/geocoder-autocomplete");
 
 require("../img/favicon.ico");
 require("../img/thinking.gif");
@@ -38,9 +40,8 @@ if (!String.prototype.includes) {
   };
 }
 
-// This is the base repository Mapquest key. Get your own
-// Mapquest key for a new app!
-var MAPQUEST_KEY = "b3ZxSWOID7jOlLLGb8KvPxbF4DGBMEHy";
+const GEOAPIFY_KEY = "247a436c9e9645e8982ff35c392096f5";
+
 var osmUrl =
   "//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4";
 var osmAttrib =
@@ -59,6 +60,12 @@ var input_lat;
 var input_lng;
 var $locationInput;
 
+// the page language, as ISO 639-1
+let lang = document.documentElement.lang;
+if(lang == 'cn') {
+  lang = 'zh';
+}
+
 // grab the position, if possible
 var query_lat = getURLParameter("lat");
 var query_lng = getURLParameter("lng");
@@ -69,7 +76,7 @@ var mapElement = document.getElementById("map");
 // convenience function to extract url parameters
 function getURLParameter(name) {
   var results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
-    window.location.href
+    window.location.href,
   );
   return results === null ? null : results[1] || 0;
 }
@@ -100,29 +107,22 @@ function reverseGeocodeLocation(lat, lng) {
   // if we don't have text for the location, reverse geocode to get it
   return $.ajax({
     type: "GET",
-    url: "https://www.mapquestapi.com/geocoding/v1/reverse",
+    url: "https://api.geoapify.com/v1/geocode/reverse",
     data: {
-      key: MAPQUEST_KEY,
-      location: lat + "," + lng,
-      outFormat: "json",
-      thumbMaps: false,
+      apiKey: GEOAPIFY_KEY,
+      lang: lang,
+      lat: lat,
+      lon: lng,
+      format: "json",
+      type: "street",
     },
   })
-    .then(function (result) {
+    .then(function (response) {
       // We have at least one result and nothing went wrong
-      if (result.info.statuscode === 0 && result.results.length > 0) {
-        var address = result.results[0].locations[0];
-        return (
-          address.street +
-          ", " +
-          address.adminArea5 +
-          ", " +
-          address.adminArea3 +
-          " " +
-          address.postalCode
-        );
+      if (response.results.length) {
+        return response.results[0].formatted;
       } else {
-        console.log("Reverse geocoding error messages", result.info.messages);
+        console.log("Reverse geocoding error; response: ", response);
       }
     })
     .catch(function (error) {
@@ -202,7 +202,7 @@ $(document).ready(function () {
     if (e.currentTarget.hostname !== location.hostname) {
       return trackOutboundLink(
         e.currentTarget.href,
-        e.currentTarget.target === "_blank"
+        e.currentTarget.target === "_blank",
       );
     }
   });
@@ -302,16 +302,12 @@ $(document).ready(function () {
   // Set up autocomplete when someone clicks in the input field
   $locationInput.one("click", function () {
     $locationInput.prop("placeholder", "");
-    var autocomplete = placeSearch({
-      key: MAPQUEST_KEY,
-      container: $locationInput[0],
-      useDeviceLocation: !!navigator.geolocation,
-    });
+    const autocompleteInput = new geoapify.GeocoderAutocomplete($locationInput[0], GEOAPIFY_KEY, {});
     $locationInput.focus();
 
-    autocomplete.on("change", function (event) {
-      input_lat = event.result.latlng.lat;
-      input_lng = event.result.latlng.lng;
+    autocompleteInput.on("select", function (location) {
+      input_lat = location.lat;
+      input_lng = location.lon;
     });
   });
 
@@ -338,16 +334,16 @@ $(document).ready(function () {
     // Geocode our location text if we don't have a lat/lng from the autocomplete (e.g someone just typed in there and hit 'enter')
     $.ajax({
       type: "GET",
-      url: "https://www.mapquestapi.com/geocoding/v1/address",
+      url: "https://api.geoapify.com/v1/geocode/search",
       data: {
-        key: MAPQUEST_KEY,
-        location: location_query_text,
-        outFormat: "json",
-        thumbMaps: false,
-        boundingBox: mapBounds,
+        apiKey: GEOAPIFY_KEY,
+        text: location_query_text,
+        lang: lang,
+        format: "json",
+        filter: `rect:${mapBounds}`,
       },
     })
-      .then(function (result) {
+      .then(function (response) {
         if (result.info.statuscode === 0) {
           var lat = result.results[0].locations[0].latLng.lat;
           var lon = result.results[0].locations[0].latLng.lng;
@@ -388,7 +384,7 @@ $(document).ready(function () {
           }
           enableForm();
         },
-        { timeout: 8000 }
+        { timeout: 8000 },
       );
     }
   });
