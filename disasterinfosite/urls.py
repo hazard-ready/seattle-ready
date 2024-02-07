@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.contrib.gis import admin
 from django.conf import settings
+from django.views.i18n import JavaScriptCatalog
 
 from disasterinfosite import views
 
@@ -27,6 +28,12 @@ urlpatterns += i18n_patterns(path('about/', views.about_view, name='about'))
 urlpatterns += i18n_patterns(path('prepare/',
                                   views.prepare_view, name='prepare'))
 urlpatterns += i18n_patterns(path('data/', views.data_view, name='data'))
+
+# enable translations in javascript
+urlpatterns += i18n_patterns(path("jsi18n/",
+                                  JavaScriptCatalog.as_view(
+                                      domain='django'
+                                  ), name="javascript-catalog"))
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

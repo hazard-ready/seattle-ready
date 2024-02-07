@@ -297,7 +297,10 @@ $(document).ready(function () {
   const autocompleteInput = new geoapify.GeocoderAutocomplete(
     $locationContainer[0],
     GEOAPIFY_KEY,
-    { filter: { rect: GEOAPIFY_MAP_BOUNDS } },
+    {
+      filter: { rect: GEOAPIFY_MAP_BOUNDS },
+      placeholder: gettext("Enter an address."),
+    },
   );
 
   // geoapify adds an input element, which we need to work with
