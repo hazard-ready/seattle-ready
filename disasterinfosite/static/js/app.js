@@ -42,18 +42,27 @@ if (!String.prototype.includes) {
 
 const GEOAPIFY_KEY = "247a436c9e9645e8982ff35c392096f5";
 
-var osmUrl =
+const osmUrl =
   "//{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=3a70462b44dd431586870baee15607e4";
-var osmAttrib =
+const osmAttrib =
   'Map data © <a href="//openstreetmap.org">OpenStreetMap</a> contributors';
 
-var boundaryStyle = {
+const boundaryStyle = {
   color: "rgb(253, 141, 60)",
   weight: 4,
   opacity: 1,
   fillColor: "#ffffff",
   fillOpacity: 0.7,
 };
+
+const GEOAPIFY_MAP_BOUNDS = {
+  lon1: mapBounds[0][1],
+  lat1: mapBounds[0][0],
+  lon2: mapBounds[1][1],
+  lat2: mapBounds[1][0],
+};
+
+const GEOAPIFY_MAP_BOUNDS_STRING = `${GEOAPIFY_MAP_BOUNDS["lon1"]},${GEOAPIFY_MAP_BOUNDS["lat1"]},${GEOAPIFY_MAP_BOUNDS["lon2"]},${GEOAPIFY_MAP_BOUNDS["lat2"]}`;
 
 var location_query_text = "";
 var input_lat;
@@ -62,13 +71,13 @@ var $locationInput;
 
 // the page language, as ISO 639-1
 let lang = document.documentElement.lang;
-if(lang == 'cn') {
-  lang = 'zh';
+if (lang == "cn") {
+  lang = "zh";
 }
 
 // grab the position, if possible
-var query_lat = getURLParameter("lat");
-var query_lng = getURLParameter("lng");
+const query_lat = getURLParameter("lat");
+const query_lng = getURLParameter("lng");
 
 var map;
 var mapElement = document.getElementById("map");
@@ -273,9 +282,9 @@ $(document).ready(function () {
   }
 
   // Set up input box
-  $locationInput = $("#location-text");
-  var $locationSubmit = $("#location-submit");
-  var $autoLocationButton = $("#auto-location");
+  const $locationContainer = $("#location-text");
+  const $locationSubmit = $("#location-submit");
+  const $autoLocationButton = $("#auto-location");
   if (mapElement) {
     if (map !== undefined && map !== null) {
       // sometimes we already have one and I don't know why
@@ -283,6 +292,16 @@ $(document).ready(function () {
     }
     setUpMap();
   }
+
+  // Set up autocomplete
+  const autocompleteInput = new geoapify.GeocoderAutocomplete(
+    $locationContainer[0],
+    GEOAPIFY_KEY,
+    { filter: { rect: GEOAPIFY_MAP_BOUNDS } },
+  );
+
+  // geoapify adds an input element, which we need to work with
+  $locationInput = $locationContainer.find("input.geoapify-autocomplete-input");
 
   // grab and set any previously entered query text
   var loc = getURLParameter("loc");
@@ -299,19 +318,14 @@ $(document).ready(function () {
   // Hide a geocoding error message every time, if there is one
   $locationInput.on("click", hideGeocodeErrors);
 
-  // Set up autocomplete when someone clicks in the input field
-  $locationInput.one("click", function () {
-    $locationInput.prop("placeholder", "");
-    const autocompleteInput = new geoapify.GeocoderAutocomplete($locationInput[0], GEOAPIFY_KEY, {});
-    $locationInput.focus();
-
-    autocompleteInput.on("select", function (location) {
-      input_lat = location.lat;
-      input_lng = location.lon;
-    });
+  autocompleteInput.on("select", function (location) {
+    if (!!location) {
+      input_lat = location.properties.lat;
+      input_lng = location.properties.lon;
+    }
   });
 
-  // hitting enter key in the textfield will trigger submit
+  //hitting enter key in the input will trigger submit
   $locationInput.keydown(function (event) {
     if (event.keyCode == 13) {
       $locationSubmit.trigger("click");
@@ -331,7 +345,8 @@ $(document).ready(function () {
       return;
     }
 
-    // Geocode our location text if we don't have a lat/lng from the autocomplete (e.g someone just typed in there and hit 'enter')
+    // Geocode our location text if we don't have a lat/lng from the autocomplete
+    // (e.g someone just typed in there and hit 'enter')
     $.ajax({
       type: "GET",
       url: "https://api.geoapify.com/v1/geocode/search",
@@ -340,21 +355,21 @@ $(document).ready(function () {
         text: location_query_text,
         lang: lang,
         format: "json",
-        filter: `rect:${mapBounds}`,
+        filter: `rect:${GEOAPIFY_MAP_BOUNDS_STRING}`,
       },
     })
       .then(function (response) {
-        if (result.info.statuscode === 0) {
-          var lat = result.results[0].locations[0].latLng.lat;
-          var lon = result.results[0].locations[0].latLng.lng;
+        if (response.results.length) {
+          var lat = response.results[0].lat;
+          var lon = response.results[0].lon;
           submitLocation(lat, lon, location_query_text);
         } else {
-          console.log("Geocoding error messages", result.info.messages);
+          console.log("Geocoding error: ", response);
           showGeocodeError();
         }
       })
       .catch(function (error) {
-        console.log("error", error);
+        console.log(`Geocoding error: ${error}`);
         showGeocodeError();
       });
   });
