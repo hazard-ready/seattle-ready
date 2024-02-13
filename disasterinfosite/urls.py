@@ -17,7 +17,8 @@ urlpatterns = [
     path('accounts/create_user/', views.create_user, name="create_user"),
 
     # Our own user account actions
-    path('accounts/update_profile/', views.update_profile, name="update_profile"),
+    path('accounts/update_profile/',
+         views.update_profile, name="update_profile"),
     path('accounts/update_prepare_action/',
          views.prepare_action_update, name='prepare_action_update')
 ]
@@ -30,10 +31,9 @@ urlpatterns += i18n_patterns(path('prepare/',
 urlpatterns += i18n_patterns(path('data/', views.data_view, name='data'))
 
 # enable translations in javascript
-urlpatterns += i18n_patterns(path("jsi18n/",
-                                  JavaScriptCatalog.as_view(
-                                      domain='django'
-                                  ), name="javascript-catalog"))
+urlpatterns += i18n_patterns(path("jsi18n/", JavaScriptCatalog.as_view(),
+                                  name="javascript-catalog"))
+
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
