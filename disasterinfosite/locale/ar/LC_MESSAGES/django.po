@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seattle-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-03 21:22+0000\n"
+"POT-Creation-Date: 2024-02-07 02:27+0000\n"
 "PO-Revision-Date: 2023-11-02 16:50\n"
 "Last-Translator: \n"
 "Language-Team: Arabic\n"
@@ -373,10 +373,6 @@ msgstr "أدخل موقعك للحصول على تقرير مخصص عن مخا�
 #: templates/header.html:23
 msgid "Find Me"
 msgstr "اعثر عليّ"
-
-#: templates/header.html:27
-msgid "Enter an address."
-msgstr "أدخل عنوانًا."
 
 #: templates/header.html:39
 msgid "We had a problem finding that location."
@@ -853,3 +849,6 @@ msgstr ""
 #: views.py:117
 msgid "Thanks for keeping us up to date!"
 msgstr "شكرًا لإبقائنا على اطلاع بكل جديد!"
+
+#~ msgid "Enter an address."
+#~ msgstr "أدخل عنوانًا."
