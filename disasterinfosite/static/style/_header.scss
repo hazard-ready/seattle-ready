@@ -164,6 +164,11 @@ header {
   z-index: $z-index-high;
 }
 
+.geoapify-close-button {
+  inset-inline-end: 5px;
+  right: unset;
+}
+
 #location-submit {
   background-color: $light-accent;
   border: 1px solid $light-accent;
