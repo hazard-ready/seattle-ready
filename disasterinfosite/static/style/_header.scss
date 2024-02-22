@@ -167,6 +167,10 @@ header {
 .geoapify-close-button {
   inset-inline-end: 5px;
   right: unset;
+
+  .visible {
+    display: inline-flex;
+  }
 }
 
 #location-submit {
