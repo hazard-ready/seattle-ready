@@ -1,3 +1,6 @@
+
+# This repository has been archived as of September 2026. You're welcome to contact the maintainers with any questions you may have.
+
 # seattle-ready
 A disaster readiness website specific to the Seattle metro area.
 
